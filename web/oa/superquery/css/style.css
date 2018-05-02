@@ -1,0 +1,58 @@
+body{ font:14px "微软雅黑" Arial,Tahoma; color:#464646; padding:0; margin:0 auto; position:relative; }
+*{ font-family:"微软雅黑";}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,input,label,select,option,textarea,button,p,span{ margin:0;padding:0; font-family:"微软雅黑"; font-size:14px; font-weight:normal;}
+img{ border:0; vertical-align:top; font-size:0; line-height:0; overflow:hidden;}
+ul,li,ol,ul { list-style:none; margin:0; padding:0;  font-family:"微软雅黑"; font-size:14px; font-weight:normal; }
+h1,h2,h3,h4,h5,h6 { font-size:14px "微软雅黑" Arial,Tahoma; font-weight:normal;}
+a{ text-decoration:none; }
+.clear{ clear:both;}
+.zj{  height:auto;   position:relative;margin:0 20px;}
+body,html{ width:100%; height:100%;}
+
+
+.ssk{ height:auto;overflow:hidden;}
+.ssk_sb{ height:94px; text-align:center;}
+.ssk_xb{ height:auto; overflow:hidden;text-align: center }
+.ssk_xb input{ width:490px; height:49px; border:solid 1px #dadada;text-indent:10px; color: #666666;font-size:18px;outline: none;}
+.ssk_xb button{ width:136px; height:50px; background:#4684d6 url(../image/ssk_07.png) no-repeat 25px center; border:none; font-size:24px; color:#FFF; padding:0 0 4px 35px; cursor:pointer;margin-left: -5px;}
+.gw,.gw_xb{ height:auto; overflow:hidden; }
+.gw_sb{ height:44px; border-bottom:2px solid #4684d6;}
+.gw_sb ul li{ float:left; width:139px; height:44px;}
+.gw_sb ul li a{ display:block; line-height:44px; text-align:center; color:#383838; font-size:16px;}
+.gw_sb ul li a:hover,.gw_sb ul li a.hover{ background:#4684d6; color:#FFF;}
+.gw_xb{ overflow:hidden; height:auto; padding-top:10px;}
+.box1{ background:#dedede;}
+.box1 td{ height:38px; background:#FFF; text-align:center;}
+.box1 td.td1{ background:#f9f9f9;}
+
+.fy{ width:570px; margin:10px auto; padding-bottom:10px; height:auto; overflow:hidden;}
+.fy_lt{ height:auto; float:left;}
+.fy_lt p{ float:left; margin-left:10px; font-size:14px;}
+.fy_zj{ width:72px; height:auto; float:left;margin-left: 10px;}
+.fy_zj input{ width:36px; height:16px; border:solid 1px #b9cfdd; float:left; margin-top:2px;text-indent:10px;}
+.fy_zj p{ float:left; font-size:14px; padding-left:6px;}
+.fy_lt p a{ color:#464646;}
+.fy_rt{ width:50px; height:auto; float:left;}
+.fy_rt a{ display:block; width:47px; height:20px; background:#f15618; text-align:center; line-height:18px; color:#FFF; font-size:14px;}
+.gn,.yh{ height:auto; overflow:hidden; padding:10px 0 10px 50px;}
+.gn li{ float:left; width:19%; height:36px; background:url(../image/sj_03.jpg) no-repeat 0 7px; padding-left:1%;}
+.gn li a{ color:#464646;}
+.yh{ width:100%; padding:0;}
+.yh dl{ width:22%; height:127px; overflow:hidden; border:solid 1px #e2e2e2; padding:10px; float:left; margin:0 10px 10px 0;}
+.yh dl dt{ width:100px; height:121px; float:left;}
+.yh dl dd{ width:128px; height:24px; border-bottom:dashed 1px #f1f1f1; float:left; margin-left:10px; line-height:29px;font-size: 12px}
+.yh dl dd div {font-size: 12px}
+.yh dl dd img{ margin:6px 5px 0 0;}
+.yh dl dd.dd1{ border:none;}
+
+.searchdiv{margin-top:30px;height: 80px;text-align: center}
+.searchinput{width:490px; height:51px; border:solid 1px #dadada; text-indent:10px;margin-left: 5px;color: #666666;font-size:18px;outline: none;}
+.searchimg{height:51px;width:201px;}
+.searchbut{width:136px; height:52px; background:#4684d6 url(../image/ssk_07.png) no-repeat 25px center; border:none; font-size:24px; color:#FFF; padding:0 0 4px 35px; cursor:pointer;margin-left: -5px;}
+.a_suspension_points{display: block;  white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;width: 200px;margin: 0px 3px}
+
+.user_small_image{float: left}
+.no_click_a{color: #908a8a;}
+
+.searchCheckBox{ margin-left: 10px; margin-right: 4px; }
+.searchCheckDiv{   text-align: center;  margin-bottom: 30px;}

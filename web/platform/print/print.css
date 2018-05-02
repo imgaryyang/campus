@@ -1,0 +1,15 @@
+#word {
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+}
+
+#buttons {
+    height: 30px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#buttons button {
+    margin-left: 6px;
+}

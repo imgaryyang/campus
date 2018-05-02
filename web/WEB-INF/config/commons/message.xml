@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <!--消息发送器-->
+    <bean class="List[com.gzzm.platform.message.MessageSender]" factory="instance">
+
+        <!--即时消息-->
+        <element type="com.gzzm.platform.message.ImMessageSender"/>
+
+        <!--手机短信-->
+        <element type="com.gzzm.platform.message.sms.SmsMessageSender"/>
+
+        <!--电子邮件-->
+        <!--<element type="com.gzzm.platform.message.EMailMessageSender"/>-->
+
+    </bean>
+    <bean class="com.gzzm.platform.message.sms.SimpleSmsSender"
+          imp="com.gzzm.platform.message.sms.DefaultSimpleSmsSender" singleton="true" factory="constructor">
+
+        <property name="server" value="http://125.90.169.162:8802"/>
+        <property name="userName" value="test2"/>
+        <property name="password" value="123456"/>
+
+    </bean>
+
+    <bean class="com.gzzm.platform.message.sms.ReceiptReceiver"
+          imp="com.gzzm.platform.message.sms.DefaultReceiptReceiver" singleton="true" factory="constructor">
+
+        <property name="server" value="http://125.90.169.162:8802"/>
+        <property name="userName" value="test2"/>
+        <property name="password" value="123456"/>
+
+    </bean>
+
+</config>

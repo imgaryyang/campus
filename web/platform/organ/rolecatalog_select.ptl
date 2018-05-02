@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/platform/organ/rolecatalog.css">
+    <script type="text/javascript" src="/platform/organ/rolecatalog_select.js"></script>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" action="">
+            <div id="components">
+                <div class="component_item">
+                    <div class="label">所属目录</div>
+                    <div class="component">
+                        <input name="parentRoleId">
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="ok();">确定</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

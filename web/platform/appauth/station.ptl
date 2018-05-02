@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>添加岗位</title>
+    <link type="text/css" rel="stylesheet" href="/platform/appauth/station.css">
+    <script type="text/javascript" src="/platform/appauth/appauth.js"></script>
+</head>
+
+<body id="dialogBody">
+    <form action="">
+        <div id="main">
+            <div id="selector">
+                <div bind="com.gzzm.platform.group.PageMemberSelector.class" id="receiverSelector"
+                     name="stationIds" type="station">
+                </div>
+            </div>
+            <div class="components">
+                <div class="component">
+                    <div class="label">
+                        权限
+                    </div>
+                    <div class="value">
+                        <span bind="apps">
+                            <input type="checkbox" name="key" value="${key}">${name}
+                        </span>
+                    </div>
+                </div>
+                <div class="component scope">
+                    <div class="label">
+                        范围
+                    </div>
+                    <div class="value">
+                        <select name="scopeId">
+                            <option bind="scopes"></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <span class="button">
+                   <button type="button" onclick="addStations();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

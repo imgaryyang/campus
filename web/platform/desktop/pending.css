@@ -1,0 +1,16 @@
+#list {
+    margin-top: 8px;
+}
+
+.title {
+    float: left;
+    width: 48%;
+    text-align: center;
+    color: red;
+}
+
+.count {
+    float: left;
+    width: 48%;
+    text-align: center;
+}

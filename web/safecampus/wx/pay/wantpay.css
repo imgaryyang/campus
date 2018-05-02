@@ -1,0 +1,44 @@
+html, body {
+    height: 100%;
+}
+
+.tjls {
+    height:270px
+}
+
+/*.zwkf span {*/
+    /*line-height: 120px;*/
+/*}*/
+
+/*.zwkf span img {*/
+    /*width: 5rem;*/
+    /*vertical-align: middle;*/
+/*}*/
+/*.zwkf p {*/
+    /*font-size: 1.1rem;*/
+    /*color: gray;*/
+/*}*/
+
+.tjjslb li {
+
+    margin-bottom: 15px;
+}
+
+.xwlb {
+ margin-top: 5px;
+}
+
+/**--------*/
+
+.zwkf {
+    height: 200px;
+}
+
+.hzkqbj2 {
+
+    border-radius: 0.33rem;
+}
+
+.contont {
+  padding-top: 0;
+}

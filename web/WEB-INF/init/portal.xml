@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+
+    <classResolver type="com.gzzm.portal.tag.PortalTagResolver"/>
+
+    <classResolver type="com.gzzm.portal.cms.information.InformationComponentResolver"/>
+
+</system>

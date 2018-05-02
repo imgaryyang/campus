@@ -1,0 +1,238 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#tabs {
+    float: left;
+    margin-top: 7px;
+    margin-left: 7px;
+    /*width: 730px;*/
+    margin-bottom: 20px;
+}
+
+.tabPage {
+    width: 770px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.components {
+    /*float: right;*/
+    width: 740px;
+    margin-top: 18px;
+}
+
+.component_line {
+    clear: both;
+    width: 770px;
+}
+
+.component_item {
+    float: left;
+    margin-bottom: 12px;
+    width: 385px;
+}
+
+.component_item .label {
+    float: left;
+    padding-top: 3px;
+    width: 65px;
+    text-align: right;
+    padding-right: 10px;
+    word-spacing: 18px;
+}
+
+.component_item .label1 {
+    float: left;
+    padding-top: 3px;
+    width: 30%;
+    text-align: right;
+    padding-right: 10px;
+    word-spacing: 18px;
+}
+.component_item .label2 {
+    float: left;
+    padding-top: 3px;
+    width: 10%;
+    text-align: right;
+    padding-right: 10px;
+    word-spacing: 18px;
+}
+
+.component_item .component {
+    float: left;
+    width: 50%;
+}
+.component_item .component1 {
+    float: left;
+    width: 22.5%;
+}
+.component_item .component2 {
+    float: left;
+    width: 50%;
+}
+
+.component_item .component_wide {
+    float: left;
+}
+
+.normalPage .components {
+    /*margin: 20px 0px 8px;*/
+}
+
+input{
+    height: 18px;
+}
+
+.normalPage .component_item .component {
+    width: 285px;
+}
+
+.normalPage .component_item .component input {
+    margin-right: 5px;
+    width: 140px;
+    height: 18px;
+}
+
+.normalPage .component_item .component input {
+    width: 275px;
+    height: 18px;
+}
+
+.normalPage .component_item .component input.checkbox {
+    width: 18px;
+    height: 18px;
+    vertical-align: bottom;
+}
+
+.normalPage .component_item .component select {
+    width: 140px;
+    height: 18px;
+}
+
+.normalPage .component_item .component_wide {
+    width: 510px;
+}
+
+.normalPage .component_item .component_wide input {
+    width: 725px;
+    height: 18px;
+}
+
+.normalPage .component_item .component_wide select {
+    width: 725px;
+    height: 18px;
+}
+
+.normalPage .component_item .component_wide textarea {
+    width: 408px;
+    height: 46px;
+}
+
+.normalPage .component_item .component_wide textarea.large {
+    width: 450px;
+    height: 90px;
+}
+
+.normalPage .component_item .component_wide textarea.single {
+    width: 450px;
+    height: 22px;
+}
+
+#timeLimitRemark {
+    height: 140px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    /*padding-top: 8px;*/
+    width: 100%;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+table.sublist {
+    width: 632px;
+}
+
+#timeLimits {
+    margin-bottom: 15px;
+}
+
+.timeLimit_value {
+    width: 120px;
+}
+
+.guide_select {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("/platform/commons/icons/add.gif");
+    cursor: pointer;
+    vertical-align: bottom;
+}
+
+.audit_info {
+    clear: both;
+    margin-left: 12px;
+    margin-top: 10px;
+    color: red;
+}
+
+fieldset.base {
+    border: none;
+    height: 180px;
+    margin-left: 10px;
+    width: 555px;
+    float: left;
+    padding: 0;
+    margin-top: 5px;
+
+}
+
+.gs {
+
+    margin: 0 10px;
+    height: auto;
+    overflow: hidden;
+    background-size: 100%;
+    padding: 0 11px;
+}
+
+#cke_con {
+    width: 730px!important;
+}
+
+#cke_1_contents{
+    height: 198px!important;
+}
+
+/*.wtms_bt{ height:32px; margin-bottom:10px;}
+.wtms_bt h2{ height:31px; text-align:center; width:15%;font-size:20px; color:#292929; border-bottom:3px solid #4075bb;line-height: 3px;}*/
+.wtnr{ height:32px; border-bottom:solid 2px #e2e2e2; margin-bottom:10px;margin-top: 50px;}
+
+.wtms_bt a{ clear: both;
+    float: right;
+    margin-right: 5px;
+    line-height: 30px;
+    color: rgb(255, 255, 255);
+    width: 70px;
+    font-size: 16px;
+    text-align: center;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 7px;
+    background: rgb(63, 116, 186);
+    text-decoration: none;
+}
+
+.component1 span{display: none}
+.component1 select{width: 100%}
+
+.component2 input{width: 100%;}

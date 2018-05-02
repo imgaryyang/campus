@@ -1,0 +1,49 @@
+#dialogBody {
+    width: 505px;
+    margin-bottom: 10px;
+}
+
+#apps {
+    width: 500px;
+    clear: both;
+    padding-top: 10px;
+    margin-left: 8px;
+}
+
+#menuTree {
+    border: 1px solid #B5B8C8;
+    float: left;
+    margin-right: 6px;
+    width: 225px;
+    height: 350px;
+    background-color: white;
+    overflow-x: auto;
+}
+
+#app {
+    float: left;
+    width: 190px;
+    padding: 5px;
+}
+
+#app fieldset {
+    border: 1px solid #B5B8C8;
+    width: 240px;
+    padding: 5px;
+    margin-bottom: 3px;
+    color: blue;
+}
+
+#roles, #roleGroups {
+    height: 28px;
+    margin-bottom: 8px;
+    color: black;
+}
+
+#scopes {
+    height: 172px;
+    margin-bottom: 8px;
+    overflow-y: auto;
+    line-height: 22px;
+    color: black;
+}

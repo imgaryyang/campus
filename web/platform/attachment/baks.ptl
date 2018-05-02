@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>文件修改历史记录</title>
+    <script type="text/javascript" src="/platform/attachment/baks.js"></script>
+    <link type="text/css" rel="stylesheet" href="/platform/attachment/baks.css">
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <table>
+            <thead>
+            <tr>
+                <th>保存时间</th>
+                <th>保存人</th>
+                <th>下载</th>
+                <th>恢复</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr bind="baks">
+                <td>
+                    ${saveTime}
+                </td>
+                <td>
+                    ${user.userName}
+                </td>
+                <td>
+                    <a target="_blank" href="/attachment/${encodedId}/${attachmentNo}/bak/${bakId}">下载</a>
+                </td>
+                <td>
+                    <button type="button" bind="isRestoreable(self)" onclick="restore(${bakId})">恢复</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="Cyan.Window.closeWindow();">关闭</button>
+            </span>
+        </div>
+    </div>
+</body>
+</html>

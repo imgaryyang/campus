@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>file窗口</title>
+    <link type="text/css" rel="stylesheet" href="sql.css"/>
+    <script type="text/javascript" src="sql.js"></script>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" action="" method="post">
+            <div class="buttons">
+                <button type="button" onclick="queryFile();">查看文件内容</button><button type="button" onclick="queryFiles();">查询文件目录</button>
+                <button type="button" onclick="queryLogFiles();">日志目录</button>
+            </div>
+            <div class="condition">
+                <textarea  class="sentence" name="filePath"></textarea>
+            </div>
+        </form>
+        <div class="content">
+            <textarea id="contentId" style="width: 100%;height: 1000px;"></textarea>
+        </div>
+    </div>
+</body>
+</html>

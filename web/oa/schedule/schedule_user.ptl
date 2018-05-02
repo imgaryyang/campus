@@ -1,0 +1,148 @@
+<html>
+<head>
+    <title>个人日程</title>
+    <link type="text/css" rel="stylesheet" href="/oa/schedule/schedule_user.css"/>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/oa/schedule/schedule.js"></script>
+</head>
+
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" bind="entity">
+
+            <div id="components">
+
+                <div class="component_item">
+                    <div class="label">事件</div>
+                    <div class="component" bind="linkId==null">
+                        <input id="title" name="title">
+                    </div>
+                    <div class="component" bind="linkId!=null">
+                        <input id="title" readOnly name="title">
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">开始时间</div>
+                    <div class="component" bind="linkId==null">
+                        <input name="startTime">
+                    </div>
+                    <div class="component" bind="linkId!=null">
+                        <input name="startTime" readOnly>
+                    </div>
+                </div>
+                <div class="component_item">
+                    <div class="label">结束时间</div>
+                    <div class="component" bind="linkId==null">
+                        <input name="endTime">
+                    </div>
+                    <div class="component" bind="linkId!=null">
+                        <input name="endTime" readOnly>
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">地点</div>
+                    <div class="component">
+                        <input id="address" name="address">
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">详细内容</div>
+                    <div class="component">
+                        <textarea id="content" name="content"></textarea>
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">优先级</div>
+                    <div class="component">
+                        <select name="priority">
+                            <option bind=""></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">类型</div>
+                    <div class="component">
+                        <select name="type">
+                            <option bind=""></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">提醒方式</div>
+                    <div class="component">
+                        <span>
+                            <span><input type="checkbox" name="remindType" value="im" class="checkbox"></span>
+                             <label>即时消息</label>
+                        </span>
+                        <span>
+                            <span><input type="checkbox" name="remindType" value="sms" class="checkbox"></span>
+                            <label>手机短息</label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">提醒时间</div>
+                    <div class="component">
+                        <input name="remindTime">
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">第二次提醒时间</div>
+                    <div class="component">
+                        <input name="remindTime1">
+                    </div>
+                </div>
+
+                <div class="component_item" bind="!new$">
+                    <div class="label">状态</div>
+                    <div class="component">
+                        <span>
+                            <span><input type="radio" name="state" value="notStarted" class="radio"></span>
+                            <label>未开始</label>
+                        </span>
+                        <span>
+                            <span><input type="radio" name="state" value="going" class="radio"></span>
+                            <label>进行中</label>
+                        </span>
+                        <span>
+                            <span><input type="radio" name="state" value="closed" class="radio"></span>
+                            <label>已结束</label>
+                        </span>
+                        <span>
+                            <span><input type="radio" name="state" value="canceled" class="radio"></span>
+                            <label>已取消</label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="component_item" bind="!new$">
+                    <div class="label">执行情况</div>
+                    <div class="component">
+                        <textarea name="result"></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="save();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

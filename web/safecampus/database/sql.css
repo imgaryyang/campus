@@ -1,0 +1,63 @@
+#dialogBody
+{
+    margin-top: 30px;
+    overflow-x: auto;
+    overflow-y:auto ;
+}
+
+#main
+{
+    margin: auto;
+    text-align: center;
+    width: 80%;
+}
+
+.buttons
+{
+
+    height: 30px;
+    text-align: left;
+}
+
+.buttons button
+{
+    float: left;
+    width: 120px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+.condition
+{
+    margin-top: 5px;
+    /*width: 1024px;*/
+    height: auto;
+}
+
+.condition .sentence
+{
+    width: 100%;
+    height: 50px;
+}
+
+.content
+{
+    margin-top: 20px;
+    /*width: 1024px;*/
+}
+
+#tableId
+{
+    width: 100%;
+    min-height: 50px;
+}
+
+#tableId tr th
+{
+    background-color: #a4a4a4;
+}
+
+#tableId tr td
+{
+    background-color: #f8f8f8;
+}

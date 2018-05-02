@@ -1,0 +1,115 @@
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/platform/commons/simpledialog.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body id="dialogBody">
+
+    <div id="main" class="single">
+
+        <form id="form" bind="entity.component">
+
+            <div id="components">
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">控件名称</div>
+                        <div class="component">
+                            <input name="name" readOnly>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">类型</div>
+                        <div class="component">
+                            <select name="dataType">
+                                <option value="string">字符型</option>
+                                <option value="integer">整型</option>
+                                <option value="positiveInteger">正整型</option>
+                                <option value="number">数字</option>
+                                <option value="positiveNumber">正数</option>
+                                <option value="date">日期</option>
+                                <option value="time">时间</option>
+                                <option value="dateTime">日期时间</option>
+                                <option value="password">密码</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">绑定值</div>
+                        <div class="component">
+                            <input name="sessionValue">
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">格式</div>
+                        <div class="component">
+                            <input name="pattern">
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">可编辑</div>
+                        <div class="component">
+                            <select name="editable">
+                                <option value="true">是</option>
+                                <option value="false">否</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">可为空</div>
+                        <div class="component">
+                            <select name="nullable">
+                                <option value="true">是</option>
+                                <option value="false">否</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">提醒信息</div>
+                        <div class="component">
+                            <input name="nullRemind">
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">提醒动作</div>
+                        <div class="component">
+                            <input name="nullRemindAction">
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">提醒条件</div>
+                        <div class="component">
+                            <input name="nullRemindCondition">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="buttons">
+                <span class="button">
+                    <button onclick="save()" type="button">保存</button>
+                </span>
+                <span class="button">
+                    <button onclick="Cyan.Window.closeWindow()" type="button">关闭</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 配置业务类型 -->
+    <bean class="List[com.gzzm.platform.form.FormType]" factory="instance">
+        <element>
+            <type>approve</type>
+            <name>审批表单</name>
+        </element>
+        <element>
+            <type>parallel</type>
+            <name>并联审批</name>
+        </element>
+        <element>
+            <type>send</type>
+            <name>发文表单</name>
+        </element>
+        <element>
+            <type>receive</type>
+            <name>收文表单</name>
+        </element>
+        <element>
+            <type>union</type>
+            <name>联合办文</name>
+        </element>
+        <element>
+            <type>collect</type>
+            <name>会签表单</name>
+        </element>
+        <element>
+            <type>inner</type>
+            <name>内部流程</name>
+        </element>
+        <element>
+            <type>survey</type>
+            <name>调研表单</name>
+        </element>
+    </bean>
+
+    <bean class="net.cyan.valmiki.form.components.FileListService"
+          imp="com.gzzm.platform.form.SystemFileListService" singlton="true"/>
+
+    <bean class="net.cyan.valmiki.form.components.ImageService"
+          imp="com.gzzm.platform.form.SystemImageService" singlton="true"/>
+
+    <bean class="net.cyan.valmiki.form.components.ParallelTextService"
+          imp="com.gzzm.platform.form.SystemParallelTextService" singlton="true"/>
+
+</config>

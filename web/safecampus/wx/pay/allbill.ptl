@@ -1,0 +1,132 @@
+<html action="false">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>我的账单</title>
+    <link href="../css/stlye.css" rel="stylesheet" type="text/css">
+    <link href="allbill.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery.js"></script>
+</head>
+
+
+<body>
+
+<div class="bjkq">
+    <ul class="tab-head">
+        <li class="hover "><a class="hover ">全部</a></li>
+        <li><a>待缴账单</a></li>
+        <li><a> 已缴账单</a></li>
+    </ul>
+</div>
+<div id="back">
+    <dl class="jtzwkq">
+        <dt><img src="../image/wdxbq_03.png"></dt>
+        <dd class="dd1">&nbsp;暂无账单记录!</dd>
+    </dl>
+</div>
+<div class="contont show">
+    <div class="tjls " bind="allBills" href="/wx/pay/billdetail/bid/${billId}/sid/${studentId}">
+
+        <div class="xbkqfy">
+            <div class="xbf">
+                <p class="p1">${payItem.payItemName}</p>
+            </div>
+            <div class="djf">
+                <span class="time">${createTime}</span>
+                <bind bind="${billStatus.name()=='Wait'}"><p class="p2">${billStatus}</p></bind>
+                <bind bind="${billStatus.name()=='Finnish'}"><p class="p3">${billStatus}</p></bind>
+                <bind bind="${billStatus.name()=='Fail'}"><p class="p4">${billStatus}</p></bind>
+            </div>
+
+            <dl class="qfk">
+                <dt><font>￥</font>${money}</dt>
+                <bind bind="${billStatus.name()!='Finnish'}">
+                    <dd>截至日期：${deadline}</dd>
+                </bind>
+                <bind bind="${billStatus.name()=='Finnish'}">
+                    <dd>付款日期：${payTime}</dd>
+                </bind>
+                <dd bind="${billStatus.name()=='Wait'}"><a
+                        href="/wx/pay/billdetail/bid/${billId}/sid/${studentId}">去付款</a></dd>
+            </dl>
+        </div>
+        <ul class="zdsqtb">
+
+            <li><span><img src="../image/xtbtm_14.png" class="im1"></span><font>交易对象：${dept.deptName}</font></li>
+            <li><span><img src="../image/djtb_07.jpg"></span><font>账单编号：${serialNo}</font></li>
+            <li class="sort"><span><img src="../image/djtb_10.jpg"></span><font>账单详情：${payItem.desc}</font></li>
+        </ul>
+    </div>
+</div>
+
+<div class="contont ">
+    <div bind="allBills">
+        <div bind="${billStatus.name()=='Wait'}">
+            <div class="tjls " href="/wx/pay/billdetail/bid/${billId}/sid/${studentId}">
+                <div class="xbkqfy">
+                    <div class="xbf">
+                        <p class="p1">${payItem.payItemName}</p>
+                    </div>
+                    <div class="djf">
+                        <span class="time">${createTime}</span>
+                        <p class="p2">${billStatus}</p>
+                    </div>
+                    <dl class="qfk">
+                        <dt><font>￥</font>${money}</dt>
+                        <dd>截至日期：${deadline}</dd>
+                        <dd><a href="/wx/pay/billdetail/bid/${billId}/sid/${studentId}">去付款</a></dd>
+                    </dl>
+                </div>
+                <ul class="zdsqtb">
+                    <li><span><img src="../image/xtbtm_14.png" class="im1"></span><font>交易对象：${dept.deptName}</font></li>
+                    <li><span><img src="../image/djtb_07.jpg"></span><font>账单编号：${serialNo}</font></li>
+                    <li class="sort"><span><img src="../image/djtb_10.jpg"></span><font>账单详情：${payItem.desc}</font></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="contont ">
+    <div bind="allBills">
+        <div bind="${billStatus.name()=='Finnish'}">
+            <div class="tjls " href="/wx/pay/billdetail/bid/${billId}/sid/${studentId}">
+                <div class="xbkqfy">
+                    <div class="xbf">
+                        <p class="p1">${payItem.payItemName}</p>
+                    </div>
+                    <div class="djf">
+                        <span class="time">${createTime}</span>
+                        <p class="p3">${billStatus}</p>
+                    </div>
+                    <dl class="qfk">
+                        <dt><font>￥</font>${money}</dt>
+                        <dd>付款日期：${payTime}</dd>
+                    </dl>
+                </div>
+                <ul class="zdsqtb">
+                    <li><span><img src="../image/xtbtm_14.png" class="im1"></span><font>交易对象：${dept.deptName}</font></li>
+                    <li><span><img src="../image/djtb_07.jpg"></span><font>账单编号：${serialNo}</font></li>
+                    <li class="sort"><span><img src="../image/djtb_10.jpg"></span><font>账单详情：${payItem.desc}</font></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+<script>
+    $(".tab-head li ").click(function () {
+        var index = $(this).index();
+        $(".tab-head li a").removeClass("hover");
+        $(this).addClass("hover").siblings().removeClass("hover");
+        $(".contont").eq(index).addClass("show").siblings().removeClass("show")
+    });
+
+    $("div.tjls").click(function () {
+        window.location.href = $(this).attr("href");
+    })
+</script>

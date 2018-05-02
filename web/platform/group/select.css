@@ -1,0 +1,94 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#main {
+    padding-top: 10px;
+    width: 755px;
+    height: 390px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#search {
+    clear: both;
+    width: 650px;
+    padding-left: 8px;
+}
+
+#search input {
+    width: 634px;
+}
+
+#selector {
+    clear: both;
+    float: left;
+    width: 650px;
+    margin-top: 4px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#sortButtons {
+    float: left;
+    width: 60px;
+    padding-top: 80px;
+    margin-left: 5px;
+}
+
+#custom {
+    width: 720px;
+    clear: both;
+    float: left;
+    height: 20px;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+
+#custom span {
+    vertical-align: middle;
+}
+
+#custom span.red {
+    color: red;
+}
+
+#custom input {
+    width: 300px;
+    height: 18px;
+}
+
+#custom button {
+    vertical-align: bottom;
+}
+
+#sortButtons button {
+    margin-top: 5px;
+    width: 55px
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 20px;
+    width: 753px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#default_expand {
+    margin-top: 20px;
+    padding-left: 14px;
+}
+
+#default_expand span {
+    margin-right: 14px;
+}
+
+#default_expand input {
+    margin-right: 4px;
+    vertical-align: top;
+}

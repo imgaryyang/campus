@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <!--系统全局的配置消息，系统的一些基本配置-->
+    <bean class="com.gzzm.platform.commons.GlobalConfig" factory="instance">
+        <loginCaptcha>true</loginCaptcha>
+        <saltPassword>true</saltPassword>
+        <logoutOthers>false</logoutOthers>
+    </bean>
+
+    <!--<bean class="com.gzzm.platform.login.PasswordRule" factory="script" singleton="true" type="java"-->
+          <!--path="/scripts/platform/login/password.java"/>-->
+
+    <!--<bean class="com.gzzm.platform.login.LoginErrorRule" factory="script" singleton="true" type="java"-->
+          <!--path="/scripts/platform/login/loginerror.java"/>-->
+
+    <bean class="net.cyan.commons.file.CommonFileService">
+        <path>/files</path>
+    </bean>
+
+    <!--<bean class="net.cyan.captcha.CaptchaQuestionGenerator" imp="net.cyan.captcha.DefaultValidateWordGenerator"-->
+    <!--factory="instance" type="1">-->
+    <!--</bean>-->
+
+</config>

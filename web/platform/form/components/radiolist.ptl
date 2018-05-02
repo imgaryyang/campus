@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/platform/commons/simpledialog.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body id="dialogBody">
+
+    <div id="main" class="single">
+
+        <form id="form" bind="entity.component">
+
+            <div id="components">
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">控件名称</div>
+                        <div class="component">
+                            <input name="name" readOnly>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">上边距</div>
+                        <div class="component">
+                            <input name="paddingTop" datatype="integer">
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">左边距</div>
+                        <div class="component">
+                            <input name="paddingLeft" datatype="integer">
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">右边距</div>
+                        <div class="component">
+                            <input name="paddingRight" datatype="integer">
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">列宽</div>
+                        <div class="component">
+                            <input name="radioWidth" datatype="integer">
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">间距</div>
+                        <div class="component">
+                            <input name="gap" datatype="integer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="buttons">
+                <span class="button">
+                    <button onclick="save()" type="button">保存</button>
+                </span>
+                <span class="button">
+                    <button onclick="Cyan.Window.closeWindow()" type="button">关闭</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+.x-panel-header {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-grid3-row TD {
+    font-size: 12px;
+    line-height: 16px;
+    font-family: '宋体'
+}
+
+.x-tip .x-tip-bd {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-tip h3 {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-tip .x-tip-bd-inner {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-panel-tl .x-panel-header {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-form-field {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-form-item label {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-form-label-left label {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-small-editor .x-form-field {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-combo-list-item {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-menu-list-item {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-window-tl .x-window-header {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-form-item {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-grid-group-hd DIV {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-btn button {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-toolbar .ytb-text {
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.x-grid3-cell-inner button {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    font-size: 12px;
+    font-family: '宋体'
+}
+
+.ux-mselect-item {
+    font-size: 12px;
+    font-family: "宋体";
+}
+
+.x-tree-col-text, .x-tree-hd-text {
+    font-size: 12px;
+    font-family: "宋体";
+}
+
+.x-panel-mc {
+    line-height: 18px;
+    font-size: 12px;
+    font-family: "宋体";
+}
+
+.x-panel-mc {
+    line-height: 18px;
+    font-size: 12px;
+    font-family: "宋体";
+}
+
+.x-toolbar td, .x-toolbar span, .x-toolbar div, .x-toolbar label, .x-toolbar input .x-toolbar select {
+    font-size: 12px;
+    font-family: "宋体";
+}
+
+.x-tree-node-el {
+    line-height: 24px;
+}
+
+.x-tree-node-anchor span {
+    font-size: 12px;
+}
+
+span.x-panel-header-text {
+    font-size: 12px;
+    line-height: 18px;
+}

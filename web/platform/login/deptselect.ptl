@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>选择部门</title>
+    <link type="text/css" rel="stylesheet" href="/platform/login/deptselect.css"/>
+    <script type="text/javascript" src="/platform/login/login.js"></script>
+</head>
+<body id="dialogBody">
+    <form action="">
+        <div id="container">
+            <div id="title">请选择部门</div>
+            <div id="select">
+                <select id="deptId" name="deptId">
+                    <option bind="depts" value="deptId" text="getAllName(1)"></option>
+                </select>
+            </div>
+            <div id="button">
+                <button type="button" onclick="setDept(function(){Cyan.Window.closeWindow(true);});">确定</button>
+                <button type="button" onclick="Cyan.Window.closeWindow(false);">取消</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

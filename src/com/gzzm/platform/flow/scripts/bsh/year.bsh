@@ -1,0 +1,4 @@
+year(Date date)
+{
+   return DateUtils.getYear(date);
+}

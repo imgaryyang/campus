@@ -1,0 +1,4 @@
+getSubDeptIds(Integer deptId)
+{
+   return FlowFunctions.getSubDeptIds(deptId);
+}

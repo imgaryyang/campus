@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"  content="width=device-width,user-scalable=no">
+<title>招in校园身份认证</title>
+<link href="../css/stlye.css" rel="stylesheet" type="text/css">
+<script src="../js/TouchSlide.1.1.js"></script>
+</head>
+<body>
+<div class="jfcg">
+     已经成功认证了！
+</div>
+</body>
+</html>

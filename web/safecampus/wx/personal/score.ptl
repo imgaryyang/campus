@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>成绩查询</title>
+    <link href="../css/stlye.css" rel="stylesheet" type="text/css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="/safecampus/wx/js/jquery.js"></script>
+    <script src="/safecampus/wx/personal/score.js"></script>
+    <script src="/safecampus/wx/personal/jssdk.js"></script>
+</head>
+
+<body>
+<div class="txkq">
+    <dl class="jsmmz">
+        <dt>
+            <img style="width: 100%;height: 100%" src="/wx/centerpage/image/${scoreMap.student.studentId}">
+        </dt>
+        <dd>${scoreMap.student.studentName}</dd>
+    </dl>
+    <div class="sscj">
+        <div class="contont">
+            <div class="tjls" bind="scoreMap.examList">
+                <div class="cjcx_bx">
+                    <p>${examName}</p>
+                    <p class="p2">${examTime}</p>
+                </div>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="cjdf">
+                    <tr>
+                        <td class="td1">考试科目</td>
+                        <td class="td1">考试成绩</td>
+                        <td class="td1">班级排名</td>
+                        <td class="td1">班级平均分</td>
+                    </tr>
+                    <tr bind="SubjectScoreList">
+                        <td>${subjectName}</td>
+                        <td>${score}</td>
+                        <td>${rank}</td>
+                        <td>${avg}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="back" bind="scoreMap.examList==null || scoreMap.examList.size()==0">
+                <dl class="jtzwkq">
+                    <dt><img src="/safecampus/campus/image/wdxbq_03.png" style="width: 12rem"></dt>
+                    <dd class="dd1">&nbsp;暂无考试成绩</dd>
+                </dl>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+</script>

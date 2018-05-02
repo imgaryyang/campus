@@ -1,0 +1,220 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>部门云盘</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery_update.js"></script>
+    <script type="text/javascript" src="../js/deptcloudstorage.js"></script>
+    <script type="text/javascript" src="/platform/fileupload/richupload.js"></script>
+</head>
+
+<body>
+<div class="yp" id="superDiv">
+    <div id="qxzwj" class="zwyp-ptwz" style="display: none">
+        <div id="errorCont"></div>
+    </div>
+    <div class="yp_lt">
+
+        <ul>
+            <li class="current"><span class="span2 typeBut"><img src="../image/ypss_16_1.png"/>全部文件</span>
+            </li>
+            <li class="current"><a></a> <span class="span1 typeBut" fileType="1"><img src="../image/ypss_16_2.png" />图片</span></li>
+            <li class="current"><a></a> <span class="span1 typeBut" fileType="2"><img src="../image/ypss_16_3.png" />文档</span></li>
+            <li class="current"><a></a> <span class="span1 typeBut" fileType="3"><img src="../image/ypss_16_4.png" />视频</span></li>
+            <li class="current"><a></a> <span class="span1 typeBut" fileType="4"><img src="../image/ypss_16_5.png"/>音乐</span></li>
+            <li class="current"><a></a> <span class="span1 typeBut" fileType="5"><img src="../image/ypss_16_6.png" />其他</span></li>
+            <%--<li class="current"><span class="span2 typeBut" fileType="6"><img src="../image/ypss_26.png" width="18"--%>
+            <%--height="15"/>我的分享</span>--%>
+            <%--</li>--%>
+        </ul>
+    </div>
+    <div class="yp_rt">
+        <div class="gncd">
+            <div class="gncd_lt">
+                <ul>
+                    <li class="li1">
+                        <a href="#" id="upoladButton" class="a1">
+                            <img src="../image/ypss_03.png" width="15" height="11"/>上传
+                        </a>
+                    </li>
+                    <li class="li1"><a id="newfolder" href="#" class="a1"><img src="../image/ypss_05.png" width="13"
+                                                                               height="11"/>新建文件夹</a>
+                    </li>
+                    <li class="li2">
+                        <p><a id="copyToBut" href="#"><img src="../image/ypss_07.png" width="15" height="12"/>复制到</a>
+                        </p>
+                        <p><a id="moveToBut" href="#"><img src="../image/ypss_07.png" width="15" height="12"/>移动到</a>
+                        </p>
+                        <%--<p><a id="shareBut" href="#"><img src="../image/ypss_09.png" width="15" height="12"/>分享</a></p>--%>
+                        <p><a id="downFileBut" href="#"><img src="../image/xzsc_03.png" width="15"
+                                                             height="12"/>下载</a></p>
+                        <p><a id="deleteBut" href="#"><img src="../image/xzsc_05.png" width="15" height="12"/>删除</a>
+                        </p>
+                        <p class="p1"><a id="rename" href="#">重命名</a></p>
+                        <%--<p class="p1"><a href="#"><img src="../image/ypss_11.png" width="17" height="15"/>历史版本</a>--%>
+                        <%--</p>--%>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="gncd_rt">
+                <div class="gncd_ss">
+                    <div class="gncd_ss_lt"></div>
+                    <div class="gncd_ss_zj">
+                        <input id="searchVal" value=""/>
+                    </div>
+                    <div id="searchBut" class="gncd_ss_rt" onclick="searchByName()"></div>
+                </div>
+                <div class="gncd_plfs"><a href="#" onclick="changeStyle(this)" id="changeStyle" styleTag="${tag}"><img
+                        src="../image/ypss_13.png" width="20" height="20"/></a>
+                </div>
+            </div>
+        </div>
+
+        <segment id="main1">
+
+            <input id="floderId" type="hidden" name="nowfolderId" value="${nowfolderId}"/>
+
+            <div class="qbwj" style="overflow: hidden">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box1" id="setable1">
+                    <tr>
+                        <td colspan="2" id="navList" class="td1 td2" style="border-bottom: hidden">
+                            <div class="navDiv" style="width:100%;">
+                                <div>当前位置：</div>
+                                <div bind="nowfolderId==0&&(type==0||type==null)">全部文件</div>
+                                <c bind="session.navList.size()>0 ">
+                                    <div onclick="gotoHomePage(0)" class="navDiv2">
+                                        全部文件<a class="navA"> > </a>
+                                    </div>
+                                </c>
+
+                                <div bind="session.navList.size()>3">
+                                    ....
+                                    <a class="navA"> > </a>
+                                </div>
+                                <c bind="session.navList">
+                                    <c bind="session.navList.size()<=5">
+                                        <div onclick="gotoHomePage(${folderId})"
+                                             class=${nowfolderId==folderId?"":"navDiv2"}>
+                                            <font bind="folderName"
+                                                  title="${createPath(session.navList,session.navList.indexOf(self))}"
+                                                  format="trunc(6)">
+                                                ${folderName}
+                                            </font>
+                                            <a class="navA">${nowfolderId==folderId?"":">"}</a>
+                                        </div>
+                                    </c>
+
+                                    <c bind="session.navList.size()>5">
+                                        <c bind="${session.navList.indexOf(self)>session.navList.size()-6}">
+                                            <div onclick="gotoHomePage(${folderId})"
+                                                 class=${nowfolderId==folderId?"":"navDiv2"}>
+                                                <font bind="folderName"
+                                                      title="${createPath(session.navList,session.navList.indexOf(self))}"
+                                                      format="trunc(6)">
+                                                    ${folderName}
+                                                </font>
+                                                <a class="navA">${nowfolderId==folderId?"":">"}</a>
+                                            </div>
+                                        </c>
+                                    </c>
+                                </c>
+                            </div>
+                        </td>
+                        <td class="td1 td4" style="border-bottom: hidden">已全部加载，共${fileCount}个</td>
+                    </tr>
+                    <tr>
+                        <td width="40%" id="allseltd" class="td1 td2"><span>
+                            <input onclick="allcheckSelect()" id="allcheck" type="checkbox" value=""/>
+                            <input id="floderIds" type="hidden" value="">
+                            <input id="fileIds" type="hidden" value="">
+                            <input id="shareIds" type="hidden" value="">
+                                        </span><font>全选</font>
+                            <div style="display: none" id="allfiletr"><a onclick="channelShare()" href="#"
+                                                                         class="cannelshare"> 取消分享</a></div>
+                        </td>
+                        <td class="coltd td1 td4" width="20%" style="text-align: right;">
+                            大小
+                        </td>
+                        <td class="coltd td1 td4" style="display: ${tag==0?"display":"none"}">上传时间</td>
+                    </tr>
+                </table>
+
+                <%--风格一--%>
+                <div id="table1" style="width:100%;height:75%;overflow:auto;display: ${tag==0?"display":"none"}">
+                    <table id="tb1" width="100%" border="0" cellspacing="0" cellpadding="0" class="box1">
+                        <%--文件夹--%>
+                        <c bind="deptFileFolders">
+                            <tr>
+                                <td width="40%" class="td2"><span><input onclick="filesSelect(this)" class="folder"
+                                                                         type="checkbox"
+                                                                         value="${folderId}"/></span>
+                                    <p><img src="../image/jjh_03.png" width="26" height="21"/></p>
+                                    <a href="#" onclick="gotoHomePage(${folderId})">
+                                        <div title="${folderName}" format="trunc(20)" bind="folderName"></div>
+                                    </a>
+                                </td>
+                                <td width="20%" class="td3">-</td>
+                                <td class="td3">${createTime}</td>
+                            </tr>
+                        </c>
+
+                        <%--文件--%>
+                        <c bind="deptFiles">
+                            <tr>
+                                <td width="40%" class="td2"><span><input onclick="filesSelect(this)" class="file"
+                                                                         type="checkbox"
+                                                                         value="${fileId}"/></span>
+                                    <p>
+                                        <img src="../image/${fileType.matches("(jpg|jpeg|gif|bmp|png|txt|doc|docx|xls|xlsx|pdf|ppt|pptx|wav|mp3|avi|mov|mpeg|mpg|ram|mp4)$")?fileType:"commonfile"}.png"
+                                             width="26" height="21"/></p>
+                                    <a target="_blank" title="${fileName}.${fileType}" href="/oa/cloudstorage/deptcloud/${fileId}/down">
+                                        <div  format="trunc(20)" bind="fullName"></div>
+                                    </a></td>
+                                <td width="20%" class="td3">
+                                    ${ net.cyan.commons.util.DataConvert.format(fileSize,'bytesize')}
+                                </td>
+                                <td class="td3">${uploadTime}</td>
+                            </tr>
+                        </c>
+                    </table>
+                </div>
+
+                <%--风格二--%>
+                <div class="wjj_lb" id="table2" style="overflow: auto;display: ${tag==1?"display":"none"}">
+                    <ul>
+                        <c bind="deptFileFolders">
+                            <li>
+                                <h2><a href="#" onclick="gotoHomePage(${folderId})"><img src="../image/dwjj_03.png"
+                                                                                         width="56" height="46"/></a>
+                                </h2>
+                                <p><a href="#" >
+                                    <div style="text-align: center" title="${folderName}" format="trunc(18)" bind="folderName"></div>
+                                </a></p>
+                                <a href="#" onclick="selectFiles(this)" code="${folderId}" state="0"
+                                   class="a2 folder"></a>
+                            </li>
+                        </c>
+
+                        <%--文件--%>
+                        <c bind="deptFiles">
+                            <li>
+                                <h2><a target="_blank" href="/oa/cloudstorage/deptcloud/${fileId}/down">
+                                    <img src="../image/${fileType.matches("(jpg|jpeg|gif|bmp|png|txt|doc|docx|xls|xlsx|pdf|ppt|pptx|wav|mp3|avi|mov|mpeg|mpg|ram|mp4)$")?fileType:"commonfile"}.png"
+                                         width="56" height="46"/></a></h2>
+                                <p><a href="#" title="${fileName}.${fileType}">
+                                    <div style="text-align: center" format="trunc(18)" bind="fullName"></div>
+                                </a></p>
+                                <a href="#" onclick="selectFiles(this)" code="${fileId}" state="0" class="a2 file"></a>
+                            </li>
+                        </c>
+                    </ul>
+                </div>
+        </segment>
+
+    </div>
+</div>
+</div>
+</body>
+</html>

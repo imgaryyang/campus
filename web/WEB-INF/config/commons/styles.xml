@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <!--桌面风格配置-->
+
+    <bean class="List[com.gzzm.platform.desktop.DesktopStyle]" factory="instance">
+        <element>
+            <path>/oa/styles/default</path>
+            <name>默认风格</name>
+        </element>
+        <element>
+            <path>/oa/styles/default_big</path>
+            <name>默认风格-大字体</name>
+        </element>
+        <element>
+            <path>/oa/styles/gray</path>
+            <name>灰色</name>
+        </element>
+        <element>
+            <path>/oa/styles/chocolate</path>
+            <name>巧克力</name>
+        </element>
+        <element>
+            <path>/oa/styles/calista</path>
+            <name>卡莉斯塔</name>
+        </element>
+        <element>
+            <path>/oa/styles/indigo</path>
+            <name>靛青</name>
+        </element>
+        <element>
+            <path>/oa/styles/silverCherry</path>
+            <name>银樱桃</name>
+        </element>
+        <element>
+            <path>/oa/styles/slate</path>
+            <name>石板</name>
+        </element>
+        <element>
+            <path>/oa/styles/plain</path>
+            <name>简洁版</name>
+        </element>
+    </bean>
+
+</config>

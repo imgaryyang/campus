@@ -1,0 +1,116 @@
+.title_trunc {
+    float: left;
+    width: 305px;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title_trunc_new {
+    font-weight: bold;
+    background: url("/oa/mail/icons/new.gif") no-repeat 4px 3px;
+}
+
+.title_trunc_old {
+    background: url("/oa/mail/icons/old.gif") no-repeat 4px 3px;
+}
+
+.title_trunc_replyed {
+    background: url("/oa/mail/icons/replyed.gif") no-repeat 4px 5px;
+}
+
+.title_trunc a {
+    text-decoration: none
+}
+
+.title_trunc a:hover {
+    text-decoration: underline
+}
+
+.time {
+    float: right;
+    color: gray;
+    margin-right: 15px;
+}
+
+.title_trunc .tag {
+    color: red;
+}
+
+#labels {
+    float: left;
+    width: 420px;
+    text-align: left;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    margin-left: 5px;
+    border-bottom: 1px solid #64c9f4;
+}
+
+.label {
+    border-left: 1px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+    border-top: 1px solid #cfcfcf;
+    background-color: #f9f9f9;
+    margin-left: -1px;
+}
+
+.label_selected {
+    border-left: 1px solid #64c9f4;
+    border-right: 1px solid #64c9f4;
+    border-top: 1px solid #64c9f4;
+    background-color: #d1effc;
+    margin-left: -1px;
+    margin-right: 1px;
+}
+
+#labels span.label {
+    color: #646464;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#labels span.label_selected {
+    color: #0c815b;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#labels span {
+    float: left;
+    line-height: 22px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.title_trunc .tag {
+    color: red;
+}
+
+.title_trunc .priority {
+    color: red;
+}
+
+#top_right {
+    float: right;
+    text-align: right;
+    padding-top: 7px;
+    margin-right: 20px;
+}
+
+#top_right a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#top_right a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+#top_right span {
+    float: left;
+    margin-right: 10px;
+}

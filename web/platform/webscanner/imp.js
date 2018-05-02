@@ -1,0 +1,1 @@
+Cyan.importJs("/platform/webscanner/at580.js");

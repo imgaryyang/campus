@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>用户组管理</title>
+    <link type="text/css" rel="stylesheet" href="/platform/group/usergroup.css">
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" bind="entity" action="">
+            <div id="components">
+                <div class="component_item">
+                    <div class="label">用户组名称</div>
+                    <div class="component">
+                        <input name="groupName">
+                    </div>
+                </div>
+            </div>
+
+            <div id="users">
+                <div class="label">成员</div>
+                <div class="selector">
+                    <div bind="com.gzzm.platform.organ.PageUserSelector.class" id="userSelector"
+                         deptId="${type.toString()=='dept'?deptId:''}"
+                         appId="${type.toString()=='dept'?'user_select':''}"
+                         selected="entity.users" name="entity.users.userId"></div>
+                </div>
+                <div id="sortButtons">
+                    <button type="button" onclick="userSelector.up();">上移</button>
+                    <button type="button" onclick="userSelector.down();">下移</button>
+                </div>
+            </div>
+
+
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="save();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html action="false">
+<head>
+    <title>${##entity.title}</title>
+    <link type="text/css" rel="stylesheet" href="/oa/notice/template/default.css">
+</head>
+<body>
+    <div id="container">
+        <div id="top">
+            <div id="title" bind="entity.title"></div>
+            <div id="remark">
+                ( 发布时间 ${entity.publishTime} 阅读次数 ${entity.readTimes} )
+            </div>
+        </div>
+        <div id="content">
+            <div id="content-text">
+                ${entity.content}
+            </div>
+        </div>
+        <div id="buttons">
+            <div id="close" onclick="window.close();"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>考勤中</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/js/jquery.js"></script>
+
+    <script src="/safecampus/wx/attendance/attendance.js"></script>
+    <script src="/safecampus/wx/attendance/siesta_student.js"></script>
+</head>
+
+<body>
+<div class="contont">
+    <ul class="sxzm">
+        <li onclick="onTopClick('a')">a</li>
+        <li onclick="onTopClick('b')">b</li>
+        <li onclick="onTopClick('c')">c</li>
+        <li onclick="onTopClick('d')">d</li>
+        <li onclick="onTopClick('e')">e</li>
+        <li onclick="onTopClick('f')">f</li>
+        <li onclick="onTopClick('g')">g</li>
+        <li onclick="onTopClick('h')">h</li>
+        <li onclick="onTopClick('j')">j</li>
+        <li onclick="onTopClick('k')">k</li>
+        <li onclick="onTopClick('l')">l</li>
+        <li onclick="onTopClick('m')">m</li>
+        <li onclick="onTopClick('n')">n</li>
+        <li onclick="onTopClick('o')">o</li>
+        <li onclick="onTopClick('p')">p</li>
+        <li onclick="onTopClick('q')">q</li>
+        <li onclick="onTopClick('r')">r</li>
+        <li onclick="onTopClick('s')">s</li>
+        <li onclick="onTopClick('t')">t</li>
+        <li onclick="onTopClick('w')">w</li>
+        <li onclick="onTopClick('x')">x</li>
+        <li onclick="onTopClick('y')">y</li>
+        <li onclick="onTopClick('z')">z</li>
+    </ul>
+    <header class="sosou">
+        <!--<div class="srk">搜索目的地/景点/酒店/关键字/航班号</div>-->
+        <!--<a href="#"></a>--></header>
+    <div class="ryxz" bind="dataMap.stuMap">
+        <div class="bqmc" id="${key}">${key}</div>
+        <div class="kqrxz">
+            <div class="kqmx">
+                <ul>
+                    <li bind="value"><a id="${studentId}" data-status="0" class="xzxg notcheck"
+                                        onclick="gethover(${studentId})"></a><span><img
+                            src="/safecampus/wx/image/tx_03.png"></span>
+                        <h2>${studentName}</h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="qbxz">
+        <div class="qbxz_lt">
+            <h2><a id="allchecked" onclick="allChecked(this)" data-status="0" class="notcheck"></a>
+
+                <p>全部选择</p>
+            </h2>
+            <h3>已选：<span id="hadchecked">0</span>/<span id="allcount">${dataMap.sizeAll}</span></h3>
+        </div>
+        <span class="unshowclass" id="attstatus" value="${attstatus}"></span>
+        <a  class="qbxz_rt" onclick="sendAttend('${key}', '${type.ordinal()}')">发送出勤通知</a>
+    </div>
+</div>
+</body>
+</html>

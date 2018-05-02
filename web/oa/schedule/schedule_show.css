@@ -1,0 +1,42 @@
+#dialogBody {
+    margin-bottom: 8px;
+}
+
+#dialogBody #components {
+    width: 930px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+#dialogBody #components .component_item {
+    clear: both;
+    width: 910px;
+}
+
+#dialogBody #components .component_item .label {
+    height: 16px;
+    width: 110px;
+    padding-right: 20px;
+}
+
+#dialogBody #components .component_item .component {
+    padding-top: 3px;
+}
+
+.participant {
+    padding-bottom: 4px;
+}
+
+.participant {
+    float: left;
+    margin-right: 10px;
+    line-height: 18px;
+}
+
+.remindType {
+    margin-right: 8px;
+}
+
+#dialogBody #buttons {
+    width: 910px;
+}

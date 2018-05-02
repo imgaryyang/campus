@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 配置业务类型 -->
+    <bean class="List[com.gzzm.platform.devolve.DevolverItem]" factory="instance">
+        <element>
+            <id>flow_nodeal</id>
+            <name>待办公文</name>
+            <devolver type="com.gzzm.platform.flow.FlowDevolver" factory="instance">
+                <flowTag>send</flowTag>
+                <flowTag>receive</flowTag>
+                <flowTag>union</flowTag>
+                <flowTag>uniondeal</flowTag>
+                <flowTag>collect</flowTag>
+                <flowTag>inner</flowTag>
+                <state>0</state>
+                <state>1</state>
+                <state>2</state>
+                <state>6</state>
+                <state>7</state>
+                <state>9</state>
+                <state>10</state>
+                <state>15</state>
+            </devolver>
+        </element>
+        <element>
+            <id>flow_dealed</id>
+            <name>已办公文</name>
+            <devolver type="com.gzzm.platform.flow.FlowDevolver" factory="instance">
+                <flowTag>send</flowTag>
+                <flowTag>receive</flowTag>
+                <flowTag>union</flowTag>
+                <flowTag>uniondeal</flowTag>
+                <flowTag>collect</flowTag>
+                <flowTag>inner</flowTag>
+                <state>3</state>
+                <state>11</state>
+                <state>18</state>
+                <state>16</state>
+                <state>17</state>
+            </devolver>
+        </element>
+        <element>
+            <id>flow_noread</id>
+            <name>待阅公文</name>
+            <devolver type="com.gzzm.platform.flow.FlowDevolver" factory="instance">
+                <flowTag>send</flowTag>
+                <flowTag>receive</flowTag>
+                <flowTag>union</flowTag>
+                <flowTag>uniondeal</flowTag>
+                <flowTag>collect</flowTag>
+                <flowTag>inner</flowTag>
+                <state>12</state>
+                <state>13</state>
+            </devolver>
+        </element>
+        <element>
+            <id>flow_readed</id>
+            <name>已阅公文</name>
+            <devolver type="com.gzzm.platform.flow.FlowDevolver" factory="instance">
+                <flowTag>send</flowTag>
+                <flowTag>receive</flowTag>
+                <flowTag>union</flowTag>
+                <flowTag>uniondeal</flowTag>
+                <flowTag>collect</flowTag>
+                <flowTag>inner</flowTag>
+                <state>14</state>
+            </devolver>
+        </element>
+        <element>
+            <id>mail</id>
+            <name>邮件</name>
+            <devolver type="com.gzzm.oa.mail.MailDevolver" factory="instance">
+            </devolver>
+        </element>
+    </bean>
+</config>

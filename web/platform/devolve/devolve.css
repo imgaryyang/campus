@@ -1,0 +1,12 @@
+#dialogBody {
+    width: 600px;
+    height: 220px;
+}
+
+#dialogBody #components {
+    width: 500px;
+}
+
+#dialogBody #components .component_item .component{
+    width: 400px;
+}

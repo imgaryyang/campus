@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <bean class="com.gzzm.safecampus.s3.S3Config" factory="instance">
+        <!--cn-north-1北京区域 cn-northwest-1宁夏区域-->
+        <region>cn-north-1</region>
+        <!--s3斗名字-->
+        <bucketName>s3gzin</bucketName>
+        <!--图片存放根路径-->
+        <imageRootPath>photo</imageRootPath>
+        <s3FilePath>/WEB-INF/config/safecampus/platform/credentials</s3FilePath>
+    </bean>
+</config>

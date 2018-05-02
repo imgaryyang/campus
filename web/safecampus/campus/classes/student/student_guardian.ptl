@@ -1,0 +1,18 @@
+<div bind="entity" id="guardianList">
+    <div class="dhz" id="container">
+        <div class="zsbj">
+            <div class="wtnr">
+                <div class="wtms_bt">
+                    <a href="javascript:void(0)" onclick="addnew()">新增</a>
+                </div>
+                <div class="component">
+                    <div id="subList"
+                         bind="com.gzzm.safecampus.campus.classes.GuardianSubListCrud.class"
+                         bind="view" showAdd="false" require>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+#dialogBody {
+    background-color: #f8f8f8;
+    margin-bottom: 0px;
+}
+
+#main {
+    margin-top: 13px;
+    width: 708px;
+    /*height: 370px;*/
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#search {
+    clear: both;
+    margin-bottom: 10px;
+}
+
+#search input {
+    width: 660px;
+    height: 30px;
+    border: 1px solid #b5b8c8;
+}
+
+#shares {
+    clear: both;
+}
+
+#shares .selector {
+    width: 700px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 8px;
+    width: 708px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.memberselector .buttons button {
+    width: 55px !important;
+    margin-bottom: 10px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    color: #3c3a3a;
+    background: #d4dfe8;
+    border-radius: 2px;
+}
+
+.memberselector .membertree {
+    height: 100%;
+}
+
+.memberselector .buttons {
+    float: left;
+    margin-left: 15px !important;
+    margin-right: 30px !important;
+    padding-top: 40px;
+    width: 40px;
+}
+.cyan-form-list{
+    width: 170px!important;
+    height: 238px;
+}
+
+button {
+    overflow: visible;
+    padding: 2px 8px;
+    width: 50px;
+    margin-bottom: 10px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    color: #fff;
+    background: #5a9bd5;
+    border-radius: 2px;
+}
+
+.zwyp-ptwz {
+    position: relative;
+
+    text-align: center;
+    margin: 0 auto;
+    z-index: 3;
+}
+
+.zwyp-ptwz div {
+    background: #c1d3ea;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    left: 38%;
+}
+
+.fild {
+    margin-left: 15px;
+    border: 1px solid #b5b8c8;
+    width: 662px;
+    padding: 12px;
+}
+
+#shareName{
+    width: 636px;
+    height: 30px;
+    border: 1px solid #b5b8c8;
+}

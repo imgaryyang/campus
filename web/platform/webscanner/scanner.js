@@ -1,0 +1,1 @@
+Cyan.importJs("/platform/webscanner/default2.js");

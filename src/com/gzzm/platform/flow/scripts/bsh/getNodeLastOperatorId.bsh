@@ -1,0 +1,9 @@
+getNodeLastOperatorId(String nodeId)
+{
+   var step = $context.getLastStep(nodeId);
+
+   if(step == null)
+      return "";
+
+   return step.getReceiver();
+}

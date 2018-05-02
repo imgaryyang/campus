@@ -1,0 +1,29 @@
+getSubDeptIdByName(Integer deptId,String deptName)
+{  
+   return FlowFunctions.getSubDeptIdByName(deptId,deptName);
+}
+
+getSubDeptIdByName(Integer deptId,String deptName1,String deptName2)
+{
+   return FlowFunctions.getSubDeptIdByName(deptId,new String[]{deptName1,deptName2});
+}
+
+getSubDeptIdByName(Integer deptId,String deptName1,String deptName2,String deptName3)
+{
+   return FlowFunctions.getSubDeptIdByName(deptId,new String[]{deptName1,deptName2,deptName3});
+}
+
+getSubDeptIdByName(Integer deptId,String deptName1,String deptName2,String deptName3,String deptName4)
+{
+   return FlowFunctions.getSubDeptIdByName(deptId,new String[]{deptName1,deptName2,deptName3,deptName4});
+}
+
+getSubDeptIdByName(Integer deptId,String deptName1,String deptName2,String deptName3,String deptName4,String deptName5)
+{
+   return FlowFunctions.getSubDeptIdByName(deptId,new Object[]{deptName1,deptName2,deptName3,deptName4,deptName5});
+}
+
+getSubDeptIdByName(Integer deptId,String[] deptNames)
+{
+   return FlowFunctions.getSubDeptIdByName(deptId,deptNames);
+}

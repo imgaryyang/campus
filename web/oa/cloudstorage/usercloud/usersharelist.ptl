@@ -1,0 +1,246 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>云盘分享</title>
+    <link href="../css/style-list.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery_update.js"></script>
+    <script type="text/javascript" src="../js/usercloudshare.js"></script>
+    <script type="text/javascript" src="/platform/fileupload/richupload.js"></script>
+</head>
+
+<body>
+<div class="yp" id="superDiv">
+    <div class="zwyp-box" width="100%">
+        <div class="zwyp-lb">
+            <img src="/oa/cloudstorage/image/logo.png"/>
+            <div class="zwyp-bt">
+                <button onclick="saveToMyCloud()">
+                    <img style="padding-right:13px" src="/oa/cloudstorage/image/saveto1.png">
+                    保存到我的网盘
+                </button>
+                <button onclick="downFile()">
+                    <img style="padding-right: 10px" src="/oa/cloudstorage/image/download1.png">
+                    下载
+                </button>
+            </div>
+        </div>
+        <!--请选择文件-->
+        <div id="qxzwj" class="zwyp-ptwz" style="display: none">
+            <div id="errorCont"></div>
+        </div>
+    </div>
+
+    <segment id="main1">
+        <input id="folderId" type="hidden" name="nowFolderId" value="${nowFolderId}"/>
+        <input id="shareId" type="hidden" name="shareId" value="${shareId}"/>
+
+        <div class="qbwj" style="overflow: hidden">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box1" id="setable1">
+                <tr>
+                    <td colspan="2" id="navList" class="td1 td2" style="border-bottom: hidden">
+                        <div class="navDiv" style="width:100%;">
+                            <div>当前位置：</div>
+                            <div bind="shareId==null">全部分享</div>
+                            <c bind="shareId!=null">
+                                <div onclick="showFileAndFolderByShareId(null)"
+                                     class=navDiv2>
+                                    <font>
+                                        全部分享
+                                    </font>
+                                    <a class="navA"> > </a>
+                                </div>
+                            </c>
+                            <div bind="type==1"></div>
+                            <div bind="shareId!=null">
+                                <c bind="session.navList.size()==0">
+                                    ${userCloudShare.shareName}
+                                </c>
+                                <c bind="session.navList.size()>0">
+                                    <div onclick="showFileAndFolderByShareId(${shareId})"
+                                         class=navDiv2>
+                                        <font>
+                                            ${userCloudShare.shareName}
+                                        </font>
+                                        <a class="navA"> > </a>
+                                    </div>
+                                </c>
+                            </div>
+
+                            <div bind="session.navList.size()>5">
+                                ...
+                                <a class="navA"> > </a>
+                            </div>
+                            <c bind="session.navList">
+                                <c bind="session.navList.size()<=5">
+                                    <div onclick="gotoFolderPage(${folderId})"
+                                         class=${nowFolderId==folderId?"":"navDiv2"}>
+                                        <font bind="folderName"
+                                              title="${createPath(session.navList,session.navList.indexOf(self))}"
+                                              format="trunc(6)">
+                                            ${folderName}
+                                        </font>
+                                        <a class="navA">${nowFolderId==folderId?"":">"}</a>
+                                    </div>
+                                </c>
+
+                                <c bind="session.navList.size()>5">
+
+                                    <c bind="${session.navList.indexOf(self)>session.navList.size()-6}">
+                                        <div onclick="gotoFolderPage(${folderId})"
+                                             class=${nowFolderId==folderId?"":"navDiv2"}>
+                                            <font bind="folderName"
+                                                  title="${createPath(session.navList,session.navList.indexOf(self))}"
+                                                  format="trunc(6)">
+                                                ${folderName}
+                                            </font>
+                                            <a class="navA">${nowFolderId==folderId?"":">"}</a>
+                                        </div>
+                                    </c>
+                                </c>
+                            </c>
+                        </div>
+                    </td>
+                    <td class="td1 td4" style="border-bottom: hidden">已全部加载，共${fileCount}个</td>
+                </tr>
+                <tr style="line-height: 40px">
+                    <td width="40%" id="allseltd" class="td1 td2">
+                        <c bind="shareId==null"><span>
+                            <input onclick="allcheckShareSelect()" id="allcheck" type="checkbox" value=""/>
+                        </span><font>全选</font></c>
+                            <input id="floderIds" type="hidden" value="">
+                            <input id="fileIds" type="hidden" value="">
+                            <input id="shareIds" type="hidden" value="">
+
+                        <div id="btu" style="display: none">
+                            <button class="btu" onclick="saveToMyCloud()">
+                                <img width="24px" height="20px" src="/oa/cloudstorage/image/saveto2.png">
+                                保存到我的网盘
+                            </button>
+                            <button class="btu" onclick="downFile()">
+                                <img width="24px" height="20px" src="/oa/cloudstorage/image/download2.png">
+                                下载
+                            </button>
+                        </div>
+                    </td>
+                    <c bind="userCloudShares!=null">
+                        <td width="20%" class="coltd td1 td4">分享人</td>
+                    </c>
+                    <c bind="userCloudShares==null">
+                        <td width="20%" class="coltd td1 td4"></td>
+                    </c>
+
+                    <td class="coltd td1 td4" style="display: ${tag==0?"display":"none"}"><c bind="shareId==null">分享时间</c></td>
+
+                </tr>
+            </table>
+
+            <%--风格一--%>
+            <div id="table1" style="width:100%;height:60%;overflow:auto;display: ${tag==0?"display":"none"}">
+                <table id="tb1" width="100%" border="0" cellspacing="0" cellpadding="0" class="box1">
+                    <%--分享的文件--%>
+                    <c bind="userCloudShares">
+                        <tr>
+                            <td width="40%" class="td2">
+                                <span><input onclick="filesShareSelect(this)" class="share"
+                                                                     type="checkbox"
+                                                                     value="${shareId}"/></span>
+                                <p><img src="/oa/cloudstorage/image/Multi_24.png" width="26" height="21"/></p>
+                                <a href="#" onclick="showFileAndFolderByShareId(${shareId})">${shareName}</a>
+                            </td>
+                            <td width="20%" class="td3">${shareUser.userName}</td>
+                            <td class="td3">${shareTime}</td>
+                        </tr>
+                    </c>
+
+                    <%--文件夹--%>
+                    <c bind="userFileFolders">
+                        <tr>
+                            <td width="40%" class="td2">
+                                <c bind="shareId==null">
+                                    <span><input onclick="filesShareSelect(this)" class="folder"
+                                                                     type="checkbox"
+                                                 value="${folderId}"/></span></c>
+                                <p><img src="/oa/cloudstorage/image/jjh_03.png" width="26" height="21"/></p>
+                                <a href="#" onclick="gotoFolderPage(${folderId})">
+                                    <div title="${folderName}" format="trunc(40)" bind="folderName"></div>
+                                </a>
+                            </td>
+                            <td class="td3" width="20%"></td>
+                            <td class="td3" bind="shareId==null">${createTime}</td>
+                        </tr>
+                    </c>
+
+                    <%--文件--%>
+                    <c bind="userFiles">
+                        <tr>
+                            <td width="40%" class="td2">
+                                <c bind="shareId==null">
+                                <span><input onclick="filesShareSelect(this)" class="file"
+                                                                     type="checkbox"
+                                             value="${fileId}"/></span></c>
+                                <p>
+                                    <img src="/oa/cloudstorage/image/${fileType.matches("(jpg|jpeg|gif|bmp|png|txt|doc|docx|xls|xlsx|pdf|ppt|pptx|wav|mp3|avi|mov|mpeg|mpg|ram|mp4)$")?fileType:"commonfile"}.png"
+                                         width="26" height="21"/></p>
+                                <a target="_blank" title="${fileName}.${fileType}" href="/oa/cloudstorage/usercloud/${fileId}/down">
+                                    <div  format="trunc(45)" bind="fullName"></div>
+                                </a></td>
+                            <td class="td3" width="20%">
+                                ${ net.cyan.commons.util.DataConvert.format(fileSize,'bytesize')}
+                            </td>
+                            <td class="td3" bind="shareId==null">${uploadTime}</td>
+                        </tr>
+                    </c>
+
+                </table>
+
+            </div>
+
+
+            <%--&lt;%&ndash;风格二&ndash;%&gt;--%>
+            <%--<div class="wjj_lb" id="table2" style="overflow: auto;display: ${tag==1?"display":"none"}">--%>
+            <%--<ul>--%>
+            <%--&lt;%&ndash;分享的文件&ndash;%&gt;--%>
+            <%--<c bind="userCloudShares">--%>
+            <%--<li>--%>
+            <%--<h2><a href="#"><img src="/oa/cloudstorage/image/Multi_24.png"--%>
+            <%--width="56" height="46"/></a>--%>
+            <%--</h2>--%>
+            <%--<p><a href="#">${shareName}</a></p>--%>
+            <%--<a href="#" onclick="selectFiles(this)" code="${shareId}" state="0"--%>
+            <%--class="a2 share"></a>--%>
+            <%--</li>--%>
+            <%--</c>--%>
+            <%--&lt;%&ndash;文件夹&ndash;%&gt;--%>
+            <%--<c bind="userFileFolders">--%>
+            <%--<li>--%>
+            <%--<h2><a href="#" onclick="gotoHomePage(${folderId})"><img src="/oa/cloudstorage/image/dwjj_03.png"--%>
+            <%--width="56" height="46"/></a>--%>
+            <%--</h2>--%>
+            <%--<p><a href="#">${folderName}</a></p>--%>
+            <%--<a href="#" onclick="selectFiles(this)" code="${folderId}" state="0"--%>
+            <%--class="a2 folder"></a>--%>
+            <%--</li>--%>
+            <%--</c>--%>
+
+            <%--&lt;%&ndash;文件&ndash;%&gt;--%>
+            <%--<c bind="userFiles">--%>
+            <%--<li>--%>
+            <%--<h2><a target="_blank" href="/oa/cloudstorage/usercloud/${fileId}/down">--%>
+            <%--<img src="/oa/cloudstorage/image/${fileType.matches("(mp4|png|txt|pdf|doc|docx)$")?fileType:"commonfile"}.png"--%>
+            <%--width="56" height="46"/></a></h2>--%>
+            <%--<p><a href="#">${fileName}.${fileType}</a></p>--%>
+            <%--<a href="#" onclick="selectFiles(this)" code="${fileId}" state="0" class="a2 file"></a>--%>
+            <%--</li>--%>
+
+            <%--</c>--%>
+            <%--</ul>--%>
+            <%--</div>--%>
+    </segment>
+
+</div>
+</div>
+</div>
+<%--</form>--%>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 配置业务类型 -->
+    <bean class="List[com.gzzm.platform.wordnumber.WordNumberType>" factory="instance">
+        <element>
+            <type>workno</type>
+            <name>工号</name>
+        </element>
+        <element>
+            <type>inquiry</type>
+            <name>咨询投诉</name>
+        </element>
+    </bean>
+</config>

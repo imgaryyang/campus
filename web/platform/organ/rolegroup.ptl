@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/platform/organ/rolegroup.css">
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/organ/rolegroup.js"></script>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" bind="entity" action="">
+            <div id="components">
+                <div class="component_item">
+                    <div class="label">角色名称</div>
+                    <div class="component">
+                        <input name="roleName">
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">所属目录</div>
+                    <div class="component">
+                        <input name="parentRoleId">
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">角色说明</div>
+                    <div class="component">
+                        <textarea name="remark" rows="" cols=""></textarea>
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">被子部门使用</div>
+                    <div class="component">
+                        <input type="checkbox" name="inheritable" class="checkbox" value="true">
+                    </div>
+                </div>
+            </div>
+
+            <div id="search">
+                <input name="word" id="word" class="search">
+            </div>
+
+            <div name="roleIds" class="itemselector" id="rolesSelector"
+                 bind="net.cyan.arachne.components.PageItemSelector.class"
+                 available="availableRoles" selected="entity.groupRoles" fromLegend="可选的权限" toLegend="已选的权限">
+            </div>
+
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="save();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

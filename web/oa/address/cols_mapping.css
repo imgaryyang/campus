@@ -1,0 +1,64 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#main {
+    clear: both;
+    width: 620px;
+    height: 440px;
+    overflow:hidden;
+}
+
+#title {
+    margin-top: 8px;
+    text-indent: 14px;
+    height: 28px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 13px;
+}
+
+#maps {
+    width: 620px;
+    height: 350px;
+    margin-bottom: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.map {
+    margin-left: 120px;
+    margin-right: 120px;
+    width: 380px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.col {
+    float: left;
+    width: 120px;
+    height: 22px;
+    text-align: right;
+}
+
+.to {
+    float: left;
+    float: left;
+    width: 50px;
+    height: 22px;
+    text-align: center;
+}
+
+.field {
+    float: left;
+    width: 210px;
+    height: 22px;
+}
+
+.field select {
+    width: 150px;
+}
+
+#dialogBody #buttons {
+    width: 620px;
+}

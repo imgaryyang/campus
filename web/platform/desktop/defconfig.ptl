@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>工作桌面配置</title>
+    <link type="text/css" rel="stylesheet" href="/platform/desktop/defconfig.css">
+    <script type="text/javascript" src="/platform/desktop/defconfig.js"></script>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <ul id="apps">
+            <li bind="menuItems">
+                <input type="checkbox" name="appIds" value="${menuId}">${title}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

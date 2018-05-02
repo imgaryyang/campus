@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+    <!---定义搜索哪个包-->
+    <package>com.gzzm</package>
+    <overJar>false</overJar>
+
+    <tempPath>/temp</tempPath>
+
+    <!--日志-->
+    <config path="log.xml"/>
+
+    <!--将其它配置放日志后面，以防止日志配置没有生效-->
+
+    <!--定义nest包为默认的注入器-->
+    <beanProvider type="net.cyan.nest.BeanContainerFactory"/>
+
+    <!--初始化持久层配置-->
+    <init type="net.cyan.thunwind.PersistenceInit"/>
+
+    <!--初始化crud-->
+    <init type="com.gzzm.platform.commons.crud.SystemCrudInit"/>
+    <init type="net.cyan.crud.thunwind.ThunwindCrudInit"/>
+
+    <!--添加配置路径-->
+    <config path="init"/>
+
+    <!--初始化任务调度-->
+    <init type="net.cyan.commons.pool.job.JobInit"/>
+
+</system>

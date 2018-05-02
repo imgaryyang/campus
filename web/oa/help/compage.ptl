@@ -1,0 +1,58 @@
+<div class="fanye">
+    <ul id="pages">
+    </ul>
+</div>
+<!--页码完-->
+<script type="text/javascript" src="/web/commons/portal.js"></script>
+<script type="text/javascript">
+    Portal.renderPages({
+        pageNo:${pageNo$},
+        pagesSize: 6,
+        pageSize: 6,
+        totalCount: ${totalCount},
+        el: "pages",
+        generateOne: function (url, pageNo, el) {
+            var text, className, title;
+
+            if (pageNo == "first") {
+                text = "第一页";
+                title = "前6页";
+            }
+            else if (pageNo == "last") {
+                text = "最后一页";
+                title = "后6页";
+                className = "shouyao";
+            }
+            else if (pageNo == "previous") {
+                return;
+            }
+            else if (pageNo == "next") {
+                return;
+            }
+            else if (pageNo == "previousPages") {
+                text = "上一页";
+            }
+            else if (pageNo == "nextPages") {
+                text = "下一页";
+            }
+            else {
+                text = pageNo;
+                if (!url)
+                    className = "currentpage";
+            }
+            var searchText = $("search").value;
+            var li = document.createElement("LI");
+            if (className)
+                li.className = className;
+            if (title)
+                li.title = title;
+            if (url) {
+                li.innerHTML = "<a onclick=\"Helper.refCom('"+url+"')\" style='cursor:pointer'>"+text+"</a>";
+            } else {
+                li.innerHTML = text;
+            }
+
+            el.appendChild(li);
+        }
+    });
+</script>

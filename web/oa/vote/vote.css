@@ -1,0 +1,118 @@
+#dialogBody {
+    margin-bottom: 30px;
+}
+
+#dialogBody #components {
+    clear: both;
+    width: 740px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#dialogBody #components .component_line {
+    clear: both;
+}
+
+#dialogBody #components .component_item .label {
+    padding-top: 3px;
+    margin-bottom: 6px;
+    float: left;
+    width: 80px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#dialogBody #components .component_item .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 275px;
+}
+
+#dialogBody #components .component_item .component_wide {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 630px;
+}
+
+#dialogBody #components .component_item .component span {
+    float: left;
+    padding-top: 3px;
+    height: 22px;
+}
+
+#dialogBody #components .component_item input {
+    width: 255px;
+    height: 18px;
+}
+
+#dialogBody #components .component_item select {
+    width: 255px;
+    height: 18px;
+}
+
+#dialogBody #components .component_item .component_wide input {
+    width: 620px;
+    height: 18px;
+}
+
+#dialogBody #components .component_item .component_wide select {
+    width: 620px;
+    height: 18px;
+}
+
+#dialogBody #components .component_line .component_wide textarea {
+    width: 620px;
+    height: 100px;
+    overflow-y: auto;
+}
+
+#dialogBody #components .component_selector_line {
+    clear: both;
+}
+
+#dialogBody #components .component_selector_line .component_selector {
+    margin-bottom: 8px;
+    float: left;
+    width: 650px;
+}
+
+#dialogBody #components .component_selector_line .component_selector .members select {
+    width: 185px;
+    height: 237px;
+}
+
+#dialogBody #components .component_selector_line .component_selector .to select {
+    width: 185px;
+    height: 237px;
+}
+
+#dialogBody #components .component_selector_line .component_selector .memberselector .membertree {
+    width: 190px;
+    height: 237px;
+}
+
+#dialogBody #components .component_selector_line .component_selector input.search {
+    float: left;
+    width: 622px;
+    height: 20px;
+    margin-bottom: 3px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 6px;
+    width: 740px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#dialogBody #buttons .button button {
+    cursor: pointer;
+}

@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/platform/organ/rolecatalog.css">
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" bind="entity" action="">
+            <div id="components">
+                <div class="component_item">
+                    <div class="label">目录名称</div>
+                    <div class="component">
+                        <input name="roleName">
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">所属目录</div>
+                    <div class="component">
+                        <input name="parentRoleId">
+                    </div>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">目录说明</div>
+                    <div class="component">
+                        <textarea name="remark" rows="" cols=""></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="save();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

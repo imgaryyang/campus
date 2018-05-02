@@ -1,0 +1,38 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#container {
+    margin: 20px 5px 5px;
+    width: 230px;
+    height: 60px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#title {
+    padding-top: 4px;
+    float: left;
+    margin-left: 4px;
+}
+
+#select {
+    float: left;
+    margin-left: 10px;
+}
+
+#type {
+    width: 130px;
+}
+
+#button {
+    clear: both;
+    padding-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

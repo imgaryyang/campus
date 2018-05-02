@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>系统标题</title>
+    <link type="text/css" rel="stylesheet" href="/oa/index/index.css">
+    <script type="text/javascript" src="/platform/login/login.js"></script>
+    <script type="text/javascript" src="/platform/login/login_key.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="center">
+            <div id="components">
+                <form id="form" action="">
+                    <input type="hidden" name="certType" value="gdca">
+                    <input type="hidden" name="random">
+                    <input type="hidden" name="sign">
+                    <input type="hidden" name="cert">
+
+                    <div id="buttons">
+                        <button id="login_button" type="button" onclick="key_login('/oa/main.ptl');"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#desktop_top {
+    float: left;
+    width: 100%;
+    padding-top: 20px;
+}
+
+#search {
+    float: left;
+    width: 90%;
+    text-align: center;
+}
+
+.top_item {
+    margin-right: 60px;
+    vertical-align: middle;
+}
+
+.top_item input {
+    width: 100px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.top_item button {
+    height: 24px;
+    line-height: 22px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#desktop_top .config {
+    float: right;
+    padding-right: 50px;
+
+}
+
+#desktop_top .config a {
+    color: blue;
+}
+
+#desktop_top .config a:hover {
+    color: red;
+}
+
+.desktop-column {
+    float: left;
+}
+
+.desktop-module {
+    border: 1px #d2d2d2 solid;
+}
+
+.desktop-module-header {
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 35px;
+    border-bottom: 2px solid #e2e2e2;
+    margin-bottom: 2px;
+}
+
+.desktop-module-title {
+    height: 32px;
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 20px;
+    line-height: 40px;
+    float: left;
+    border-bottom: 4px solid #4173ba;
+}
+
+.desktop-module-buttons {
+    margin-top: 8px;
+    float: right;
+}
+
+.desktop-module-buttons button {
+    border: 0 none;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 6px;
+}
+
+.desktop-module-button-config {
+    background: url(desktop/config.gif);
+}
+
+.desktop-module-button-refresh {
+    background: url(desktop/refresh.gif);
+}
+
+.desktop-module-button-close {
+    background: url(desktop/close.gif);
+}
+
+.desktop-module-content {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 2px;
+}
+
+.desktop-module iframe {
+    border: 0 none;
+    width: 100%;
+    height: 100%;
+}
+
+#desktop_bottom {
+    clear: both;
+    float: left;
+    width: 100%;
+    height: 20px;
+}
+#deskcondition {
+    width: 395px;
+    height: 35px;
+    border: solid 1px #dadada;
+    text-indent: 10px;
+    margin-left: 5px;
+    color: #666666;
+    font-size: 18px;
+    outline: none;
+}
+
+#desksearchbut {
+    width: 124px;
+    height: 39px;
+    background: #4684d6 url(/oa/superquery/image/ssk_07.png) no-repeat 25px center;
+    border: solid 1px #4684d6;
+    font-size: 21px;
+    color: #FFF;
+    padding: 1px 0 4px 35px;
+    cursor: pointer;
+    margin-left: -1px;
+}
+
+#desksearchdiv {
+    text-align: center;
+}

@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>角色权限预览</title>
+    <link type="text/css" rel="stylesheet" href="/platform/organ/role_display.css">
+    <script type="text/javascript" src="/platform/organ/role_display.js"></script>
+</head>
+<body id="dialogBody">
+
+    <div id="apps">
+
+        <div bind="menuTree" id="menuTree" autoRender="true" checkboxName="appId" onselect="menuselect();"></div>
+
+        <div id="app">
+
+            <fieldset>
+                <legend>相关角色</legend>
+
+                <div id="roleGroups"></div>
+            </fieldset>
+
+            <fieldset>
+                <legend>相关权限</legend>
+
+                <div id="roles"></div>
+            </fieldset>
+
+            <fieldset>
+                <legend>数据范围</legend>
+
+                <div id="scopes"></div>
+            </fieldset>
+
+        </div>
+
+    </div>
+</body>
+</html>

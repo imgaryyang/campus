@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>支付+签约</title>
+
+    <script type="text/javascript" src="/safecampus/pay/js/basepay.js"></script>
+    <script>
+        var HttpPathSignAndPay = "http://localhost:80/cmb/pay/signAndPay";
+        var HttpPathPay = "http://121.15.180.66:801/NetPayment/BaseHttp.dll?MB_EUserPay";
+
+        function submit() {
+            // var xmlRequest = "{";
+            // xmlRequest += "\"dateTime\":\"" + getNowFormatDate() + "\",";
+            // xmlRequest += "\"branchNo\":\"" + branchNo.value + "\",";
+            // xmlRequest += "\"merchantNo\":\"" + merchantNo.value + "\",";
+            // xmlRequest += "\"date\":\"" + date.value + "\",";
+            // xmlRequest += "\"orderNo\":\"" + orderNo.value + "\",";
+            // xmlRequest += "\"amount\":\"" + amount.value + "\",";
+            // xmlRequest += "\"expireTimeSpan\":\"" + expireTimeSpan.value + "\",";
+            // xmlRequest += "\"payNoticeUrl\":\"" + payNoticeUrl.value + "\",";
+            // xmlRequest += "\"payNoticePara\":\"" + payNoticePara.value + "\",";
+            // xmlRequest += "\"returnUrl\":\"" + returnUrl.value + "\",";
+            // xmlRequest += "\"cardType\":\"" + cardType.value + "\",";
+            // xmlRequest += "\"agrNo\":\"" + agrNo.value + "\",";
+            // xmlRequest += "\"merchantSerialNo\":\"" + merchantSerialNo.value + "\",";
+            // xmlRequest += "\"clientIP\":\"" + clientIP.value + "\",";
+            // xmlRequest += "\"userID\":\"" + userID.value + "\",";
+            // xmlRequest += "\"mobile\":\"" + mobile.value + "\",";
+            // xmlRequest += "\"riskLevel\":\"" + riskLevel.value + "\",";
+            // xmlRequest += "\"signNoticeUrl\":\"" + signNoticeUrl.value + "\",";
+            // xmlRequest += "\"signNoticePara\":\"" + signNoticePara.value + "\"";
+            // xmlRequest += "}";
+
+            var params = "openId="+111+"&amount="+amount.value;
+            //console.log(xmlRequest);
+            //客户端封装数据
+            //var rsp = sendXmlRequest(xmlRequest, HttpPathSignAndPay).replace(/[\r\n]/g, "").replace(/<.*/gi, "");
+            //服务端封装数据
+            var rsp = sendXmlRequestByParams(params, HttpPathSignAndPay).replace(/[\r\n]/g, "").replace(/<.*/gi, "");
+            sendFormRequest(rsp, HttpPathPay);
+        }
+    </script>
+</head>
+
+<body>
+<p>
+
+    <label><br>
+        reqData:</label>
+
+    <label for="branchNo"> branchNo:</label>
+    <input name="branchNo" type="text" id="branchNo" value="0020">
+    <label><br>
+        merchantNo:</label>
+    <input name="merchantNo" type="text" id="merchantNo" value="010030">
+    <label for="date"><br>
+        date:</label>
+    <input name="date" type="text" id="date" value="20180131">
+    <label for="orderNo"><br>
+        orderNo:</label>
+    <input name="orderNo" type="text" id="orderNo" value="9999000001">
+    <br>
+    <label for="amount">amount:</label>
+    <input name="amount" type="text" id="amount" value="0.01">
+    <label for="expireTimeSpan"><br>
+        expireTimeSpan:</label>
+    <input name="expireTimeSpan" type="text" id="expireTimeSpan" value="30">
+    <br>
+    <label for="payNoticeUrl">payNoticeUrl:</label>
+    <input name="payNoticeUrl" type="text" id="payNoticeUrl" value="http://localhost:80/cmb/callback/pay">
+    <label for="payNoticePara"><br>
+        payNoticePara:</label>
+    <input name="payNoticePara" type="text" id="payNoticePara" value="pay">
+    <label for="returnUrl"><br>
+        returnUrl:</label>
+    <input name="returnUrl" type="text" id="returnUrl" value="http://localhost:80/cmb/signAndPay">
+    <label for="cardType"><br>
+        cardType:</label>
+    <input type="text" name="cardType" id="cardType">
+    <label for="agrNo"><br>
+        agrNo:</label>
+    <input name="agrNo" type="text" id="agrNo" value="9934567890987654332">
+    <label for="merchantSerialNo"><br>
+        merchantSerialNo:</label>
+    <input name="merchantSerialNo" type="text" id="merchantSerialNo" value="20160804100538">
+    <label for="userID"><br>
+        <br>
+    </label>
+    <label for="clientIP">clientIP:</label>
+    <input name="clientIP" type="text" id="clientIP" value="99.12.43.26">
+    <label for="cardType"></label>
+    <label for="userID"> <br>
+        userID:</label>
+    <input name="userID" type="text" id="userID" value="2018013088888">
+    <label for="mobile"><br>
+        mobile:</label>
+    <input name="mobile" type="text" id="mobile" value="18202532653">
+    <label for="riskLevel"><br>
+        riskLevel:</label>
+    <input name="riskLevel" type="text" id="riskLevel" value="3">
+    <label for="signNoticeUrl"><br>
+        signNoticeUrl:</label>
+    <input name="signNoticeUrl" type="text" id="signNoticeUrl" value="http://localhost:80/cmb/callback/sign">
+    <label for="signNoticePara"><br>
+        signNoticePara:</label>
+    <input type="text" name="signNoticePara" id="signNoticePara">
+</p>
+<p>
+    <!--<input type="button" name="getSign" id="getSign" onClick="getSign();" value="获取签名">-->
+    <input type="button" name="submit" id="submit" value="提交" onClick="submit();">
+</p>
+</body>
+</html>

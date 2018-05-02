@@ -1,0 +1,134 @@
+.x-window-dlg .ext-mb-waiting {
+    background: transparent url(../../images/icons/waiting.gif) no-repeat top left;
+    margin-top: 3px;
+    width: 38px;
+    height: 46px;
+}
+
+.ext-el-mask {
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+input.x-table-checkbox {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+}
+
+.cyan-window-loading {
+    background: transparent url(../../images/icons/loading.gif) no-repeat 10px 10px;
+    padding-left: 80px;
+    padding-top: 29px;
+}
+
+.cyan-form-field-date, .cyan-form-field-color, .cyan-form-field-selectable {
+    cursor: pointer;
+}
+
+#ext-msg-div {
+    font-size: 12px;
+    position: absolute;
+    left: 35%;
+    top: 10px;
+    width: 180px;
+    z-index: 20000;
+}
+
+.cyan-targetlist-div {
+    cursor: pointer;
+}
+
+.cyan-targetlist-div span {
+    float: left;
+}
+
+.cyan-targetlist-div-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    background: transparent url(../../images/icons/bullet_arrow_down.gif) no-repeat left -2px;
+}
+
+.cyan-selectable-clear {
+    position: absolute;
+    float: left;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: transparent url(../../images/icons/clear.gif) no-repeat left;
+}
+
+.cyan-selectable-icon {
+    position: absolute;
+    float: left;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: transparent url(../../images/icons/bullet_arrow_down.gif) no-repeat left;
+}
+
+.cyan-search {
+    background: white url(../../images/icons/search.gif) right no-repeat;
+    border: 1px solid gray;
+    height: 18px;
+    margin-bottom: 3px;
+    vertical-align: text-bottom;
+}
+
+.cyan-clear {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: transparent url(../../images/icons/delete.gif) no-repeat left;
+    border: 0;
+    margin-left: 4px;
+}
+
+.x-grid3-row-expander-icon {
+    background-image: url(../../../../extjs/resources/images/default/grid/row-expand-sprite.gif);
+    float: left;
+    width: 14px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.x-grid3-row-expander-span {
+    float: left;
+    width: 20px;
+    height: 18px;
+}
+
+.x-grid3-row-expander-icon-collapsed {
+    background-position: 0 1px;
+}
+
+.x-grid3-row-expander-icon-expanded {
+    background-position: -25px 1px;
+}
+
+.cyan_qtip {
+    padding: 5px;
+}
+
+.x-grid3-row-expander-text {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ext-ie6 .x-menu-item-icon {
+    left: 0;
+}
+
+.x-unselectable, .x-unselectable * {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: ignore;
+    -ms-user-select: none;
+}
+
+.x-window-header-text {
+    font-size: 12px;
+}

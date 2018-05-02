@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rewrite>
+    <rewriter type="simple">
+        <from>/oa</from>
+        <to>/oa/index.lp</to>
+    </rewriter>
+
+    <rewriter type="simple">
+        <from>/oa/index.jsp</from>
+        <to>/oa/index.lp</to>
+    </rewriter>
+
+    <rewriter type="simple">
+        <from>/oa/Index.jsp</from>
+        <to>/oa/index.lp</to>
+    </rewriter>
+
+</rewrite>

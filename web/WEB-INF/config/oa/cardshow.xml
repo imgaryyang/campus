@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!--应用信息-->
+    <bean class="com.gzzm.oa.address.CardShowConfig" factory="instance">
+        <!--<serviceUrl>https://oa.zhengmeng.net</serviceUrl>-->
+        <serviceUrl>http://192.168.1.37</serviceUrl>
+        <!--<serviceUrl>http://192.168.1.204</serviceUrl>-->
+        <areaStr>zm</areaStr>
+    </bean>
+
+</config>

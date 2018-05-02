@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>退款</title>
+    <script type="text/javascript" src="/safecampus/pay/js/basepay.js"></script>
+    <script>
+        var HttpPath = "http://localhost/cmb/do/refund";
+
+        function submit() {
+            var params = "openId=" + 111 + "&orderNo=" + orderNo.value
+                + "&date=" + date.value + "&amount="+amount.value+"&desc="+desc.value
+            /**
+             * 取得数据有多余<script>标签??
+             * replace去除掉
+             */
+            var json = sendXmlRequestByParams(params, HttpPath).replace(/[\r\n]/g, "").replace(/<.*/gi, "");
+            console.log("server-json: " + json);
+            var rsp = JSON.parse(json);
+            document.getElementById("rspCode").value = rsp.rspData.rspCode;
+            document.getElementById("rspMesg").value = rsp.rspData.rspMesg;
+            document.getElementById("dateTime").value = rsp.rspData.dateTime;
+            document.getElementById("rspData").value = JSON.stringify(rsp.rspData);
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <label> reqData:</label>
+            <br>
+            amount:
+            <input name="amount" type="text" id="amount" value="0.01">
+            <br/>
+            date:
+            <input name="date" type="text" id="date" value="20180131">
+            <br/>
+            orderNo:
+            <input name="orderNo" type="text" id="orderNo" value="9999000001">
+            <br/>
+            desc:
+            <input name="desc" type="text" id="desc" value="退款refund 0.01">
+            <br/>
+
+            <p>
+                <input type="button" name="submit" id="submit" value="提交" onClick="submit();">
+            </p>
+        </td>
+        <td width="100"></td>
+        <td valign="top">
+
+            <label for="rspCode"> rspCode:</label>
+            <input name="rspCode" type="text" id="rspCode" value=""/>
+            <br/>
+            <label for="rspMesg"> rspMesg:</label>
+            <input name="rspMesg" type="text" id="rspMesg" value=""/>
+            <br/>
+            <label for="dateTime"> dateTime:</label>
+            <input name="dateTime" type="text" id="dateTime" value=""/>
+            <br/>
+            <label for="rspData"> rspData:</label>
+            <textarea rows="10" id="rspData" style="width: 400px"></textarea>
+            <br/>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

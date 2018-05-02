@@ -1,0 +1,35 @@
+#dialogBody {
+    height: 150px;
+}
+
+#dialogBody #components .component_item input[name=file] {
+    height: 25px;
+}
+
+.component_item {
+    margin-bottom: 20px;
+    height: 25px;
+}
+
+.label {
+    float: left;
+    margin-right: 5px;
+}
+
+#dialogBody #components .component_item .component {
+    width: 200px;
+}
+
+#buttons {
+    width: 100%;
+    bottom: 25px;
+    position: absolute;
+}
+
+.msg_item {
+    padding-left: 12px;
+}
+
+ul li {
+    padding-bottom: 5px;
+}

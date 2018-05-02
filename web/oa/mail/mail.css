@@ -1,0 +1,215 @@
+body {
+    height: 100%;
+}
+
+.mark {
+    width: 17px;
+    height: 17px;
+}
+
+.title_new {
+    background: url("/oa/mail/icons/new.gif") no-repeat left -2px;
+}
+
+.title_old {
+    background: url("/oa/mail/icons/old.gif") no-repeat left -2px;
+}
+
+.title_replyed {
+    background: url("/oa/mail/icons/replyed.gif") no-repeat left;
+}
+
+.title a {
+    margin-left: 25px;
+    text-decoration: none
+}
+
+.title a:hover {
+    text-decoration: underline
+}
+
+#mail {
+    background-color: white;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#mail #header {
+    margin-left: 12px;
+    margin-right: 12px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    border-bottom: #9CB8CC solid 1px;
+}
+
+#mail #title {
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    padding-top: 6px;
+    height: 30px;
+}
+
+#mail .item {
+    clear: both;
+    margin-bottom: 3px;
+}
+
+#mail .item .label {
+    float: left;
+    text-indent: 3px;
+    width: 65px;
+    height: 20px;
+}
+
+#mail span.attachment {
+    margin-right: 20px;
+}
+
+#mail .attachment img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+#mail #content {
+    line-height: 200%;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 8px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    border-bottom: #9CB8CC solid 1px;
+}
+
+.received {
+    min-height: 280px;
+    height: 280px;
+    height: auto !important;
+}
+
+.sended {
+    min-height: 440px;
+    height: 440px;
+    height: auto !important;
+}
+
+#mail #replyDiv {
+    overflow-y: hidden;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 6px;
+    padding-left: 8px;
+    padding-bottom: 15px;
+}
+
+#mail #replyDiv .label {
+    font-weight: bold;
+    height: 18px;
+}
+
+#mail #replyDiv .content {
+    width: 560px;
+    border: #6C92AD solid 1px;
+}
+
+#mail #replyDiv textarea {
+    width: 450px;
+    height: 100px;
+    border: 0;
+    margin: 0;
+    vertical-align: middle;
+    overflow: auto;
+    font-size: 13px;
+}
+
+#mail #replyDiv button {
+    height: 60px;
+    width: 80px;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#mail #replyDiv .result {
+    margin-top: 4px;
+    display: none;
+}
+
+#mail #replyDiv .result span {
+    height: 17px;
+    padding-top: 3px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+#mail #replyDiv .result .message {
+    float: left;
+    background-color: green;
+    width: 120px;
+    color: white;
+}
+
+#mail #replyDiv .result .href {
+    float: left;
+    width: 100px;
+}
+
+#mail #replyDiv .result a {
+    color: red;
+}
+
+.email {
+    cursor: pointer;
+    margin-right: 10px;
+    color: gray;
+}
+
+#tip {
+    width: 280px;
+}
+
+#email_operators {
+    margin-left: 18px;
+    padding-bottom: 22px;
+}
+
+#email_operators span {
+    margin-top: 12px;
+    margin-left: 4px;
+}
+
+#email_operators span a {
+    color: blue;
+}
+
+#email_operators span a:hover {
+    color: red;
+}
+
+#email_name {
+    padding-top: 1px;
+    padding-bottom: 2px;
+    height: 18px;
+    margin-left: 14px;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+}
+
+#email_remark {
+    padding-bottom: 12px;
+    min-height: 18px;
+    margin-left: 22px;
+    font-size: 12px;
+    color: gray;
+}
+
+.quote_handler {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: #5c6efc;
+}

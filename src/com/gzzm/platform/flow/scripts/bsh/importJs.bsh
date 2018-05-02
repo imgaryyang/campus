@@ -1,0 +1,4 @@
+importJs(String path)
+{
+    net.cyan.arachne.RequestContext.getContext().getForm().importJs(path);
+}

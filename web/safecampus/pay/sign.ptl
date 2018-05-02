@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" action="false">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/safecampus/js/jquery.js"></script>
+    <script src="/safecampus/pay/js/basepay.js"></script>
+</head>
+<body>
+
+<form action="http://121.15.180.66:801/mobilehtml/DebitCard/M_NetPay/OneNetRegister/NP_BindCard.aspx" method="post">
+    <input name="jsonRequestData" id="t" value="">
+    <input type="submit">
+
+</form>
+<script>
+    $.post("http://127.0.0.1/cmb/pay/sign", function (d) {
+        console.log(d)
+        $("#t").val(d)
+        //sendFormRequest(d, "http://121.15.180.66:801/mobilehtml/DebitCard/M_NetPay/OneNetRegister/NP_BindCard.aspx")
+    })
+
+
+</script>
+</body>
+</html>

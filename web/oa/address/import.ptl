@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>导入通讯录</title>
+    <link type="text/css" rel="stylesheet" href="/platform/styles/big.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/oa/address/card.js"></script>
+</head>
+<body id="dialogBody">
+    <form id="form" action="">
+        <div id="components">
+            <div class="component_item">
+                <div class="label">选择文件</div>
+                <div class="component">
+                    <input name="impFile" type="file" filetype="xls xlsx csv txt">
+                </div>
+            </div>
+
+            <div class="component_item">
+                <div class="label">导入到组</div>
+                <div class="component">
+                    <select name="groupId">
+                        <option value="">---------</option>
+                        <option bind="groups"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="toImp();">确定</button>
+            </span>
+            <span class="button">
+                <button type="button" onclick="closeWindow();">取消</button>
+            </span>
+        </div>
+
+    </form>
+</body>
+</html>

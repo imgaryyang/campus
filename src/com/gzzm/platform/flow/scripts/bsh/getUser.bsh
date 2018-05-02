@@ -1,0 +1,29 @@
+getUser(Integer userId)
+{
+   return FlowFunctions.getUser(new Integer[]{userId});
+}
+
+getUser(Integer userId1,Integer userId2)
+{
+   return FlowFunctions.getUser(new Integer[]{userId1,userId2});
+}
+
+getUser(Integer userId1,Integer userId2,Integer userId3)
+{
+   return FlowFunctions.getUser(new Integer[]{userId1,userId2,userId3});
+}
+
+getUser(Integer userId1,Integer userId2,Integer userId3,Integer userId4)
+{
+   return FlowFunctions.getUser(new Integer[]{userId1,userId2,userId3,userId4});
+}
+
+getUser(Integer[] userIds)
+{  
+   return FlowFunctions.getUser(userIds);
+}
+
+getUser(java.util.Collection userIds)
+{
+   return FlowFunctions.getUser(userIds);
+}

@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>选择范围</title>
+    <script type="text/javascript" src="/platform/appauth/appauth.js"></script>
+</head>
+<body id="dialogBody">
+
+    <form id="form">
+
+        <div id="components">
+            <div class="component_item">
+                <div class="label"></div>
+                <div class="component">
+                    <select name="scopeId">
+                        <option bind="scopes"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="setScope();">确定</button>
+                    <button type="button" onclick="closeWindow();">取消</button>
+                </span>
+        </div>
+
+    </form>
+</body>
+</html>

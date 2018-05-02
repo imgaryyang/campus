@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <bean class="com.gzzm.oa.version.VersionConfig" factory="instance">
+        <!--读取系统更新发布文件路径，根目录是WEB-INF/-->
+        <filePath>config/version</filePath>
+        <!--设置更新发布文件名称结尾，以此结尾的文件名称才被读取-->
+        <fileLastName>_version.xml</fileLastName>
+    </bean>
+</config>

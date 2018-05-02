@@ -1,0 +1,97 @@
+<!doctype html>
+<html action="false">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>我要缴费</title>
+    <link href="../css/newstyle.css" rel="stylesheet" type="text/css">
+    <link href="wantpay.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery.js"></script>
+
+</head>
+
+<body>
+<div id="banner" class="banner">
+    <div class="bd">
+        <ul>
+            <li> <a class="pic" href="#"><img src="../image/1.jpg"></a> <a class="tit" href="#">问渠那得清如许</a> </li>
+            <li> <a class="pic" href="#"><img src="../image/2.jpg"></a> <a class="tit" href="#">为有源头活水来</a> </li>
+            <li> <a class="pic" href="#"><img src="../image/1.jpg"></a> <a class="tit" href="#">长风破浪会有时</a> </li>
+            <li> <a class="pic" href="#"><img src="../image/2.jpg"></a> <a class="tit" href="#">直挂云帆济沧海</a> </li>
+        </ul>
+    </div>
+    <div class="hd">
+        <ul>
+        </ul>
+    </div>
+    <script src="../js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript">
+        TouchSlide({
+            slideCell:"#banner",
+            titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+            mainCell:".bd ul",
+            effect:"leftLoop",
+            autoPage:true,//自动分页
+            autoPlay:true //自动播放
+        });
+    </script>
+</div>
+<div class="contont">
+    <div class="hzkqbj2">
+        <div class="xbjf_lb">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td><ul>
+                        <li><h2><a href="/wx/pay/billsofstatus/status/0/type/2"><span><img src="../image/cstb_09.png"></span></a></h2>
+                            <p>校巴费缴纳</p>
+                        </li>
+                    </ul></td>
+                    <td><ul>
+                        <li><h2 class="hs"><a href="/wx/pay/billsofstatus/status/0/type/1"><span><img src="../image/cstb_12.png"></span></a></h2>
+                            <p>托管费缴纳</p>
+                        </li>
+                    </ul></td>
+                    <td><ul>
+                        <li><h2 class="ls"><a href="/wx/pay/billsofstatus/status/0/type/0"><span><img src="../image/cstb_03.png"></span></a></h2>
+                            <p>学费缴纳</p>
+                        </li>
+                    </ul></td>
+                    <td><ul>
+                        <li><h2><a href="/wx/pay/billsofstatus/status/0/type/4"><span><img src="../image/cstb_06.png"></span></a></h2>
+                            <p>餐费缴纳 </p>
+                        </li>
+                    </ul></td>
+                </tr>
+                <tr>
+                    <td><ul>
+                        <li><h2 class="las"><a href="/wx/pay/billsofstatus/status/0/type/3"><span><img src="../image/cstb_19.png"></span></a></h2>
+                            <p>学杂费缴纳</p>
+                        </li>
+                    </ul></td>
+                    <td><ul>
+                        <li><h2><a href="/wx/pay/billsofstatus/status/0/type/5"><span class="sp2"><img src="../image/cstb_22.png"></span></a></h2>
+                            <p>其它费用</p>
+                        </li>
+                    </ul></td>
+
+                    </ul></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="hzkqbj2">
+        <div class="xydt">
+            <div class="tjls_bt">
+                <p>校园动态</p>
+            </div>
+        </div>
+        <div class="zwkf"><span><img src="../image/zh_03.png"></span>
+            <p>&nbsp;&nbsp;未开放...</p></div>
+    </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

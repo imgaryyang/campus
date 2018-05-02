@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>选择文件格式</title>
+    <link type="text/css" rel="stylesheet" href="/platform/commons/export.css"/>
+</head>
+<body id="dialogBody">
+    <div id="container">
+        <div id="title">请文件格式</div>
+        <div id="select" bind="request.parameters.type==null">
+            <select id="type" name="type">
+                <option value="xls">xls</option>
+                <option value="xls">xlsx</option>
+                <option value="csv">csv</option>
+                <option value="doc">doc</option>
+                <option value="doc">docx</option>
+            </select>
+        </div>
+        <div id="select" bind="request.parameters.type!=null">
+            <select id="type" name="type">
+                <option bind="request.parameters.type"></option>
+            </select>
+        </div>
+        <div id="button">
+            <button type="button" onclick="closeWindow($('type').value);">确定</button>
+            <button type="button" onclick="closeWindow();">取消</button>
+        </div>
+    </div>
+</body>
+</html>

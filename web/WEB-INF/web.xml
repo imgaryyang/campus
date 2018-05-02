@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"-->
+<!--"http://java.sun.com/dtd/web-app_2_3.dtd">-->
+<web-app metadata-complete="true">
+
+    <!--发卡器WebService-->
+
+    <listener>
+        <listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>AttendanceInterface</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AttendanceInterface</servlet-name>
+        <url-pattern>/attendance/interface/service</url-pattern>
+    </servlet-mapping>
+    <!--考勤机UDP-->
+    <listener>
+        <listener-class>com.gzzm.safecampus.device.attendance.UDPSocketListener</listener-class>
+    </listener>
+
+
+    <!--<servlet>-->
+    <!--<servlet-name>SpringContextServlet</servlet-name>-->
+    <!--<servlet-class>-->
+    <!--org.springframework.web.context.ContextLoaderServlet-->
+    <!--</servlet-class>-->
+    <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+    <!--<filter>-->
+    <!--<filter-name>parameterCheck</filter-name>-->
+    <!--<filter-class>net.cyan.arachne.exts.ParameterCheckFliter</filter-class>-->
+    <!--</filter>-->
+
+    <!--<filter>-->
+    <!--<filter-name>gb5</filter-name>-->
+    <!--<filter-class>net.cyan.arachne.exts.Gb5Filter</filter-class>-->
+    <!--<init-param>-->
+    <!--<param-name>mapper</param-name>-->
+    <!--<param-value>com.gzzm.portal.cms.commons.CmsGb5DomainMap</param-value>-->
+    <!--</init-param>-->
+    <!--</filter>-->
+
+    <filter>
+        <!--<async-supported>true</async-supported>-->
+        <filter-name>auth</filter-name>
+        <filter-class>com.gzzm.platform.login.AuthorityFilter</filter-class>
+    </filter>
+
+    <filter>
+        <!--<async-supported>true</async-supported>-->
+        <filter-name>wxauth</filter-name>
+        <filter-class>com.gzzm.safecampus.wx.personal.AuthInterceptor</filter-class>
+    </filter>
+
+    <!--<filter>-->
+    <!--<async-supported>true</async-supported>-->
+    <!--<filter-name>help</filter-name>-->
+    <!--<filter-class>com.gzzm.platform.help.HelpFilter</filter-class>-->
+    <!--</filter>-->
+
+    <filter>
+        <!--<async-supported>true</async-supported>-->
+        <filter-name>urlrewrite</filter-name>
+        <filter-class>net.cyan.arachne.urlrewrite.UrlRewriteFilter</filter-class>
+    </filter>
+
+    <!--<filter-mapping>-->
+    <!--<filter-name>parameterCheck</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
+    <!--<dispatcher>REQUEST</dispatcher>-->
+    <!--</filter-mapping>-->
+
+    <!--<filter-mapping>-->
+    <!--<filter-name>gb5</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
+    <!--<dispatcher>REQUEST</dispatcher>-->
+    <!--</filter-mapping>-->
+
+    <filter-mapping>
+        <filter-name>auth</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>wxauth</filter-name>
+        <url-pattern>/wx/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+    <!--<filter-mapping>-->
+    <!--<filter-name>help</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
+    <!--<dispatcher>REQUEST</dispatcher>-->
+    <!--</filter-mapping>-->
+
+    <filter-mapping>
+        <filter-name>urlrewrite</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>com.gzzm.safecampus.wx.user.WxLoginSessionListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>arachne-comet</servlet-name>
+        <!--<servlet-class>net.cyan.arachne.comet.WeblogicCometServlet</servlet-class>-->
+        <!--<servlet-class>net.cyan.arachne.comet.Tomcat6CometServlet</servlet-class>-->
+        <!--<servlet-class>net.cyan.arachne.comet.Tomcat7CometServlet</servlet-class>-->
+        <servlet-class>net.cyan.arachne.comet.JettyCometServlet</servlet-class>
+        <!--<servlet-class>net.cyan.arachne.comet.Jetty8CometServlet</servlet-class>-->
+        <!--<servlet-class>net.cyan.arachne.comet.Servlet3CometServlet</servlet-class>-->
+        <!--<async-supported>true</async-supported>-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>arachne</servlet-name>
+        <servlet-class>net.cyan.arachne.PageServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>forward</servlet-name>
+        <servlet-class>net.cyan.arachne.ForwardServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>script</servlet-name>
+        <servlet-class>net.cyan.arachne.ScriptServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>remotecall</servlet-name>
+        <servlet-class>net.cyan.nest.remote.RemoteCallServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>captcha</servlet-name>
+        <servlet-class>net.cyan.captcha.CaptchaServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>wxlogin</servlet-name>
+        <servlet-class>com.gzzm.safecampus.wx.user.WxLoginServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>wxMessageReceive</servlet-name>
+        <servlet-class>com.gzzm.safecampus.campus.wx.message.MessageReceiveServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>cache</servlet-name>
+        <servlet-class>net.cyan.arachne.exts.CacheControlServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>arachne-comet</servlet-name>
+        <url-pattern>*.comet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>arachne</servlet-name>
+        <url-pattern>*.page</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>forward</servlet-name>
+        <url-pattern>*.ptl</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>script</servlet-name>
+        <url-pattern>*.bsh</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>script</servlet-name>
+        <url-pattern>*.mvel</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>script</servlet-name>
+        <url-pattern>*.script</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>script</servlet-name>
+        <url-pattern>*.javascript</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>script</servlet-name>
+        <url-pattern>*.groovy</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>remotecall</servlet-name>
+        <url-pattern>/remotecall</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>captcha</servlet-name>
+        <url-pattern>/captcha</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>wxlogin</servlet-name>
+        <url-pattern>/wxlogin</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>wxMessageReceive</servlet-name>
+        <url-pattern>/wxMessageReceive</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>cache</servlet-name>
+        <url-pattern>*.js</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>cache</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>600</session-timeout>
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!--<icon>-->
+    <!--<small-icon>/favicon.ico</small-icon>-->
+    <!--<large-icon>/favicon.ico</large-icon>-->
+    <!--</icon>-->
+
+    <error-page>
+        <error-code>400</error-code>
+        <location>/400.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/403.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>405</error-code>
+        <location>/405.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.jsp</location>
+    </error-page>
+
+</web-app>

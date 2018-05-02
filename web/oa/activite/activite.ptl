@@ -1,0 +1,180 @@
+<html>
+<head>
+    <title>${entity.title}</title>
+    <link type="text/css" rel="stylesheet" href="/oa/activite/activite.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/oa/activite/activite.js"></script>
+
+</head>
+<body>
+    <form id="form" bind="entity">
+
+        <div id="mainBody">
+            <div id="activite">
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">活动标题</div>
+                        <div class="wide_component">
+                            <input name="title">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">开始时间</div>
+                        <div class="component">
+                            <input name="startTime">
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">结束时间</div>
+                        <div class="component">
+                            <input name="endTime">
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">报名截止时间</div>
+                        <div class="component">
+                            <input name="applyEndTime">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">活动地点</div>
+                        <div class="wide_component">
+                            <input name="activitePlace">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">活动类型</div>
+                        <div class="component">
+                            <select name="typeId">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="component_item" bind="activiteBudgets.size()>0">
+                        <div class="label">预算年份</div>
+                        <div class="component">
+                            <select name="activiteBudgetId">
+                                <option value="">----</option>
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">活动预算(元)</div>
+                        <div class="component">
+                            <input name="amount">元
+                        </div>
+                    </div>
+                    <div class="component_item" bind="state!=null&&state.name()!='created'">
+                        <div class="label">实际活动金额(元)</div>
+                        <div class="component">
+                            <input name="actualAmount">元
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">手机短信通知</div>
+                        <div class="component">
+                            <input name="notify" type="checkbox" class="checkbox" value="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">允许报名</div>
+                        <div class="component">
+                            <input name="publicity" type="checkbox" class="checkbox" value="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">活动内容</div>
+                        <div class="wide_component">
+                            <textarea name="activiteContent"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line" bind="state!=null&&state.name()!='created'">
+                    <div class="component_item">
+                        <div class="label">活动情况小结</div>
+                        <div class="wide_component">
+                            <textarea name="summary"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line" bind="!new$" bind="memberLists!=null && memberLists.size()>0">
+                    <div class="component_item">
+                        <div class="label">
+                            邀请人员
+                        </div>
+                        <div class="wide_component">
+                            <div id="activeMembers">
+                                <span bind="memberLists" bind="state.name()=='invite'">${user.UserName}(${state})</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line" bind="!new$" bind="memberLists!=null && memberLists.size()>0">
+                    <div class="component_item">
+                        <div class="label">
+                            报名参与人员
+                        </div>
+                        <div class="wide_component">
+                            <div id="activeMembers">
+                                <span bind="memberLists" bind="state.name()!='invite'">${user.UserName}(${state})</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="members" bind="new$">
+                    <div class="label">邀请人员</div>
+                    <div class="selector">
+                        <div bind="com.gzzm.platform.organ.PageUserSelector.class" appId="activite_members"
+                             deptId="${deptId}" name="inviteUserIds"></div>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                        <span bind="state==null||state.name()!='end'">
+                            <button type="button" onclick="save();" icon="/oa/mail/icons/save.gif">保存</button>
+                        </span>
+                        <span bind="state==null||state.name()=='created'||state.name()=='canceled'">
+                            <button type="button" onclick="issue();">发布</button>
+                        </span>
+                        <span bind="state!=null&&state.name()=='issued'">
+                            <%--<button type="button" onclick="endPtl1('${activiteId}');">结束活动</button>--%>
+                            <button type="button" onclick="end();">结束活动</button>
+                        </span>
+                        <span bind="state!=null&&state.name()=='issued'">
+                            <button type="button" onclick="cancel();">取消活动</button>
+                        </span>
+                        <span>
+                            <button type="button" onclick="System.closePage();">关闭</button>
+                        </span>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

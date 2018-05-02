@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>${entity.title}</title>
+    <link type="text/css" rel="stylesheet" href="/oa/activite/activite.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/oa/activite/activite.js"></script>
+
+</head>
+<body>
+    <form id="form" bind="entity">
+        <div id="mainBody">
+            <div id="activite">
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">实际活动金额(元)</div>
+                        <div class="component">
+                            <input name="actualAmount">元
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">活动情况小结</div>
+                        <div class="wide_component">
+                            <textarea name="summary"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <span bind="state!=null&&state.name()=='issued'">
+                        <button type="button" onclick="end1s();">结束活动
+                        </button>
+                    </span>
+                    <span>
+                        <button type="button" onclick="System.closePage();">关闭</button>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+
+    </form>
+</body>
+</html>

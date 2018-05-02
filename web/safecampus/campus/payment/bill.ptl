@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="/platform/weboffice/office.js"></script>
+    <script type="text/javascript" src="/safecampus/campus/payment/bill.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <link type="text/css" rel="stylesheet" href="/safecampus/campus/payment/bill.css">
+</head>
+<body>
+<form>
+    <div id="container">
+        <fieldset>
+            <div id="components">
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">
+                            ID
+                        </div>
+                        <div class="component">
+                            <input name="entity.billId">
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">
+                            金额
+                        </div>
+                        <div class="component">
+                            <input name="entity.money">
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">
+                            学校
+                        </div>
+                        <div class="component">
+                            <input name="entity.dept.deptName">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <iframe id="mask"></iframe>
+    <div id="mask1"></div>
+    <div id="word"></div>
+
+    <div id="buttons">
+        <button onclick="openFile();" type="button">打开本地文件</button>
+        <button onclick="printWord();" type="button">打印</button>
+        <button onclick="closePage();" type="button">关闭</button>
+    </div>
+</form>
+</body>
+</html>

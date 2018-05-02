@@ -1,0 +1,5 @@
+@import url("/oa/styles/extjs.css");
+
+#top, #menu_bottom, #menu_bottom_right {
+    background-color: #deecfd;
+}

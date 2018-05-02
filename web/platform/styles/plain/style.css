@@ -1,0 +1,583 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+
+textarea {
+    resize: none;
+}
+
+img {
+    border: 0 none;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: red;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+    border: hidden0 none;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+.new_bold td, .new_bold td a {
+    font-weight: bold;
+}
+
+button {
+    overflow: visible;
+    padding: 3px 8px;
+}
+
+button::-moz-focus-inner {
+    border: none;
+    padding: 0;
+}
+
+#pageBody {
+    display: none;
+}
+
+#app_title, #app_remark {
+    display: none;
+}
+
+#main_left {
+    float: left;
+    width: 175px;
+    border-right: #e2e2e2 solid 1px;
+    overflow: auto;
+}
+
+#main_left_content {
+    margin-top: 4px;
+}
+
+#main_right {
+    float: right;
+}
+
+#mainBody {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.toolbar {
+    width: 100%;
+    height: 60px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+
+#toolbar_left {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+
+.toolbar_right {
+    text-align: right;
+}
+
+.toolbar_bottom {
+    padding-bottom: 15px;
+}
+
+.toolbar_right .components, .toolbar_right .buttons {
+    float: right;
+}
+
+.toolbar_left .buttons {
+    padding-left: 20px;
+}
+
+.toolbar_span {
+    float: left;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.toolbar_span .cyan-combox-down {
+    padding-top: 17px;
+}
+
+.toolbar_span .cyan-selectable-down {
+    padding-top: 17px;
+}
+
+.toolbar_span .cyan-selectable-clear {
+    padding-top: 17px;
+}
+
+.toolbar_span_active {
+    float: left;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 12px;
+    margin-left: 4px;
+    margin-right: 2px;
+}
+
+.toolbar .components {
+    color: #727272;
+}
+
+.toolbar .components input {
+    width: 110px;
+    height: 22px;
+    padding: 0;
+    margin-left: 2px;
+    border: 1px solid #ebebeb;
+    color: #727272;
+    background: #f8f8f8;
+}
+
+.toolbar .components input.cyan-form-field-date {
+    width: 75px;
+}
+
+.toolbar .components select {
+    height: 22px;
+    padding: 0;
+    margin-left: 2px;
+    border: 1px solid #ebebeb;
+    color: #727272;
+    background: #f8f8f8;
+}
+
+.toolbar .buttons button {
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    color: #ffffff;
+    border: 0 none;
+    padding: 0 10px;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    border-radius: 4px;
+}
+
+.toolbar_button0 {
+    background: #ff9a00;
+}
+
+.toolbar_button1 {
+    background: #0090ff;
+}
+
+.toolbar_button2 {
+    background: #21c407;
+}
+
+.toolbar_button3 {
+    background: #ffc907;
+}
+
+.toolbar .buttons .toolbar_button0_icon {
+    padding-left: 28px;
+    background-repeat: no-repeat;
+    background-position: 6px center;;
+}
+
+#moreComponents {
+    height: 40px;
+    overflow: hidden;
+    color: #727272;
+    padding-left: 50px;
+}
+
+#moreComponents input {
+    width: 110px;
+    height: 22px;
+    padding: 0;
+    margin-left: 2px;
+    border: 1px solid #ebebeb;
+    color: #727272;
+    background: #f8f8f8;
+}
+
+#moreComponents input.cyan-form-field-date {
+    width: 75px;
+}
+
+#moreComponents select {
+    height: 22px;
+    padding: 0;
+    margin-left: 2px;
+    border: 1px solid #ebebeb;
+    color: #727272;
+    background: #f8f8f8;
+}
+
+.crud-button-edit {
+    width: 100%;
+    height: 20px;
+    background: url("icons/edit.gif") no-repeat center;
+    cursor: pointer;
+}
+
+.crud-button-copy {
+    width: 100%;
+    height: 20px;
+    background: url("icons/copy.gif") no-repeat center;
+    cursor: pointer;
+}
+
+#dialogBody {
+    margin-bottom: 70px;
+    overflow: hidden;
+    background: #fafafa;
+    color: #666;
+}
+
+#dialogBody #main.single {
+    width: 390px;
+    overflow-x: hidden;
+}
+
+#dialogBody #main.double {
+    width: 780px;
+}
+
+#dialogBody #components.double {
+    width: 780px;
+}
+
+#dialogBody #components {
+    clear: both;
+    width: 390px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#dialogBody #components input {
+    border: 1px solid #a9a9a9;
+    padding: 0;
+    height: 20px;
+    vertical-align: top;
+    margin-top: 0;
+}
+
+#dialogBody #components input[type=file], #dialogBody #components input.checkbox,
+#dialogBody #components input.radio, #dialogBody #components input[type=checkbox],
+#dialogBody #components input[type=radio] {
+    border: 0;
+}
+
+#dialogBody #components select {
+    height: 20px;
+}
+
+#dialogBody #components textarea {
+    border: 1px solid #a9a9a9;
+}
+
+#dialogBody #components .component_line {
+    clear: both;
+}
+
+#dialogBody #components .component_item .label {
+    padding-top: 3px;
+    margin-bottom: 6px;
+    float: left;
+    width: 80px;
+    line-height: 19px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#dialogBody #components .component_item .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 300px;
+}
+
+#dialogBody #components .component_item input {
+    width: 250px;
+}
+
+#dialogBody #components .component_item input.checkbox {
+    margin-top: 3px;
+    width: 14px;
+    height: 14px;
+    vertical-align: bottom;
+}
+
+#dialogBody #components .component_item input[type=radio] {
+    margin-top: 3px;
+    width: 14px;
+    height: 14px;
+    vertical-align: bottom;
+}
+
+#dialogBody #components .component_item input.radio {
+    margin-top: 3px;
+    width: 14px;
+    height: 14px;
+}
+
+#dialogBody #components .component_item input[type=checkbox] {
+    margin-top: 3px;
+    width: 14px;
+    height: 14px;
+}
+
+#dialogBody #components .component_item input.between {
+    width: 115px;
+}
+
+.checkbox span label {
+    padding-left: 3px;
+    padding-right: 15px;
+}
+
+.radio span label {
+    padding-left: 3px;
+    padding-right: 15px;
+}
+
+#dialogBody #components .component_item textarea {
+    width: 250px;
+    height: 100px;
+}
+
+#dialogBody #components .component_item select {
+    width: 250px;
+}
+
+#dialogBody #components .component_item .component_with_unit {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 210px;
+}
+
+#dialogBody #components .component_item .component_with_unit input {
+    width: 200px;
+}
+
+#dialogBody #components .component_item .unit {
+    padding-top: 3px;
+    margin-bottom: 6px;
+    float: left;
+    width: 90px;
+    line-height: 19px;
+    text-align: left;
+}
+
+#dialogBody #components .component_item .component_double {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 690px;
+}
+
+#dialogBody #components .component_item .component_double input {
+    width: 640px;
+}
+
+#dialogBody #components .component_item .component_double textarea {
+    width: 640px;
+    height: 100px;
+}
+
+#dialogBody #components .component_item .component_double select {
+    width: 640px;
+}
+
+#dialogBody #components .component_item .component_double_with_unit {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 600px;
+}
+
+#dialogBody #components .component_item .component_double_with_unit input {
+    width: 595px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    margin-top: 8px;
+    width: 386px;
+}
+
+#dialogBody #buttons.double {
+    width: 780px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 8px;
+}
+
+span.require {
+    color: red;
+}
+
+table.sublist {
+    margin-left: 10px;
+    border-spacing: 0;
+    *border-spacing: expression(this.cellSpacing='0');
+}
+
+table.sublist th {
+    background-color: #efe2e6;
+    height: 25px;
+    padding-left: 6px;
+}
+
+table.sublist td {
+    height: 25px;
+    padding-left: 6px;
+    border-bottom: 1px #efe2e6 solid;
+}
+
+table.sublist span.add {
+    float: left;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-image: url("/platform/commons/icons/add.gif");
+}
+
+table.sublist span.up {
+    float: left;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-image: url("/platform/commons/icons/up.gif");
+}
+
+table.sublist span.down {
+    float: left;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-image: url("/platform/commons/icons/down.gif");
+}
+
+table.sublist span.remove {
+    float: left;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-image: url("/platform/commons/icons/delete.gif");
+}
+
+table.sublist span.edit {
+    float: left;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-image: url("/platform/commons/icons/edit.gif");
+}
+
+table.sublist th.add, table.sublist td.add {
+    width: 30px;
+}
+
+table.sublist th.up, table.sublist th.down, table.sublist th.remove, table.sublist th.edit,
+table.sublist td.up, table.sublist td.down, table.sublist td.remove, table.sublist td.edit {
+    width: 30px;
+}
+
+input.search {
+    background: white url("/platform/commons/icons/search.gif") right no-repeat;
+    border: 1px solid gray;
+    height: 22px;
+    vertical-align: text-bottom;
+}
+
+input.search::-ms-clear {
+    display: none;
+}
+
+input.search::-webkit-search-cancel-button {
+    display: none;
+}
+
+#left_search {
+    padding: 1px;
+}
+
+#main_left_search input {
+    border: 1px solid gray;
+    width: 165px;
+    margin-left: 3px;
+    height: 18px;
+    margin-bottom: 3px;
+    vertical-align: text-bottom;
+}
+
+.main_left_collapsed {
+    float: left;
+    width: 20px;
+    height: 60px;
+    background: url("/platform/styles/icons/more_right.gif") no-repeat center;
+    cursor: pointer;
+}
+
+.main_left_expanded {
+    float: left;
+    width: 20px;
+    height: 60px;
+    background: url("/platform/styles/icons/more_left.gif") no-repeat center;
+    cursor: pointer;
+}
+
+.more_components_collapsed {
+    float: right;
+    width: 10px;
+    height: 60px;
+    margin-right: 3px;
+    background: url("/platform/styles/icons/more_down.gif") no-repeat center;
+    cursor: pointer;
+}
+
+.more_components_expanded {
+    float: right;
+    width: 10px;
+    height: 60px;
+    margin-right: 3px;
+    background: url("/platform/styles/icons/more_up.gif") no-repeat center;
+    cursor: pointer;
+}

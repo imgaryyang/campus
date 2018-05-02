@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>考勤中</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/TouchSlide.1.1.js"></script>
+    <script src="/safecampus/wx/attendance/attendance.js"></script>
+    <script src="/safecampus/js/jquery.js"></script>
+</head>
+
+<body>
+<div class="contont">
+    <ul class="sxzm">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+        <li>g</li>
+        <li>h</li>
+        <li>j</li>
+        <li>k</li>
+        <li>l</li>
+        <li>m</li>
+        <li>n</li>
+        <li>o</li>
+        <li>p</li>
+        <li>q</li>
+        <li>r</li>
+        <li>s</li>
+        <li>t</li>
+        <li>w</li>
+        <li>x</li>
+        <li>y</li>
+        <li>z</li>
+    </ul>
+    <header class="sosou">
+        <!--<div class="srk">搜索目的地/景点/酒店/关键字/航班号</div>-->
+        <!--<a href="#"></a>--></header>
+    <div class="ryxz" bind="stutMap.stuMap">
+        <div class="bqmc">${key}</div>
+        <div class="kqrxz">
+            <div class="kqmx">
+                <ul>
+                    <li bind="value"><a  id="${studentId}" data-status="0" class="xzxg notcheck"
+                                        onclick="gethover(${studentId})"></a><span><img
+                            src="/safecampus/wx/image/tx_03.png"></span>
+
+                        <h2>${studentName}</h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="qbxz">
+        <div class="qbxz_lt">
+            <h2><a id="allchecked" onclick="allChecked(this)" class="notcheck" data-status="0" ></a>
+
+                <p>全部选择</p>
+            </h2>
+            <h3>已选：<span id="hadchecked">0</span>/<span id="allcount">${stutMap.sizeAll}</span></h3>
+        </div>
+        <a href="#" class="qbxz_rt" onclick="sendMessage('${relationId}','${state}')">发送考勤通知</a>
+    </div>
+</div>
+</body>
+</html>

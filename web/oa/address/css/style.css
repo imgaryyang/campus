@@ -1,0 +1,52 @@
+*{ margin: 0; padding: 0; font-family: "Microsoft YaHei", "微软雅黑", "Segoe UI", Arial;}
+html{font-size: 10px; }
+@media (min-width:360px){
+	html{font-size:10px !important;}
+}
+@media (min-width:360px){
+	html{font-size:12px !important;}
+}
+@media (min-width:401px){
+	html{font-size:14px !important;}
+}
+@media (min-width:480px){
+	html{font-size:16px !important;}
+}
+@media (min-width:640px){
+	html{font-size:20px !important;}
+}
+
+body{height: 100%; color: #555;font-size: 10px;}
+.container{max-width: 750px;}
+.bg_img{background: url(/oa/address/area/zm/bg.png) center no-repeat; background-size: 100% 100%;}
+.bg_img img{margin: 0 auto; }
+.logo{padding-top: 1.2rem; padding-bottom:8rem ;width: 17.1rem; margin: 0 auto;}
+.logo img{height: 4.5rem; width: 17.1rem;}
+.container{padding: 0px;}
+header{position: relative;}
+.thumbnail{background: none; border: 0px; margin-top:-5rem ;  text-align: center; margin-bottom: 0;}
+.thumbnail .caption{padding: 0;}
+.thumbnail .caption h3{font-size: 1.5rem;margin-top: 1rem;}
+.thumbnail .caption h4{font-size: 1rem;color:#8a8a8a;margin-bottom:1.5rem ;}
+.thumbnail img{width: 8rem;  height:8rem;border-radius: 8rem; margin: 0.25rem;}
+.thumbnail .img-border{width: 8.6rem; height:8.6rem; margin: 0 auto; background: #fff;border-radius: 8.6rem; border:1px solid #f9f9f9}
+
+.row{padding: 0px; margin: 0;}
+.row .col-xs-12{padding: 0;}
+.user h3{width: 100%; border-top:1px solid #dcdcdc;background: #f2f4f6; 
+font-size: 1rem;color: #a4a6a8; line-height: 2.85rem; height: 2.85rem; padding-left:1rem ; margin: 0;}
+.user .user-cont{border-top:1px solid #dcdcdc; height:5rem;line-height: 5rem;}
+.user .user-cont .col-xs-4{display: table-cell;vertical-align: middle;}
+.user .user-cont img{float: left; margin-right: 0.56rem;width: 1.9rem; height: 1.9rem;     margin-top: 1.45rem;}
+.user .user-cont h4{float: left;color: #bcbcbc;font-size: 1.2rem; margin: 0;line-height: 5rem;}
+.user .user-cont span{color: #212121; font-size: 1.2rem;}
+.user .user-cont .address{line-height: 2.2rem;font-size: 1.2rem;}
+.user .user-cont .col-xs-8{padding-left: 0;}
+.user .user-cont button.right{float: right; height: 2rem; width: 4rem; line-height: 2rem;margin-top: 1.45rem;
+color:#3e3e3e;font-size: 1.2rem;border-radius: 0.5rem; border: 1px solid #ccc; background: #f8f8f8;}
+
+.h8{height: 7.5rem;}
+.footer_nav {background: #fff; width: 100%; max-width: 750px;}
+.footer_nav .navbar{width: 100%; background: #fff; padding-bottom: 1rem;max-width: 750px;margin: 0 auto;}
+.footer_nav button{width: 94%; margin: 0 auto; height: 4.5rem;line-height: 4.5rem;border:0px;
+border-radius: 0.5rem; background: #18ac16; color:#fff;text-align: center;font-size: 1.5rem; margin-left: 1rem;}

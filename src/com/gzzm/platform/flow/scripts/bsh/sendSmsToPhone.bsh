@@ -1,0 +1,4 @@
+sendSmsToPhone(String content, String phone)
+{
+   FlowFunctions.sendSmsToPhone(content,phone);
+}

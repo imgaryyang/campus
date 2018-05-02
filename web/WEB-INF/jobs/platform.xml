@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+
+    <!--生成操作日志的索引，用于操作日志查询-->
+    <!--<job single="true">-->
+        <!--<task type="com.gzzm.platform.log.LogIndexGenerator"/>-->
+        <!--<trigger type="simple" interval="1800000"/>-->
+    <!--</job>-->
+
+</schedule>

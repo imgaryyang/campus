@@ -1,0 +1,127 @@
+#dialogBody {
+    width: 450px;
+    margin-bottom: 30px;
+}
+
+#dialogBody #components {
+    clear: both;
+    width: 430px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#dialogBody #components .component_item {
+    clear: both;
+}
+
+#dialogBody #components .component_item .label {
+    padding-top: 3px;
+    margin-bottom: 6px;
+    float: left;
+    width: 90px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#dialogBody #components .component_item .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 330px;
+}
+
+#dialogBody #components .component_item input {
+    width: 310px;
+    height: 18px;
+}
+
+#dialogBody #components .component_item textarea {
+    width: 310px;
+    height: 60px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    margin-top: 8px;
+    width: 426px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#apps {
+    width: 420px;
+    clear: both;
+    padding-top: 10px;
+    margin-left: 8px;
+}
+
+#apps fieldset {
+    border: 1px solid #B5B8C8;
+    padding: 8px;
+    width: 405px;
+}
+
+#menuTree {
+    border: 1px solid #B5B8C8;
+    float: left;
+    margin-right: 6px;
+    width: 190px;
+    height: 250px;
+    background-color: white;
+    overflow-x: auto;
+}
+
+#app {
+    float: left;
+}
+
+#app fieldset {
+    border: 1px solid #B5B8C8;
+    width: 190px;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+#app fieldset .component {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#app fieldset input {
+    width: 183px;
+    height: 18px;
+}
+
+#app fieldset select {
+    width: 183px;
+    height: 22px;
+}
+
+#app fieldset input.checkbox {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+
+#app fieldset input.self {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#auths div {
+    margin-top: 6px;
+    float: left;
+    width: 95px;
+    height: 18px;
+}
+
+#auths div span {
+    margin-left: 5px;
+}

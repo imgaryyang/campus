@@ -1,0 +1,134 @@
+<html>
+<head>
+    <title>查看邮件-${mail.title}</title>
+    <script type="text/javascript" src="/oa/mail/util.js"></script>
+    <script type="text/javascript" src="/oa/mail/mail.js"></script>
+    <script type="text/javascript" src="/platform/attachment/attachment.js"></script>
+    <link type="text/css" rel="stylesheet" href="/oa/mail/mail.css"/>
+
+</head>
+<body>
+    <script type="text/javascript" name="catalogMenus" bind="catalogMenus"></script>
+    <script type="text/javascript" name="markMenus" bind="markMenus"></script>
+
+    <div id="pageBody" class="left">
+        <form id="form" action="" bind="mail">
+            <div id="buttons">
+                <span bind="type.toString()=='received'">
+                    <button type="button" onclick="window.reply(${mailId});" icon="/oa/mail/icons/reply.gif">回复</button>
+                </span>
+                <span bind="type.toString()=='received'">
+                    <button type="button" onclick="replyAll(${mailId});" icon="/oa/mail/icons/replyall.gif">回复全部
+                    </button>
+                </span>
+                <span bind="type.toString()=='received'">
+                    <button type="button" onclick="forward(${bodyId});" icon="/oa/mail/icons/forward.gif">转发</button>
+                </span>
+                <span bind="type.toString()=='sended'">
+                    <button type="button" onclick="resend(${bodyId});" icon="/oa/mail/icons/send.gif">再次发送</button>
+                </span>
+                <span bind="!deleted&&type.toString()!='draft'">
+                    <button type="button" menu="catalogMenus" icon="/platform/commons/icons/catalog.gif">归档到</button>
+                </span>
+                <span>
+                    <button type="button" menu="markMenus" icon="/oa/mail/icons/mark.gif">标记为</button>
+                </span>
+                <span bind="!deleted&&type.toString()!='draft'">
+                    <button type="button" onclick="markDeleted(${mailId});" icon="/oa/mail/icons/delete.gif">删除</button>
+                </span>
+                <span bind="deleted">
+                    <button type="button" onclick="restore(${mailId});" icon="/platform/commons/icons/restore.gif">还原
+                    </button>
+                </span>
+                <span bind="type.toString()!='draft'">
+                    <button type="button" onclick="remove(${mailId});" icon="/oa/mail/icons/remove.gif">彻底删除</button>
+                </span>
+                <span bind="type.toString()=='sended'">
+                    <button type="button" onclick="trace(${bodyId});" icon="/oa/mail/icons/trace.gif">跟踪</button>
+                </span>
+                <span bind="type.toString()=='sended'">
+                    <button type="button" onclick="showReplies(${bodyId});" icon="/oa/mail/icons/link.gif">查看回复</button>
+                </span>
+                 <span bind="attachment">
+                    <button type="button"
+                            onclick="System.AttachmentList.storeAllTo('${body.attachmentEncodedId}',null,'mail');"
+                            icon="/platform/commons/icons/save.gif">
+                        保存附件到资料中心
+                    </button>
+                </span>
+            </div>
+
+            <div id="mainBody">
+
+                <div id="mail">
+                    <div id="header">
+                        <div id="title">${title}</div>
+
+                        <div class="item" bind="type.toString()!='sended'">
+                            <div class="label">发件人 ：</div>
+                            <div class="value" bind="body.from" format="html" id="from"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="label">时　间 ：</div>
+                            <div class="value" bind="sendTime" format="yyyy年M月d日 HH:mm(E)"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="label">收件人 ：</div>
+                            <div class="value" bind="body.mailTo" format="html" id="to"></div>
+                        </div>
+
+                        <div class="item" bind="body.cc!=null&&body.cc.length()>0">
+                            <div class="label">抄　送 ：</div>
+                            <div class="value" bind="body.cc" format="html" id="cc"></div>
+                        </div>
+
+                        <div class="item" bind="type.toString()=='sended'&&body.sc!=null&&body.sc.length()>0">
+                            <div class="label">密　送 ：</div>
+                            <div class="value" bind="body.sc" format="html" id="sc"></div>
+                        </div>
+
+                        <div class="item" bind="attachment">
+                            <div class="label">附　件 ：</div>
+                            <div class="value">
+                                <span bind="body.attachments" class="attachment">
+                                    <img src="${iconPath}">
+                                    <a href="/attachment/${encodedId}/${attachmentNo}/${attachmentName}"
+                                       target="_blank">
+                                        ${attachmentName}
+                                    </a>
+                                </span>
+                                <span bind="body.attachments.size()>1" class="attachment">
+                                     <a href="/oa/mail/attachment/${mailId}" target="_blank">打包下载</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="content" bind="html" class="${type.toString()=='sended'?'sended':'received'}">
+                        ${body.content}
+                    </div>
+                    <div id="content" bind="!html" bind="body.content"
+                         class="${type.toString()=='sended'?'sended':'received'}">
+                    </div>
+
+                    <div id="replyDiv" bind="type.toString()!='sended'&&type.toString()!='draft'">
+                        <div class="label">快捷回复</div>
+                        <div class="content" id="reply_content">
+                            <textarea rows="" cols="" id="reply" name="reply"></textarea>
+                            <button type="button" onclick="replyQuickly();">发送</button>
+                        </div>
+                        <div class="result" id="reply_result">
+                            <span class="message">邮件发送成功</span>
+                            <span class="href">
+                                <a href="#" onclick="return displayReply();">再回一封邮件</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

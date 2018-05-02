@@ -1,0 +1,11 @@
+getIds(items)
+{
+   int n = items.size();
+   Integer[] ids = new Integer[n];
+   for(int i=0;i<n;i++)
+   {
+      ids[i]=items.get(i).getId();
+   }
+
+   return ids;
+}

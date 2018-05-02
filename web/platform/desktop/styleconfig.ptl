@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/platform/desktop/styleconfig.css">
+    <script type="text/javascript" src="/platform/desktop/styleconfig.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body>
+
+    <div id="mainBody">
+        <div id="container">
+            <div id="main">
+                <form id="form" action="">
+                    <div class="components">
+                        <div class="component_item">
+                            <div class="label">界面风格</div>
+                            <div class="component">
+                                <select name="style.stylePath" onchange="stylechange();">
+                                    <option value="">---------</option>
+                                    <option bind=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="component_item">
+                            <div class="label"></div>
+                            <div class="component">
+                                <img src="${style.stylePath.path+"/preview.jpg"}" alt="" id="preview">
+                            </div>
+                        </div>
+                        <div class="component_item">
+                            <div class="label">每页记录</div>
+                            <div class="component">
+                                <input name="style.pageSize" class="number">条 (0表示由系统统一配置)
+                            </div>
+                        </div>
+                        <div class="component_item">
+                            <div class="label">刷新列表</div>
+                            <div class="component">
+                                <select name="style.autoReload">
+                                    <option value="true">自动刷新列表</option>
+                                    <option value="false">不自动刷新列表</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="component_item" bind="com.gzzm.platform.login.UserOnlineInfo.class"
+                             bind="depts.size()>1">
+                            <div class="label">登录部门</div>
+                            <div class="component">
+                                <select name="defaultDept">
+                                    <option value="-1">登录时选择登录哪个部门</option>
+                                    <option bind="depts" value="deptId"
+                                            text="getAllName(1)"></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="component_item">
+                            <div class="label">正文打开方式</div>
+                            <div class="component">
+                                <select name="properties.od_show_text_with_modal">
+                                    <option value="">-------</option>
+                                    <option value="false">标签页</option>
+                                    <option value="true">模态对话框</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <span class="button">
+                            <button type="button" onclick="save();">保存</button>
+                        </span>
+                        <span class="button">
+                            <button type="button" onclick="System.closePage()">关闭</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

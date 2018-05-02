@@ -1,0 +1,30 @@
+.title_trunc {
+    float: left;
+    padding-left: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title_trunc_noread {
+    font-weight: bold;
+    width: 305px;
+}
+
+.title_trunc_readed {
+    width: 305px;
+}
+
+.title_trunc a {
+    text-decoration: none
+}
+
+.title_trunc a:hover {
+    text-decoration: underline
+}
+
+.time {
+    float: right;
+    color: gray;
+    margin-right: 15px;
+}

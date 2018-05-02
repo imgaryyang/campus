@@ -1,0 +1,38 @@
+.cyan-table-content.cyan-table-center button {
+    padding: 3px 8px;
+    border: none;
+    background-color: #169bd5;
+    color: white;
+    cursor: pointer;
+}
+
+.cyan-table-content.cyan-table-center .editCol {
+    background-color: #0cb43f;
+}
+
+.cyan-table-content.cyan-table-center .billCol {
+    background-color: #ff9a39;
+}
+
+div.cyan-table-content.cyan-table-center a {
+    text-decoration: none;
+    color: #000;
+}
+
+div.cyan-table-content.cyan-table-center a:hover {
+    text-decoration: none;
+    color: #169bd5;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.thisYear {
+    /*background-color: #35abff;*/
+    /*border: none;*/
+    border-radius: 3px;
+    color: blue;
+    text-decoration: underline !important;
+}

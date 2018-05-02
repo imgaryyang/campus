@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>文件共享</title>
+    <link type="text/css" rel="stylesheet" href="../css/share.css"/>
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery_update.js"></script>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="../js/cloudshare.js"></script>
+</head>
+
+<body id="dialogBody">
+<div id="main">
+    <form id="form" action="">
+        <div id="qxzwj" class="zwyp-ptwz" style="display: none">
+            <div id="errorCont"></div>
+        </div>
+
+        <div style="margin-left: 27px;margin-bottom: 10px;">
+            标题:
+            <input id="shareName" value="${shareName}" />
+            <input type="hidden" value="${shareId}" id="shareId"/>
+            <input type="hidden" value="${fileIds}" id="fileIds"/>
+            <input type="hidden" value="${folderIds}" id="folderIds"/>
+
+        </div>
+        <fieldset class="fild">
+            <legend>选择分享的对象</legend>
+            <div id="search">
+                <input class="search" name="word" id="word">
+            </div>
+
+            <div id="shares">
+                <div id="selector">
+                    <div bind="com.gzzm.platform.group.PageMemberSelector.class" id="shareSelector"
+                         name="members" types="user,dept" deptGroupDisplay="false" userGroupDisplay="false" app="">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="saveShare();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+        </div>
+    </form>
+</div>
+</body>
+</html>

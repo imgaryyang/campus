@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>招行一网通签约账户管理测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h3 class="text-center">
+                招行一网通签约账户管理测试
+            </h3>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-12 column table-responsive">
+                    <table class="table table-hover table-bordered  table-striped">
+                        <thead>
+                        <tr>
+                            <th>
+                                银行通知序号
+                            </th>
+                            <th>
+                                分行号
+                            </th>
+                            <th>
+                                商户号
+                            </th>
+                            <th>
+                                支付签约协议号
+                            </th>
+                            <th>
+                                协议开通流水号
+                            </th>
+                            <th>
+                                创建时间
+                            </th>
+                            <th>
+                                完成时间
+                            </th>
+                            <th>
+                                商户名称
+                            </th>
+                            <th>
+                                状态
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr  oql="select u from UserMerchantAccount u">
+
+                                <td>
+                                    ${noticeSerialNo}
+                                </td>
+                                <td>
+                                    ${branchNo}
+                                </td>
+                                <td>
+                                    ${merchantNo}
+                                </td>
+                                <td>
+                                    ${agrNo}
+                                </td>
+                                <td>
+                                    ${merchantSerialNo}
+                                </td>
+                                <td>
+                                    ${createTime}
+                                </td>
+                                <td>
+                                    ${signTime}
+                                </td>
+                                <td>
+                                    ${merchant.dept.deptName}
+                                </td>
+                                <td>
+                                    ${status}
+                                </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+

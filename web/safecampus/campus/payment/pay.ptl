@@ -1,0 +1,508 @@
+
+<%-- 测试页面 --%>
+
+
+<html>
+<head>
+    <title>新增缴费项目</title>
+    <!--<link type="text/css" rel="stylesheet" href="/safecampus/campus/payment/pay.css">-->
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+</head>
+<body>
+<div id="main">
+    <form id="form" action="">
+        <input type="text" name="entity.payItemId" id="payItemId" value="${payItem.payItemId}" hidden>
+
+        <div class="component_line">
+            <div class="component_item" id="paymentType">
+                <span class="label">缴费类型: </span>
+                <span class="component">
+                    <span>
+				<input type="radio" name="entity.paymentType" id="Tuition" value="0">
+				<label for="Tuition"> 学费</label></span>  <span>
+				<input type="radio" name="entity.paymentType" id="Host" value="1">
+				<label for="Host"> 托管费</label></span>  <span>
+				<input type="radio" name="entity.paymentType" id="SchoolBus" value="2">
+				<label for="SchoolBus"> 校巴费</label></span>
+			</span>
+            </div>
+        </div>
+
+        <div class="component_line">
+            <div class="component_item" id="payname">
+                <span class="label">项目名称: </span>
+                <input class="component" type="text" name="entity.payItemName" id="payItemName"
+                       value="${payItem.payItemName}"/>
+            </div>
+        </div>
+        <div class="component_line">
+            <div class="component_item">
+                <span class="label">项目编号: </span>
+                <input class="component" type="text" name="entity.serialNo" id="serialNo"
+                       value="${payItem.serialNo}"/>
+
+            </div>
+            <div class="component_item">
+                <span class="label">缴费金额(元): </span>
+                <input class="component" type="text" name="entity.money" id="money" value="${payItem.money}"/>
+            </div>
+        </div>
+        <div class="component_line">
+            <div class="component_item">
+                <span class="label">开始时间: </span>
+                <input class="component" type="text" name="entity.beginTime" id="beginTime"
+                       value="${payItem.beginTime}"/>
+            </div>
+            <div class="component_item">
+                <span class="label">截止时间: </span>
+                <input class="component" type="text" name="entity.deadline" id="deadline" value="${payItem.deadline}"/>
+            </div>
+        </div>
+        <div class="component_line">
+            <div class="component_item" id="description">
+                <span class="label">缴费说明: </span>
+
+                <textarea class="component" type="text" name="entity.desc" id="desc" value="${payItem.desc}"></textarea>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="choosestu">
+        <h3>选择学生</h3>
+        <div class="line"></div>
+    </div>
+
+
+    <div id="selectTuition" class="select">
+
+        <div class="chooseMsg">
+
+            <input type="checkbox" id="sendAll"/>
+            <label for="sendAll"> 全选</label>
+
+            <span id="chooseCount" class="chooseCount">
+					<span>已选择 </span>
+            <strong class="recent">0</strong>
+             <strong>/</strong>
+             <strong class="total">0</strong>
+            <span>人</span>
+				</span>
+        </div>
+
+        <div class="session" id="grades" data-type="grade">
+            <div class="block"><span>年级</span></div>
+            <ul></ul>
+        </div>
+        <div class="session" id="classes">
+            <div class="block"><span>班级</span></div>
+        </div>
+
+        <div class="session stuList" id="students">
+            <div class="block stuAutoHide">学生</div>
+        </div>
+
+
+    </div>
+
+    <div id="selectHost" class="select">
+
+        <div class="session" id="hostRoom">
+            <div class="block"><span>托管室</span></div>
+        </div>
+
+        <div class="session" id="hostStudents">
+            <div class="block stuAutoHide">学生</div>
+        </div>
+
+        <div class="session chooseMsg">
+            <div class="block"><input type="checkbox" id="sendAllHost"/>
+                <label for="sendAll"> 全选</label></div>
+            <div class="block choose">
+				<span id="hostChooseCount" class="chooseCount">
+					<span>已选择 </span><strong>0</strong><span>人</span>
+				</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="selectSchoolBus" class="select">
+
+        <div class="session" id="bus">
+            <div class="block"><span>校巴</span></div>
+        </div>
+
+        <div class="session" id="busStudents">
+            <div class="block stuAutoHide">学生</div>
+        </div>
+
+        <div class="session chooseMsg">
+            <div class="block"><input type="checkbox" id="sendAllBus"/>
+                <label for="sendAll"> 全选</label></div>
+            <div class="block choose">
+				<span id="busChooseCount" class="chooseCount">
+					<span>已选择 </span><strong>0</strong><span>人</span>
+				</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="selectButton">
+        <button id="back">返回</button>
+        <button id="save">保存</button>
+        <button id="send">推送</button>
+    </div>
+    <div id="subPageMask"></div>
+    <div id="subPage">
+
+        <div class="choosestu">
+            <h3>缴费项目明细</h3>
+            <span class="line"></span>
+        </div>
+        <div class="subBody" id="paymentMsg"></div>
+
+        <div class="choosestu ">
+            <h3>发送统计信息</h3>
+            <span class="line"></span>
+        </div>
+        <div class="subBody">
+            <div class="tableCount">
+                <table class="table">
+                    <tr>
+                        <th></th>
+                        <th>一年级</th>
+                        <th>二年级</th>
+                        <th>三年级</th>
+                    </tr>
+                    <tr>
+                        <th>一班</th>
+                        <td>50/50</td>
+                        <td>50/50</td>
+                        <td>50/50</td>
+                    </tr>
+                    <tr>
+                        <th>二班</th>
+                        <td>50/50</td>
+                        <td>50/50</td>
+                        <td>50/50</td>
+                    </tr>
+                    <tr>
+                        <th>三班</th>
+                        <td>50/50</td>
+                        <td>50/50</td>
+                        <td>50/50</td>
+                    </tr>
+                    <tr>
+                        <th>四班</th>
+                        <td>50/50</td>
+                        <td>50/50</td>
+                        <td>50/50</td>
+                    </tr>
+
+                    <tr class="total">
+                        <th>合计</th>
+                        <td colspan="3">50</td>
+
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <div class="selectButton">
+            <button id="subBack">返回</button>
+            <button>保存</button>
+            <button id="subSend">推送</button>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="/safecampus/js/jquery.js"></script>
+<script type="text/javascript" src="/safecampus/campus/payment/pay.js"></script>
+
+<script>
+    var isShow = "${show}";
+
+    //查看：选择单选框
+    var type = "${payItem.paymentType}";
+    var typeId = type[0].toUpperCase() + type.substring(1);
+    $("#" + typeId).attr("checked", "checked");
+
+    var List = "${payItem.stuList}";
+    $(document).ready(function () {
+        if (isShow != "") {
+            $(".choosestu").show();
+            // $("#tuition").attr("checked", "checked")
+            showTuition(List, isShow);
+            $("#main input[type='radio']").attr("disabled", "disabled")
+        }
+        if (isShow == "0") {
+            $("title").text("查看缴费项目");
+            $("#save").hide();
+            $("#main input[type='text'], #main textarea").attr("readonly", "readonly");
+            $("#main input[type='checkbox']").attr("disabled", "disabled")
+        } else {
+            $("title").text("修改缴费项目")
+        }
+    });
+
+    $("#paymentType .component span").click(function () {
+        if (isShow != "") {
+            alert("缴费类型不能修改")
+        }
+    })
+
+</script>
+
+<script>
+
+
+    $("#subBack").click(function () {
+        $("#subPageMask").hide(150);
+        $("#subPage").hide(150)
+    });
+    $("button#back").click(function () {
+        System.closePage();
+    });
+
+    $("button#save").click(function () {
+
+            save(function (d) {
+                console.log("save: " + d);
+                Cyan.message("保存成功");
+
+            })
+        }
+    );
+
+    function send(status, p) {
+        var id = "";
+        $("#paymentType input").each(function () {
+            if ($(this).prop("checked")) {
+                id = $(this).attr("id");
+            }
+        });
+        //[checked='checked']
+        var arr = [];
+        $("#select" + id).find(".stuList").find(".checkAll").each(function () {
+            arr.push($(this).val());
+        });
+
+        console.log("students=" + arr.join("&students="));
+        console.log($("#form").serialize().replace(/entity/gi, "payItem"));
+
+        $.post(
+            "/campus/pay/payItem/send/" + status,
+            {
+                "studentArray": arr.join("-")
+            },
+            function (result) {
+                console.log(result)
+            }
+        )
+        // sendStuList(arr,
+        //     $("#payItemId").val(),
+        //     $("#" + id).val(),
+        //     $("#payItemName").val(),
+        //     $("#serialNo").val(),
+        //     $("#money").val(),
+        //     $("#date").val(),
+        //     $("#deadline").val(),
+        //     $("#desc").val(),
+        //     status,
+        //     function (status) {
+        //         console.log(status);
+        //         if (p) {
+        //             p()
+        //         }
+        //     }
+        // )
+    }
+
+    $("button#send").click(function () {
+        $(".choosestu").show();
+        $(".select").hide();
+        showTuition();
+        if ($(this).hasClass("ready")) {
+            sendTo()
+        } else {
+            $(this).addClass("ready")
+        }
+    });
+
+    function sendTo() {
+
+
+        $("#subPageMask").show(200);
+        $("#subPage").show(200);
+
+        var id;
+        $("#paymentType input").each(function () {
+            if ($(this).prop("checked")) {
+                id = $(this).attr("id");
+            }
+        });
+        if ($("#paymentMsg").find(".item").length == 0) {
+            //单选框的名称
+            var name = $("#paymentType span").eq(0).text();
+            //单选框选中的值
+            var value = $("#" + id).next().text();
+            paymentMsg(name, value);
+
+            $("#form .component_item").each(function (index) {
+                if (index > 0) {
+                    var key = $(this).find(".label").text();
+                    var value = $(this).find(".component").val();
+                    paymentMsg(key, value);
+                }
+            })
+        }
+
+        function paymentMsg(key, value) {
+            var item = $("<div class='item'></div>");
+            var span_label = $("<span class='label'>" + key + "</span>");
+            var span_value = $("<span class='value'>" + value + "</span>");
+            item.append(span_label).append(span_value);
+            $("#paymentMsg").append(item);
+        }
+
+        //json
+        var session = $("#select" + id).find(".session").eq(0).find("ul");
+        que(session, 0);
+
+        var format = eval(json);
+
+        console.log(format);
+        var arr = [];
+        getJson(format, "", 0);
+        console.log(arr);
+
+        function getJson(f, fa, deep) {
+            for (var i = 0; i < f.length; i++) {
+                var name = f[i].node;
+                if (f[i].value != null) {
+                    if (f[i].all != null) {
+                        var all = f[i].all;
+                        var choose = f[i].choose;
+                        arr.push(fa + "-" + name + "-" + choose + "/" + all);
+                    } else {
+                        //console.log(name);
+                    }
+                    getJson(f[i].value, name, deep)
+                } else {
+                    var status = f[i].status
+                }
+                deep++;
+            }
+        }
+
+        function creatCell(obj, type) {
+
+            for (var i = 0; i < arr.length; i++) {
+                var value = arr[i].split("-");
+                var classes = value[0];
+                var grade = value[1];
+                var num = value[2];
+                $("<th>" + grade + "</th>");
+
+                var table = $(".tableCount table");
+                table.find("tr").eq(0).append()
+
+            }
+        }
+
+        $("#subSend").click(function () {
+            //推送
+            send(1, function () {
+                alert("发送成功");
+                System.closePage();
+            })
+        })
+    }
+
+
+    /**
+     * 递归遍历节点及其所包含的节点生成层级关系的 json 数组
+     * @param ele 父元素
+     * @param d 层次 level
+     */
+    var json = "";
+
+    function que(ele, d) {
+        d++;
+        var index_ = 0;
+        ele.find("div").each(function (index) {
+            index_ = index;
+            //节点名
+            var name = $(this).find("span").text();
+            //父节点继续遍历其子节点
+            if ($(this).data("node") != null && $(this).data("node").length > 3) {
+                var dataFather = $(this).data("node");
+
+                var children = $("#" + dataFather);
+                if (children.find("div").eq(0).data("node") == null) {
+                    var c = children.find("li").find(".checkAll").length;
+                    var a = children.find("li").find("input").length;
+                    json = json + "{'node':'" + name + "','all':'" + a + "','choose':'" + c + "','value':[";
+                } else {
+                    json = json + "{'node':'" + name + "','value':[";
+                }
+
+                que($("#" + dataFather), d)
+            } else {
+                //叶子节点
+                var status = $(this).find("input").prop("checked");
+                json = json + "{'node':'" + name + "','status':'" + status + "'},";
+            }
+        });
+        if (d != 1) {
+            json = json + "]},";
+        }
+        //从父节点开始的遍历完毕
+        if (index_ == ele.find("div").length - 1 && d == 1) {
+            json = ("[" + json + "]");
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
+
+<style>
+    .session > div {
+        display: none;
+    }
+
+    ul {
+        overflow: hidden;
+    }
+
+    #chooseCount {
+        margin-left: 30px;
+    }
+
+    .chooseMsg {
+        margin-bottom: 25px;
+        border: none;
+    }
+
+    #chooseCount .recent {
+        color: #0782C1;
+    }
+
+    .block:hover {
+        background-color: #ecf0fc;
+    }
+
+    .chooseBlock {
+        background-color: #ecf0fc;
+    }
+
+    #grades {
+        border-top: 1px #dddfff solid
+    }
+
+</style>

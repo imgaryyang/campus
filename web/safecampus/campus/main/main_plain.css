@@ -1,0 +1,115 @@
+@import "/platform/styles/plain/main.css";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    overflow: hidden;
+    font-family: "微软雅黑";
+}
+
+#top_top {
+    height: 28px;
+    line-height: 28px;
+    background: #f2f2f2;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+#top_top div {
+    float: left;
+}
+
+#userInfo {
+    margin-right: 30px;
+    color: #303030;
+}
+
+#userInfo span {
+    margin-left: 14px;
+}
+
+#top_top_right span {
+    margin-right: 12px;
+    padding-left: 18px;
+}
+
+#top_top_right a {
+    text-decoration: none;
+    color: #4074ba;
+}
+
+#lock_screen {
+    background: url("icons/lock.gif") no-repeat;
+}
+
+#change_dept {
+    background: url("icons/change_dept.gif") no-repeat;
+}
+
+#logout {
+    background: url("icons/logout.gif") no-repeat 0 1px;
+}
+
+#top_bottom {
+    height: 70px;
+    background: #3f74ba;
+    overflow: hidden;
+}
+
+#logo {
+    float: left;
+    margin-top: 9px;
+    margin-left: 20px;
+    width: 200px;
+    height: 57px;
+    background: url("icons/logo_plain.png") no-repeat;
+    cursor:pointer;
+}
+
+#placard {
+    float: left;
+    margin-left: 10px;
+}
+
+#placard_marquee {
+    width: 450px;
+    height: 30px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+#placard_content {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#shortcuts {
+    float: right;
+    margin-right: 65px;
+}
+
+.shortcut_icon {
+    position: relative;
+    float: left;
+    width: 52px;
+    height: 52px;
+    margin-top: 9px;
+    margin-left: 20px;
+    margin-right: 0;
+    cursor: pointer;
+}
+
+.shortcut_icon_flash {
+    position: relative;
+    float: left;
+    left: -2px;
+    right: -2px;
+    width: 52px;
+    height: 52px;
+    margin-top: 7px;
+    margin-left: 20px;
+    margin-right: 0;
+    cursor: pointer;
+}

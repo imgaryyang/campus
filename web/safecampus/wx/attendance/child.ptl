@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>孩子安全</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/TouchSlide.1.1.js"></script>
+    <script src="/safecampus/js/jquery.js"></script>
+    <script src="/safecampus/wx/attendance/attendance.js"></script>
+    <script src="/safecampus/wx/attendance/child.js"></script>
+    <!--<script src="/safecampus/wx/laydate/laydate.js"></script>-->
+    <script src="/safecampus/wx/attendance/datePicker.js"></script>
+    <style>
+        input[type=date]::-webkit-inner-spin-button{visibility: hidden}
+        /*input[type=date]::-webkit-calendar-picker-indicator{display: none;-webkit-appearance: none;}*/
+    </style>
+</head>
+
+<body>
+<div class="zkd" bind="student">
+    <div class="txkq3">
+        <input id="oncheck" type="hidden" value="${studentId}"/>
+        <div class="cmm_lt">
+            <dl class="jsmmz2" bind="student">
+                <dt><img src="/wx/centerpage/image/${studentId}"></dt>
+                <dd class="dd2">
+                    <div class="mc_sb">
+                    <p class="p1">${studentName}</p>
+
+                    <p class="p2 ${classes==null?'unshowclass':''}">${classes.grade}${classes}</p>
+                    </div>
+                    <div class="mc_xb">
+                    <p>${dept}</p>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <a bind="${students.size()>1}" class="qhhz" onclick="showStudentAttendance('${studentId}','${state}')">
+            <p>切换孩子</p>
+            <span><img src="/safecampus/wx/image/wxdtb_05.png"></span></a></div>
+
+
+    <div class="ryck ">
+        <!--class="dateInput ${dateStart==null?'unshowclass':''}"-->
+        <!--<input type="date" class="dateInput"  value="${dateStart} " onchange="queryMsg('${studentId}')" name="dateStart"-->
+               <!--id="dateStart"/>-->
+        <h2 class="childh2"><a class="childh2">
+
+        <p class="childa"><span><img src="/safecampus/wx/image/wxdtb_03.png"></span><input style="width: 88%" readonly="readonly"  placeholder="任意日期查看" type="text"  value="${dateStart.getTime()==0?'':dateStart}" id="dateStart"/></p>
+        </a></h2>
+    </div>
+
+
+    <div class="hzkqbj" bind="attMap">
+        <div class="tjls_bt"><p>${key}考勤情况
+        </p></div>
+        <div class="kq_bj">
+            <ul class="kqlb">
+                <li bind="value">
+                    <p class="p1"></p>
+                    <h2>${attName}</h2>
+                    <span>${arrivedTime}</span></li>
+                <li class="li1"><p class="p2 kqzt">${key}</p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div bind="${count==0}" class="txkq3">
+    <dl class="nochildstyle">
+        <dt><img src="/safecampus/wx/image/noattend.png" class="imgsize"></dt>
+        <dd class="mydd1">暂无考勤</dd>
+    </dl>
+</div>
+<div bind="${student==null}">
+    <dl class="nochildstyle">
+        <dt><img src="/safecampus/wx/image/noattend.png" class="imgsize"></dt>
+        <dd class="mydd1">您暂无关联的孩子</dd>
+    </dl>
+</div>
+<!--<script>-->
+    <!--laydate.render({-->
+    <!--elem: '#dateStart'-->
+    <!--,theme: 'molv'-->
+<!--});</script>-->
+</body>
+<!--<style>
+    input::-ms-input-placeholder{text-align: center;}
+    input::-webkit-input-placeholder{text-align: center;}
+</style>-->
+</html>

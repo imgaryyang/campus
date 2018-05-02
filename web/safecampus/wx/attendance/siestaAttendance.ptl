@@ -1,0 +1,158 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>校园考勤</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/js/jquery.js"></script>
+    <script src="/safecampus/wx/attendance/attendance.js"></script>
+    <script src="/safecampus/wx/attendance/siesta_attendance.js"></script>
+    <script src="/safecampus/wx/arttemplate/template-web.js"></script>
+    <script src="/safecampus/wx/arttemplate/json3.min.js"></script>
+    <style>
+        select {
+            /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+            border: solid 0px #000;
+            /*很关键：将默认的select选择框样式清除*/
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            margin-left: 21px;
+            width: 88px;
+            height: 100%;
+            background: #f9b126
+        }
+    </style>
+</head>
+
+<div id="selecttype" class="unshowclass" style="text-align: center">
+    <div class="aa" onclick="checkthis(this)" status="0" value="0">上午上车</div>
+    <div class="aa" onclick="checkthis(this)" status="0" value="1">上午下车</div>
+    <div class="aa" onclick="checkthis(this)" status="0" value="2">下午上车</div>
+    <div class="aa" onclick="checkthis(this)" status="0" value="3">下午下车</div>
+    <button onclick="startAtt(this,'${key}','${type.ordinal()}')">确定</button>
+    <button onclick="unshowdiv()">取消</button>
+</div>
+<div id="facetype" class="unshowclass" style="text-align: center">
+    <div class="aa" onclick="checkthis(this)" status="0" value="0">上午进校</div>
+    <div class="aa" onclick="checkthis(this)" status="0" value="1">中午出校</div>
+    <div class="aa" onclick="checkthis(this)" status="0" value="2">中午进校</div>
+    <div class="aa" onclick="checkthis(this)" status="0" value="3">下午出校</div>
+    <button onclick="startAtt(this,'${key}','${type.ordinal()}')">确定</button>
+    <button onclick="unshowdiv()">取消</button>
+</div>
+
+<body>
+<div id="full" class="unshowclass full"
+    >
+
+</div>
+<div class="bjkq" id="nav" type="${type.ordinal()}">
+    <ul>
+        <li><a href="/wx/attendance/classes" class="${type.ordinal()==0?'hover':''}">班级考勤</a></li>
+        <li><a href="/wx/attendance/busroute" class="${type.ordinal()==1?'hover':''}">校巴考勤</a></li>
+        <li><a href="/wx/attendance/face" class="${type.ordinal()==4?'hover':''}">校门考勤</a></li>
+        <li><a href="/wx/attendance/siesta" class="${type.ordinal()==2?'hover':''}">午休考勤</a></li>
+        <li><a href="/wx/attendance/trustee" class="${type.ordinal()==3?'hover':''}">托管考勤</a></li>
+
+    </ul>
+</div>
+<div class="bjkq2"></div>
+<div class="contont" id="bigdiv">
+    <div class="xzbj" id="tag " style="height: 35px">
+        <select id="roomsel">
+            <c bind="list">
+                <option value="${Id}" selected="${key!=null && key==Id}">${name}
+                </option>
+            </c>
+
+        </select>
+    </div>
+    <a class="ljkq" id="attend">开始考勤</a>
+
+    <div id="attendInfo">
+
+    </div>
+</div>
+
+<!--<input type="date" id="hisdate" onchange="queryHis(this,'{{key}}')"  class="dateselect {{historyStatus==1?'':'unshowclass'}}"/>-->
+<%--数据模板--%>
+<script id="attenItem" type="text/html">
+    {{if items}}
+    {{each items value index}}
+    <div class="tjls">
+        <div class="tjls_bt">
+            <p>{{value.date}}考勤情况</p>
+            <span onclick="showAttendanceDetail('{{value.aoId}}',0)"></span>
+        </div>
+        <div class="wfs">
+            <div class="wfs_lt">未发送出勤通知学生<span style="color: white">{{value.noSenedCount}}</span></div>
+            {{if !value.history}}
+            <div class="wfs_rt {{value.noSenedCount==0?'unshowclass':''}}"><a href="/wx/attendance/changestate?aoId={{value.aoId}}&finishState=1">更改状态</a></div>
+            {{/if}}
+        </div>
+        <div class="kqmx">
+            {{each value.unSendeStudents student i}}
+            <ul>
+                <li class="li1">
+                    <span><img src="/safecampus/wx/image/tx_03.png"></span>
+
+                    <h2>{{student.studentName}}</h2>
+                    {{each student.relations relation n}}
+                    <h3><a href="tel:{{relation.phone}}">联系家长</a></h3>
+                    {{/each}}
+                </li>
+            </ul>
+            {{/each}}
+        </div>
+        <div class="cdzh">
+            <ul>
+                <li>
+                    <p>迟到学生</p>
+
+                    <p class="p1">{{value.lateCount}}</p>
+                    <span></span></li>
+                <li>
+                    <p>请假学生</p>
+
+                    <p class="p2">{{value.leaveCount}}</p>
+                    <span></span></li>
+
+                <li >
+                    <p class="${type.ordinal()==0?'':'unshowclass'}">已到班学生</p>
+                    <p class="${type.ordinal()==1?'':'unshowclass'}">已签到学生</p>
+                    <p class="${type.ordinal()==2?'':'unshowclass'}">已午休学生</p>
+                    <p class="${type.ordinal()==3?'':'unshowclass'}">已托管学生</p>
+                    <p class="${type.ordinal()==4?'':'unshowclass'}">已签到学生</p>
+
+                    <p class="p3">{{value.arrivedCount}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {{/each }}
+    <div class="tjls2 " style="text-align: center;margin-bottom: 65px" onclick="allHistory('${type.ordinal()}')">
+        <span><span class="tipsty ${type.ordinal()==0?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换班级</span>
+            <span class="tipsty ${type.ordinal()==1?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换校巴</span>
+            <span class="tipsty ${type.ordinal()==2?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换午休室</span>
+            <span class="tipsty ${type.ordinal()==3?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换托管室</span>
+            <span class="tipsty ${type.ordinal()==4?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换班级</span></span>
+        <button class="ckkqls2 {{historyStatus==1?'unshowclass':''}}" >查看考勤历史</button>
+    </div>
+    {{else}}
+    <dl class="jtzwkq" onclick="unshow()" onclick="showTag()">
+        <dt><img src="/safecampus/wx/image/noattend.png" class="imgsize"></dt>
+        <dd class="dd1">今天暂无该考勤信息！</dd>
+        <dd><span class="tipsty ${type.ordinal()==0?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换班级</span>
+            <span class="tipsty ${type.ordinal()==1?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换校巴</span>
+            <span class="tipsty ${type.ordinal()==2?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换午休室</span>
+            <span class="tipsty ${type.ordinal()==3?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换托管室</span>
+            <span class="tipsty ${type.ordinal()==4?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换班级</span></dd>
+    </dl>
+    <div class="tjls2" onclick="allHistory('${type.ordinal()}')">
+        <button class="ckkqls ">查看考勤历史</button>
+    </div>
+    {{/if}}
+</script>
+</body>
+</html>

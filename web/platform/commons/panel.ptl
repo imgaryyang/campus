@@ -1,0 +1,39 @@
+${view.top}
+<html>
+<head>
+    <title bind="view.title"></title>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+</head>
+<body>
+
+    ${view.header}
+
+    <div id="pageBody">
+
+        <div bind="view.title" id="app_title"></div>
+        <div bind="view.remark" id="app_remark"></div>
+
+        <div id="components" bind="view.components!=null">
+            <span bind="view.components">
+                ${self.display()}
+            </span>
+        </div>
+        <div id="moreComponents" bind="view.moreComponents!=null">
+            <span bind="view.moreComponents">
+                ${self.display()}
+            </span>
+        </div>
+        <div id="buttons" bind="view.buttons!=null">
+            <span bind="view.buttons">
+                ${self.display()}
+            </span>
+        </div>
+
+        <div id="mainBody" bind="view">
+        </div>
+
+    </div>
+
+    ${view.bottom}
+</body>
+</html>

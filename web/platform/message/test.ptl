@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>消息测试</title>
+    <link type="text/css" rel="stylesheet" href="/platform/message/test.css">
+    <script type="text/javascript" src="/platform/message/test.js"></script>
+</head>
+<body>
+    <div id="pageBody">
+        <form id="form" action="">
+
+            <div id="mainBody">
+                <div id="message">
+
+                    <div class="item">
+                        <div class="label">
+                            内容
+                        </div>
+                        <div class="input content">
+                            <textarea id="content" name="content" class="content"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                            发送方式
+                        </div>
+                        <div class="input">
+                            <span class="checkbox" bind="allMethods">
+                                <input name="method" type="checkbox" value="${key}"><label>${value}</label>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <span class="button">
+                            <button type="button" onclick="send();">发送</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

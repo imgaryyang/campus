@@ -1,0 +1,89 @@
+<script type="text/javascript" src="/safecampus/campus/turtor/institution.js"></script>
+<script type="text/javascript" src="/platform/commons/htmleditor_ckeditor.js"></script>
+<script type="text/javascript" src=""></script>
+
+<div>
+    <div class="head" style="margin-top:5px;height: 200px">
+        <div class="img">
+            <img bind="isNew$()" id="imageId" src="/safecampus/campus/icons/organ.jpg"/>
+            <img bind="!isNew$()" id="imageId" src="/campus/tutorship/institution/${entity.institutionId}"/>
+        </div>
+        <div class="imgTip" id="upoladButton">点击上传图片</div>
+        <input name="entity.picture" type="file"
+               style="position:relative;left: 0px;bottom: 40px;filter:alpha(opacity=0);opacity:0;width:140px;height: 35px;"
+               id="t_file"
+               onchange="chooseFile();" hidefocus="true" onclick="this.blur();" accept="image/*">
+    </div>
+
+    <fieldset class="base">
+        <div class="components">
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">
+                        机构名称
+                    </div>
+                    <div class="component" style="width: 438px">
+                        <input require style="width: 410px" name="entity.institutionName">
+                    </div>
+                    <span class="require">*</span>
+                </div>
+            </div>
+
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">
+                        客服QQ
+                    </div>
+                    <div class="component">
+                        <input name="entity.qq">
+                    </div>
+                </div>
+                <div class="component_item">
+                    <div class="label">
+                        联系方式
+                    </div>
+                    <div class="component">
+                        <input require name="entity.phone">
+                    </div>
+                    <span class="require">*</span>
+                </div>
+            </div>
+
+
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">
+                        机构地址
+                    </div>
+                    <div class="component">
+                        <input style="width: 412px" name="entity.address"/>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">
+                        跳转地址
+                    </div>
+                    <div class="component"  style="width: 438px">
+                        <input require style="width: 412px" name="entity.url"/>
+                    </div>
+                    <span class="require">*</span>
+                </div>
+            </div>
+
+        </div>
+    </fieldset>
+</div>
+
+<div class="gs">
+    <div style="padding-bottom: 5px">机构介绍</div>
+    <div id="content_div" style="float: left;   height: 350px;width: 300px">
+        <div class="" id="conn">
+            <textarea id="con" name="entity.institutionDes" class="htmleditor"></textarea>
+        </div>
+    </div>
+</div>
+

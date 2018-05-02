@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 配置委托的功能模块 -->
+    <bean class="List[com.gzzm.platform.consignation.ConsignationModule]" factory="instance">
+        <element>
+            <type>send</type>
+            <name>发文</name>
+        </element>
+        <element>
+            <type>receive</type>
+            <name>收文</name>
+        </element>
+        <element>
+            <type>collect</type>
+            <name>会签公文</name>
+        </element>
+        <element>
+            <type>union</type>
+            <name>联合办文</name>
+        </element>
+        <element>
+            <type>inner</type>
+            <name>内部事务</name>
+        </element>
+        <!--<element>-->
+        <!--<type>approve</type>-->
+        <!--<name>审批</name>-->
+        <!--</element>-->
+    </bean>
+</config>

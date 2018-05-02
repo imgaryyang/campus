@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 配置业务类型 -->
+    <bean class="List[com.gzzm.platform.flow.FlowType]" factory="instance">
+        <element>
+            <type>approve</type>
+            <name>审批流程</name>
+        </element>
+        <element>
+            <type>parallel</type>
+            <name>并联审批</name>
+        </element>
+        <element>
+            <type>send</type>
+            <name>发文流程</name>
+        </element>
+        <element>
+            <type>receive</type>
+            <name>收文流程</name>
+        </element>
+        <element>
+            <type>union</type>
+            <name>联合办文</name>
+        </element>
+        <element>
+            <type>collect</type>
+            <name>会签流程</name>
+        </element>
+        <element>
+            <type>inner</type>
+            <name>内部流程</name>
+        </element>
+    </bean>
+</config>

@@ -1,0 +1,59 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#main {
+    width: 710px;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+table {
+    margin: 13px 10px 3px;
+    width: 680px;
+    border-spacing: 1px;
+    *border-spacing: expression(this.cellSpacing='1px');
+}
+
+table th {
+    text-align: center;
+    font-weight: bold;
+    height: 24px;
+    background: #ffffff;
+}
+
+table td {
+    text-align: center;
+    height: 24px;
+    background: #ffffff;
+}
+
+.depts {
+    width: 300px;
+}
+
+.name {
+    width: 120px;
+}
+
+.state {
+    width: 80px;
+}
+
+.time {
+    width: 180px;
+}
+
+.count {
+    width: 320px;
+    margin-top: 8px;
+    margin-bottom: 3px;
+    margin-right: 13px;
+    float: right;
+    text-align: right;
+}
+
+.count span {
+    margin-right: 5px;
+}

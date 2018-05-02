@@ -1,0 +1,63 @@
+#message {
+    width: 99%;
+    height: 450px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+#message .item {
+    clear: both;
+    width: 100%;
+    padding-top: 8px;
+}
+
+#message .item .label {
+    float: left;
+    width: 7%;
+    height: 21px;
+    text-align: right;
+}
+
+#message .item .label a {
+    color: blue;
+}
+
+#message .item .input {
+    width: 90%;
+    float: left;
+}
+
+#message span.checkbox {
+    margin-right: 15px;
+}
+
+#message span.checkbox input {
+    vertical-align: middle;
+    margin-right: 5px;
+    height: 14px;
+}
+
+#message .item div.content {
+    height: 350px;
+}
+
+textarea.content {
+    width: 97%;
+    height: 350px;
+}
+
+.buttons {
+    padding-top: 10px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+}
+
+.buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.input{
+    padding-left: 1%;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <!--一些基本的环境变量配置-->
+    <net.cyan.commons.ftpclient.FtpFileCaches>
+        <cachePath>/ftptemp</cachePath>
+        <cacheSize>200K</cacheSize>
+        <cacheCount>100</cacheCount>
+    </net.cyan.commons.ftpclient.FtpFileCaches>
+
+    <net.cyan.commons.ext.CompressUtils>
+        <charset>GBK</charset>
+    </net.cyan.commons.ext.CompressUtils>
+
+    <net.cyan.commons.util.compile.Compile>
+        <path>/classes</path>
+    </net.cyan.commons.util.compile.Compile>
+
+</config>

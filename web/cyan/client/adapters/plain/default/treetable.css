@@ -1,0 +1,158 @@
+.cyan-treetable {
+    overflow: hidden;
+    font-size: 13px;
+}
+
+.cyan-treetable-header {
+    width: 100%;
+}
+
+.cyan-treetable-header table {
+    position: relative;
+    left: 0;
+    top: 0;
+    border-top: #e2e2e2 solid 1px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-spacing: 0;
+    *border-spacing: expression(this.cellSpacing='0');
+}
+
+.cyan-treetable-header td {
+    height: 40px;
+    background: #ecf1f7;
+    border-bottom: #e2e2e2 solid 1px;
+    padding: 0;
+}
+
+.cyan-treetable-header-column {
+    border-right: #e2e2e2 solid 1px;
+}
+
+.cyan-treetable-header-column .cyan-table-content {
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+.cyan-treetable-content {
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+.cyan-treetable-wrap .cyan-treetable-content {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.cyan-treetable-left {
+    padding-left: 3px;
+    padding-right: 1px;
+}
+
+.cyan-treetable-right {
+    padding-left: 1px;
+    padding-right: 3px;
+}
+
+.cyan-treetable-center {
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.cyan-treetable-body {
+    width: 100%;
+    overflow: auto;
+}
+
+.cyan-treetable-body table {
+    border: 0;
+    border-spacing: 0;
+    *border-spacing: expression(this.cellSpacing='0');
+}
+
+.cyan-treetable-body tr:hover {
+    background: #eeeeee;
+}
+
+.cyan-treetable-body .cyan-treetable-node-selected tr {
+    background: #e3f9f5;
+}
+
+.cyan-treetable-body .cyan-treetable-node-selected tr:hover {
+    background: #e3f9f5;
+}
+
+.cyan-treetable-body td {
+    padding: 3px 0;
+    border-bottom: #e2e2e2 solid 1px;
+    height: 28px;
+}
+
+.cyan-treetable-cell {
+    border-right: #e2e2e2 solid 1px;
+}
+
+.cyan-treetable-cell .cyan-treetable-content {
+    line-height: 16px;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+}
+
+.cyan-treetable-content button {
+    padding: 2px;
+}
+
+.cyan-treetable-cell .cyan-treetable-left a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.cyan-treetable-cell .cyan-treetable-left a:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+.cyan-treetable-cell .cyan-treetable-center a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.cyan-treetable-cell .cyan-treetable-center a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.cyan-treetable-node-indent {
+    float: left;
+    width: 20px;
+    height: 18px;
+}
+
+.cyan-treetable-expander {
+    float: left;
+    width: 16px;
+    height: 18px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.cyan-treetable-expander-collapsed {
+    cursor: pointer;
+    background: url(treetable/arrows.gif) 0, 0;
+}
+
+.cyan-treetable-expander-collapsed:hover {
+    background: url(treetable/arrows.gif) -32px, 0;
+}
+
+.cyan-treetable-expander-expanded {
+    cursor: pointer;
+    background: url(treetable/arrows.gif) -16px, 0;
+}
+
+.cyan-treetable-expander-expanded:hover {
+    background: url(treetable/arrows.gif) -48px, 0;
+}

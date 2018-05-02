@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/platform/organ/role.css">
+    <script type="text/javascript" src="/platform/organ/role.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body id="dialogBody">
+
+    <form id="form" bind="entity" action="">
+        <div id="components">
+            <div class="component_item">
+                <div class="label">权限名称</div>
+                <div class="component">
+                    <input name="roleName">
+                </div>
+            </div>
+
+            <div class="component_item">
+                <div class="label">所属目录</div>
+                <div class="component">
+                    <input name="parentRoleId">
+                </div>
+            </div>
+
+            <div class="component_item">
+                <div class="label">权限说明</div>
+                <div class="component">
+                    <textarea name="remark" rows="" cols=""></textarea>
+                </div>
+            </div>
+
+            <div class="component_item">
+                <div class="label">可选择</div>
+                <div class="component">
+                    <input type="checkbox" name="selectable" class="checkbox" value="true">
+                </div>
+            </div>
+
+            <div class="component_item">
+                <div class="label">被子部门使用</div>
+                <div class="component">
+                    <input type="checkbox" name="inheritable" class="checkbox" value="true">
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+    <div id="apps">
+        <fieldset>
+            <legend>功能设置</legend>
+            <div bind="menuTree" id="menuTree" autoRender="true" checkboxName="appId" onselect="menuselect();"
+                 oncheck="menucheck(this);"></div>
+
+            <form id="appForm" action="">
+                <div id="app">
+                    <fieldset>
+                        <legend>数据范围</legend>
+
+                        <div class="component">
+                            <input name="scopeId">
+                        </div>
+
+                        <div>
+                            <input name="self" type="checkbox" class="self">只允许操作个人数据
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>操作</legend>
+                        <div id="auths"></div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>查询条件</legend>
+                        <div class="component">
+                            <input name="condition">
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <div id="buttons">
+           <span class="button">
+               <button type="button" onclick="save();">保存</button>
+           </span>
+         <span class="button">
+               <button type="button" onclick="closeWindow();">关闭</button>
+           </span>
+    </div>
+</body>
+</html>

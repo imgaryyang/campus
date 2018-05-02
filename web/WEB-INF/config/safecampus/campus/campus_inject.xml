@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inject>
+    <!--定义人脸识别的默认实现类-->
+    <bean class="com.gzzm.safecampus.campus.face.FaceService"
+          imp="com.gzzm.safecampus.campus.face.FaceServiceDefault" singlton="true"/>
+</inject>

@@ -1,0 +1,59 @@
+* {margin: 0;padding: 0;font-family: "Microsoft YaHei", "微软雅黑", "Segoe UI", Arial;}
+body {font-family: "Microsoft YaHei", "微软雅黑", "Segoe UI", Arial;color: #646464;font-size: 14px;line-height: 1.5em;min-width:1200px;width: 100%;height: 100%;background-color: #f8f8f8;}
+li {list-style: none;}
+div {display: block;
+}
+a {text-decoration: none;}
+img {border: none;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;font-size: 14px;}
+.clear {clear: both;}
+.box {border: solid 1px #e2e2e2;background: #FFF;margin: 20px 50px;min-width: 1100px;}
+.box_bt {height: 43px;border-bottom: solid 1px #e2e2e2;}
+.box_bt h2 {height: 42px;border-bottom: solid 2px #3f74ba;float: left;padding: 0 10px;font-size: 18px;color: #121212;line-height: 42px;margin-left: 15px; font-weight:bold;}
+.sctx{ height:auto; overflow:hidden;padding: auto;}
+.sctx dt{ height:280px; margin: auto;}
+.sctx dt div{ height:200px;width:150px; padding-right: 10px;}
+.sctx dt div div{ height:160px;width:140px; display:block; float: right;}
+.sctx dt div div img{ height:160px;width:140px; display:block; }
+.sctx_btn{width:140px !important; height:35px !important; line-height: 35px; padding-top: 5px;}
+.sctx dt div div button{ width:140px; height:35px; line-height: 30px; background:#3f74ba; border:none; color:#FFF; }
+.zdjj{ height:auto; overflow:hidden; padding:20px 50px 30px;}
+.srk_lb{width: 1000px;float: left;}
+.srk_lb td{ height:48px;width: 177px;}
+.srk_lb td.td2{ text-align:right; padding-right:4px;width: 110px;}
+.srk_lb td.td3{ width: 150px;}
+.restButton{float: left;margin-top: -12px;margin-left: 20px;}
+.restButton button{ width:114px; height:31px; background:#3f74ba; border:none; color:#FFF; margin-top:10px;cursor: pointer;}
+.bottomButton{ height:auto; overflow:hidden; padding:20px 50px 30px;text-align: center;}
+.bottomButton button{ width:114px; height:35px; background:#3f74ba; border:none; color:#FFF; margin-top:10px;margin-left: 20px;}
+.srk_lb td.td1{ width:72px;}
+.srk_lb td select{ width:96%; height:25px; border:solid 1px #dddddd;}
+.srk_lb td input{width: 96%; height:25px; border:solid 1px #dddddd;}
+.shh{ width:auto; overflow:hidden; float:left; height:auto;margin-left:10px;}
+.shh_lt{ width:auto; height:auto; overflow:hidden; text-align:right; padding-right:5px; float:left;}
+.shh_lt2{ padding-left:20px;}
+.shh_rt{ width:auto; height:auto; overflow:hidden; float:left;}
+.shh_rt input{ width:222px; height:26px; border:solid 1px #dddddd;}
+.shh span{ display:block; width:14px; height:14px; float:left; padding-right:5px;}
+.shh span.sp2{ padding-left:30px;}
+.shh span input{ margin-top:5px;}
+.zdjj2{ height:auto; overflow:hidden; padding-bottom:10px;}
+.serviceType{font-size: 20px;color: #23ac38;padding-bottom: 10px;padding-left: 10px; background: url(../image/title_bg.png) no-repeat left 4px}
+.red{color:red;margin-left:3px;float: left;}
+.marleft{margin-left:-8px;}
+.tInput{float: left; width: 166px; }
+.bcfh{ height:auto; overflow:hidden; width:200px; margin:0 auto 40px;}
+.bcfh button{ cursor:pointer;width:90px; height:35px; background:#568ed8; color:#FFF; border-radius:5px; border:none; float:left;}
+.bcfh .btn2{ background:#36aecc; margin-left:20px;}
+.srk_lb td textarea{width:744px; height:144px; overflow:hidden; color:#121212; line-height:20px;border:solid 1px #dddddd; }
+.fileInput{cursor:pointer;position:relative;bottom: 35px;filter:alpha(opacity=0);opacity:0;width:140px !important;height: 35px !important;;}
+
+
+.long1 input,
+.long input{
+    width: 300px;
+}
+
+.long{
+    margin-top: -30px;
+}

@@ -1,0 +1,21 @@
+#dialogBody {
+    margin-bottom: 10px;
+}
+
+#content {
+    width: 370px;
+}
+
+textarea {
+    width: 350px;
+    height: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    overflow-y: auto;
+    line-height: 16px;
+}
+
+#bottons {
+    width: 380px;
+}

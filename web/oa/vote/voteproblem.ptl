@@ -1,0 +1,132 @@
+<html>
+<head>
+    <title bind="new$">新增问题</title>
+    <title bind="!new$">修改问题</title>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/oa/vote/voteproblem.js"></script>
+    <link type="text/css" rel="stylesheet" href="/oa/vote/voteproblem.css">
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" bind="entity" action="">
+            <div id="tabs" class="tab">
+                <div class="tabPage" legend="基本信息">
+                    <div id="components">
+                        <div class="component_line">
+                            <div class="component_item">
+                                <div class="label">问题</div>
+                                <div class="component">
+                                    <input name="problemName">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="component_line">
+                            <div class="component_item">
+                                <div class="label">类型</div>
+                                <div class="component">
+                                    <select name="dataType">
+                                        <option bind=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component_line">
+                            <div class="component_item">
+                                <div class="label">必填</div>
+                                <div class="component">
+                                    <select name="required">
+                                        <option bind=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component_line">
+                            <div class="component_item">
+                                <div class="label">最小值</div>
+                                <div class="component">
+                                    <input name="minval">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component_line">
+                            <div class="component_item">
+                                <div class="label">最大值</div>
+                                <div class="component">
+                                    <input name="maxval">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component_line">
+                            <div class="component_item">
+                                <div class="label">至少选择</div>
+                                <div class="component">
+                                    <input name="minCount" class="number" showErrorTo="minCountSpan" showName="">
+                                    <span id='minCountSpan'>项</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component_line">
+                            <div class="component_item">
+                                <div class="label">最多选择</div>
+                                <div class="component">
+                                    <input name="maxCount" class="number" showErrorTo="maxCountSpan" showName="">
+                                    <span id='maxCountSpan'>项</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component_line">
+                            <div class="component_item">
+                                <div class="label">允许填其他意见</div>
+                                <div class="component">
+                                    <input type="checkbox" name="other" value="true" class="checkbox">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="component_line">
+                            <div class="component_item">
+                                <div class="label">排序方式</div>
+                                <div class="component">
+                                    <select name="orderType">
+                                        <option bind=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="component_line" bind="groups.size()>0">
+                            <div class="component_item">
+                                <div class="label">所属分组</div>
+                                <div class="component">
+                                    <select name="groupId">
+                                        <option value=""></option>
+                                        <option bind=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="options" class="tabPage normalPage" legend="答案选项">
+                    <div class="components">
+                        <div id="properties" bind="com.gzzm.oa.vote.VoteOptionCrud.class"
+                             bind="view"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="save();">保存</button>
+            </span>
+            <span class="button">
+                <button type="button" onclick="closeWindow();">关闭</button>
+            </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

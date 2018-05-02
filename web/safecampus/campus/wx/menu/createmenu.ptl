@@ -1,0 +1,57 @@
+<html>
+<head>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/platform/commons/simpledialog.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/safecampus/campus/wx/menu/createmenu.js"></script>
+</head>
+<body id="dialogBody">
+
+<div id="main" class="single">
+    <form id="form">
+
+        <input name="keys" type="hidden"/>
+        <div id="components">
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">
+                        <span>appId</span>
+                    </div>
+                    <div class="component">
+                        <input name="appId" require>
+                    </div>
+
+                </div>
+            </div>
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">
+                        <span>appSecret</span>
+                    </div>
+                    <div class="component">
+                        <input name="appSecret" require>
+                    </div>
+                </div>
+            </div>
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">
+                        <span>domain</span>
+                    </div>
+                    <div class="component">
+                        <input name="domain" require>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="buttons">
+            <span class="button">
+                <button id="btn_save" onclick="createMenu()" type="button">生成菜单</button>
+            </span><span class="button">
+            <button id="btn_close" onclick="closeWindow()" type="button">关闭</button>
+            </span>
+        </div>
+    </form>
+</div>
+</body>
+</html>

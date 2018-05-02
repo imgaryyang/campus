@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /safecampus-1.1-SNAPSHOT.war
+    destination: /home/ccoe-user/safecampus
+hooks:
+  BeforeInstall:
+    - location: scripts/backup.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server.sh
+      timeout: 300
+      runas: root

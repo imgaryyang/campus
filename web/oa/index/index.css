@@ -1,0 +1,100 @@
+html, body {
+    background-color: #103d51;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+* {
+    font-size: 12px;
+    font-family: '宋体';
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#center {
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 651px;
+    height: 141px;
+    background: url(/oa/index/loginbg.jpg) no-repeat;
+    text-align: left;
+    padding-left: 350px;
+    padding-top: 190px;
+    box-sizing: content-box;
+}
+
+#components {
+    height: 180px;
+    width: 300px;
+}
+
+.item {
+    clear: both;
+    width: 300px;
+    height: 29px;
+}
+
+.label {
+    float: left;
+    padding-top: 3px;
+    height: 26px;
+}
+
+.input {
+    float: left;
+    width: 140px;
+    height: 29px;
+}
+
+input {
+    width: 130px;
+    height: 18px;
+}
+
+.image {
+    float: left;
+    height: 29px;
+    width: 40px;
+}
+
+img {
+    cursor: pointer;
+    height: 21px;
+}
+
+#buttons {
+    padding-top: 5px;
+}
+
+#login_button {
+    height: 24px;
+    width: 59px;
+    background: url(/oa/index/br1.gif);
+    cursor: pointer;
+    border: 0;
+    margin-left: 30px;
+}
+
+#reset_button {
+    height: 24px;
+    width: 59px;
+    background: url(/oa/index/br2.gif);
+    cursor: pointer;
+    border: 0;
+    margin-left: 10px;
+}
+
+div.x-form-invalid-msg {
+    font-weight: bold;
+    color: #E90000;
+    font-size: 12px;
+    font-family: '宋体';
+}

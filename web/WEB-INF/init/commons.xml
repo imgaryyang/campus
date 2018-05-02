@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+
+    <classResolver type="com.gzzm.platform.commons.event.ListenerResolver"/>
+
+    <classResolver type="com.gzzm.platform.flow.FlowComponentResolver"/>
+
+    <!--同步表结构-->
+    <afterLoad type="com.gzzm.platform.commons.TableSynchronizer"/>
+
+    <!--初始化系统数据-->
+    <afterLoad type="com.gzzm.platform.commons.SysDataInit"/>
+
+    <!--系统全局初始化-->
+    <afterLoad type="com.gzzm.platform.commons.GlobalInit"/>
+
+</system>

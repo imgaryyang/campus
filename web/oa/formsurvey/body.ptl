@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>${survey.surveyName}</title>
+    <script type="text/javascript" src="/cyan/client/valmiki/valmiki.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/buttons.js"></script>
+    <script type="text/javascript" src="/platform/form/form.js"></script>
+    <script type="text/javascript" src="/oa/formsurvey/body.js"></script>
+    <script type="text/javascript" src="${survey.jsPath}"></script>
+
+    <link type="text/css" rel="stylesheet" href="/platform/form/form.css">
+</head>
+<body>
+    <form>
+        <div id="top">
+            <div class="buttons">
+                <span>
+                    <button class="btn" type="button" onclick="save();">保存</button>
+                </span>
+                <span>
+                    <button class="btn" type="button" onclick="printForm();">打印</button>
+                </span>
+                <span bind="record.state.name()=='NOSUBMITED'||record.state.name()=='NOPASSED'">
+                    <button class="btn" type="button" onclick="setState('SUBMITED');">提交</button>
+                </span>
+                <span bind="audit&&(record.state.name()=='SUBMITED')">
+                    <button class="btn" type="button" onclick="setState('PASSED');">审核通过</button>
+                </span>
+                <span bind="audit&&(record.state.name()=='SUBMITED')">
+                    <button class="btn" type="button" onclick="setState('NOPASSED');">审核不通过</button>
+                </span>
+                <span bind="audit&&(record.state.name()=='PASSED')">
+                    <button class="btn" type="button" onclick="setState('SUBMITED');">取消审核</button>
+                </span>
+                <span>
+                    <button class="btn" type="button" onclick="exit();">退出</button>
+                </span>
+            </div>
+        </div>
+        <div id="container">
+            <div id="pages">
+                <div class="page" bind="pageItems" title="${title}">
+                    <div bind="self.execute()"></div>
+                </div>
+            </div>
+
+            <div id="bottom"></div>
+        </div>
+
+    </form>
+    <script>
+        $.onload(function ()
+        {
+            ${javascripts}
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!--招行一网通相关配置-->
+    <bean class="com.gzzm.safecampus.pay.cmb.CmbConfig" factory="instance">
+
+        <!--域名-->
+        <serverName>http://http://gzin.cmburl.cn</serverName>
+        <!--服务端URL-->
+        <server>http://54.223.49.31</server>
+
+        <host>http://121.15.180.66:801/</host>
+
+        <!--查询公钥URL-->
+        <publicKeyUrl>http://121.15.180.72/CmbBank_B2B/UI/NetPay/DoBusiness.ashx</publicKeyUrl>
+
+        <!--签约支付URL-->
+        <payAndSignUrl>http://121.15.180.66:801/NetPayment/BaseHttp.dll?MB_EUserPay</payAndSignUrl>
+
+        <!--按商户日期查询订单URL-->
+        <queryOrderByMerchantDateUrl>http://121.15.180.66:801/NetPayment_dl/BaseHttp.dll?QuerySettledOrderByMerchantDate</queryOrderByMerchantDateUrl>
+
+        <!--查询商户入账明细URL-->
+        <queryAccountListUrl>http://121.15.180.66:801/NetPayment_dl/BaseHttp.dll?QueryAccountList</queryAccountListUrl>
+
+        <!--查询单笔订单URL-->
+        <querySigleOrderUrl>http://121.15.180.66:801/NetPayment_dl/BaseHttp.dll?QuerySingleOrder</querySigleOrderUrl>
+
+        <!--退款URL-->
+        <refundUrl>http://121.15.180.66:801/NetPayment_dl/BaseHttp.dll?DoRefund</refundUrl>
+
+        <!--一网通账户输出(我的钱包)URL-->
+        <accountOutputUrl>http://mobiletest.cmbuat.com/HtmlBankUAT/Outreach/MHtmlGateway/JumpGateway.aspx</accountOutputUrl>
+
+        <bindCardUrl>http://121.15.180.66:801/mobilehtml/DebitCard/M_NetPay/OneNetRegister/NP_BindCard.aspx</bindCardUrl>
+
+        <!--一网通账户开户URL-->
+        <openAccountUrl>http://mobiletest.cmbuat.com/HtmlBankUAT/IFinancial/Gaincustomer/NoHookPrdPage/NH_Entry.aspx?CorperationCode=</openAccountUrl>
+
+        <!--编码-->
+        <chartset>UTF-8</chartset>
+
+        <!--一网通账户输出固定参数-->
+        <funcid>6021062</funcid>
+
+        <!--商户秘钥-->
+        <screctKey>666666aaaaAAAAAA</screctKey>
+
+        <!--项目合作编码-->
+        <copCode>M12345678901234567890123456789</copCode>
+
+        <!--商户号-->
+        <merchantNo>010030</merchantNo>
+
+        <!--分行号-->
+        <branchNo>0020</branchNo>
+
+    </bean>
+</config>

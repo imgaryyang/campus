@@ -1,0 +1,4 @@
+seconds(Date date)
+{
+   return DateUtils.getSecond(date);
+}

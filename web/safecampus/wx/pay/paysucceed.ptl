@@ -1,0 +1,25 @@
+
+<html action="false">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"  content="width=device-width,user-scalable=no">
+<title>缴费成功</title>
+<link href="../css/stlye.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div class="jfcg">
+  <dl class="kqwc">
+    <dt><img src="../image/cg.png"></dt>
+    <dd class="dd2"> &nbsp;缴费成功!</dd>
+     <dd class="dd3">${bill.payItem.payItemName}
+</dd>
+  </dl>
+    <div class="jxkq">
+      <button class="hover" onclick="window.location.href='/wx/pay/allbills'">我的账单</button>
+      <button class="btn2" onclick="window.location.href='/wx/pay/wanttopay'">返回首页</button></div>
+  </div>
+
+</body>
+</html>

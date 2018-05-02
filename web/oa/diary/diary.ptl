@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/oa/diary/diary.css"/>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" action="">
+            <div class="components">
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">
+                            标题
+                        </div>
+                        <div class="component" style="width:550px;">
+                            <input name="entity.title" style="width:550px;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="components">
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">日志时间</div>
+                        <div class="date">
+                            <input name="entity.diaryTime" type="date"/>
+                        </div>
+                    </div>
+
+                    <div class="component_item">
+                        <div class="label">
+                            工作量
+                        </div>
+                        <div class="component" style="width:180px;">
+                            <input name="entity.amount" style="width:180px;"/>
+                        </div>
+                        <div class="label">(人小时)</div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="components">
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label" style="margin-top:3px;">
+                            日志内容
+                        </div>
+                        <div class="diary">
+                            <textarea name="entity.content" cols="89" rows="27"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="save();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

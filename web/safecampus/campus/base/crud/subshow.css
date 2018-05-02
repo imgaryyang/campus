@@ -1,0 +1,95 @@
+#dialogBody #components .component_item input {
+    height: 21px;
+    width: 200px;
+}
+
+#dialogBody #components {
+    width: 100%;
+}
+
+#dialogBody #components .component_item .label {
+    color: #262626;
+}
+
+#dialogBody #buttons .button #btn_save,
+#dialogBody #buttons .button #btn_close {
+    align-items: flex-start;
+    background-color: rgb(221, 221, 221);
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    cursor: default;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 13.3333px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    height: 29px;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    overflow-x: visible;
+    overflow-y: visible;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    text-align: center;
+    text-indent: 0px;
+    text-rendering: auto;
+    text-shadow: none;
+    text-transform: none;
+    width: 46px;
+    word-spacing: 0px;
+    writing-mode: horizontal-tb;
+    -webkit-appearance: button;
+    -webkit-border-image: none;
+    border: 1px solid #ababab;
+}
+
+#buttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+#dialogBody {
+    min-height: 150px;
+    width: 430px;
+    height: auto;
+    margin-bottom: 0;
+}
+
+#dialogBody #buttons {
+    margin-top: 15px;
+    width: 100%;
+}
+
+#dialogBody #components .component_item .component {
+    margin-bottom: 10px;
+
+}
+#dialogBody #components .component_item .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+     width: 220px;
+}
+#dialogBody #main.single {
+    width: 100%;
+    overflow-x: hidden;
+}
+#dialogBody #components .component_line {
+    padding-left: 40px;
+}
+
+#buttons button {
+    overflow: visible;
+    padding: 0;
+}

@@ -1,0 +1,9 @@
+getDeptAttribute(Integer deptId,String attributeName,String defaultValue)
+{
+   return FlowFunctions.getDeptAttribute(deptId,attributeName,defaultValue);
+}
+
+getDeptAttribute(Integer deptId,String attributeName)
+{
+   return getDeptAttribute(deptId,attributeName,null);
+}

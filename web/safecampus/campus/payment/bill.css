@@ -1,0 +1,84 @@
+body {
+    overflow-x: hidden;
+}
+
+#word {
+    width: 100%;
+    height: 550px;
+}
+
+form {
+    margin: 0;
+}
+
+#buttons {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#buttons button {
+    margin-left: 10px;
+}
+
+#container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+    overflow: hidden;
+}
+
+fieldset {
+    border: 1px solid #B5B8C8;
+    z-index: 550;
+    margin: 10px;
+}
+
+#components {
+    clear: both;
+    padding: 8px;
+}
+
+#components .component_line {
+    clear: both;
+    height: 24px;
+}
+
+#components .component_item .label {
+    margin-bottom: 6px;
+    float: left;
+    width: 10%;
+    line-height: 24px;
+    text-align: right;
+}
+
+#components .component_item .component {
+    line-height: 24px;
+    float: left;
+    width: 23%;
+}
+
+#components .component_item input {
+    width: 250px;
+    margin-left: 10px;
+    height: 18px;
+}
+
+#mask {
+    z-index: 400;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 62px;
+    border: 0;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+#mask1 {
+    width: 100%;
+    height: 62px;
+}

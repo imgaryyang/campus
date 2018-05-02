@@ -1,0 +1,26 @@
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/platform/styles/plain/desktop.css">
+    <script type="text/javascript" src="/platform/styles/plain/desktop.js"></script>
+    <script type="text/javascript" src="/platform/styles/plain/search.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        <%
+        try{
+                String s= "System.desktopGroupId=\""+request.getParameter("groupId")+"\"";
+        %>
+        <%=s%>
+        <%
+        }
+        catch (Throwable ex)
+        {
+        }
+        %>
+    </script>
+
+    <div id="desktop_top"></div>
+    <div id="desktop_main"></div>
+    <div id="desktop_bottom"></div>
+</body>
+</html>

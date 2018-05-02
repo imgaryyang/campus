@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inject>
+
+    <!--<reloadable>false</reloadable>-->
+
+    <!--定义常量容器，从config目录下的properties文件加载-->
+    <bean class="net.cyan.nest.ConstantContainer" imp="net.cyan.nest.DefaultConstantContainer"
+          factory="constructor" singlton="true">
+        <parameter name="path">config</parameter>
+    </bean>
+
+    <!--定义ThunwindDaoFactory为单例-->
+    <bean class="net.cyan.nest.integration.ThunwindDaoFactory" singlton="true"/>
+
+    <!--支持thunwind dao对象的自动注入-->
+    <factoryProvider type="net.cyan.nest.integration.ThunwindDaoFactory"/>
+
+    <!--将ThunwindDaoFactory工厂命名为dao-->
+    <factory name="dao" type="net.cyan.nest.integration.ThunwindDaoFactory"/>
+
+    <!--让实体对象支持dao和注入-->
+    <bean class="net.cyan.thunwind.EntityFactory"
+          factory="net.cyan.nest.integration.InjectableEntityFactory"/>
+
+    <!--支持QueryExecutor对象的自动注入-->
+    <factoryProvider type="net.cyan.nest.integration.ThunwindSQLExecutorFactory"/>
+
+    <!--定义持久层管理器工厂,将此定义留在thunwind.xml中，以实现更加丰富的配置-->
+    <!-- <bean class="net.cyan.thunwind.PersistenceManagerFactory"
+    imp="net.cyan.thunwind.connection.DefaultPersistenceManagerFactory" singlton="true"/>-->
+
+    <!--支持从arachne的requestContext中获取HttpServletRequest来注入到对象中-->
+    <bean class="javax.servlet.http.HttpServletRequest"
+          factory="net.cyan.nest.integration.ArachneRequestFactory"/>
+
+    <!--支持从arachne的requestContext中获取HttpServletRequest来注入到对象中-->
+    <bean class="javax.servlet.http.HttpServletResponse"
+          factory="net.cyan.nest.integration.ArachneResponseFactory"/>
+
+
+    <scope name="request" type="net.cyan.nest.integration.RequestBeanScope"/>
+    <scope name="session" type="net.cyan.nest.integration.SessionBeanScope"/>
+
+    <!--定义对事务支持-->
+    <decorator type="net.cyan.nest.aop.TransactionLoader"/>
+
+    <!--将持久层事务定义为默认事务-->
+    <transaction name="" type="net.cyan.thunwind.PersistenceTransactionFactory"/>
+    <!--将持久层事务定义为crud事务-->
+    <transaction name="crud" type="net.cyan.thunwind.PersistenceTransactionFactory"/>
+
+    <!--定义对缓存的支持-->
+    <decorator type="net.cyan.nest.aop.CacheLoader"/>
+
+    <!--添加初始化路径-->
+    <config path="nest_init"/>
+
+    <!--添加配置路径-->
+    <config path="config"/>
+</inject>

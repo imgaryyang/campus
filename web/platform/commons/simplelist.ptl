@@ -1,0 +1,32 @@
+${view.top}
+<html>
+<head>
+    <title bind="view.title"></title>
+    <link type="text/css" rel="stylesheet" href="/platform/commons/simplelist.css">
+    <script type="text/javascript" src="/platform/commons/simplelist.js"></script>
+    <script type="text/javascript" src="/platform/commons/simplelist_crud.js"></script>
+</head>
+<body>
+
+    ${view.header}
+    <div bind="view.title" id="app_title"></div>
+
+    <div id="top">
+    </div>
+
+    <ul id="list">
+    </ul>
+
+    <div id="bottom">
+        <div id="page">
+        </div>
+        <div id="actions" bind="view.actions!=null">
+            <span bind="view.actions">
+                <a href="#" onclick="${action};return false;">${title}</a>
+            </span>
+        </div>
+    </div>
+
+    ${view.bottom}
+</body>
+</html>

@@ -1,0 +1,61 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#main {
+    margin-top: 10px;
+    width: 668px;
+    height: 325px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#search {
+    clear: both;
+    width: 600px;
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+
+#search input {
+    width: 400px;
+    height: 20px;
+}
+
+#users {
+    clear: both;
+    width: 650px;
+    margin-top: 4px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#users .selector {
+    float: left;
+    width: 570px;
+}
+
+#sortButtons {
+    float: left;
+    width: 65px;
+    height: 130px;
+    padding-top: 70px;
+    margin-left: 10px;
+}
+
+#sortButtons button {
+    margin-top: 5px;
+    width: 55px
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 8px;
+    width: 620px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

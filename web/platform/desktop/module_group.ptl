@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title bind="menuItem.title"></title>
+    <link type="text/css" rel="stylesheet" href="/platform/desktop/module_group.css">
+    <script type="text/javascript" src="/platform/desktop/module_group.js"></script>
+</head>
+<body>
+
+    <div bind="menuItem.title" id="app_title"></div>
+
+    <div id="top">
+        <div id="labels" style="${hideAllStart&&hideEmpty&&count?'display: none':''}">
+            <span bind="menuItems" class="${index$>0?'label':'label_selected'}"
+                  style="${hideAllStart&&hideEmpty&&count?'display: none':''}" onclick="selectLabel(this,true)">${title}<font
+                    color="red" bind="count"></font></span>
+        </div>
+    </div>
+    <div id="frames">
+
+        <iframe bind="menuItems" style="${(index$>0||(hideAllStart&&hideEmpty&&count))?'display: none':''}"
+                src="/menu/${menuId}" frameborder="0"></iframe>
+
+    </div>
+
+</body>
+</html>

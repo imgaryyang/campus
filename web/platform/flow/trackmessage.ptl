@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>发送消息</title>
+    <link type="text/css" rel="stylesheet" href="/platform/flow/trackmessage.css">
+    <script type="text/javascript" src="/platform/flow/track.js"></script>
+</head>
+<body id="dialogBody">
+    <form id="form">
+        <div id="content">
+            <textarea name="message"></textarea>
+        </div>
+        <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="sendMessage();">发送</button>
+            </span>
+              <span class="button">
+                <button type="button" onclick="closeWindow();">关闭</button>
+            </span>
+        </div>
+    </form>
+</body>
+</html>

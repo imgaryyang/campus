@@ -1,0 +1,34 @@
+.gdls dt span img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 100%;
+}
+.no dt span img {
+    height: auto;
+}
+
+.gdls dt span {
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    margin: 0;
+}
+
+.gdls dt {
+    width: 5rem;
+    height: 5rem;
+    background: none;
+}
+
+.gdls dt {
+    box-shadow: #CDE6F5 0px 3px 5px;
+}
+.tjls2 .gdls dt span {
+     width: auto;
+     margin: 0;
+}
+.tjls2 .no dt span {
+     width: 2.4rem;
+     margin: 0.9rem auto;
+ }

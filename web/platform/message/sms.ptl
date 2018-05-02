@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>发送手机短信</title>
+    <link type="text/css" rel="stylesheet" href="/platform/message/sms.css">
+    <link type="text/css" rel="stylesheet" href="/platform/receiver/receiverselector.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/receiver/receiverselector.js"></script>
+    <script type="text/javascript" src="/platform/message/sms.js"></script>
+</head>
+<body>
+    <div id="pageBody">
+        <form id="form">
+
+            <div id="mainBody">
+                <div id="sms">
+
+                    <div class="item">
+                        <div class="label">
+                            <a href="#" onclick="openReceiverDialog();">接收人</a>：
+                        </div>
+                        <div class="input">
+                            <input name="sendTo" id="sendTo"
+                                   title="可直接输入手机号码,或者输入用户的姓名或者拼音可以快速查找用户,点击左边的接收人可以在组织机构和通讯录中选择接收人">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                            发送时间：
+                        </div>
+                        <div class="input">
+                            <input name="fixedTime" id="fixedTime" class="fixedTime" readOnly="${smsId!=null}">(不填表示立即发送)
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                            内容：
+                        </div>
+                        <div class="input content" bind="smsId==null">
+                            <textarea id="content" name="content" class="content"></textarea>
+                        </div>
+                        <div class="input content" bind="smsId!=null">
+                            <textarea id="content" name="content" class="content" readonly></textarea>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                        </div>
+                        <div class="input">
+                            <span class="checkbox" bind="smsId==null">
+                                <input name="dept" type="checkbox" value="true"><label>部门短信</label>
+                            </span>
+                             <span class="checkbox" bind="smsId!=null">
+                                <input name="dept" type="checkbox" value="true" disabled><label>部门短信</label>
+                            </span>
+
+                            <span class="checkbox" bind="smsId==null">
+                                <input name="requireReply" type="checkbox"
+                                       value="true"><label>要求回复</label>
+                            </span>
+                            <span class="checkbox" bind="smsId!=null">
+                                <input name="requireReply" type="checkbox" value="true"
+                                       disabled><label>要求回复</label>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <span class="button">
+                            <button type="button" onclick="send();">发送</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

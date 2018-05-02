@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>${isNew$()?'新增学生':'学生详细信息'}</title>
+    <link type="text/css" rel="stylesheet" href="/safecampus/campus/classes/classesbase.css">
+    <link type="text/css" rel="stylesheet" href="/safecampus/campus/classes/student/student.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+</head>
+<body id="dialogBody">
+<div id="main">
+    <form id="form" action="">
+        <div id="tabs" class="tab">
+
+            <div class="tabPage normalPage" legend="基本信息">
+                <include page="/safecampus/campus/classes/student/student_base.ptl"/>
+            </div>
+
+            <div class="tabPage normalPage" legend="家属信息">
+                <include page="/safecampus/campus/classes/student/student_guardian.ptl"/>
+            </div>
+
+        </div>
+        <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="saveStu();">保存</button>
+            </span>
+            <span class="button">
+                <button type="button" onclick="closeWindow(true);">关闭</button>
+            </span>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
+<script src="/safecampus/js/jquery.js"></script>
+<script>
+    flag = false;
+
+    function saveStu() {
+
+        if (!flag) {
+            saveWithPic();
+        } else if ($("#classesId").val() == "") {
+            Cyan.message("保存成功", function () {
+                closeWindow(true);
+            })
+        } else {
+            saveWithPic();
+        }
+    }
+
+    function addnew() {
+        if ($("#studentName input").val() == "" || $("#classesId input").val() == "") {
+            Cyan.message("请先填写学生信息")
+        }
+        else {
+            System.SubList.add('subList', function (ret) {
+                System.openPage();
+                flag = true;
+            });
+        }
+    }
+</script>
+

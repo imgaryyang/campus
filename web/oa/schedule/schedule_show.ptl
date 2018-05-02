@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>查看日程</title>
+    <link type="text/css" rel="stylesheet" href="/oa/schedule/schedule_show.css"/>
+</head>
+
+<body id="dialogBody">
+<div id="components" bind="entity">
+
+    <div class="component_item">
+        <div class="label">事件</div>
+        <div class="component" bind="title">
+        </div>
+        <div class="label">开始时间</div>
+        <div class="component" bind="startTime">
+        </div>
+
+    </div>
+
+    <div class="component_item">
+        <div class="label">地点</div>
+        <div class="component" bind="address">
+        </div>
+        <div class="label">结束时间</div>
+        <div class="component" bind="endTime">
+        </div>
+    </div>
+
+
+    <div class="component_item">
+        <div class="label">详细内容</div>
+        <div class="component" style="width: 780px;" bind="content">
+        </div>
+    </div>
+
+    <div class="component_item">
+        <div class="label">优先级</div>
+        <div class="component" bind="priority">
+            ${name}
+        </div>
+        <div class="label">类型</div>
+        <div class="component" bind="type">
+            ${name}
+        </div>
+    </div>
+
+    <div class="component_item">
+        <div class="label">提醒方式</div>
+        <div class="component">
+            <span bind="remindType" bind="self" class="remindType"></span>
+        </div>
+        <div class="label">提醒时间</div>
+        <div class="component" bind="remindTime">
+        </div>
+    </div>
+
+    <div class="component_item">
+        <div class="label">状态</div>
+        <div class="component" bind="state">
+        </div>
+        <div class="label">第二次提醒时间</div>
+        <div class="component" bind="remindTime1">
+        </div>
+    </div>
+
+    <div class="component_item">
+        <div class="label">执行情况</div>
+        <div class="component" style="width: 780px;" bind="result">
+        </div>
+    </div>
+
+    <div class="component_item">
+        <div class="label">参与者</div>
+        <div class="component" style="width: 780px;" bind="tag.name()=='dept'">
+            <span bind="participants" class="participant">${userName}(${self.allSimpleDeptName()})</span>
+        </div>
+        <div class="component" style="width: 780px;" bind="tag.name()=='user'">
+            <span class="participant">${user.userName}(${user.allSimpleDeptName()})</span>
+        </div>
+    </div>
+
+</div>
+
+<div id="buttons">
+        <span class="button">
+            <button type="button" onclick="closeWindow();">关闭</button>
+        </span>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>菜单配置</title>
+    <link type="text/css" rel="stylesheet" href="/platform/commons/sort.css">
+    <script type="text/javascript" src="/cyan/client/combox.js"></script>
+    <script type="text/javascript" src="/platform/menu/config.js"></script>
+</head>
+<body id="sortBody">
+
+    <form>
+        <div id="sortPage">
+            <div id="sortList">
+                <select name="menuIds" multiple="true" size="3">
+                    <option bind="menus"></option>
+                </select>
+            </div>
+            <div id="sortButtons">
+                <button type="button" onclick="up();">上移</button>
+                <button type="button" onclick="down();">下移</button>
+                <button type="button" onclick="saveConfig();">确定</button>
+                <button type="button" onclick="closeWindow();">关闭</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+.cyan-tooltip {
+    position: absolute;
+    border: 1px solid #888888;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    background: #fafafa;
+}
+
+.cyan-tooltip-header {
+    height: 20px;
+    cursor: pointer;
+}
+
+.cyan-tooltip-title {
+    float: left;
+    margin-top: 3px;
+    line-height: 13px;
+    font-size: 12px;
+}
+
+.cyan-tooltip-close {
+    float: right;
+    margin-right: 4px;
+    margin-top: 3px;
+    width: 13px;
+    height: 13px;
+    background: url(tooltip/close.gif) no-repeat center;
+}
+
+.cyan-tooltip-close:hover {
+    background: url(window/close_hover.gif) no-repeat center;
+}
+
+.cyan_qtip {
+    padding: 8px
+}

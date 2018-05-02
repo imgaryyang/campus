@@ -1,0 +1,20 @@
+.cyan-mask {
+    background: #ffffff;
+    position: absolute;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: default;
+}
+
+.cyan-mask-loading {
+    position: absolute;
+    width: 100px;
+    height: 28px;
+    text-indent: 25px;
+    line-height: 28px;
+    border: solid 2px #a3a9f5;
+    color: #1111aa;
+    cursor: wait;
+    background: #ffffff url("../images/icons/loading1.gif") no-repeat 4px center;
+
+}

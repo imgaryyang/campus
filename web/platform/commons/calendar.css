@@ -1,0 +1,81 @@
+.x-grid3-row-over {
+    background: #FFFFFF;
+}
+
+.name {
+    color: blue;
+    white-space: normal
+}
+
+.calendar {
+    cursor: pointer;
+}
+
+.day {
+    min-height: 40px;
+    *height: 40px;
+}
+
+.week {
+    min-height: 40px;
+    *height: 40px;
+}
+
+.weekday {
+    min-height: 40px;
+    *height: 40px;
+}
+
+.month {
+    min-height: 90px;
+    *height: 90px;
+}
+
+.x-grid3-cell:hover {
+    background-color: #efefef;
+}
+
+.calendar .item {
+    text-align: left;
+    padding-left: 4px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    white-space: normal;
+}
+
+.calendar .item a {
+    color: #000099;
+}
+
+.calendar .item img {
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+.calendar .title {
+    padding-right: 4px;
+    padding-top: 4px;
+    text-align: right;
+    height: 16px;
+    background-color: #84A2E0;
+    margin-bottom: 2px;
+}
+
+.today .title {
+    background-color: #FADE63;
+    color: #880000;
+}
+
+#tip {
+    overflow: hidden;
+}
+
+#tip a {
+    color: blue;
+}
+
+#tip a:hover {
+    color: red;
+}

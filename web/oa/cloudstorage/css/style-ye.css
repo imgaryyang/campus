@@ -1,0 +1,107 @@
+@charset "utf-8";
+body {
+
+    margin: 0 auto;
+    font-size: 12px;
+    font-family: Verdana;
+}
+
+body, html {
+    background:#e6f1fa;
+    height: 100%;
+    width: 100%;
+}
+
+/*新增机构*/
+.lj{
+	background: #e6f1fa;
+	width: 100%;
+	margin:0 auto;
+	position: absolute;
+    bottom: 0;
+}
+
+.ljbg {
+    background-image: url(../image/bg.jpg);
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 1200px;
+    height: 460px;
+    display: inline-block;
+}
+
+.ljbox {
+    width: 320px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 70px 30px 70px 30px;
+    margin-top: 50px;
+    border-radius: 3px;
+}
+
+.ljbox input {
+    width: 220px;
+    height: 30px;
+    border: none;
+    border: solid 1px #d2d2d3;
+    margin-right: 10px;
+    text-indent: 10px;
+    vertical-align: top;
+}
+
+.ljbox button {
+    width: 80px;
+    height: 34px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    background: #3f74ba;
+    color: #fff;
+    font-size: 14px;
+}
+
+.promptbox{
+	background-color:rgba(0, 0, 0, 0.3);
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+/*政务云盘-列表*/
+.zwyp-box{
+	margin:20px ;
+}
+.zwyp-lb img{
+	float: left;
+}
+.zwyp-bt{
+	float: right;
+}
+.zwyp-bt button{
+	padding:10px 20px 10px 20px;
+	height: 34px;
+    cursor: pointer;
+    border-radius:3px;
+    border:none ;
+    background: #3f74ba;
+    color: #fff;
+    font-size: 14px;
+    margin-left:10px ;
+}
+.zwyp-ptwz{
+	position:relative;
+
+	text-align: center;
+	margin:0 auto;
+}
+.zwyp-ptwz div{
+	background: #c1d3ea;
+    color: #fff;
+    font-size: 14px;
+    padding:10px 20px 10px 20px;
+    border-radius:3px;
+    position: absolute;
+	top:0px;
+	left: 45%;
+}

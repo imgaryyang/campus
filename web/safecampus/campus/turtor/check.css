@@ -1,0 +1,151 @@
+#main {
+    clear: both;
+    width: 784px;
+    height: auto;
+}
+
+#tabs {
+    /*height: 400px;*/
+}
+
+.tabPage {
+    /*height: 360px;*/
+}
+
+fieldset.types {
+    border: 1px solid #00aaff;
+    padding: 8px;
+    width: 780px;
+    margin-left: 35px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    min-height: 60px;
+    *height: 60px;
+    font-weight: bold;
+}
+
+fieldset.types ul {
+    font-weight: normal;
+}
+
+fieldset.types fieldset {
+    border: 1px solid #B5B8C8;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 765px;
+    margin-left: 12px;
+    margin-top: 2px;
+    margin-bottom: 6px;
+    min-height: 40px;
+    *height: 40px;
+    font-weight: normal;
+}
+
+fieldset.types ul {
+    margin-top: 8px;
+}
+
+fieldset.types li {
+    float: left;
+    width: 150px;
+    height: 20px;
+}
+
+fieldset.types fieldset li {
+    width: 94px;
+}
+
+fieldset.types li input {
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+
+
+.head{
+    float: left;
+    margin-top: 20px;
+    margin-left: 43px;
+    width: 140px;
+}
+.head .img{
+    height: 160px;
+    line-height: 160px;
+/ / background-color: #E7EBFE;
+
+}
+
+.imgTip{
+    height: 33px;
+    width: 140px;
+    line-height: 32px;
+    color: white;
+    background-color: #0090ff;
+    border-radius: 2px;
+    text-align: center;
+    margin: 7px auto;
+    cursor: pointer;
+}
+.imgTip:hover{
+    cursor: pointer;
+}
+
+.head img{
+    background-color: #00AAFF;
+    vertical-align:middle;
+width: 100%;
+    height:100%;
+    /*max-width: 140px;*/
+    /*max-height: 160px;*/
+}
+
+
+.head input{
+    width: 100%;
+}
+
+.richupload_container{
+    display: none;
+}
+
+
+
+
+
+.hide {
+    display: none;
+}
+
+#addParent {
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+    margin-right: 5px;
+    line-height: 20px;
+    float: right;
+}
+
+.parentRelation .component_item .component {
+    width: auto;
+}
+
+.parentRelation .label {
+    width: 60px;
+}
+
+.relation .label {
+    width: 102px;
+}
+
+.parentRelation .relation .component input {
+    width: 50px;
+}
+
+.parentRelation .parent .component input {
+    width: 90px;
+}
+
+.parentRelation .contract .component input {
+    width: 110px;
+}

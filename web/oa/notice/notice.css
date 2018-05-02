@@ -1,0 +1,110 @@
+#dialogBody {
+    margin-bottom: 30px;
+}
+
+#main {
+    width: 1100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 0;
+}
+
+#dialogBody #components {
+    clear: both;
+    width: 1090px;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#dialogBody #components .component_line {
+    clear: both;
+}
+
+#dialogBody #components .component_item {
+    float: left;
+}
+
+#dialogBody #components .component_item .label {
+    padding-top: 3px;
+    margin-bottom: 6px;
+    float: left;
+    width: 60px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#dialogBody #components .component_item .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 475px;
+}
+
+#dialogBody #components .component_item .component input {
+    width: 400px;
+    height: 18px;
+}
+
+#dialogBody #components .component_item .component select {
+    width: 400px;
+    height: 18px;
+}
+
+#dialogBody #components .component_item .component_double {
+    padding-top: 0;
+    padding-bottom: 6px;
+    float: left;
+    width: 960px;
+}
+
+#dialogBody #components .component_item .component_double input {
+    width: 950px;
+    height: 18px;
+}
+
+#dialogBody #components .component_item .component_double input#file {
+    width: 900px;
+    height: 18px;
+}
+
+#dialogBody .component_content {
+    clear: both;
+    width: 1090px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#dialogBody .component_content .label {
+    padding-top: 3px;
+    margin-bottom: 6px;
+    float: left;
+    width: 60px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#dialogBody .component_content .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 470px;
+}
+
+#dialogBody .component_content .component textarea {
+    width: 950px;
+    height: 350px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 3px;
+    width: 1100px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

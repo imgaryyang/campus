@@ -1,0 +1,20 @@
+<%-- 仅查看状态下显示 课程-班级 信息 --%>
+
+<div id="subject" bind="entity">
+    <div class="tablec">
+        <table id="subList" class="sesublist" orderable="true" readonly="false" editable="true">
+            <thead>
+            <tr>
+                <th width="auto" align="">班级</th>
+                <th width="auto" align="">科目</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr bind="classTeachers">
+                <td>${classes.grade.gradeName+classes.classesName}</td>
+                <td>${subject.subjectName}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

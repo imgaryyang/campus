@@ -1,0 +1,16 @@
+<html>
+<head>
+    <script type="text/javascript" src="/cyan/client/widgets/fileupload.js"></script>
+    <script type="text/javascript" src="/platform/webscanner/scanner.js"></script>
+    <script type="text/javascript" src="/platform/webscanner/test.js"></script>
+    <link type="text/css" rel="stylesheet" href="/platform/webscanner/test.css">
+</head>
+<body>
+    <form>
+        <button onclick="scan();" type="button">扫描</button>
+        <button onclick="uploadImg()" type="button" id="upload">上传</button>
+    </form>
+    <ul>
+    </ul>
+</body>
+</html>

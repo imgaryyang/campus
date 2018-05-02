@@ -1,0 +1,142 @@
+<div id="head">
+    <img alt="头像" src="/oa/address/icon/${cardId}" id="head_img" bind="!new$">
+    <img alt="头像" src="/oa/address/images/head.gif" id="head_img" bind="new$">
+
+    <div bind="!readOnly">
+        <button type="button" id="head_upload_button">上传头像</button>
+        <button type="button" id="head_del_button" onclick="delimg();">删除头像</button>
+        <input type="hidden" name="delHead" value="false">
+    </div>
+</div>
+
+<div class="components">
+    <div class="component_line">
+        <div class="component_item">
+            <div class="cardName">
+                姓 名<font color="red">*</font>
+            </div>
+            <div class="component">
+                <input readonly="${readOnly}" name="cardName">
+            </div>
+        </div>
+        <div class="component_item">
+            <div class="label">
+                昵 称
+            </div>
+            <div class="component">
+                <input readonly="${readOnly}" name="nick">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                性 别
+            </div>
+            <div class="component">
+                <span bind="!readOnly">
+                    <select name="entity.sex">
+                        <option bind=""></option>
+                    </select>
+                </span>
+                <span bind="readOnly"><input value=" ${sex}" readonly></span>
+            </div>
+        </div>
+
+        <div class="component_item">
+            <div class="label">
+                生 日
+            </div>
+            <div class="component">
+                <input readonly="${readOnly}" name="entity.attributes.birthday" datatype="date">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label mobilePhone">
+                手 机
+            </div>
+            <div class="component">
+                <input readonly="${readOnly}" name="entity.attributes.mobilePhone">
+            </div>
+        </div>
+
+        <div class="component_item">
+            <div class="label">
+                家庭电话
+            </div>
+            <div class="component">
+                <input readonly="${readOnly}" name="entity.attributes.homePhone">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                家庭地址
+            </div>
+            <div class="component_wide">
+                <input readonly="${readOnly}" name="entity.attributes.address">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+
+        <div class="component_item">
+            <div class="label">
+                籍 贯
+            </div>
+            <div class="component">
+                <input readonly="${readOnly}" name="entity.attributes.nativePlace">
+            </div>
+        </div>
+
+        <div class="component_item">
+            <div class="label">
+                民 族
+            </div>
+            <div class="component">
+                <input readonly="${readOnly}" name="entity.attributes.national">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="component_line">
+
+        <div class="component_item">
+            <div class="label">
+                邮政编码
+            </div>
+            <div class="component">
+                <input readonly="${readOnly}" name="entity.attributes.postcode">
+            </div>
+        </div>
+
+        <div class="component_item">
+            <div class="label">
+                学 历
+            </div>
+            <div class="component">
+                <input readonly="${readOnly}" name="entity.attributes.degree">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                特长爱好
+            </div>
+            <div class="component_wide">
+                <textarea readonly="${readOnly}" name="entity.attributes.interests"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

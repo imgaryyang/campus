@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>我的信息</title>
+    <link href="../css/newstyle.css" rel="stylesheet" type="text/css">
+    <link href="/safecampus/wx/personal/loaders.css" rel="stylesheet" type="text/css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="/safecampus/wx/js/jquery.js"></script>
+    <script src="/safecampus/wx/personal/jssdk.js"></script>
+    <script src="/safecampus/wx/arttemplate/template-web.js"></script>
+    <script src="/safecampus/wx/arttemplate/json3.min.js"></script>
+</head>
+<body id="psnbody">
+
+<div class="zkd">
+    <div class="cbb_bj">
+        <dl class="cbb">
+            <dt><img src="${dataMap.imgUrl==null?'/safecampus/wx/image/bbtx_03.png':dataMap.imgUrl}"></dt>
+            <dd>
+                <p class="p1">  ${com.gzzm.safecampus.wx.personal.WxHandler.getStarString(dataMap.phone, 3, 7)}</p>
+                <p>${dataMap.userName}</p>
+            </dd>
+        </dl>
+        <div class="jsbq">
+            <h2 bind="dataMap.identify==1 || dataMap.identify==2"><span><img src="../image/rztb_06.png"></span>
+                <p>亲属</p>
+            </h2>
+            <h2 class="jzg" bind="dataMap.identify==0 || dataMap.identify==2"><span><img
+                    src="../image/rztb_06.png"></span>
+                <p>教职工</p>
+            </h2>
+        </div>
+    </div>
+    <div class="yglhz bbxb">
+        <ul class="tjjslb">
+            <li bind="dataMap.students">
+                <a href="/wx/stuedntInfoPage?studentId=${studentId}">
+                    <h4><span><img  src="/wx/centerpage/image/${studentId}"></span></h4>
+                    <h2>${studentName}</h2>
+                </a>
+            </li>
+            <li>
+                <a href="/wx/resgiterpage">
+                    <h4><span class="bx"><img src="../image/jh_03.png"></span></h4>
+                    <h2>关联孩子</h2>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="hzkqbj">
+        <div class="sjzkd">
+            <dl class="sjhm_lb" url="/wx/unbingpage">
+                <dt class="dt2"><img src="../image/xykqtb_08.png"></dt>
+                <dd>
+                    <p>更改号码</p>
+                    <span><img src="../image/xykqtb_03.png"></span>
+                </dd>
+            </dl>
+            <dl class="sjhm_lb" url="/wx/pay/allbills" bind="dataMap.identify==1 || dataMap.identify==2">
+                <dt class="dt2"><img src="../image/ystb_03.png"></dt>
+                <dd>
+                    <p>我的账单</p>
+                    <span><img src="../image/xykqtb_03.png"></span>
+                </dd>
+            </dl>
+            <dl class="sjhm_lb" url="/wx/mywallet/index">
+                <dt class="dt2"><img src="../image/ystb_05.png"></dt>
+                <dd>
+                    <p>我的钱包</p>
+                    <span><img src="../image/xykqtb_03.png"></span>
+                </dd>
+            </dl>
+            <dl class="else" onclick="unBind()" style="margin-bottom: 0px">
+                <dt><img src="../image/ystb_07.png"></dt>
+                <dd>
+                    <p>解除绑定</p>
+                    <span><img src="../image/xykqtb_03.png"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<script src="/safecampus/wx/personal/person_center.js"></script>
+<script id="jbcg" type="text/html">
+    {{if status=='success'}}
+    <dl class="kqwc">
+        <dt><img src="/safecampus/wx/image/cg.png"></dt>
+        <dd class="dd2">解绑成功！</dd>
+        <dd class="dd3">相关服务已关闭，如需开通请重新认证身份！
+        </dd>
+    </dl>
+    {{else}}
+    <dl class="kqwc">
+        <dt><img src="/safecampus/wx/image/cw_03.png"></dt>
+        <dd class="dd2">解绑失败</dd>
+        <dd class="dd3">
+        </dd>
+    </dl>
+    {{/if}}
+    <div class="ckkqls">
+        {{if status=='success'}}
+        <button class="ckkqls" onclick="wx.closeWindow()">关闭</button>
+        {{else}}
+        <button class="ckkqls" onclick="window.history.go(0)">返回</button>
+        {{/if}}
+    </div>
+</script>
+</body>
+</html>

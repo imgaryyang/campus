@@ -1,0 +1,70 @@
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/oa/address/card.css">
+    <script type="text/javascript" src="/cyan/client/widgets/fileupload.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/oa/address/card.js"></script>
+</head>
+<body id="dialogBody">
+<div id="main">
+    <form id="form" bind="entity">
+        <div id="tabs" class="tab">
+
+            <div id="info" class="tabPage" style="height: 290px" legend="基本信息">
+                <include page="/oa/address/baseinf.ptl"/>
+            </div>
+
+            <div id="work" class="tabPage normalPage" style="height: 290px" legend="工作信息">
+                <include page="/oa/address/workinf.ptl"/>
+            </div>
+
+            <div id="internet" class="tabPage normalPage" style="height: 290px" legend="互联网信息">
+                <include page="/oa/address/internetinf.ptl"/>
+            </div>
+
+            <div id="resume" class="tabPage" style="height: 290px" legend="简历">
+                    <span>
+                        <textarea name="entity.attributes.resume" readonly="${readOnly}"></textarea>
+                    </span>
+            </div>
+
+            <div id="resume" class="tabPage" style="height: 290px" legend="备注">
+                    <span>
+                        <textarea name="entity.attributes.remark" readonly="${readOnly}"></textarea>
+                    </span>
+            </div>
+
+            <div id="groups" class="tabPage" style="height: 290px" legend="所属组" bind="!readOnly">
+                <div name="entity.groups.groupId" class="itemselector" id="rolesSelector"
+                     bind="net.cyan.arachne.components.PageItemSelector.class"
+                     available="availableGroups" selected="entity.groups" fromLegend="可选的组" toLegend="已选的组">
+                </div>
+            </div>
+
+            <div bind="!new$" id="resume" class="tabPage" style="height: 290px" legend="条码信息">
+                <span>
+                    <img src="/oa/address/getBarCodeById/${entity.attributes.empNo}"/>
+                </span>
+            </div>
+
+        </div>
+
+        <div id="buttons">
+                <span class="button" bind="!readOnly">
+                    <button type="button" onclick="toSave();">保存</button>
+                </span>
+                <span class="button" bind="readOnly">
+
+                    <script type="text/javascript" name="userGroupMenus" bind="userGroupMenus"></script>
+
+                    <button type="button" id="showMenus">复制到个人通讯录</button>
+                </span>
+                <span class="button" bind="!readOnly">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+        </div>
+    </form>
+</div>
+</body>
+</html>

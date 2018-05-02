@@ -1,0 +1,13 @@
+add(e1,e2)
+{
+   if(e1 instanceof NodeReceiverList && e2 instanceof NodeReceiverList)
+      return e1.add(e2);
+
+   if(e1 instanceof Date)
+      e1 = dateToString(e1);
+
+   if(e2 instanceof Date)
+      e2 = dateToString(e2);
+
+      return e1+e2;
+}

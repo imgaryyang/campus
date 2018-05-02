@@ -1,0 +1,241 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/platform/organ/user.css">
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/platform/organ/user.js"></script>
+    <script type="text/javascript" src="/platform/ca/cert.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" bind="entity">
+            <div id="components">
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">用户名称</div>
+                        <div class="component">
+                            <input name="userName" onchange="onUserNameChange();" readonly="${!hasAuth('userName')}">
+                        </div>
+                    </div>
+
+                    <div class="component_item">
+                        <div class="label">登录名</div>
+                        <div class="component">
+                            <input name="loginName" trim="true" readonly="${!hasAuth('loginName')}">
+                        </div>
+                    </div>
+                </div>
+
+                <div bind="new$" class="component_line">
+                    <div class="component_item">
+                        <div class="label">密码</div>
+                        <div class="component">
+                            <input type="password" name="password" minlen="3" require>
+                        </div>
+                    </div>
+
+                    <div class="component_item">
+                        <div class="label">确认密码</div>
+                        <div class="component">
+                            <input type="password" name="password_confirm" equal="entity.password" require>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">手机号码</div>
+                        <div class="component">
+                            <input name="phone">
+                        </div>
+                    </div>
+
+                    <div class="component_item">
+                        <div class="label">办公电话</div>
+                        <div class="component">
+                            <input name="officePhone">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line" bind="certModifiable&&certTypes!=null&&certTypes.size()>1">
+                    <div class="component_item">
+                        <div class="label">证书类型</div>
+                        <div class="component" bind="certModifiable">
+                            <select name="certType">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                        <div class="component" bind="!certModifiable">
+                            <input readonly value="${certTypeName}">
+                        </div>
+                    </div>
+
+                    <div class="component_item">
+                        <div class="label">证书ID</div>
+                        <div class="component">
+                            <input name="certId" readonly="${!certModifiable}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line" bind="certModifiable&&certTypes!=null&&certTypes.size()==1">
+                    <div class="component_item">
+                        <div class="label">证书ID</div>
+                        <div class="double_component" bind="certModifiable">
+                            <input name="certId">
+                        </div>
+                        <div class="component" bind="!certModifiable">
+                            <span bind="certId">1234567890</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">证件类型</div>
+                        <div class="component">
+                            <select name="idCardType" onchange="onIdCardNo()">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="component_item">
+                        <div class="label">证件号码</div>
+                        <div class="component">
+                            <input name="idCardNo" onchange="onIdCardNo()">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+
+                    <div class="component_item">
+                        <div class="label">性别</div>
+                        <div class="component">
+                            <select name="sex">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="component_item">
+                        <div class="label">生日</div>
+                        <div class="component">
+                            <input name="birthday" format="yyyyMMdd">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="component_line">
+
+                    <div class="component_item">
+                        <div class="label">工作时间</div>
+                        <div class="component">
+                            <input name="workday" editable="true">
+                        </div>
+                    </div>
+
+                    <div class="component_item">
+                        <div class="label">工号</div>
+                        <div class="component">
+                            <input name="workno">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">职位</div>
+                        <div class="double_component">
+                            <input name="duty">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line" bind="this.adminUser">
+                    <div class="component_item">
+                        <div class="label">登录方式</div>
+                        <div class="component">
+                            <select name="loginType">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="component_item">
+                        <div class="label">超级管理员</div>
+                        <div class="component">
+                            <input type="checkbox" name="adminUser" class="checkbox" value="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line" bind="!public.adminUser&&hasAuth('loginType',true)">
+                    <div class="component_item">
+                        <div class="label">登录方式</div>
+                        <div class="double_component">
+                            <select name="loginType">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line" bind="modifiableDepts.size()>1">
+                    <div class="component_item">
+                        <div class="label">所属部门</div>
+                        <div class="double_component">
+                            <select name="deptId" onchange="onDeptChange()">
+                                <option bind="modifiableDepts"></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tab" id="auths">
+                <div legend="权限角色" id="roles">
+
+                    <div id="search">
+                        <input name="word" id="word" class="search">
+                    </div>
+
+                    <div name="roleIds" class="itemselector" id="rolesSelector"
+                         bind="net.cyan.arachne.components.PageItemSelector.class"
+                         available="availableRoles" selected="roles" fromLegend="可选的角色" toLegend="已选的角色">
+                    </div>
+                </div>
+                <div legend="岗位" id="stations" >
+                    <div name="stationIds" class="itemselector" id="stationsSelector"
+                         bind="net.cyan.arachne.components.PageItemSelector.class"
+                         available="availableStations" selected="stations" fromLegend="可选的岗位" toLegend="已选的岗位">
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="save();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="role_display();">预览菜单</button>
+                </span>
+                <span class="button" bind="certModifiable">
+                    <button class="certButton" type="button" onclick="setCertId();">读证书ID</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="devolve();">工作移交</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

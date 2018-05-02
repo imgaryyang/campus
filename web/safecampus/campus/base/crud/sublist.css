@@ -1,0 +1,63 @@
+table.sesublist {
+    border-spacing: 1px;
+    *border-spacing: expression(this.cellSpacing='0');
+    width: 100%;
+    background:#dcdcdc;
+}
+
+table.sesublist th {
+    color:#FFF;
+    background:#36aecc;
+    padding-left: 6px;
+    height:30px;
+}
+
+table.sesublist td {
+    height:30px;
+    text-align:left;
+    padding: 0 10px;
+    color:#262626;
+    background:#FFF;
+    line-height: 30px;
+}
+
+table.sesublist span.up {
+    float: left;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    margin-left: 8px;
+    background-image: url("/safecampus/campus/base/crud/icon/up.png");
+}
+
+table.sesublist span.down {
+    float: left;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    margin-left: 8px;
+    background-image: url("/safecampus/campus/base/crud/icon/down.png");
+}
+
+table.sesublist span.remove {
+    float: left;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    margin-left: 8px;
+    background-image: url("/safecampus/campus/base/crud/icon/delete.png");
+}
+
+table.sesublist span.edit {
+    float: left;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    margin-left: 8px;
+    background-image: url("/safecampus/campus/base/crud/icon/edit.png");
+}
+
+table.sesublist th.up, table.sesublist th.down, table.sesublist th.remove, table.sesublist th.edit,
+table.sesublist td.up, table.sesublist td.down, table.sesublist td.remove, table.sesublist td.edit {
+    width: 40px;
+}

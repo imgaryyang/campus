@@ -1,0 +1,99 @@
+<html action="false">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>课外辅导</title>
+    <link href="../css/stlye.css" rel="stylesheet" type="text/css">
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery.js"></script>
+
+</head>
+
+<body>
+<div id="banner" class="banner">
+    <div class="bd">
+        <ul>
+            <li> <a class="pic" href="#"><img src="../image/1.jpg"></a> <a class="tit" href="#">问渠那得清如许</a> </li>
+            <li> <a class="pic" href="#"><img src="../image/2.jpg"></a> <a class="tit" href="#">为有源头活水来</a> </li>
+            <li> <a class="pic" href="#"><img src="../image/1.jpg"></a> <a class="tit" href="#">长风破浪会有时</a> </li>
+            <li> <a class="pic" href="#"><img src="../image/2.jpg"></a> <a class="tit" href="#">直挂云帆济沧海</a> </li>
+        </ul>
+    </div>
+    <div class="hd">
+        <ul>
+        </ul>
+    </div>
+    <script src="../js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript">
+        TouchSlide({
+            slideCell:"#banner",
+            titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+            mainCell:".bd ul",
+            effect:"leftLoop",
+            autoPage:true,//自动分页
+            autoPlay:true //自动播放
+        });
+    </script>
+</div>
+<div class="contont">
+    <div class="tjls">
+        <div class="tjls_bt">
+            <p>推荐老师</p>
+            <a href="/wx/tutorship/more/0"><span class="more" >更多</span></a>
+        </div>
+        <div class="lslb">
+            <ul class="tjjslb laoshi head">
+                <li bind="tutorTeachers">
+                    <span>
+                   <a href="${url}" title="${url}"> <img src="/campus/tutorship/teacherimage/${teacherId}"></a>
+                    </span>
+                    <h2>${teacherName}</h2>
+                    <p bind="teacherCourses">
+                        <bind bind="${index$==0}">
+                            ${course}
+                        </bind>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="tjls">
+        <div class="tjls_bt">
+            <p>推荐课程</p>
+            <a href="/wx/tutorship/more/1"><span class="more" >更多</span></a></div>
+        <div class="lslb lslb2">
+            <ul class="tjjslb kecheng ">
+                <bind bind="tutorCourses">
+                    <li>
+                        <span>
+                            <a href="${url}"><img src="../image/tjkc_06.png"></a>
+                        </span>
+                        <h2>${courseName}</h2>
+                    </li>
+                </bind>
+            </ul>
+        </div>
+    </div>
+    <div class="tjls">
+        <div class="tjls_bt">
+            <p>推荐机构</p>
+            <a href="/wx/tutorship/more/2"><span class="more" >更多</span></a>
+        </div>
+        <div class="lslb lslb2">
+            <ul class="tjjslb jigou head">
+                <li bind="tutorInstitutions">
+                    <span>
+                    <a href="${url}">
+                    <img src="/campus/tutorship/institution/${institutionId}">
+                    </a>
+                    </span>
+                    <h2>${institutionName}</h2>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+

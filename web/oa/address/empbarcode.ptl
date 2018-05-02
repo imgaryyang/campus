@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="js/empbarcode.js"/>
+</head>
+<body>
+<div class="container">
+    <c bind="${addressCard!=null&&addressCard.attributes.get("state")!=null&&"在职".equals(addressCard.attributes.get("state"))}">
+        <header>
+            <div class="bg_img">
+                <div class="logo">
+                    <img src="/oa/address/area/${config.areaStr}/logo.png">
+                </div>
+            </div>
+            <div class="thumbnail">
+                <div class="img-border">
+                    <img src="/oa/address/${code}/getHeadInputFile" alt="用户头像" class="img-responsive">
+                </div>
+                <div class="caption">
+                    <h3>${addressCard.cardName}</h3>
+                    <h4>${addressCard.attributes.get("duty")}</h4>
+                </div>
+            </div>
+        </header>
+        <div class="row  user">
+            <div class="col-xs-12"><h3>身份 : </h3></div>
+
+            <div class="col-xs-12 user-cont">
+                          <div class="col-xs-4">
+                              <img src="/oa/address/area/${config.areaStr}/icon03.png" alt="姓名">
+                              <h4>姓名</h4>
+                          </div>
+                          <div class="col-xs-8">
+                              <span>${addressCard.cardName}</span>
+                          </div>
+                      </div>
+
+            <div class="col-xs-12 user-cont">
+                <div class="col-xs-4">
+                    <img src="/oa/address/area/${config.areaStr}/icon04.png" alt="职务">
+                    <h4>职务</h4>
+                </div>
+                <div class="col-xs-8">
+                    <span>${addressCard.attributes.get("duty")}</span>
+
+                </div>
+            </div>
+
+            <div class="col-xs-12"><h3>联系 : </h3></div>
+            <div class="col-xs-12 user-cont">
+                <div class="col-xs-4">
+                    <img src="/oa/address/area/${config.areaStr}/icon01.png" alt="手机">
+                    <h4>手机</h4>
+                </div>
+                <div class="col-xs-8">
+                    <span>${addressCard.attributes.get("mobilePhone")}</span>
+                    <%--<button class="right"> 拨打</button>--%>
+                </div>
+            </div>
+            <div class="col-xs-12 user-cont">
+                <div class="col-xs-4">
+                    <img src="/oa/address/area/${config.areaStr}/icon02.png" alt="邮箱">
+                    <h4>邮箱 </h4>
+                </div>
+                <div class="col-xs-8">
+                    <span>${addressCard.attributes.get("email")}</span>
+                </div>
+            </div>
+
+            <div class="col-xs-12"><h3>公司地址 : </h3></div>
+            <div class="col-xs-12 user-cont">
+                <div class="col-xs-4">
+                    <img src="/oa/address/area/${config.areaStr}/icon05.png" alt="手机">
+                    <h4>联系地址</h4>
+                </div>
+                <div class="col-xs-8">
+                    <%--先写死，后改todo--%>
+                    <div class="col-xs-9 address">广州市天河区天河软件园粤和楼207广州正盟科技有限公司</div>
+                    <div class="col-xs-3">
+                        <button class="right" onclick="gotoBaiduMap()">地图</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h8"></div>
+        <div class="footer_nav" id="footer">
+            <nav class="navbar nav navbar-fixed-bottom">
+                <button onclick="saveCard('${code}')">保存到通讯录</button>
+            </nav>
+        </div>
+    </c>
+    <c  bind="${!(addressCard!=null&&addressCard.attributes.get("state")!=null&&"在职".equals(addressCard.attributes.get("state")))}">
+        此人不在正盟公司任职或者已离职！
+    </c>
+</div>
+</body>
+<script>
+    function saveCard(code) {
+        Cyan.Arachne.doGet("/oa/address/" + code + "/getCardVcf", arguments, 1);
+    }
+    function gotoBaiduMap() {
+        Cyan.Arachne.doGet("/oa/address/toBaiduMap", arguments, 1);
+    }
+</script>
+
+</html>

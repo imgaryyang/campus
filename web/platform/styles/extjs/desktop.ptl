@@ -1,0 +1,23 @@
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/platform/styles/extjs/desktop.css">
+    <link type="text/css" rel="stylesheet" href="/platform/styles/extjs/search.css">
+    <script type="text/javascript" src="/platform/styles/extjs/desktop.js"></script>
+    <script type="text/javascript" src="/platform/styles/extjs/search.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        <%
+        try{
+                String s= "System.desktopGroupId=\""+request.getParameter("groupId")+"\"";
+        %>
+        <%=s%>
+        <%
+        }
+        catch (Throwable ex)
+        {
+        }
+        %>
+    </script>
+</body>
+</html>

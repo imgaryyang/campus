@@ -1,0 +1,37 @@
+${view.top}
+<html>
+<head>
+    <title>${view.title==null?"高级查询":view.title}</title>
+    <script type="text/javascript" src="/platform/commons/query.js"></script>
+    <script type="text/javascript" src="/platform/commons/simpledialog.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body id="dialogBody">
+
+    ${view.header}
+
+    <form id="form">
+        <span bind="view.hiddens">
+            <input type="hidden" name="${self}">
+        </span>
+
+        <div id="components">
+            <div class="component_line" bind="view.components">
+                <div class="component_item">
+                    <div bind="label" class="label"></div>
+                    <div bind="component" class="component">
+                        ${self.display(this,null)}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="buttons">
+                <span bind="view.buttons" class="button">
+                    ${self.display()}
+                </span>
+        </div>
+
+        <div bind="view.bottom"></div>
+    </form>
+</body>
+</html>

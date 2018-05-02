@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>屏幕锁定</title>
+    <link type="text/css" rel="stylesheet" href="/platform/login/lock.css"/>
+    <script type="text/javascript" src="/platform/login/lock.js"></script>
+</head>
+<body id="dialogBody">
+    <form action="">
+        <div id="container">
+            <div id="title">请输入密码解锁屏幕</div>
+            <div id="select">
+                <input id="password" type="password" name="password">
+            </div>
+            <div id="button">
+                <button type="button" onclick="ok()">确定</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

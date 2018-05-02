@@ -1,0 +1,85 @@
+<script type="text/javascript" src="/safecampus/campus/turtor/institution.js"></script>
+<script type="text/javascript" src="/platform/commons/htmleditor_ckeditor.js"></script>
+<script type="text/javascript" src=""></script>
+
+<div>
+    <fieldset class="base" style="width: 740px">
+        <div class="components">
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">
+                        课程名称
+                    </div>
+                    <div class="component">
+                        <input require name="entity.courseName">
+                    </div>
+                    <span class="require">*</span>
+                </div>
+
+                <div class="component_item">
+                    <div class="label">
+                        所属机构
+                    </div>
+                    <div class="component">
+                        <input require name="entity.institutionId" text="${entity.institution.institutionName}">
+                    </div>
+                    <span class="require">*</span>
+                </div>
+            </div>
+
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">
+                        客服QQ
+                    </div>
+                    <div class="component">
+                        <input name="entity.qq">
+                    </div>
+                </div>
+                <div class="component_item">
+                    <div class="label">
+                        微信
+                    </div>
+                    <div class="component">
+                        <input name="entity.weChat">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">
+                        课程分类
+                    </div>
+                    <div class="component">
+                        <input require name="items" text="${this.getTypeItemString(entity.courseId)}"/>
+                    </div>
+                    <span class="require">*</span>
+                </div>
+            </div>
+
+            <div class="component_line">
+                <div class="component_item"  style="width:790px">
+                    <div class="label">
+                        跳转地址
+                    </div>
+                    <div class="component" style="width:673px">
+                        <input require style="width: 665px" name="entity.url"/>
+                    </div>
+                    <span class="require">*</span>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+<div class="gs">
+    <div style="padding-bottom: 5px">课程介绍</div>
+    <div id="content_div" style="float: left;height: 350px;">
+        <div class="" id="conn">
+            <textarea id="con" name="entity.courseDescribe" class="htmleditor"></textarea>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,4 @@
+incDate(Date date,int n)
+{
+   return DateUtils.addDate(date,n);
+}

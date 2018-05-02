@@ -1,0 +1,153 @@
+<html>
+<head>
+    <title bind="voteId==null">${vote.title}-${record.user.userName}</title>
+    <title bind="voteId!=null">${vote.title}</title>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/oa/vote/votepage.js"></script>
+    <link type="text/css" rel="stylesheet" href="/oa/vote/votepage.css"/>
+</head>
+<body>
+    <div id="mainBody">
+        <form>
+            <div id="vote">
+                <div id="head">
+                    <div class="title">${vote.title}</div>
+                    <div class="intro" bind="vote.intro"></div>
+                    <div class="score" bind="record!=null&&record.state.name()=='committed'&&score!=null">得分:${score}分
+                    </div>
+                    <div class="costTime" bind="costTime!=null">
+                        已用时间<span id="costTime"></span>。<span bind="overtime">已经超过时间限制，请按提交按钮提交结果!</span>
+                    </div>
+                    <div class="indefinite" bind="vote.period!=null&&vote.period.name()=='INDEFINITE'">
+                        此信息的${actionName}方式为不定期${actionName}，当您有信息要${actionName}时随时可以上报，点击“查看${actionName}记录”按钮可以查看以前上报过的记录
+                    </div>
+                </div>
+
+                <%int index = 0;%>
+                <div bind="groups" class="group${(groupId!=null&&problems.size()>1)?' group_content':''}">
+
+                    <div class="groupTitle" bind="groupId!=null&&problems.size()>1">
+                        <span class="index"> <%=++index%>、</span>
+                        <span class="problemName">${groupName}</span>
+                    </div>
+
+                    <div bind="problems" class="problem">
+                        <div class="${(groupId!=null&&problems.size()>1)?'title':'top_title'}"
+                             bind="problems.size()>1||groups.size()>1">
+
+                            <span class="index" bind="groupId==null||problems.size()==1"><%=++index%>、</span>
+                            <span class="index" bind="groupId!=null&&problems.size()>1">(${index$+1})</span>
+                            <span class="problemName">${problemName}</span>
+                            <span bind="required" class="required">[必填]</span>
+                            <span bind="record!=null&&record.state.name()=='committed'&&getScore(problemId)!=null"
+                                  class="score">(得分:${getScore(problemId)}分)</span>
+
+                        </div>
+
+                        <div class="problem_content" id="problem_content${problemId}">
+                            <div bind="optionList" class="option" id="option${optionId}">
+                                <div bind="maxCount!=null&&maxCount>1">
+                                    <input type="checkbox" name="options.p${problemId}" value="${optionId}"
+                                           disabled="${readOnly||overtime}" maxCount="${maxCount}"
+                                           minCount="${minCount}"
+                                           require="${!readOnly&&required}" showName=""
+                                           showErrorTo="problem_content${problemId}">
+                                    <span class="label">${optionName}</span>
+                                </div>
+                                <div bind="maxCount==null||maxCount<=1">
+                                    <input type="radio" name="options.p${problemId}" value="${optionId}"
+                                           disabled="${readOnly||overtime}" require="${!readOnly&&required}" showName=""
+                                           showErrorTo="problem_content${problemId}">
+                                    <span class="label">${optionName}</span>
+                                </div>
+                                <div class="remark" bind="remark!=null&&remark.length()>0" bind="remark">
+                                </div>
+                            </div>
+
+                            <div bind="optionList.size()==0&&dataType.name()!='FILE'" class="text">
+                                <span class="input"
+                                      bind="dataType==null||(dataType.name()!='TEXT')">
+                                    <input name="inputs.p${problemId}" datatype="${dataType.name().toLowerCase()}"
+                                           readonly="${readOnly||overtime}" showName="" require="${!readOnly&&required}"
+                                           minval="${minval}" maxval="${maxval}">
+                                </span>
+                                <span class="input" bind="dataType!=null&&dataType.name()=='TEXT'">
+                                    <textarea name="inputs.p${problemId}" readonly="${readOnly||overtime}"
+                                              showName="" require="${!readOnly&&required}"></textarea>
+                                </span>
+                            </div>
+                            <div bind="optionList.size()==0&&dataType.name()=='FILE'" class="file">
+                                <span class="file" bind="dataType!=null&&!readOnly&&!overtime">
+                                    <input type="file" name="files.f${problemId}" showName=""
+                                           require="${required&&inputs["p"+problemId]==null}">
+                                </span>
+                            </div>
+                            <div bind="record" bind="optionList.size()==0&&dataType.name()=='FILE'" class="file">
+                                <span class="file" bind="dataType!=null">
+                                    <a href="/oa/vote/record/${recordId}/down/${problemId}"
+                                       target="_blank">${inputs["p"+problemId]}</a>
+                                </span>
+                            </div>
+                            <div bind="${optionList.size()>0&&(other!=null&&other)}" class="other">
+                                <span bind="maxCount!=null&&maxCount>1">
+                                    <input type="checkbox" name="options.p${problemId}" value="-1"
+                                           disabled="${readOnly||overtime}" maxCount="${maxCount}"
+                                           minCount="${minCount}"
+                                           require="${!readOnly&&required}" showName=""
+                                           showErrorTo="problem_content${problemId}">
+                                </span>
+                                <span bind="maxCount==null||maxCount<=1">
+                                    <input type="radio" name="options.p${problemId}" value="-1"
+                                           disabled="${readOnly||overtime}" showName=""
+                                           showErrorTo="problem_content${problemId}">
+                                </span>
+                                <span class="label">
+                                    其他
+                                </span>
+                                <span class="input">
+                                    <input name="inputs.p${problemId}" datatype="${dataType.name().toLowerCase()}"
+                                           style="display:${inputs['p'+problemId]==null?'none':''}}" showName=""
+                                           minval="${minval}" maxval="${maxval}" readonly="${readOnly||overtime}">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div bind="vote.anonymous" class="anonymous">
+                    匿名<input type="checkbox" name="anonymous" value="true" disabled="${readOnly}">
+                </div>
+
+                <div class="buttons">
+                    <span class="button" bind="!readOnly&&!preview&&!overtime">
+                        <button type="button" onclick="save(false);">保存</button>
+                    </span>
+                    <span class="button" bind="!readOnly&&!preview">
+                        <button type="button" onclick="save(true);">提交</button>
+                    </span>
+                    <span class="button" bind="!readOnly&&!overtime">
+                        <button type="button" onclick="resetVote();">重填</button>
+                    </span>
+                    <span class="button"
+                          bind="record!=null&&record.state.name()=='committed'&&!add&&(vote.period!=null&&vote.period.name()=='INDEFINITE'||scope!=null&&scope.voteCount!=null&&scope.voteCount>1&&records.size()<scope.voteCount)">
+                        <button type="button" onclick="reVote()">继续${typeName}</button>
+                    </span>
+                    <span bind="vote.period!=null&&vote.period.name()=='INDEFINITE'||scope!=null&&scope.voteCount!=null&&scope.voteCount>1">
+                        <button class="btn" type="button" onclick="showRecords();">查看${actionName}记录</button>
+                    </span>
+                    <span class="button">
+                        <button type="button" onclick="exportVote();">导出</button>
+                    </span>
+                    <span class="button">
+                        <button type="button" onclick="printVote();">打印</button>
+                    </span>
+                    <span class="button">
+                        <button type="button" onclick="System.closePage();">关闭</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

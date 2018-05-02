@@ -1,0 +1,17 @@
+<html>
+<head>
+    <script type="text/javascript" src="scanfine.js"></script>
+    <link type="text/css" rel="stylesheet" href="scan.css">
+</head>
+<body>
+    <object style="left:0;top:0;height:0;width:0" classid="clsid:6AAFF9FB-EDFA-4C7F-9F4D-CE7DDCC69682"
+            id="ETScanFine"></object>
+
+
+    <button onclick="location.href='/ScanFine_Installation_2.3.zip'">下载驱动</button>
+    <button onclick="upload()">扫描或拍照</button>
+
+    <div id="images">
+    </div>
+</body>
+</html>

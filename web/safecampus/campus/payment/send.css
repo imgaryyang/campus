@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", "微软雅黑", "Segoe UI", Arial;
+}
+
+body {
+    font-family: "Microsoft YaHei", "微软雅黑", "Segoe UI", Arial;
+    color: #646464;
+    font-size: 14px;
+    line-height: 1.5em;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+}
+
+li {
+    list-style: none;
+}
+
+div {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.clear {
+    clear: both;
+}
+
+.box {
+    border: solid 1px #e2e2e2;
+    background: #FFF;
+    margin: 30px 30px;
+}
+
+.box_bt {
+    height: 43px;
+    border-bottom: solid 1px #e2e2e2;
+}
+
+.box_bt h2 {
+    height: 42px;
+    border-bottom: solid 2px #3f74ba;
+    float: left;
+    padding: 0 10px;
+    font-size: 18px;
+    color: #121212;
+    line-height: 42px;
+    margin-left: 15px;
+}
+
+.zdjj {
+    padding: 30px 50px;
+}
+
+.zdjj2 {
+    border-bottom: solid 1px #e2e2e2;
+    padding: 20px 50px 30px;
+}
+
+.zdlb td {
+    color: #121212;
+    height: 43px;
+    font-size: 16px;
+}
+
+.zdlb td.td1 {
+    width: 30%;
+}
+
+.fssz {
+    height: 40px;
+    overflow: hidden;
+}
+
+.fssz p {
+    float: left;
+    color: #121212;
+}
+
+.fssz p.p1 {
+    font-size: 16px;
+}
+
+.fssz p.p2 {
+    margin: 0 20px;
+}
+
+.fssz p.p2 input {
+    float: left;
+    margin: 5px 4px 0 0;
+}
+
+.fssz p.p2 span {
+    float: left;
+}
+
+.fssz p font {
+    color: #f28b0c
+}
+
+.njxz {
+    background: #e2e2e2;
+}
+
+.njxz td {
+    background: #FFF;
+    width: 16.66%;
+    height: 63px;
+    font-size: 16px;
+    position: relative;
+}
+
+.njxz td a {
+    display: block;
+    height: 100%;
+    line-height: 63px;
+    color: #121212;
+}
+
+.njxz td a.a1 {
+    border-bottom: solid 1px #e2e2e2;
+}
+
+.ynj {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    padding-left: 20px;
+}
+
+.njxz td a:hover, .njxz td a.hover {
+    background: #f7f7f7;
+    color: #F00;
+}
+
+.ynj input, .ynj p, .ynj span, .tsxx {
+    float: left;
+}
+
+.tsxx {
+    width: auto;
+    overflow: hidden;
+    font-size: 14px;
+    position: absolute;
+    right: 7%;
+    top: 20%;
+    color: #121212;
+}
+
+.tsxx font {
+    color: #f28b0c
+}
+
+.ynj input {
+    margin: 26px 8px 0 0;
+}
+
+.ynj span {
+    background: url(sj_01.png) no-repeat right center;
+    display: block;
+    width: 9px;
+    height: 6px;
+    margin: 30px 0 0 6px;
+}
+
+.fs {
+    width: 210px;
+    height: auto;
+    overflow: hidden;
+    margin: 30px auto;
+}
+
+.fs button {
+    width: 94px;
+    height: 33px;
+    float: left;
+    background: #568ed9;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+}
+
+.fs button.btn2 {
+    margin-left: 20px;
+    background: #f6ae23;
+}
+
+.zdlb td {
+
+    height: 30px;
+}
+
+
+
+.session > div {
+    display: none;
+}
+
+ul {
+    overflow: hidden;
+}
+
+#chooseCount {
+    margin-left: 30px;
+}
+
+.chooseMsg {
+    margin-bottom: 25px;
+    border: none;
+}
+
+#chooseCount .recent {
+    color: #0782C1;
+}
+
+.block:hover {
+    background-color: #ecf0fc;
+}
+
+.chooseBlock {
+    background-color: #ecf0fc;
+}
+
+#grades, #bus, #hostRoom {
+    border-top: 1px #dddfff solid
+}
+
+td span{
+    color: #616161;
+}
+
+.block .count {
+    padding-left: 10px;
+}

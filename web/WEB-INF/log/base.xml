@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log>
+
+    <log:log name="" target="log">
+        <target>log,console</target>
+        <track>true</track>
+    </log:log>
+
+    <log:log name="net.cyan.connection" target="db" debug="sql"/>
+
+    <log name="net.cyan.thunwind"/>
+    <log name="net.cyan.charset"/>
+
+    <log:log name="com.gzzm.platform.login.Authoritys" target="auth" track="false" path="auth"/>
+
+</log>

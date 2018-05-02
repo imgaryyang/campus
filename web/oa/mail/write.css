@@ -1,0 +1,98 @@
+#mail {
+    width: 99%;
+    height: 520px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+#mail .item {
+    clear: both;
+    width: 100%;
+    padding-top: 4px;
+}
+
+#mail .item .label {
+    float: left;
+    width: 7%;
+    height: 21px;
+    padding-top: 4px;
+    text-align: right;
+
+}
+
+#mail .item .label a {
+    color: blue;
+}
+
+#mail .item .input {
+    width: 93%;
+    float: left;
+}
+
+#mail .item .input input, #mail .item .input select {
+    height: 16px;
+}
+
+#mail span.checkbox title {
+    vertical-align: middle;
+    margin-right: 5px;
+    height: 14px;
+}
+
+.mailFrom {
+    padding-top: 4px;
+    height: 16px;
+}
+
+.mailFrom select, .mailFrom input {
+    width: 200px;
+    height: 16px;
+}
+
+.mailFrom div {
+    height: 18px;
+}
+
+.title {
+    width: 97%;
+    height: 22px;
+    border: 1px solid gray;
+    background-color: white;
+}
+
+#mail .item div.content {
+    height: 360px;
+}
+
+textarea.content {
+    width: 97%;
+    height: 350px;
+}
+
+div.attachment_add {
+    height: 28px;
+}
+
+div.attachment_add a {
+    cursor: pointer;
+    color: blue;
+    margin-left: 10px;
+}
+
+.attachments .attachment_item {
+    background: url("/platform/commons/icons/attachment.gif") no-repeat;
+    padding-left: 20px;
+    height: 20px;
+}
+
+.attachments .attachment_action {
+    margin-left: 15px;
+}
+
+.attachments .attachment_action a {
+    color: blue;
+}
+
+div.receiverlist {
+    width: 97%;
+}

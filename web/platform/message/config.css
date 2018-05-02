@@ -1,0 +1,105 @@
+#container {
+    width: 100%;
+    text-align: center;
+}
+
+#main {
+    text-align: left;
+    margin-top: 10px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.components {
+    overflow: hidden;
+    clear: both;
+    width: 400px;
+}
+
+.components .component_item {
+    padding-top: 5px;
+    clear: both;
+    width: 420px;
+}
+
+.components .component_item .label {
+    float: left;
+    width: 110px;
+    height: 22px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.components .component_item .component {
+    text-align: left;
+    padding-top: 0;
+    float: left;
+    width: 300px;
+}
+
+.components .component_item input {
+    width: 220px;
+    height: 18px;
+}
+
+.components .component_item input.number {
+    width: 50px;
+    height: 18px;
+    text-align: right;
+}
+
+.components .component_item input.checkbox {
+    margin-top: 3px;
+    width: 14px;
+    height: 14px;
+}
+
+.components .component_item textarea {
+    width: 300px;
+    height: 120px;
+}
+
+.components .component_item select {
+    width: 220px;
+    height: 22px;
+}
+
+.components span.checkbox {
+    float: left;
+    margin-right: 15px;
+}
+
+.components span.checkbox input {
+    vertical-align: middle;
+    margin-right: 5px;
+    height: 14px;
+    width: 14px;
+}
+
+#message .item div.content {
+    height: 350px;
+}
+
+#preview {
+    width: 250px;
+    height: 150px;
+}
+
+.buttons {
+    padding-top: 10px;
+    clear: both;
+    text-align: center;
+    width: 450px;
+}
+
+.buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+fieldset {
+    border: 1px solid #B5B8C8;
+    margin-bottom: 10px;
+    padding: 12px;
+}

@@ -1,0 +1,5 @@
+getDeptName(Integer deptId)
+{
+    var dept = FlowFunctions.getDeptInfo(deptId)
+    return dept==null?dept.getDeptName():"";
+}

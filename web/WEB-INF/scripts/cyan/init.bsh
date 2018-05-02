@@ -1,0 +1,88 @@
+import java.util.*;
+import net.cyan.commons.util.*;
+import com.gzzm.platform.commons.*;
+
+query(sql)
+{
+   return SimpleDao.getInstance().sqlQuery(sql,this.interpreter.getNameSpace().getMap());
+}
+
+query(sql,database)
+{
+   return SimpleDao.getInstance(database).sqlQuery(sql,this.interpreter.getNameSpace().getMap());
+}
+
+queryForType(sql,c)
+{
+   return SimpleDao.getInstance().sqlQuery(sql,c,this.interpreter.getNameSpace().getMap());
+}
+
+queryForType(sql,c,database)
+{
+   return SimpleDao.getInstance(database).sqlQuery(sql,c,this.interpreter.getNameSpace().getMap());
+}
+
+queryFirst(sql)
+{
+   return SimpleDao.getInstance().sqlQueryFirst(sql,this.interpreter.getNameSpace().getMap());
+}
+
+queryFirst(sql,database)
+{
+   return SimpleDao.getInstance(database).sqlQueryFirst(sql,this.interpreter.getNameSpace().getMap());
+}
+
+queryFirstForType(sql,c)
+{
+   return SimpleDao.getInstance().sqlQueryFirst(sql,c,this.interpreter.getNameSpace().getMap());
+}
+
+queryFirstForType(sql,c,database)
+{
+   return SimpleDao.getInstance(database).sqlQueryFirst(sql,c,this.interpreter.getNameSpace().getMap());
+}
+
+oqlQuery(oql)
+{
+   return SimpleDao.getInstance().oqlQuery(oql,this.interpreter.getNameSpace().getMap());
+}
+
+oqlQuery(oql,database)
+{
+   return SimpleDao.getInstance(database).oqlQuery(oql,this.interpreter.getNameSpace().getMap());
+}
+
+oqlQueryForType(oql,c)
+{
+   return SimpleDao.getInstance().oqlQuery(oql,c,this.interpreter.getNameSpace().getMap());
+}
+
+oqlQueryForType(oql,c,database)
+{
+   return SimpleDao.getInstance(database).oqlQuery(oql,c,this.interpreter.getNameSpace().getMap());
+}
+
+oqlQueryFirst(oql)
+{
+   return SimpleDao.getInstance().oqlQueryFirst(oql,this.interpreter.getNameSpace().getMap());
+}
+
+oqlQueryFirst(oql,database)
+{
+   return SimpleDao.getInstance(database).oqlQueryFirst(oql,this.interpreter.getNameSpace().getMap());
+}
+
+getBean(c)
+{
+   return Tools.getBean(c);
+}
+
+sendSmsToPhone(String content, String phone)
+{
+    com.gzzm.platform.message.Message.sendSmsToPhone(content,phone);
+}
+
+sendMessageToUser(String content, String userId)
+{
+    com.gzzm.platform.message.Message.sendMessageToUser(content,userId);
+}

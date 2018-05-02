@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>导出通讯录</title>
+    <link type="text/css" rel="stylesheet" href="/oa/address/export.css"/>
+    <script type="text/javascript" src="/oa/address/export.js"></script>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <form action="">
+            <div id="cols">
+                <fieldset>
+                    <legend>
+                        请选择导出信息的列：
+                        <input type="checkbox" name="allCol" onclick="selectAll();">全选
+                    </legend>
+                    <ul>
+                        <li bind="items">
+                            <input type="checkbox" name="exportCols" value="${field}">${name}
+                        </li>
+                    </ul>
+                </fieldset>
+            </div>
+
+            <div id="components">
+                <div class="component_item">
+                    <div class="label">导出格式</div>
+                    <div class="component">
+                        <select name="ext">
+                            <option value="xls">xls</option>
+                            <option value="xlsx">xlsx</option>
+                            <option value="csv">csv</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="component_item">
+                    <div class="label">通讯组</div>
+                    <div class="component">
+                        <select name="groupId">
+                            <option value="">所有联系人</option>
+                            <option bind="groups"></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="toExport();">导出</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

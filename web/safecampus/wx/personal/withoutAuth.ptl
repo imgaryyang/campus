@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>招in校园</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="../js/TouchSlide.1.1.js"></script>
+</head>
+<body>
+<div class="jfcg">
+    <dl class="jtzwkq" >
+        <dt><img src="/safecampus/wx/image/noattend.png" class="imgsize"></dt>
+        <dd>温馨提示：您没有权限访问此页面</dd>
+    </dl>
+</div>
+</body>
+</html>

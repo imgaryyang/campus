@@ -1,0 +1,200 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#tabs {
+    float: left;
+    margin-top: 7px;
+    margin-left: 7px;
+    /*width: 730px;*/
+    margin-bottom: 20px;
+}
+
+.tabPage {
+    width: 770px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.components {
+    float: right;
+    width: 555px;
+    margin-top: 18px;
+}
+
+.component_line {
+    clear: both;
+}
+
+.component_item {
+    float: left;
+    margin-bottom: 12px;
+}
+
+.component_item .label {
+    float: left;
+    padding-top: 3px;
+    width: 100px;
+    text-align: right;
+    padding-right: 10px;
+    word-spacing: 18px;
+}
+
+.component_item .component {
+    float: left;
+}
+
+.component_item .component_wide {
+    float: left;
+}
+
+.normalPage .components {
+    margin: 20px 0px 8px;
+}
+
+.normalPage .component_item .component {
+    width: 160px;
+}
+
+.normalPage .component_item .component input {
+    margin-right: 5px;
+    width: 140px;
+    height: 18px;
+}
+
+.normalPage .component_item .component input {
+    width: 140px;
+    height: 18px;
+}
+
+.normalPage .component_item .component input.checkbox {
+    width: 18px;
+    height: 18px;
+    vertical-align: bottom;
+}
+
+.normalPage .component_item .component select {
+    width: 140px;
+    height: 18px;
+}
+
+.normalPage .component_item .component_wide {
+    width: 510px;
+}
+
+.normalPage .component_item .component_wide input {
+    width: 725px;
+    height: 18px;
+}
+
+.normalPage .component_item .component_wide select {
+    width: 725px;
+    height: 18px;
+}
+
+.normalPage .component_item .component_wide textarea {
+    width: 408px;
+    height: 46px;
+}
+
+.normalPage .component_item .component_wide textarea.large {
+    width: 450px;
+    height: 90px;
+}
+
+.normalPage .component_item .component_wide textarea.single {
+    width: 450px;
+    height: 22px;
+}
+
+#timeLimitRemark {
+    height: 140px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    /*padding-top: 8px;*/
+    width: 100%;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+table.sublist {
+    width: 632px;
+}
+
+#timeLimits {
+    margin-bottom: 15px;
+}
+
+.timeLimit_value {
+    width: 120px;
+}
+
+.guide_select {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("/platform/commons/icons/add.gif");
+    cursor: pointer;
+    vertical-align: bottom;
+}
+
+.audit_info {
+    clear: both;
+    margin-left: 12px;
+    margin-top: 10px;
+    color: red;
+}
+
+fieldset.base {
+    border: none;
+    height: 220px;
+    margin-left: 10px;
+    width: 555px;
+    float: left;
+    padding: 0;
+    margin-top: 5px;
+
+}
+
+.gs {
+    margin: 0 28px;
+    height: auto;
+    overflow: hidden;
+    background-size: 100%;
+    padding: 0 11px;
+}
+
+#cke_con {
+    width: 700px !important;
+}
+
+#cke_1_contents {
+    height: 198px !important;
+}
+
+#t_file {
+    position: relative;
+    left: 5px;
+    bottom: 31px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width: 114px;
+    height: 31px;
+}
+
+#t_head {
+    margin-top: 5px;
+    height: 200px;
+}
+
+#content_div {
+    float: left;
+    height: 350px;
+    width: 300px;
+}

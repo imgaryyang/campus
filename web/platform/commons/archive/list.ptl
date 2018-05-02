@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>预览-${name}</title>
+    <link type="text/css" rel="stylesheet" href="/platform/commons/archive/list.css">
+    <script type="text/javascript" src="/platform/commons/archive/list.js"></script>
+    <script type="text/javascript" src="/platform/commons/image.js"></script>
+</head>
+<body>
+    <div id="fileName">${name}</div>
+
+    <div id="navigator" style="display: none">
+        <div id="back" class="go" onclick="goBack();" style="display: none"></div>
+        <div id="forward" class="go" onclick="goForward();" style="display: none"></div>
+        <div id="up" class="go" onclick="goUp();" style="display: none"></div>
+
+        <div id="paths"></div>
+    </div>
+
+    <div id="files">
+    </div>
+
+    <div id="actions" style="display: none">
+        <span><a href="#" onclick="download0()">下载</a></span>
+        <span><a href="#" onclick="preview0()" id="preview">预览</a></span>
+    </div>
+</body>
+</html>

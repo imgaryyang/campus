@@ -1,0 +1,256 @@
+<html>
+<head>
+    <title>${actionName}统计—${vote.title}</title>
+    <style type="text/css">
+        #vote {
+            clear: both;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 15px;
+            width: 90%;
+        }
+
+        #vote #head .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #vote #head .intro {
+            font-size: 13px;;
+            color: #005590;
+            text-indent: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-bottom: solid 2px #444444;
+        }
+
+        .recordCount {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        #vote .group_content {
+            margin-left: 10px;
+        }
+
+        #vote .problem {
+            margin-left: 10px;
+        }
+
+        #vote .group_content .problem {
+            margin-left: 20px;
+        }
+
+        #vote .problem {
+            margin-bottom: 15px;
+        }
+
+        #vote .problem .title {
+            line-height: 20px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        #vote .problem .required {
+            color: red;
+            margin-left: 5px;
+        }
+
+        #vote .problem .top_title {
+            line-height: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        #vote .problem .top_title span {
+            font-size: 16px;
+        }
+
+        #vote .groupTitle {
+            line-height: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #vote .groupTitle span {
+            font-size: 16px;
+        }
+
+        table {
+            border: 0;
+        }
+
+        #vote .problem .option .label {
+            width: 250px;
+            height: 24px;
+            font-size: 13px;
+        }
+
+        #vote .problem .option .ratio {
+            width: 300px;
+            height: 24px;
+        }
+
+        #vote .problem .option .value {
+            text-indent: 20px;
+            width: 120px;
+            height: 24px;
+            font-size: 13px;
+        }
+
+        #vote .problem .option .ratio .ratio_value0 {
+            height: 10px;
+            line-height: 10px;
+            font-size: 5px;
+            border: 1px solid #8a4461;
+            background: #e7ab6d;
+        }
+
+        #vote .problem .option .ratio .ratio_value1 {
+            height: 10px;
+            line-height: 10px;
+            font-size: 5px;
+            border: 1px solid #377136;
+            background: #5dbc5b;
+        }
+
+        #vote .problem .option .ratio .ratio_value2 {
+            height: 10px;
+            line-height: 10px;
+            font-size: 5px;
+            border: 1px solid #404d6d;
+            background: #6c81b6;
+        }
+
+        #vote .problem .option .ratio .ratio_value3 {
+            height: 10px;
+            line-height: 10px;
+            font-size: 5px;
+            border: 1px solid #637a80;
+            background: #d2e5ea;
+        }
+
+        #vote .problem .option .ratio .ratio_value4 {
+            height: 10px;
+            line-height: 10px;
+            font-size: 5px;
+            border: 1px solid #844174;
+            background: #eba0d9;
+        }
+
+        #vote .problem .option .ratio .ratio_value5 {
+            height: 10px;
+            line-height: 10px;
+            font-size: 5px;
+            border: 1px solid #869569;
+            background: #c2f363;
+        }
+
+        #vote .problem .option .ratio .ratio_value6 {
+            height: 10px;
+            line-height: 10px;
+            font-size: 5px;
+            border: 1px solid #8f5664;
+            background: #ee325f;
+        }
+
+        #vote .problem .option .ratio .ratio_value7 {
+            height: 10px;
+            line-height: 10px;
+            font-size: 5px;
+            border: 1px solid #99761f;
+            background: #ffc534;
+        }
+
+        #vote .problem  .stat {
+            margin-left: 10px;
+            margin-top: 3px;
+            font-size: 13px;
+        }
+
+        #vote .problem  .stat span {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainBody">
+        <div id="vote">
+            <div id="head">
+                <div class="title">${vote.title}</div>
+                <div class="recordCount">
+                    共${recordCount}${objectName}${actionName}&nbsp;&nbsp;开始时间:${vote.startTime}&nbsp;&nbsp;截止时间:${vote.endTime}
+                </div>
+                <div class="intro" bind="vote.intro"></div>
+            </div>
+
+            <%int index = 0;%>
+            <div bind="groups" class="group${(groupId!=null&&problems.size()>1)?' group_content':''}">
+
+                <div class="groupTitle" bind="groupId!=null&&problems.size()>1">
+                    <span class="index"> <%=++index%>、</span>
+                    <span class="problemName">${groupName}</span>
+                </div>
+
+                <div bind="problems" class="problem">
+
+                    <div class="${(groupId!=null&&problems.size()>1)?'title':'top_title'}"
+                         bind="problems.size()>1||groups.size()>1">
+
+                        <span class="index" bind="groupId==null||problems.size()==1"><%=++index%>、</span>
+                        <span class="index" bind="groupId!=null&&problems.size()>1">(${index$+1})</span>
+                        <span class="problemName">${problemName}</span>
+                        <span bind="required" class="required">[必填]</span>
+
+                    </div>
+
+                    <table class="problem_content" bind="optionList.size()>0" cellpadding="0" cellspacing="0"
+                           border="0">
+                        <tr bind="getOptionList(self)" class="option">
+                            <td class="label">${optionName}：</td>
+                            <td class="ratio">
+                                <table bind="getOptionVoteCount(self)!=0" style="width:${getOptionVoteRatio(self)}">
+                                    <tr>
+                                        <td class="ratio_value${index$%8}"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="value">
+                                ${getOptionVoteCount(self)}(${getOptionVoteRatio(self)})
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="problem_content"
+                         bind="optionList.size()==0&&(dataType.name()=='NUMBER'||dataType.name()=='INTEGER')">
+                        <div class="stat">
+                            <span>共${getVoteInputStat(problemId).count}${objectName}回答了此问题</span>
+                            <span> 最小值:${getVoteInputStat(problemId).min}</span>
+                            <span>最大值:${getVoteInputStat(problemId).max}</span>
+                            <span> 平均值:${getVoteInputStat(problemId).avg}</span>
+                        </div>
+                    </div>
+                    <div class="problem_content"
+                         bind="optionList.size()==0&&dataType.name()=='FILE'">
+                        <div class="stat">
+                            共${getVoteInputCount(problemId)}${objectName}上传了内容
+                        </div>
+                    </div>
+                    <div class="problem_content"
+                         bind="optionList.size()==0&&dataType.name()!='NUMBER'&&dataType.name()!='INTEGER'&&dataType.name()!='FILE'">
+                        <div class="stat">
+                            共${getVoteInputCount(problemId)}${objectName}回答了此问题
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html action="false">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>我的账单</title>
+    <link href="../css/stlye.css" rel="stylesheet" type="text/css">
+    <link href="paylist.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery.js"></script>
+</head>
+
+<body>
+
+<div class="txkq">
+
+    <div class="wfkqxs">
+        <span >待缴账单</span>
+        (<font>${allBills.size()}</font>)
+    </div>
+
+    <div class="sscj">
+        <div class="contont">
+            <div class="tjls" bind="${allBills.size()==0}" style="height: 250px">
+                <div id="back" style="z-index:1;position: relative">
+                    <dl class="jtzwkq" >
+                        <dt><img src="../image/wdxbq_03.png"></dt>
+                        <dd class="dd1">&nbsp;暂无待缴账单</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="tjls payItem" bind="allBills" href="/wx/pay/billdetail/bid/${billId}/sid/${studentId}">
+                <div class="xbkqfy">
+                    <div class="xbf">
+                        <p class="p1">${payItem.payItemName}</p>
+                    </div>
+                    <div class="djf">
+                        <span class="time">${createTime}</span>
+                        <bind bind="${billStatus.name()=='Wait'}"><p class="p2">${billStatus}</p></bind>
+                        <bind bind="${billStatus.name()=='Finnish'}"><p class="p3">${billStatus}</p></bind>
+                        <bind bind="${billStatus.name()=='Fail'}"><p class="p4">${billStatus}</p></bind>
+                    </div>
+                    <dl class="qfk">
+                        <dt><font>￥</font>${money}</dt>
+                        <bind bind="${billStatus.name()=='Wait'}">
+                            <dd>截至日期：${deadline}</dd>
+                            <dd><a href="/wx/pay/billdetail/bid/${billId}/sid/${studentId}">去付款</a></dd>
+                        </bind>
+                        <bind bind="${billStatus.name()=='Finnish'}">
+                            <dd>付款日期：${payTime}</dd>
+                        </bind>
+                    </dl>
+                </div>
+                <ul class="zdsqtb">
+                    <li><span><img src="../image/xtbtm_14.png" class="im1"></span><font>交易对象：${dept.deptName}</font></li>
+                    <li><span><img src="../image/djtb_07.jpg"></span><font>账单编号：${serialNo}</font></li>
+                    <li class="sort"><span><img src="../image/djtb_10.jpg"></span><font>账单详情：${payItem.desc}</font></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    $("div.payItem").click(function () {
+        window.location.href = $(this).attr("href");
+    })
+</script>

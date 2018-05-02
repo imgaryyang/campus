@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>导入通讯录</title>
+    <link type="text/css" rel="stylesheet" href="/oa/address/cols_mapping.css"/>
+    <script type="text/javascript" src="/oa/address/card.js"></script>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <form action="">
+            <div id="title">映射要导入的域:</div>
+
+            <div id="maps">
+                <div class="map" bind="itemMaps">
+                <span class="col">
+                    ${col}
+                    <input type="hidden" name="itemMaps.col" value="${col}">
+                </span>
+                <span class="to">
+                    -->
+                </span>
+                <span class="field">
+                    <select name="itemMaps.field" value="${field}">
+                        <option value="">----------</option>
+                        <option bind="items"></option>
+                    </select>
+                </span>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="imp();">确定</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">取消</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

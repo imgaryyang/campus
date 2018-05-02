@@ -1,0 +1,42 @@
+${view.top}
+<html>
+<head>
+    <title bind="view.title"></title>
+    <link type="text/css" rel="stylesheet" href="/platform/styles/big.css">
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/platform/commons/simpledialog.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body id="dialogBody">
+
+    <div id="main" class="single">
+
+        ${view.header}
+
+        <form id="form" action="">
+            <span bind="view.hiddens">
+                <input type="hidden" name="${self}">
+            </span>
+
+            <div id="components">
+                <div class="component_item" bind="view.components">
+                    <div class="label">
+                        <span bind="label"></span><span class="require" bind="require">*</span>
+                    </div>
+                    <div bind="component" class="component">
+                        ${self.display(entity,'entity')}
+                    </div>
+                </div>
+            </div>
+            <div id="buttons">
+                <span bind="view.buttons" class="button">
+                    ${self.display()}
+                </span>
+            </div>
+
+            ${view.bottom}
+        </form>
+
+    </div>
+</body>
+</html>

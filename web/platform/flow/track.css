@@ -1,0 +1,116 @@
+html, body {
+    overflow-y: auto;
+}
+
+#steps {
+    width: 665px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    color: #005590;
+}
+
+.step {
+    clear: both;
+    float: left;
+    width: 600px;;
+    margin-left: 25px;;
+    margin-right: 25px;;
+    margin-bottom: 20px;
+    border-top: 1px solid #6c92ad;
+    border-left: 1px solid #6c92ad;
+    border-right: 1px solid #6c92ad;
+}
+
+.line {
+    clear: both;
+    float: left;
+    width: 100%;
+    line-height: 23px;
+    border-bottom: 1px solid #6c92ad;
+    overflow-y: hidden;
+}
+
+.label {
+    float: left;
+    width: 120px;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+    text-align: right;
+    padding-right: 30px;
+    background-color: #edf2f7;
+    border-right: 1px solid #6c92ad;
+}
+
+.value {
+    float: left;
+    width: 419px;
+    padding-left: 30px;
+    background-color: white;
+}
+
+button {
+    line-height: 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.copy {
+    color: #005590;
+}
+
+.press {
+    color: #005590;
+}
+
+.noAccept .value {
+    color: #ff0000;
+}
+
+.noDeal .value {
+    color: green;
+}
+
+.backNoAccept .value {
+    color: green;
+}
+
+.backNoDeal .value {
+    color: #008000;
+}
+
+.passNoAccept {
+    color: red;
+}
+
+.copyNoAccept {
+    color: red;
+}
+
+.copyNoDeal {
+    color: green;
+}
+
+.text {
+
+}
+
+.time {
+    text-align: right;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+#bottom {
+    float: left;
+    clear: both;
+    width: 10px;
+    height: 5px;
+}
+
+#buttons {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

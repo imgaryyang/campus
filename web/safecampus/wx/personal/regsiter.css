@@ -1,0 +1,27 @@
+.srxsj_zt {
+    width: 90%;
+}
+
+.require::-webkit-input-placeholder { /* WebKit browsers */
+    color: #e7505a;
+}
+
+.require:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #e7505a;
+}
+
+.require::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #e7505a;
+}
+
+.require:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #e7505a;
+}
+
+#verifCodeBut {
+    position: relative;
+    bottom: 90%;
+    right: 46px;
+    cursor: pointer;
+}
+

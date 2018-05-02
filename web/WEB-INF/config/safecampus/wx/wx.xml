@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!--不拦截的路径-->
+    <bean class="com.gzzm.safecampus.wx.common.WxConfig" factory="instance">
+        <excludeUrls>
+            <element>/wx/tutorship/index</element>
+            <element>/wx/tutorship/</element>
+            <!--认证页面不拦截-->
+            <element>/wx/personal/toauthpage</element>
+            <element>/wx/resgiterpage</element>
+            <element>/wx/personal/jsapiConfig</element>
+        </excludeUrls>
+    </bean>
+</config>

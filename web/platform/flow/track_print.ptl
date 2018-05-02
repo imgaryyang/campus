@@ -1,0 +1,110 @@
+<html>
+<head>
+    <title>流程跟踪-${struct.instance.title}</title>
+    <link type="text/css" rel="stylesheet" href="/platform/flow/track_print.css">
+</head>
+<body bind="struct">
+
+    <div id="steps">
+        <div bind="steps" class="step ${getStateName(state)}">
+
+            <div class="line">
+                <div class="label">环节名称</div>
+                <div class="value">${nodeName}</div>
+            </div>
+            <div class="line">
+                <div class="label">处理人</div>
+                <div class="value" bind="state==3||state==16||state==17">
+                    ${dealerName}
+                    <span bind="disposer.properties.get('deptName')!=null">(${disposer.properties.deptName})</span>
+                </div>
+                <div class="value" bind="state!=3&&state!=16&&state!=17&&disposer!=null">
+                    ${disposer.receiverName}
+                    <span bind="disposer.properties.get('deptName')!=null">(${disposer.properties.deptName})</span>
+                </div>
+                <div class="value" bind="disposer==null">
+                    <div bind="receivers">
+                        ${receiverName}<span bind="properties.get('deptName')!=null">(${properties.deptName})</span>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="label">状态</div>
+                <div class="value">
+                    ${getStateString(state)}
+                </div>
+            </div>
+            <div class="line" bind="preStepIds[0]!='0'">
+                <div class="label">文件来源</div>
+                <div class="value">
+                    <div bind="sourceNames" class="sourceName">
+                        ${self}
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="label">开始时间</div>
+                <div class="value">${receiveTime}</div>
+            </div>
+            <div class="line" bind="preStepIds[0]!='0'&&acceptTime!=null">
+                <div class="label">接收时间</div>
+                <div class="value">${acceptTime}</div>
+            </div>
+            <div class="line" bind="disposeTime!=null">
+                <div class="label">处理时间</div>
+                <div class="value">${disposeTime}</div>
+            </div>
+            <div class="line" bind="state!=18">
+                <div class="label">已用时间</div>
+                <div class="value">${getWorkDay(self)}工作日</div>
+            </div>
+            <div class="line" bind="stepId!=null&&getOpinions(stepId)!=null">
+                <div class="label">处理意见</div>
+                <div class="value">
+
+                    <div bind="getOpinions(stepId)">
+                        <div class="text">
+                            ${text}
+                        </div>
+                        <div class="time">
+                            ${time}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="line" bind="copySteps.size()>0">
+                <div class="label">${copyNodeName}人员</div>
+                <div class="value">
+                    <div bind="copySteps" id="step${stepId}" class="copy ${getStateName(state)}">
+                        ${receiverName}(
+                        <span bind="receiveTime" format="yyyy-MM-dd HH:mm"></span>
+                        <span bind="state==9">${getStateString(state)}</span>
+                        <span bind="state==10">于<span bind="acceptTime" format="yyyy-MM-dd HH:mm"></span>接收，目前处理中</span>
+                        <span bind="state==11">于<span bind="disposeTime" format="yyyy-MM-dd HH:mm"></span>处理</span>
+                        )
+                    </div>
+
+                </div>
+            </div>
+            <div class="line" bind="passSteps.size()>0">
+                <div class="label">${passNodeName}人员</div>
+                <div class="value">
+                    <div bind="passSteps" id="step${stepId}" class="pass ${getStateName(state)}">
+                        ${receiverName}(
+                        <span bind="receiveTime" format="yyyy-MM-dd HH:mm"></span>
+                        <span bind="state==12">${getStateString(state)})</span>
+                        <span bind="state!=12">于<span bind="acceptTime" format="yyyy-MM-dd HH:mm"></span>阅读</span>
+                        )
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="bottom"></div>
+
+    </div>
+</body>
+</html>

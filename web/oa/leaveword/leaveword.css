@@ -1,0 +1,65 @@
+#dialogBody {
+    margin-bottom: 40px;
+
+}
+
+#main {
+    width: 688px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#dialogBody .components {
+    clear: both;
+    width: 680px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-left: 20px;
+}
+
+#dialogBody .components .component_line {
+    clear: both;
+}
+
+#dialogBody .components .component_item .label {
+    padding-top: 3px;
+    margin-bottom: 6px;
+    float: left;
+    width: 60px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#dialogBody .components .component_line .component_item .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 580px;
+}
+
+#dialogBody .components .component_line .component_item input {
+    width: 580px;
+    height: 18px;
+}
+
+#dialogBody .components .component_line .component_item select {
+    width: 580px;
+    height: 18px;
+}
+
+#dialogBody .components .component_line .component_item textarea {
+    width: 580px;
+    height: 200px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 8px;
+    width: 688px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

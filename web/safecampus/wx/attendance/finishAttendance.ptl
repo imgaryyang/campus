@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>完成考勤</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/TouchSlide.1.1.js"></script>
+    <script src="/safecampus/wx/attendance/attendance.js"></script>
+    <script src="/safecampus/js/jquery.js"></script>
+    <script src="/safecampus/wx/personal/jssdk.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+<script>
+    console.log("1")
+</script>
+<body>
+
+<div class="txkq">
+    <dl class="kqwc">
+        <dt><img src="/safecampus/wx/image/dg_03.png"></dt>
+        <dd>${name}</dd>
+    </dl>
+
+    <div class="sscj">
+        <div class="contont">
+
+            <div class="tjls">
+                <div class="tjls_bt">
+                    <p>${currentDate}考勤情况</p>
+                    <span onclick="showAttendanceDetail('${aoId}','${state}')"></span></div>
+                <div class="wfs">
+                    <div class="wfs_lt">未发送考勤通知学生<span style="color: white;text-indent:0rem">${unsendedCount}</span></div>
+                    <div class="wfs_rt ${unsendedCount==0?'unshowclass':''}" bind="${state==0||state==2||state==3||state==4}"><a href="/wx/attendance/changestate?aoId=${aoId}">更改状态</a></div>
+                    <div class="wfs_rt ${unsendedCount==0?'unshowclass':''}" bind="${state==1}"><a href="/wx/attendance/buschangestate?aoId=${aoId}">更改状态</a></div>
+                </div>
+                <div class="kqmx">
+                    <ul>
+                        <li class="li1" bind="studentsUnsended"><span><img src="/safecampus/wx/image/tx_03.png"></span>
+
+                            <h2>${studentName}</h2>
+
+                            <h3><a href="tel:${phone}">联系家长</a></h3>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cdzh">
+                    <ul>
+                        <li>
+                            <p>迟到学生</p>
+
+                            <p class="p1">${lateCount}</p>
+                            <span></span></li>
+                        <li>
+                            <p>请假学生</p>
+
+                            <p class="p2">${leaveCount}</p>
+                            <span></span></li>
+                        <li>
+                            <p class="${state==0?'':'unshowclass'}">已到班学生</p>
+                            <p class="${state==1?'':'unshowclass'}">已签到学生</p>
+                            <p class="${state==2?'':'unshowclass'}">已午休学生</p>
+                            <p class="${state==3?'':'unshowclass'}">已托管学生</p>
+                            <p class="${state==4?'':'unshowclass'}">已签到学生</p>
+                            <p class="p3">${arrvedCount}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="jxkq">
+                <button type="button" class="hover" onclick="continueAtt('${relationId}','${state}')">继续考勤</button>
+                <button type="button" class="btn2" onclick="wx.closeWindow()">返回首页</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

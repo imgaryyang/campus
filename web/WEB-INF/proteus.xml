@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proteus>
+    <jsptag>true</jsptag>
+
+    <!---支持报表功能-->
+    <transformer attribute="report" type="net.cyan.proteus.report.ReportTagTransformer"/>
+
+    <!--支持sql和oql-->
+    <transformer attribute="sql" type="net.cyan.proteus.imp.SQLTagTransformer"/>
+    <transformer attribute="oql" type="net.cyan.proteus.imp.OQLTagTransformer"/>
+
+    <!--支持图片校验码-->
+    <processor attribute="id" value="captcha$img" type="net.cyan.captcha.ArachneCaptchaSupport"/>
+
+    <!--支持在页面上取得nest所配置的常量-->
+    <variable name="constant" type="net.cyan.nest.ConstantContainer"/>
+
+    <config path="proteus"/>
+
+    <transformer attribute="portal" type="com.gzzm.portal.tag.PortalTagTransformer"/>
+
+    <!--<init type="com.gzzm.portal.commons.ExternalLinkInit"/>-->
+
+</proteus>

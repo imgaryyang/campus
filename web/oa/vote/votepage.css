@@ -1,0 +1,191 @@
+html, body {
+    overflow-y: auto;
+}
+
+#vote {
+    clear: both;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 15px;
+    width: 90%;
+}
+
+#vote #head .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#vote #head .intro {
+    font-size: 13px;;
+    color: #005590;
+    text-indent: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 2px #444444;
+}
+
+#vote .group_content {
+    margin-left: 10px;
+}
+
+#vote .problem {
+    margin-left: 10px;
+}
+
+#vote .group_content .problem {
+    margin-left: 20px;
+}
+
+#vote .problem span {
+    font-size: 13px;;
+}
+
+#vote .problem {
+    margin-bottom: 15px;
+}
+
+#vote .problem .title {
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+#vote .problem .title .required {
+    color: red;
+    margin-left: 5px;
+}
+
+#vote .problem .top_title {
+    line-height: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#vote .problem .top_title span {
+    font-size: 16px;
+}
+
+#vote .problem .top_title .required {
+    color: red;
+    margin-left: 5px;
+}
+
+#vote .groupTitle {
+    line-height: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#vote .groupTitle span {
+    font-size: 16px;
+}
+
+#vote .problem .option {
+    line-height: 20px;
+}
+
+#vote .problem .option span {
+    vertical-align: top;
+}
+
+#vote .problem .option div.remark {
+    padding-left: 10px;
+    text-indent: 20px;
+    font-size: 12px;
+    color: #808080;
+    font-style: italic;
+}
+
+#vote .problem .other .label {
+    margin-right: 3px;
+}
+
+#vote .problem .other .input input {
+    width: 500px;
+    height: 18px;
+    line-height: 20px;
+    border-width: 0;
+    border-bottom: 1px solid #000000;
+    background: none;
+}
+
+#vote .problem .text input {
+    width: 560px;
+    height: 18px;
+    line-height: 20px;
+    border-width: 0;
+    border-bottom: 1px solid #000000;
+    background: none;
+}
+
+#vote .problem .text textarea {
+    line-height: 20px;
+    width: 560px;
+    height: 150px;
+    overflow-y: auto;
+}
+
+#vote .problem .file input {
+    width: 560px;
+    height: 20px;
+}
+
+.anonymous {
+    padding-left: 10px;
+    line-height: 20px;
+}
+
+.anonymous input {
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.buttons {
+    clear: both;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.buttons .button button {
+    cursor: pointer;
+}
+
+.problem .score {
+    color: red;
+}
+
+#head .score {
+    color: red;
+    padding-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+#head .costTime {
+    color: red;
+    padding-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+#head .indefinite {
+    font-size: 13px;;
+    line-height: 20px;
+    color: red;
+    text-indent: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+}

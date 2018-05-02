@@ -1,0 +1,68 @@
+.valmiki_filelist_main {
+    float: left;
+    width: 100%;
+}
+
+ul.valmiki_filelist {
+    float: left;
+    width: 100%;
+}
+
+ul.valmiki_filelist li {
+    clear: both;
+    line-height: 22px;
+}
+
+ul.valmiki_filelist li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+}
+
+ul.valmiki_filelist li .fileName {
+    color: #000000;
+    font-size: 12px;
+}
+
+ul.valmiki_filelist li a:hover {
+    color: red;
+}
+
+ul.valmiki_filelist span {
+    float: left;
+}
+
+ul.valmiki_filelist span.delete {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    margin-top: 4px;
+    cursor: pointer;
+    background: url(../images/icons/delete.gif)
+}
+
+ul.valmiki_filelist span.action {
+    margin-left: 10px;
+}
+
+ul.valmiki_filelist span.action a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 12px;
+}
+
+ul.valmiki_filelist span.action a:hover {
+    color: red;
+}
+
+.valmiki_filelist_bottom {
+    clear: both;
+    width: 100%;
+}
+
+.valmiki_filelist_bottom button {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+

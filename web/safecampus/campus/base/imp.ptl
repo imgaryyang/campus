@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>导入数据</title>
+    <link rel="stylesheet" type="text/css" href="/safecampus/campus/base/imp.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/imp.js"></script>
+</head>
+<body id="dialogBody">
+
+<form id="form" action="">
+    <div id="components">
+        <div class="component_item">
+            <div class="label">选择文件</div>
+            <div class="component">
+                <input type="file" name="imp" filetype="xls csv xlsx">
+            </div>
+        </div>
+        <div class="component_item msg" bind="showTemplate">
+            <div class="tip">提示：</div>
+            <div>1) 请按模板填写对应信息</div>
+            <div>2) 模板及使用说明(点击下载)：<a href="${templatePath}" target="_blank">导入模板.xls</a>
+            </div>
+        </div>
+    </div>
+    <div id="buttons">
+            <span class="button">
+                <button onclick="ok();" type="button" progress="true">确定</button>
+                <button onclick="closeWindow();" type="button">取消</button>
+            </span>
+    </div>
+</form>
+</body>
+</html>

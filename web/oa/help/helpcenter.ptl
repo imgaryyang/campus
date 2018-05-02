@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>帮助中心</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="zj">
+  <div class="cjwt">
+    <div class="cjwt_bt">
+      <div class="cjwt_bt_lt">帮助中心</div>
+      <div class="cjwt_bt_zj"><a href="/oa/help/compro">常见问题</a></div>
+      <div class="cjwt_bt_rt">common problem</div>
+    </div>
+    <div class="wtlb"  portal:type="info" pageSize="1" channelId="${request.channelId}">
+    <%--<divclass="wtlb">--%>
+      <div class="xxy"  bind="title" format="trunk(6)"></div>
+      <%--<div class="xxy">${title}</div>--%>
+      <div class="xxy_sm">${content}</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<div bind="sublist$">
+    <table id="${id}" class="sublist" orderable="${orderable.toString()}" readOnly="${readOnly.toString()}">
+        <thead>
+        <tr>
+            <th bind="columns" width="${width==null?'auto':width}" align="${align}">
+                ${title}
+            </th>
+            <th class="up" bind="orderable&&!readOnly">
+                上移
+            </th>
+            <th class="down" bind="orderable&&!readOnly">
+                下移
+            </th>
+            <th class="remove" bind="!readOnly">
+                删除
+            </th>
+            <th class="edit" bind="!readOnly">
+                修改
+            </th>
+            <th class="add" bind="!readOnly">
+                <span title="添加${name}" onclick="System.SubList.add('${id}');" class="add"></span>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        Cyan.onload(function ()
+        {
+            System.SubList.init("${id}", "${field}");
+        });
+    </script>
+</div>

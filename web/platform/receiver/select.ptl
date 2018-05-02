@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>选择接收者</title>
+    <link type="text/css" rel="stylesheet" href="/platform/receiver/select.css">
+    <script type="text/javascript" src="/platform/receiver/select.js"></script>
+</head>
+
+<body id="dialogBody">
+    <div id="main">
+        <div id="search">
+            <input name="word" id="word" class="search">
+        </div>
+        <div id="selector">
+            <div bind="com.gzzm.platform.receiver.PageReceiverSelector.class" id="receiverSelector"
+                 name="receivers" type="${type}" typeName="${typeName}" appId="${appId}" deptId="${deptId}">
+            </div>
+        </div>
+        <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="ok();">确定</button>
+            </span>
+            <span class="button">
+                <button type="button" onclick="closeWindow();">关闭</button>
+            </span>
+            <span class="button" bind="type!='stationId'">
+                <button type="button" onclick="addUserGroup();">新建用户组</button>
+            </span>
+            <span class="button" bind="type!='stationId'">
+                <button type="button" onclick="manageUserGroup();">用户组管理</button>
+            </span>
+        </div>
+
+        <div id="default_expand">
+        </div>
+    </div>
+</body>
+</html>

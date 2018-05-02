@@ -1,0 +1,126 @@
+<html>
+<head>
+    <title>新增缴费项目</title>
+    <link type="text/css" rel="stylesheet" href="/safecampus/campus/payment/pay.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/safecampus/js/jquery.js"></script>
+</head>
+
+<body id="dialogBody">
+<div id="main">
+    <form id="form" action="">
+        <input type="text" name="entity.payItemId" hidden>
+        <div class="component_line">
+            <div class="component_item" id="paymentType">
+                <span class="label">缴费类型  </span>
+                <span class="component">
+			</span>
+                <span class="component">
+                <span bind="com.gzzm.safecampus.campus.pay.PaymentType">
+                     <input name="entity.paymentType" type="radio" class="checkbox"
+                            value="${self.name()}" require trim readonly id="${self.name()}" require>
+                    <label for="${self.name()}">${self}</label>
+                 </span><span class="require">*</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="component_line">
+            <div class="component_item" id="payname">
+                <span class="label">项目名称  </span>
+                <input class="component" type="text" name="entity.payItemName" id="payItemName"
+                       require/><span class="require">*</span>
+            </div>
+        </div>
+        <div class="component_line">
+            <div class="component_item">
+                <span class="label">项目编号  </span>
+                <input class="component" type="text" name="entity.serialNo" id="serialNo"
+                       require/><span class="require">*</span>
+
+            </div>
+            <div class="component_item">
+
+            </div>
+        </div>
+        <div class="component_line">
+            <div class="component_item">
+                <span class="label">缴费金额(元)  </span>
+                <input class="component" type="text" name="entity.money" id="money" require/>
+                <span class="require">*</span>
+            </div>
+
+        </div>
+        <div class="component_line">
+
+            <div class="component_item">
+                <span class="label">截止时间  </span>
+                <input class="component" type="text" name="entity.deadline" id="deadline"/>
+            </div>
+        </div>
+        <div class="component_line">
+            <div class="component_item" id="description">
+                <span class="label">缴费说明  </span>
+
+                <textarea class="component" type="text" name="entity.desc" id="desc"></textarea>
+            </div>
+        </div>
+        <div class="selectButton">
+            <button id="save" type="button">保存</button>
+            <button onclick="closeWindow(true);">关闭</button>
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>
+<script>
+
+    $("#save").click(function () {
+        if ($("#deadline").val().length > 0) {
+            var thetime = $("#deadline").val();
+            var d = thetime.replace(/-/g, "");
+            var mydate = new Date();
+            var str = mydate.getFullYear();
+            var m = mydate.getMonth() + 1;
+            if (parseInt(m) < 10) {
+                str = str + "0" + m + mydate.getDate();
+            } else {
+                str = str + m + mydate.getDate();
+            }
+            console.log(d + "-" + str);
+            if (parseInt(d) < parseInt(str)) {
+                Cyan.message("请选择大于今天的时间！");
+            }
+            else {
+                window.save()
+            }
+        } else {
+            window.save()
+        }
+
+    });
+    $("#serialNo").change(function () {
+        var text =$(this).val();
+        var strlen=0;
+        for (var i = 0; i < text.length; i++) {
+            if (isChinese(text.charAt(i)) == true) {
+                strlen = strlen + 3; //中文为2个字符
+            }else {
+                strlen = strlen + 1; //英文一个字符
+            }
+        }
+        if(strlen>20){
+            Cyan.message("项目编号超出长度")
+        }
+
+    });
+    function isChinese(str) {  //判断是不是中文
+        var reCh = /[u00-uff]/;
+        return !reCh.test(str);
+    }
+
+</script>
+

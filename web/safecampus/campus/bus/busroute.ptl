@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>${new$?'新增路线':'路线修改'}</title>
+    <link type="text/css" rel="stylesheet" href="/safecampus/campus/bus/busroute.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/safecampus/campus/bus/busroute.js"></script>
+</head>
+<body id="dialogBody">
+<div id="main">
+    <form id="form" action="">
+        <div>
+            <fieldset class="base" style="width: 740px;height: 400px;">
+                <div class="components">
+                    <div class="component_line">
+                        <div class="component_item">
+                            <div class="label1">
+                                路线名称
+                            </div>
+                            <div class="component2">
+                                <input name="entity.routeName" require/>
+                            </div>
+                            <span class="require" style="margin-left: 5px;">*</span>
+                        </div>
+
+                        <div class="component_item">
+                            <div class="label1">
+                                预计路线行程时间
+                            </div>
+                            <div class="component2">
+                                <input name="entity.routeTravelTime" require/>
+                            </div>
+                            <span class="require" style="margin-left: 5px;">*</span>
+                        </div>
+                    </div>
+
+                    <div class="component_line">
+                        <div class="component_item">
+                            <div class="label1">
+                                早班发车时间
+                            </div>
+                            <div class="component1">
+                                <select name="entity.morningBusHour">
+                                    <option bind=""></option>
+                                </select>
+                            </div>
+                            <div class="component" style="width: 5%;">&nbsp;&nbsp;:</div>
+                            <div class="component1">
+                                <select name="entity.morningBusMinute">
+                                    <option bind=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="component_item">
+                            <div class="label1">
+                                晚班发车时间
+                            </div>
+                            <div class="component1">
+                                <select name="entity.nightBusHour">
+                                    <option bind=""></option>
+                                </select>
+                            </div>
+                            <div class="component" style="width: 5%;">&nbsp;&nbsp;:</div>
+                            <div class="component1">
+                                <select name="entity.nightBusMinute">
+                                    <option bind=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wtnr">
+                        <div class="wtms_bt">
+                            <a href="javascript:void(0)" onclick="addnew()">新增</a>
+
+                            <h3>途经地点</h3>
+                        </div>
+                        <div class="component">
+                            <div id="busSiteSubList"
+                                 bind="com.gzzm.safecampus.campus.bus.BusSiteSubList.class"
+                                 bind="view" showAdd="false" require>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="save()">保存</button>
+            </span>
+            <span class="button">
+                <button type="button" onclick="closeWindow(true);">关闭</button>
+            </span>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+

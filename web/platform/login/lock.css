@@ -1,0 +1,54 @@
+html, x:-moz-any-link {
+    overflow: hidden;
+}
+
+html {
+    *overflow: hidden;
+}
+
+body {
+    background: #d2e0f2;
+}
+
+#dialogBody {
+    margin-bottom: 0;
+    width: 310px;
+    height: 100px;
+}
+
+* {
+    font-size: 12px;
+    font-family: '宋体';
+}
+
+#container {
+    margin: 5px;
+    width: 320px;
+    height: 80px;
+    text-align: center;
+}
+
+#title {
+    margin-left: 4px;
+    text-align: left;
+    line-height: 30px;
+}
+
+#select {
+}
+
+#password {
+    width: 280px;
+    height: 18px;
+}
+
+#button {
+    padding-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

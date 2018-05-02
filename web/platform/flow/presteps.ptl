@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>请选择要退回的人员</title>
+    <link type="text/css" rel="stylesheet" href="/platform/flow/presteps.css">
+    <script type="text/javascript" src="/platform/flow/presteps.js"></script>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <ul>
+            <li bind="preSteps">
+                <input type="checkbox" name="stepIds" value="${stepId}">${dealerName}
+            </li>
+        </ul>
+    </div>
+    <div id="buttons">
+        <span class="button">
+            <button type="button" onclick="ok()">确定</button>
+        </span>
+        <span class="button">
+            <button type="button" onclick="cancel()">取消</button>
+        </span>
+    </div>
+</body>
+</html>

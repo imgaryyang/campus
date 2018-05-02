@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>系统标题</title>
+</head>
+<body>
+    <script type="text/javascript">
+        Cyan.onload(function()
+        {
+            $.modal("/login/selectDept", function(ret)
+            {
+                if (ret)
+                    window.location.href = "${forward}.ptl";
+            });
+        });
+    </script>
+</body>
+</html>

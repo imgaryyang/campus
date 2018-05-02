@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!--微信消息相关配置-->
+    <bean class="com.gzzm.safecampus.campus.wx.message.MessageConfig" factory="instance">
+        <!--考试成绩通知-->
+        <scoreTemplate>
+            <templateId>n6F4xi15TfwC5jkxw6IKXrbqNDOwVUFtaGe5RAcbG3I</templateId>
+            <template>
+                {first}
+                学生姓名：{childName}
+                考试名称：{courseName}
+                考试时间：{time}
+                考试成绩：{score}
+            </template>
+        </scoreTemplate>
+        <!--考勤通知-->
+        <attendanceTemplate>
+            <templateId>oJUnETgECgxGy__q-uG513C1hMzzW9Rftian5ki6CAU</templateId>
+            <template>
+                {first}
+                考勤类型：{attendanceType}
+                考勤时间：{attendanceTime}
+                考勤情况：{attendanceStatus}
+            </template>
+        </attendanceTemplate>
+        <!--待缴账单消息模板-->
+        <unpaidBillTemplate>
+            <templateId>9wbbIdw8o6b-1s1l171zgveYurW-vWCv9s_D-AouXXk</templateId>
+            <template>
+                {first}
+                缴费类型：{paymentType}
+                账单名称：{payItemName}
+                缴费金额：{money}
+                截止日期：{time}
+            </template>
+        </unpaidBillTemplate>
+        <!--已缴账单-->
+        <paidBillTemplate>
+            <templateId>LdzkvzK5fc3z9bscu_zgHmfYL80FUeh2FSeW0-vEd7c</templateId>
+            <template>
+                {first}
+                缴费类型：{paymentType}
+                账单名称：{payItemName}
+                缴费金额：{money}
+                缴费时间：{time}
+            </template>
+        </paidBillTemplate>
+    </bean>
+</config>

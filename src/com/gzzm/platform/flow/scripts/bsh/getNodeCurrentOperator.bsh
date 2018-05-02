@@ -1,0 +1,28 @@
+getNodeCurrentOperator(String nodeId)
+{
+   return getNodeCurrentOperator(new String[]{nodeId});
+}
+
+getNodeCurrentOperator(String nodeId1,String nodeId2)
+{
+   return getNodeCurrentOperator(new String[]{nodeId1,nodeId2});
+}
+
+getNodeCurrentOperator(String nodeId1,String nodeId2,String nodeId3)
+{
+   return getNodeCurrentOperator(new String[]{nodeId1,nodeId2,nodeId3});
+}
+
+getNodeCurrentOperator(String nodeId1,String nodeId2,String nodeId3,String nodeId4)
+{
+   return getNodeCurrentOperator(new String[]{nodeId1,nodeId2,nodeId3,nodeId4});
+}
+
+getNodeCurrentOperator(String[] nodeIds)
+{
+   var r = $empty;
+   for(nodeId:nodeIds)
+     r=r.add($context.getNodeCurrentOperator(nodeId));
+   
+   return r;
+}

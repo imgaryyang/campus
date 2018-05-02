@@ -1,0 +1,36 @@
+#dialogBody {
+    width: 800px;
+    margin-bottom: 20px;
+}
+
+#remark {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+#list {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.receiverName {
+    height: 18px;
+    line-height: 18px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.unselected {
+    color: gray;
+    font-style: italic;
+}
+
+#dialogBody #buttons {
+    width: 800px;
+    padding-top: 10px;
+    text-align: center;
+}

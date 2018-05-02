@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>系统标题</title>
+    <link type="text/css" rel="stylesheet" href="/oa/index/index.css">
+    <link type="text/css" rel="stylesheet" href="/oa/index/index_sms.css">
+    <script type="text/javascript" src="/platform/login/login.js"></script>
+    <script type="text/javascript" src="/platform/login/sms.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="center">
+            <div id="components">
+                <form id="form" action="">
+                    <div class="item">
+                        <div class="label">
+                            登&nbsp;录&nbsp;名：
+                        </div>
+                        <div class="input">
+                            <input name="loginName" require>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="label">
+                            密&nbsp;&nbsp;&nbsp;&nbsp;码：
+                        </div>
+                        <div class="input">
+                            <input name="password" type="password" require>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="label">
+                            短信密码：
+                        </div>
+                        <div class="input">
+                            <input name="sms" require showErrorTo="smssend">
+                        </div>
+                        <div class="sms">
+                            <a href="#" onclick="return sendSms();" id="smssend">获取短信密码</a>
+                        </div>
+                    </div>
+                    <div id="buttons">
+                        <button id="login_button" type="button" onclick="login('/oa/main.ptl');"></button>
+                        <button id="reset_button" type="button" onclick="reset();"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

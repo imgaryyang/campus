@@ -1,0 +1,11 @@
+#sms_captcha {
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    border: 1px solid #000000;
+    background: white;
+}
+
+#sms_captcha .label {
+    float: left;
+}

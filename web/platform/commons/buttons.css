@@ -1,0 +1,31 @@
+.btn {
+    padding: 2px 8px;
+    *padding: 1px 7px;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.btn_mouseout {
+    border: 1px solid #2c59aa;
+    filter: progid:dximagetransform.microsoft.gradient(gradienttype=0, startcolorstr=#ffffff, endcolorstr=#c3daf5);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffffff), to(#c3daf5));
+    background: -ms-linear-gradient(top, #ffffff, #c3daf5);
+    color: black;
+}
+
+.btn_mouseover {
+    border: 1px solid #2c59aa;
+    filter: progid:dximagetransform.microsoft.gradient(gradienttype=0, startcolorstr=#ffffff, endcolorstr=#d7e7fa);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffffff), to(#d7e7fa));
+    background: -ms-linear-gradient(top, #ffffff, #d7e7fa);
+    color: black;
+}
+
+.btn_mousedown {
+    border: 1px solid #ffe400;
+    filter: progid:dximagetransform.microsoft.gradient(gradienttype=0, startcolorstr=#ffffff, endcolorstr=#c3daf5);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffffff), to(#c3daf5));
+    background: -ms-linear-gradient(top, #ffffff, #c3daf5);
+    color: black;
+}

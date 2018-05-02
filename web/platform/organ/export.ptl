@@ -1,0 +1,34 @@
+<html>
+<head>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/organ/export.js"></script>
+    <link type="text/css" rel="stylesheet" href="/platform/organ/export.css">
+</head>
+<body id="dialogBody">
+
+    <form id="form">
+
+        <div id="components">
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">导出的系统</div>
+                    <div class="component">
+                        <span bind="topMenus" class="checkbox">
+                            <input type="checkbox" class="checkbox" name="groupIds" value="${menuId}">${menuTitle}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="buttons">
+            <span class="button">
+                <button onclick="exp()" type="button">导出</button>
+            </span>
+            <span class="button">
+                <button onclick="cancel()" type="button">取消</button>
+            </span>
+        </div>
+
+    </form>
+</body>
+</html>

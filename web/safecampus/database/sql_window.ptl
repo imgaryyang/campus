@@ -1,0 +1,59 @@
+<html>
+<head action="false">
+    <title>SQL窗口</title>
+    <link type="text/css" rel="stylesheet" href="sql.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <form id="form" action="" method="post">
+                <div class="buttons">
+                    <button type="button" class="btn btn-info" onclick="querySQL();">查询</button>
+                </div>
+                <div class="condition">
+                    <textarea class="sentence" name="sqlSentence" id="sqlSentence"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <table class="table table-condensed table-bordered   table-striped">
+                <thead>
+                <tr>
+                    <th bind="fields">${self}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr bind="fieldValues">
+                    <td bind="self"><div class="val" title="${self}">${self}</div></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+<style>
+    body{
+        padding: 50px;
+    }
+    .container{
+        width: 100%;
+    }
+    .val{max-height: 100px; overflow: hidden;
+
+        text-overflow: ellipsis;}
+</style>
+</html>
+<script type="text/javascript" src="sql.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

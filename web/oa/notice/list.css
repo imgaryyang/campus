@@ -1,0 +1,90 @@
+.title_new {
+    background: url("/platform/commons/icons/tag_new_flash.gif") no-repeat 0 3px;
+}
+
+.title_new a {
+    margin-left: 25px;
+}
+
+.title_top {
+    background: url("/platform/commons/icons/tag_top.gif") no-repeat 0 3px;
+}
+
+.title_top_new {
+    background: url("/platform/commons/icons/tag_top_flash.gif") no-repeat 0 3px;
+}
+
+.title_top a {
+    margin-left: 25px;
+}
+
+.title_top_new a {
+    margin-left: 25px;
+}
+
+.title_new a {
+    font-weight: bold;
+}
+
+.title a {
+    text-decoration: none
+}
+
+.title a:hover {
+    text-decoration: underline
+}
+
+.title_trunc {
+    float: left;
+    width: 205px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title_trunc_new {
+    padding-left: 20px;
+    width: 185px;
+    background: url("/platform/commons/icons/tag_new_flash.gif") no-repeat 0 3px;
+}
+
+.title_trunc_top {
+    padding-left: 20px;
+    width: 185px;
+    background: url("/platform/commons/icons/tag_top.gif") no-repeat 0 3px;
+}
+
+.title_trunc_top_new {
+    padding-left: 20px;
+    width: 185px;
+    background: url("/platform/commons/icons/tag_top_flash.gif") no-repeat 0 3px;
+}
+
+.title_trunc a {
+    text-decoration: none
+}
+
+.title_trunc a:hover {
+    text-decoration: underline
+}
+
+.type a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.type a:hover {
+    color: red;
+    text-decoration: underline
+}
+
+.type {
+    float: left;
+    margin-right: 2px;
+}
+
+.time {
+    float: right;
+    color: gray;
+    margin-right: 15px;
+}

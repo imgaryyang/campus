@@ -1,0 +1,4 @@
+day(Date date)
+{
+   return DateUtils.getDay(date);
+}

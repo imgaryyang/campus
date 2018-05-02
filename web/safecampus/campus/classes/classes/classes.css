@@ -1,0 +1,146 @@
+h4 {
+    font-weight: 400;
+    padding: 5px 0 5px 50px;
+    margin: 0;
+}
+
+#dialogBody #buttons {
+
+    bottom: 25px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+fieldset {
+    border-width: 1px;
+    height: 110px;
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-left: 0;
+}
+
+.base {
+    overflow: hidden;
+}
+
+#main {
+    width: 600px;
+    height: 335px;
+    margin-top: 20px;
+}
+
+.components {
+    float: right;
+    width: 500px;
+    margin-top: 18px;
+}
+
+.component_line {
+    clear: both;
+}
+
+.component_item {
+    float: left;
+    margin-bottom: 10px;
+}
+
+.component_item .label {
+    float: left;
+    padding-top: 3px;
+    width: 100px;
+    text-align: right;
+    padding-right: 10px;
+
+}
+
+.component_item .component {
+    float: left;
+
+}
+
+input {
+    width: 150px;
+    height: 20px;
+    margin-bottom: 6px;
+}
+
+.subject .label {
+    width: 50px;
+}
+
+.subject .component_item {
+    margin-right: 30px;
+}
+
+.hide {
+    display: none;
+}
+
+#dialogBody {
+    margin-bottom: 10px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+
+.wtms_bt span{
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    float: left;
+    line-height: 30px;
+    width: 70px;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+#guardianList {
+    margin-top: -10px;
+}
+#subList {
+    width: 95%;
+    margin: 0 auto;
+
+}
+
+.xzlx {
+    display: none;
+}
+
+#tableList {
+    height: 158px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.xzlx {
+    height: 40px;
+}
+
+.xzlx a, .wtms_bt a {
+    text-decoration: none;
+    line-height: 30px;
+    color: rgb(255, 255, 255);
+    width: 70px;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    border-image: initial;
+    border-radius: 5px;
+    background: rgb(63, 116, 186);
+    float: right;
+    margin-right: 30px;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: block;
+
+}
+
+.up, .down {
+    display: none;
+}

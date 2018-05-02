@@ -1,0 +1,89 @@
+getUserOnStation(Integer deptId,String stationName)
+{
+  return getUserOnStation(deptId,new String[]{stationName});
+}
+
+getUserOnStation(Integer deptId,String stationName1,String stationName2)
+{
+  return getUserOnStation(deptId,new String[]{stationName1,stationName2});
+}
+
+getUserOnStation(Integer deptId,String stationName1,String stationName2,String stationName3)
+{
+  return getUserOnStation(deptId,new String[]{stationName1,stationName2,stationName3});
+}
+
+getUserOnStation(Integer deptId,String stationName1,String stationName2,String stationName3,String stationName4)
+{
+  return getUserOnStation(deptId,new String[]{stationName1,stationName2,stationName3,stationName4});
+}
+
+getUserOnStation(Integer deptId,String stationName1,String stationName2,String stationName3,String stationName4,String stationName5)
+{
+  return getUserOnStation(deptId,new String[]{stationName1,stationName2,stationName3,stationName4,stationName5});
+}
+
+getUserOnStation(Integer deptId,String[] stationNames)
+{  
+   return FlowFunctions.getUserOnStation(new Integer[]{deptId},stationNames);
+}
+
+getUserOnStation(Integer[] deptIds,String stationName)
+{
+  return getUserOnStation(deptIds,new String[]{stationName});
+}
+
+getUserOnStation(Integer[] deptIds,String stationName1,String stationName2)
+{
+  return getUserOnStation(deptIds,new String[]{stationName1,stationName2});
+}
+
+getUserOnStation(Integer[] deptIds,String stationName1,String stationName2,String stationName3)
+{
+  return getUserOnStation(deptIds,new String[]{stationName1,stationName2,stationName3});
+}
+
+getUserOnStation(Integer[] deptIds,String stationName1,String stationName2,String stationName3,String stationName4)
+{
+  return getUserOnStation(deptIds,new String[]{stationName1,stationName2,stationName3,stationName4});
+}
+
+getUserOnStation(Integer[] deptIds,String stationName1,String stationName2,String stationName3,String stationName4,String stationName5)
+{
+  return getUserOnStation(deptIds,new String[]{stationName1,stationName2,stationName3,stationName4,stationName5});
+}
+
+getUserOnStation(Integer[] deptIds,String[] stationNames)
+{  
+   return FlowFunctions.getUserOnStation(deptIds,stationNames);
+}
+
+getUserOnStation(java.util.Collection deptIds,String stationName)
+{
+  return getUserOnStation(deptIds,new String[]{stationName});
+}
+
+getUserOnStation(java.util.Collection deptIds,String stationName1,String stationName2)
+{
+  return getUserOnStation(deptIds,new String[]{stationName1,stationName2});
+}
+
+getUserOnStation(java.util.Collection deptIds,String stationName1,String stationName2,String stationName3)
+{
+  return getUserOnStation(deptIds,new String[]{stationName1,stationName2,stationName3});
+}
+
+getUserOnStation(java.util.Collection deptIds,String stationName1,String stationName2,String stationName3,String stationName4)
+{
+  return getUserOnStation(deptIds,new String[]{stationName1,stationName2,stationName3,stationName4});
+}
+
+getUserOnStation(java.util.Collection deptIds,String stationName1,String stationName2,String stationName3,String stationName4,String stationName5)
+{
+  return getUserOnStation(deptIds,new String[]{stationName1,stationName2,stationName3,stationName4,stationName5});
+}
+
+getUserOnStation(java.util.Collection deptIds,String[] stationNames)
+{
+   return FlowFunctions.getUserOnStation(deptIds,stationNames);
+}

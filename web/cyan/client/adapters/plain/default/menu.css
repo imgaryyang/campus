@@ -1,0 +1,60 @@
+.cyan-menu {
+    position: absolute;
+    border: 1px solid #888888;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 2px 0;
+}
+
+.cyan-menu-items {
+
+}
+
+.cyan-menu-item {
+    text-indent: 32px;
+    line-height: 26px;
+    font-size: 12px;
+    color: #555555;
+    cursor: pointer;
+    padding-right: 52px;
+    background: no-repeat 10px center;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+.cyan-widget {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.cyan-widget-search {
+}
+
+.cyan-widget-search input {
+    background: white url(menu/search.gif) right no-repeat;
+    border: 1px solid gray;
+    width: 96%;
+    margin-left: 1%;
+    height: 18px;
+    margin-bottom: 3px;
+    vertical-align: text-bottom;
+}
+
+.cyan-widget-search input::-ms-clear {
+    display: none;
+}
+
+.cyan-widget-search input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.cyan-menu-item:hover {
+    background: #cde3f3 no-repeat 10px center;
+}
+
+.cyan-menu-separator {
+    border-bottom: 1px solid rgb(233, 233, 233);
+    height: 0;
+    margin: 4px 0;
+}

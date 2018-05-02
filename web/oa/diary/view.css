@@ -1,0 +1,35 @@
+#diary_content {
+    width: 280px;
+    height: 130px;
+    color: black;
+    font-size: 14px;
+}
+
+#diary_content .label {
+    float: left;
+    width: 50px;
+    text-align: left;
+    height: 20px;
+    text-indent: 14px;
+    margin-bottom: 6px;
+}
+
+#diary_content .content {
+    float: left;
+    width: 220px;
+    min-height: 20px;
+    *height: 20px;
+    margin-bottom: 6px;
+}
+
+#operators {
+    clear: both;
+    float: left;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#operators span {
+    margin-left: 8px;
+}

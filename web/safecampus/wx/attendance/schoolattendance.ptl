@@ -1,0 +1,81 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>校园考勤</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/TouchSlide.1.1.js"></script>
+    <script src="/safecampus/wx/attendance/attendance.js"></script>
+    <script src="/safecampus/js/jquery.js"></script>
+</head>
+
+<body>
+
+<div class="bjkq">
+    <ul>
+        <li><a href="/wx/attendance/classatt" class="hover">班级考勤</a></li>
+        <li><a href="/wx/attendance/busatt">校巴考勤</a></li>
+        <li><a href="/wx/attendance/siestaatt">午休考勤</a></li>
+        <li><a href="/wx/attendance/truatt">托管考勤</a></li>
+    </ul>
+</div>
+<div class="contont">
+    <div class="xzbj">
+        <ul id="showclass" onclick="showcla('${relationId}',0)" data-status="0">
+            <li id="currli">${currentClass}</li>
+        </ul>
+        <ul bind="classeses" class="unshowclass" onclick="showClass('${classesId}',0)">
+            <li>${classesName}</li>
+        </ul>
+
+    </div>
+    <a href="/wx/attendance/startclassatt?relationId=${relationId}" class="ljkq">开始考勤</a>
+
+    <div class="tjls" bind="minMap" onclick="unshow()">
+        <div class="tjls_bt">
+            <p>${key}考勤情况</p>
+            <span onclick="showAttendanceDetail('${value.aoId}',0)"></span>
+        </div>
+        <div class="wfs">
+            <div class="wfs_lt">未发送考勤通知学生<span>${value.unsendedCount}</span></div>
+            <div class="wfs_rt"><a href="/wx/attendance/changestate?aoId=${value.aoId}">更改状态</a></div>
+        </div>
+        <div class="kqmx">
+            <ul>
+                <li class="li1" bind="value.unsendedStudents">
+                    <span><img src="/safecampus/wx/image/tx_03.png"></span>
+
+                    <h2>${studentName}</h2>
+
+                    <h3><a href="tel:${phone}">联系家长</a></h3>
+                </li>
+
+            </ul>
+        </div>
+        <div class="cdzh">
+            <ul>
+                <li>
+                    <p>迟到学生</p>
+
+                    <p class="p1">${value.lateCount}</p>
+                    <span></span></li>
+                <li>
+                    <p>请假学生</p>
+
+                    <p class="p2">${value.leaveCount}</p>
+                    <span></span></li>
+                <li>
+                    <p>正常到班学生</p>
+
+                    <p class="p3">${value.arrvedCount}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="tjls" style="text-align: center" onclick="unshow()">
+        <span>温馨提示：点击左下角按钮切换需要考勤的班级</span>
+        <button onclick="toHistory('${relationId}',0)">查看考勤历史</button>
+    </div>
+</div>
+</body>
+</html>

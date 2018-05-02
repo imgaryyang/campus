@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>招in校园身份认证</title>
+    <link href="../css/stlye.css" rel="stylesheet" type="text/css">
+    <link href="/safecampus/wx/personal/auth.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/jquery.js"></script>
+    <script src="/safecampus/wx/personal/auth.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="/safecampus/wx/personal/jssdk.js"></script>
+    <script src="/safecampus/wx/personal/validate.js"></script>
+</head>
+<body>
+<div class="jfcg">
+    <div class="contont">
+        <div class="logo"><img src="../image/zyxylogo_03.png"></div>
+        <div class="jzlsrz">
+            <a id="patriarch" idtype="1" state="1" class="hover">家长认证</a>
+            <a state="0" idtype="0" id="teacher" class="a2">教职工认证</a>
+        </div>
+
+        <div id="patriarch_div" class="inpdiv">
+            <div class="srxsj">
+                <div class="srxsj_lt"><img src="../image/sjh_03.png"></div>
+                <div class="srxsj_zt">
+                    <input id="phone" type="text" name="phone" class="kuang df" placeholder="请输入家长预留手机号码">
+                </div>
+            </div>
+
+            <div class="srxsj">
+                <div class="srxsj_lt"><img src="../image/xtbtm_07.png"></div>
+                <div class="srxsj_zt">
+                    <input id="userName"  type="text" name="userName" class="kuang df" placeholder="请输入家长姓名">
+                </div>
+            </div>
+        </div>
+
+        <div id="teacher_div" class="inpdiv" style="display: none">
+            <div class="srxsj">
+                <div class="srxsj_lt"><img src="../image/sjh_03.png"></div>
+                <div class="srxsj_zt">
+                    <input id="phone" type="text" name="phone" class="kuang df" placeholder="请输入教师预留手机号码">
+                </div>
+            </div>
+
+            <div class="srxsj">
+                <div class="srxsj_lt"><img src="../image/xtbtm_07.png"></div>
+                <div class="srxsj_zt">
+                    <input id="userName" type="text" name="userName" class="kuang df" placeholder="请输入教师姓名">
+                </div>
+            </div>
+
+            <div class="srxsj">
+                <div class="srxsj_lt"><img src="../image/xtbtm_22.png"></div>
+                <div class="srxsj_zt">
+                    <input id="idCard" type="text" name="idCard" class="kuang df" placeholder="请输入身份证号">
+                </div>
+            </div>
+        </div>
+
+        <div class="qdxg">
+            <button class="hover" id="authed">认证</button>
+            <div id="errmsg"></div>
+        </div>
+        <div class="sqzc" id="register"><a href="/wx/resgiterpage">申请注册</a></div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+.richupload .richupload_files {
+    height: 400px;
+}
+
+#buttons {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#buttons button {
+    margin-left: 5px;
+    margin-right: 5px;
+}

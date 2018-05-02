@@ -1,0 +1,104 @@
+<!doctype html>
+<html action="false">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>校园缴费</title>
+    <link href="../css/stlye.css" rel="stylesheet" type="text/css">
+    <link href="billdeatail.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="zkd">
+
+    <div class="tk" id="payMask">
+        <div class="zfbj" id="pay" bind="allBills">
+            <div class="zfbj_top"><a href="#" class="gb"><img src="../image/gb_04_03.png"></a>确认付款</div>
+            <p class="qds">¥<font>${money}</font></p>
+            <div class="ddxx">
+                <div class="ddxx_lt">订单信息:</div>
+                <div class="ddxx_rt">${student.studentName} ${payItem.payItemName}</div>
+            </div>
+            <ul class="zflb">
+                <li><span><img src="../image/zftb_03.jpg"></span>
+                    <h2>招行一网通支付（推荐）</h2>
+                    <a href="#" class="active"></a></li>
+
+                <!--<li class="li1"><span><img src="../image/zftb_07.jpg"></span>-->
+                <!--<h2>招行一网通支付（推荐）</h2>-->
+                <!--<a href="#"></a></li>-->
+
+            </ul>
+            <%--href="/wx/pay/payment/test/${billId}"--%>
+            <a  onclick="submit(${billId})" class="qrzf">确认支付${money}元</a>
+        </div>
+    </div>
+    <div class="txkq">
+        <div class="wfkqxs">账单详情</div>
+        <div class="sscj">
+            <div class="contont">
+                <div class="tjls" bind="allBills">
+                    <div class="xbkqfy">
+                        <div class="xbf">
+                            <p class="p1">${payItem.payItemName}</p>
+                        </div>
+                        <div class="djf">
+                            <span class="time">${createTime}</span>
+                            <bind bind="${billStatus.name()=='Wait'}"><p class="p2">${billStatus}</p></bind>
+                            <bind bind="${billStatus.name()=='Finnish'}"><p class="p3">${billStatus}</p></bind>
+                            <bind bind="${billStatus.name()=='Fail'}"><p class="p4">${billStatus}</p></bind>
+                        </div>
+
+                        <dl class="qfk" bind="${payItem.paymentType.name()=='schoolBus'}">
+                            <dt>
+                                <div class="xbdd"><font class="ft1"><img src="../image/xbddtb_03.jpg"></font>
+                                    <p>
+                                        <bind bind="msg">${busSite}</bind>
+                                    </p>
+                                </div>
+                            </dt>
+                            <dd>已预约校车上落点</dd>
+                        </dl>
+                    </div>
+                    <ul class="zdsqtb zdjj">
+                        <li><span><img src="../image/xtbtm_07.png"></span><font>学生姓名：${student.studentName} </font></li>
+                        <li bind="${payItem.paymentType.name()=='schoolBus'}">
+                            <span><img src="../image/xbddtb_11.jpg"></span>
+                            <font >
+                                校巴路线：
+                                <bind bind="msg">${busInfo}</bind>
+                            </font>
+                        </li>
+                        <li><span><img src="../image/xtbtm_14.png"></span><font>班级：${classes.allName} </font></li>
+                        <li><span><img src="../image/xtbtm_03.png"></span><font>学校名称：${dept.deptName}</font></li>
+                        <li><span><img src="../image/xbddtb_17.jpg"></span>
+                            <bind bind="${billStatus.name()!='Finnish'}">
+                                <font>截至日期：${deadline}</font>
+                            </bind>
+                            <bind bind="${billStatus.name()=='Finnish'}">
+                                <font>付款日期：${payTime}</font>
+                            </bind>
+                        </li>
+                        <li><span><img src="../image/xbddtb_20.jpg"></span><font>账单类型：${payItem.paymentType}</font></li>
+                        <li><span><img src="../image/djtb_07.jpg"></span><font>账单编号：${serialNo}</font></li>
+                        <li><span><img src="../image/djtb_10.jpg"></span><font>账单详情：${payItem.desc}</font></li>
+                    </ul>
+                    <div class="xffy">${payItem.paymentType}：<font>${money}元</font>
+                    </div>
+                    <bind bind="${billStatus.name()!='Wait'}">
+                        <a class="ljjf2" href="/wx/pay/allbills">关闭</a>
+                    </bind>
+                    <bind bind="${billStatus.name()=='Wait'}">
+                        <a onclick="pay()" class="ljjf">立即缴费</a></bind>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="basepay.js"></script>
+<script type="text/javascript" src="wxpay.js"></script>
+

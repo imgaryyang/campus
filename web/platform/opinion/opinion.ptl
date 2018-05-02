@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>填写意见</title>
+    <link type="text/css" rel="stylesheet" href="/platform/opinion/opinion.css">
+    <script type="text/javascript" src="/platform/opinion/edit.js"></script>
+</head>
+<body id="dialogBody">
+
+    <form>
+        <div id="container">
+            <div id="opinion">
+                <div class="label" id="remark">
+                    请输入意见：
+                </div>
+                <div>
+                    <textarea name="text"></textarea>
+                </div>
+            </div>
+            <div id="select">
+                <button type="button" onclick="selectOpinion();">&lt</button>
+            </div>
+            <div id="opinionList">
+                <div class="label">
+                    常用意见：
+                </div>
+                <div title="双击使用常用意见">
+                    <select name="keys" multiple="multiple" size="3" ondblclick="selectOpinion();">
+                    </select>
+                </div>
+            </div>
+            <div id="opinionsButtons">
+                <button type="button" onclick="addOpinion();">增加</button>
+                <button type="button" onclick="editOpinion();">修改</button>
+                <button type="button" onclick="deleteOpinion();">删除</button>
+                <button type="button" onclick="upOpinion();">上移</button>
+                <button type="button" onclick="downOpinion();">下移</button>
+                <button type="button" onclick="selectCommonOpinion();">系统<br>意见</button>
+            </div>
+        </div>
+        <div id="autoAddDiv">
+            <input name="autoAdd" type="checkbox" value="true"> 自动添加到常用意见中
+            &nbsp;&nbsp;&nbsp;
+            <input name="split" type="checkbox" value="true"> 添加到常用意见时是否按标点符号拆分
+        </div>
+        <div id="buttons">
+            <span>
+                <button type="button" onclick="ok();">确定</button>
+            </span>
+            <span>
+                <button type="button" onclick="Cyan.Window.closeWindow(null);">取消</button>
+            </span>
+        </div>
+    </form>
+
+</body>
+</html>

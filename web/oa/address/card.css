@@ -1,0 +1,190 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#main {
+    clear: both;
+    width: 604px;
+    height: 380px;
+}
+
+#tabs {
+    float: left;
+    margin-top: 7px;
+    margin-left: 7px;
+    width: 590px;
+    height: 320px;
+}
+
+.tabPage {
+    width: 590px;
+    height: 262px;
+    overflow: hidden;
+}
+
+#head {
+    float: left;
+    width: 114px;
+    height: 350px;
+    text-align: center;
+}
+
+#head button {
+    margin-top: 3px;
+}
+
+#head_img {
+    width: 94px;
+    height: 94px;
+    margin-top: 10px;
+}
+
+.components {
+    float: left;
+    margin-top: 18px;
+}
+
+.component_line {
+    clear: both;
+}
+
+.component_item {
+    float: left;
+    margin-bottom: 3px;
+}
+
+.component_item .label {
+    float: left;
+    padding-top: 3px;
+    width: 60px;
+    text-align: right;
+    padding-right: 10px;
+    word-spacing: 18px;
+}
+
+.component_item .component {
+    float: left;
+}
+
+.component_item .component_wide {
+    float: left;
+}
+
+.cardName {
+    float: left;
+    padding-top: 3px;
+    width: 60px;
+    text-align: right;
+    padding-right: 10px;
+    word-spacing: 12px;
+}
+
+#info .component_item .component {
+    width: 165px;
+    overflow: hidden;
+}
+
+#info .component_item .component input {
+    width: 160px;
+    height: 18px;
+}
+
+#info .component_item .component select {
+    width: 160px;
+    height: 22px;
+}
+
+#info .component_item .component_wide {
+    width: 395px;
+}
+
+#info .component_item .component_wide input {
+    width: 395px;
+    height: 18px;
+}
+
+#info .component_item .component_wide textarea {
+    width: 395px;
+    height: 100px;
+    overflow: auto;
+}
+
+.normalPage .components {
+    margin: 20px;
+}
+
+.normalPage .component_item .component {
+    width: 200px;
+}
+
+.normalPage .component_item .component input {
+    width: 195px;
+    height: 18px;
+}
+
+.normalPage .component_item .component_wide {
+    width: 465px;
+}
+
+.normalPage .component_item .component_wide input {
+    width: 465px;
+    height: 18px;
+}
+
+#resume textarea {
+    width: 590px;
+    height: 290px;
+    overflow: auto;
+    border: none;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 8px;
+    width: 604px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/**可选列表框样式**/
+.itemselector {
+    margin-left: 75px;
+    padding-top: 10px;
+    width: 460px;
+}
+
+.itemselector .legend {
+    height: 18px;
+}
+
+.itemselector .from {
+    float: left;
+    width: 180px;
+}
+
+.itemselector select {
+    width: 200px;
+    height: 205px;
+}
+
+.itemselector .to {
+    float: left;
+    width: 180px;
+}
+
+.itemselector .buttons {
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 65px;
+    width: 40px;
+}
+
+.itemselector .buttons button {
+    width: 40px;
+    margin-bottom: 3px;
+}

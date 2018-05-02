@@ -1,0 +1,11 @@
+.sms {
+    float: left;
+    height: 20px;
+    width: 75px;
+    line-height: 20px;
+}
+
+.sms a {
+    float: left;
+    color: red;
+}

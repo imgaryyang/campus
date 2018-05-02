@@ -1,0 +1,148 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>历史考勤</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/js/jquery.js"></script>
+    <script src="/safecampus/wx/attendance/attendance.js"></script>
+    <script src="/safecampus/wx/attendance/history.js"></script>
+    <script src="/safecampus/wx/arttemplate/template-web.js"></script>
+    <script src="/safecampus/wx/arttemplate/json3.min.js"></script>
+    <script src="/safecampus/wx/attendance/datePicker.js"></script>
+    <script src="/safecampus/wx/attendance/dateselect.js"></script>
+    <style>
+        select {
+            /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+            border: solid 0px #000;
+            /*很关键：将默认的select选择框样式清除*/
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            margin-left: 21px;
+            width: 88px;
+            height: 100%;
+            background: #f9b126
+        }
+    </style>
+</head>
+
+<body>
+<div class="bjkq" id="nav" type="${type.ordinal()}">
+    <ul>
+        <li><a href="/wx/attendance/classes" class="${type.ordinal()==0?'hover':''}">班级考勤</a></li>
+        <li><a href="/wx/attendance/busroute" class="${type.ordinal()==1?'hover':''}">校巴考勤</a></li>
+        <li><a href="/wx/attendance/face" class="${type.ordinal()==4?'hover':''}">校门考勤</a></li>
+        <li><a href="/wx/attendance/siesta" class="${type.ordinal()==2?'hover':''}">午休考勤</a></li>
+        <li><a href="/wx/attendance/trustee" class="${type.ordinal()==3?'hover':''}">托管考勤</a></li>
+
+    </ul>
+</div>
+<div class="bjkq2"></div>
+<div class="contont" id="bigdiv">
+    <div class="xzbj" id="tag " style="height: 35px">
+        <select id="roomselhis">
+            <c bind="list">
+                <option value="${Id}" selected="${key!=null && key==Id}">${name}
+                </option>
+            </c>
+
+        </select>
+    </div>
+    <div class="ryck" id="searchdiv">
+        <h2 class="childh2"><a class="childh2">
+
+            <p class="childa"><span><img src="/safecampus/wx/image/wxdtb_03.png"></span>
+                <input  style="width: 88%" readonly="readonly" placeholder="任意日期查看"
+                       type="text" id="dateStart"/>
+            </p>
+        </a></h2>
+    </div>
+    <div id="attendInfohis">
+
+    </div>
+</div>
+
+
+<%--数据模板--%>
+<script id="attenItemhis" type="text/html">
+    <input type="hidden" value="{{key}}" id="relationkey">
+    {{if items}}
+    {{each items value index}}
+    <div class="tjls">
+        <div class="tjls_bt">
+            <p>{{value.date}}考勤情况</p>
+            <span onclick="showAttendanceDetail('{{value.aoId}}',0)"></span>
+        </div>
+        <div class="wfs">
+            <div class="wfs_lt">未发送出勤通知学生<span style="color: white">{{value.noSenedCount}}</span></div>
+            <!--{{if !value.history}}
+            <div class="wfs_rt"><a href="/wx/attendance/changestate?aoId={{value.aoId}}&finishState=1">更改状态</a></div>
+            {{/if}}-->
+        </div>
+        <div class="kqmx">
+            {{each value.unSendeStudents student i}}
+            <ul>
+                <li class="li1">
+                    <span><img src="/safecampus/wx/image/tx_03.png"></span>
+
+                    <h2>{{student.studentName}}</h2>
+                    {{each student.relations relation n}}
+                    <h3><a href="tel:{{relation.phone}}">联系家长</a></h3>
+                    {{/each}}
+                </li>
+            </ul>
+            {{/each}}
+        </div>
+        <div class="cdzh">
+            <ul>
+                <li>
+                    <p>迟到学生</p>
+
+                    <p class="p1">{{value.lateCount}}</p>
+                    <span></span></li>
+                <li>
+                    <p>请假学生</p>
+
+                    <p class="p2">{{value.leaveCount}}</p>
+                    <span></span></li>
+                <li>
+                    <p class="${type.ordinal()==0?'':'unshowclass'}">已到班学生</p>
+
+                    <p class="${type.ordinal()==1?'':'unshowclass'}">已签到学生</p>
+
+                    <p class="${type.ordinal()==2?'':'unshowclass'}">已午休学生</p>
+
+                    <p class="${type.ordinal()==3?'':'unshowclass'}">已托管学生</p>
+
+                    <p class="${type.ordinal()==4?'':'unshowclass'}">已签到学生</p>
+
+                    <p class="p3">{{value.arrivedCount}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {{/each }}
+    <div class="tjls2 " style="text-align: center;margin-bottom: 65px">
+        <span>
+            <span class="tipsty ${type.ordinal()==0?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换班级</span>
+            <span class="tipsty ${type.ordinal()==1?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换校巴</span>
+            <span class="tipsty ${type.ordinal()==2?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换午休室</span>
+            <span class="tipsty ${type.ordinal()==3?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换托管室</span>
+            <span class="tipsty ${type.ordinal()==4?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换班级</span>
+        </span>
+    </div>
+    {{else}}
+    <dl class="jtzwkq" onclick="unshow()" onclick="showTag()">
+        <dt><img src="/safecampus/wx/image/noattend.png" class="imgsize"></dt>
+        <dd class="dd1">暂无历史考勤信息！</dd>
+        <dd><span class="${type.ordinal()==0?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换班级</span>
+            <span class="${type.ordinal()==1?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换校巴</span>
+            <span class="${type.ordinal()==2?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换午休室</span>
+            <span class="${type.ordinal()==3?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换托管室</span>
+            <span class="${type.ordinal()==4?'':'unshowclass'}">温馨提示：点击左下角黄色按钮切换班级</span></dd>
+    </dl>
+    {{/if}}
+</script>
+</body>
+</html>

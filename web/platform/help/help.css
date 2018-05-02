@@ -1,0 +1,44 @@
+.help a {
+    color: red;
+    text-decoration: none
+}
+
+.help a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.help_content {
+    height: 72px;
+}
+
+.help_exclude {
+    float: left;
+    width: 100%;
+    text-align: right;
+}
+
+.help_remind a {
+    color: blue;
+    text-decoration: none;
+}
+
+.help_remind a:hover {
+    color: red;
+}
+
+.help_remind_content {
+    height: 72px;
+}
+
+.help_remind_nav {
+    padding-left: 5px;
+}
+
+.help_remind_pre {
+    float: left
+}
+
+.help_remind_next {
+    float: right
+}

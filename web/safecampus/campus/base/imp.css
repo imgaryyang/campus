@@ -1,0 +1,49 @@
+.msg {
+    padding-left: 25px;
+}
+
+.msg .tip
+{
+    font-weight: bold;
+}
+
+.msg div {
+    line-height: 28px;
+    clear: both;
+}
+
+#dialogBody {
+    height: 150px;
+}
+
+#dialogBody #components input {
+    height: 25px;
+}
+
+.component_item {
+    margin-bottom: 20px;
+    height: 25px;
+}
+
+.label {
+    float: left;
+    margin-right: 5px;
+}
+
+#dialogBody #components .component_item .component {
+    width: 200px;
+}
+
+#buttons {
+    width: 100%;
+    bottom: 25px;
+    position: absolute;
+}
+
+.msg_item {
+    padding-left: 12px;
+}
+
+ul li {
+    padding-bottom: 5px;
+}

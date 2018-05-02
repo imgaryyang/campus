@@ -1,0 +1,7 @@
+sub(e1,e2)
+{
+   if(e1 instanceof NodeReceiverList && e2 instanceof NodeReceiverList)
+      return e1.multiply(e2);
+   else
+      return e1-e2;
+}

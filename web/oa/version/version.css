@@ -1,0 +1,36 @@
+.components {
+    clear: both;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.component_item{
+    float: left;
+    clear: both;
+}
+
+.component_item .label {
+    padding-top: 3px;
+    float: left;
+    width: 70px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.component_item .value {
+    padding-top: 0;
+    margin-top: 2px;
+    float: left;
+    width: 450px;
+}
+
+.longValue{
+    height: 100px;
+    overflow-y: auto;
+}
+
+#list li{
+    line-height: 20px;
+    text-indent:0;
+    padding-left: 5px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="http://192.168.1.52/cmb/callback/pay/000000012012032722694" method="post">
+   pay:  <input name="jsonRequestData" value='{
+   " version":"1.0",
+    "charset":"UTF-8",
+    "sign":"Pez08MLS6tnrPTnO2febDbHmZ1FNB8Rgy1dp82XwPXkWbP0XPFZAy0ElRomJnMGuGNEwz9hC61TUNhRYhb22ZEHhFMpMNZWFeiN1ewXwIT5Sx7VmE4InfklQnVub0dRr1d6zJ3gprMHBoiQBe8xAxpd1y+82Jm5z7IkvLtgWXU4=",
+    "signType":"RSA",
+    "noticeData":{
+    "dateTime":"20160622182921",
+    "noticeUrl":"http://www.merchant.com/path/WAPProcResult.dll",
+    "httpMethod":"POST",
+    "branchNo":"0755",
+    "merchantNo":"000054",
+    "noticeType":"BKPAYRTN",
+    "noticeSerialNo":"201606249999000001121212",
+    "date":"20160624",
+    "orderNo":"9999000001",
+    "amount":"40.01",
+    "bankDate":"20160624",
+    "bankSerialNo":"20160624121201000001",
+    "discountFlag":"Y",
+    "discountAmount":"30.00",
+    "merchantPara":"12345678|ABCDEFG|HIJKLM",
+    "cardType":"02"
+    }
+    }'>
+
+    <input type="submit" value="submit">
+</form>
+
+</body>
+</html>

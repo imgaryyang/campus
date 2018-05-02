@@ -1,0 +1,1 @@
+Cyan.importJs("/platform/webcamera/scanfine.js");

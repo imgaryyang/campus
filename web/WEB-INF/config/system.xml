@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <!--系统变化较少的配置，如修改此文件的配置标志着系统底层功能的变更-->
+
+    <bean class="com.gzzm.platform.commons.BaseConfig" factory="instance">
+
+        <!---配置部门的级别,这里定义了三个级别-->
+        <deptLevel>学校</deptLevel>
+        <deptLevel>支行</deptLevel>
+        <deptLevel>分行</deptLevel>
+        <deptLevel>总行</deptLevel>
+    </bean>
+
+    <bean class="List[com.gzzm.platform.organ.DeptAttributeItem]" factory="instance">
+
+        <element>
+            <name>领导部门</name>
+            <label>领导部门</label>
+            <selectableSql>
+                <![CDATA[select DEPTID,DEPTNAME from PFDEPT where (PARENTDEPTID=:deptId or DEPTID=:deptId) and STATE=0 order by LEFTVALUE]]>
+            </selectableSql>
+        </element>
+
+        <element>
+            <name>分管领导</name>
+            <label>分管领导</label>
+            <selectableSql>
+                <![CDATA[select u.USERID,USERNAME from PFUSER u join PFUSERDEPT d
+                on u.USERID=d.USERID where u.STATE=0 and d.DEPTID=nvl( (select tonumber(ATTRIBUTEVALUE)
+                from PFDEPTATTRIBUTE a where a.DEPTID=:parentDeptId and ATTRIBUTENAME='领导部门' and ATTRIBUTEVALUE<>''),
+                :parentDeptId) order by orderId]]>
+            </selectableSql>
+        </element>
+
+        <element>
+            <name>主管领导</name>
+            <label>主管领导</label>
+            <selectableSql>
+                <![CDATA[select u.USERID,USERNAME from PFUSER u join PFUSERDEPT d
+                on u.USERID=d.USERID where u.STATE=0 and d.DEPTID=nvl( (select tonumber(ATTRIBUTEVALUE)
+                from PFDEPTATTRIBUTE a where a.DEPTID=:parentDeptId and ATTRIBUTENAME='领导部门' and ATTRIBUTEVALUE<>''),
+                :parentDeptId) order by orderId]]>
+            </selectableSql>
+        </element>
+
+    </bean>
+
+    <!--<bean class="com.gzzm.platform.login.LoginVerifier" imp="com.gzzm.platform.login.SmsLoginVerifier"
+          singleton="true" factory="constructor"/>-->
+
+    <bean class="com.gzzm.platform.login.Authoritys" factory="instance">
+
+        <!--配置不需要权限检查的路径-->
+        <no_checked_path>/web/</no_checked_path>
+
+    </bean>
+
+</config>

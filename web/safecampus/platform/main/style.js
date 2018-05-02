@@ -1,0 +1,1 @@
+Cyan.importJs("/platform/styles/plain/style.js");

@@ -1,0 +1,27 @@
+<html action="false">
+<head>
+    <title>${entity.noticeType.sort.sortName}-${##entity.title}</title>
+    <link type="text/css" rel="stylesheet" href="/oa/notice/template/ldcy.css">
+</head>
+<body>
+    <div id="container">
+        <h1>
+            ${entity.noticeType.sort.sortName}
+        </h1>
+
+        <div id="time" bind="entity.publishTime" format="yyyy年MM月dd日">
+        </div>
+
+        <h2 bind="entity.title"></h2>
+
+        <div id="content">
+            ${entity.content}
+        </div>
+
+        <div id="editor">
+            编辑人： ${entity.user.userName}
+        </div>
+    </div>
+
+</body>
+</html>

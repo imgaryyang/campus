@@ -1,0 +1,202 @@
+html, body {
+    overflow: hidden;
+}
+
+#top {
+    width: 100%;
+    padding-bottom: 5px;
+    background-color: #f7f3f7;
+    border-bottom: 1px #919b9c solid;
+}
+
+.buttons {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+#voter {
+    line-height: 16px;
+    padding-right: 20px;
+    text-align: right;
+    color: #000000;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#container {
+    padding-top: 25px;
+    background-color: #d8d8d8;
+    overflow-y: auto;
+}
+
+#page {
+    width: 94%;
+    min-height: 1200px;
+    height: 1200px;
+    height: auto !important;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    border: 1px solid #afb0b4;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+}
+
+#vote {
+    clear: both;
+    margin-left: 90px;
+    margin-right: 90px;
+    margin-top: 15px;
+}
+
+#bottom {
+    height: 20px;
+}
+
+#vote #head .title {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: bold;
+}
+
+#vote #head .time {
+    text-align: center;
+    line-height: 25px;
+}
+
+#vote #head .time span {
+    font-size: 14px;
+}
+
+#vote #head .intro {
+    font-size: 14px;;
+    line-height: 20px;
+    color: #005590;
+    text-indent: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: solid 2px #9fb0b4;
+}
+
+#vote #head .indefinite {
+    font-size: 13px;;
+    line-height: 20px;
+    color: red;
+    text-indent: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+
+#vote .group_content {
+    margin-left: 15px;
+}
+
+#vote .problem {
+    margin-left: 15px;
+}
+
+#vote .group_content .problem {
+    margin-left: 28px;
+}
+
+#vote .problem span {
+    font-size: 13px;;
+}
+
+#vote .problem {
+    margin-bottom: 30px;
+}
+
+#vote .problem .title {
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+#vote .problem .title .required {
+    color: red;
+    margin-left: 5px;
+}
+
+#vote .problem .top_title {
+    line-height: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#vote .problem .top_title span {
+    font-size: 16px;
+}
+
+#vote .problem .top_title .required {
+    color: red;
+    margin-left: 5px;
+}
+
+#vote .groupTitle {
+    line-height: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#vote .groupTitle span {
+    font-size: 16px;
+}
+
+#vote .problem .option {
+    line-height: 20px;
+}
+
+#vote .problem .option span {
+    vertical-align: top;
+}
+
+#vote .problem .option div.remark {
+    padding-left: 10px;
+    text-indent: 20px;
+    font-size: 12px;
+    color: #808080;
+    font-style: italic;
+}
+
+#vote .problem .other .label {
+    margin-right: 3px;
+}
+
+#vote .problem .other .input input {
+    width: 500px;
+    height: 18px;
+    line-height: 20px;
+    border-width: 0;
+    border-bottom: 1px solid #000000;
+    background: none;
+}
+
+#vote .problem .text input {
+    width: 560px;
+    height: 18px;
+    line-height: 20px;
+    border-width: 0;
+    border-bottom: 1px solid #000000;
+    background: none;
+}
+
+#vote .problem .text textarea {
+    line-height: 20px;
+    width: 560px;
+    height: 150px;
+    overflow-y: auto;
+}
+
+#vote .problem .file input {
+    width: 560px;
+    height: 20px;
+}
+

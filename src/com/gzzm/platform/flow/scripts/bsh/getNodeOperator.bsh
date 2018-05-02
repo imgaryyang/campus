@@ -1,0 +1,28 @@
+getNodeOperator(String nodeId)
+{
+   return getNodeOperator(new String[]{nodeId});
+}
+
+getNodeOperator(String nodeId1,String nodeId2)
+{
+   return getNodeOperator(new String[]{nodeId1,nodeId2});
+}
+
+getNodeOperator(String nodeId1,String nodeId2,String nodeId3)
+{
+   return getNodeOperator(new String[]{nodeId1,nodeId2,nodeId3});
+}
+
+getNodeOperator(String nodeId1,String nodeId2,String nodeId3,String nodeId4)
+{
+   return getNodeOperator(new String[]{nodeId1,nodeId2,nodeId3,nodeId4});
+}
+
+getNodeOperator(String[] nodeIds)
+{
+   var r = $empty;
+   for(nodeId:nodeIds)
+     r=r.add($context.getNodeOperator(nodeId));
+   
+   return r;
+}

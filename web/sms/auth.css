@@ -1,0 +1,54 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#main {
+    margin-top: 10px;
+    width: 578px;
+    height: 325px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#authUsers {
+    clear: both;
+    width: 570px;
+    margin-top: 4px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#authUsers .label {
+    float: left;
+    text-align: left;
+
+    height: 25px;
+}
+
+#deptLabel {
+    width: 190px;
+}
+
+#userLabel {
+    width: 215px;
+}
+
+#selectedLabel {
+    width: 160px;
+}
+
+#authUsers .selector {
+    width: 570px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 8px;
+    width: 578px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

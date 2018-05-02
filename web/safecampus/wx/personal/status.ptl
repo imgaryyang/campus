@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>更改状态</title>
+    <link href="../css/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/jquery.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="/safecampus/wx/personal/jssdk.js"></script>
+    <script src="/safecampus/wx/personal/nobind.js"></script>
+    <script src="/safecampus/wx/arttemplate/template-web.js"></script>
+    <script src="/safecampus/wx/arttemplate/json3.min.js"></script>
+</head>
+
+<body>
+<div class="jfcg" id="unbind">
+    <dl class="kqwc">
+        <dt><img src="../image/sjtb_03.png"></dt>
+        <dd class="dd2">已认证手机号码：${com.gzzm.safecampus.wx.personal.WxHandler.getStarString(wxUserOnlineInfo.phone, 3, 7)}
+        </dd>
+    </dl>
+    <div class="jxkq">
+        <button class="hover" id="unbinding">解除绑定</button>
+        <button id="changeBut" class="btn2">修改号码</button>
+    </div>
+</div>
+
+<script id="jbcg" type="text/html">
+    <div class="jfcg" id="unbind">
+        {{if status=='success'}}
+        <dl class="kqwc">
+            <dt><img src="/safecampus/wx/image/cg.png"></dt>
+            <dd class="dd2">解绑成功！</dd>
+            <dd class="dd3">相关服务已关闭，如需开通请重新认证身份！
+            </dd>
+        </dl>
+        {{else}}
+        <dl class="kqwc">
+            <dt><img src="/safecampus/wx/image/cw_03.png"></dt>
+            <dd class="dd2">解绑失败</dd>
+            <dd class="dd3">
+            </dd>
+        </dl>
+        {{/if}}
+        <div class="ckkqls">
+            {{if status=='success'}}
+            <button class="ckkqls" onclick="wx.closeWindow()">关闭</button>
+            {{else}}
+            <button class="ckkqls" onclick="window.history.go(0)">返回</button>
+            {{/if}}
+        </div>
+    </div>
+</script>
+</body>
+</html>

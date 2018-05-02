@@ -1,0 +1,19 @@
+#back{
+    position: absolute;
+    width: 100%;
+    z-index:-1;
+}
+.jtzwkq dt img {
+    width: 10rem;
+}
+
+.jtzwkq dd.dd1 {
+    font-size: 1.4rem;
+    color:grey;
+}
+.zdsqtb .sort font {
+    width: 90%;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}

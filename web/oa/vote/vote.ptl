@@ -1,0 +1,121 @@
+<html>
+<head>
+    <title bind="new$">新增${typeName}</title>
+    <title bind="!new$">修改${typeName}</title>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/oa/vote/vote.js"></script>
+    <link type="text/css" rel="stylesheet" href="/oa/vote/vote.css"/>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <form id="" bind="entity" action="">
+            <div id="components">
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">${typeName}标题</div>
+                        <div class="component_wide">
+                            <input name="title">
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">开始时间</div>
+                        <div class="component">
+                            <input name="startTime">
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">结束时间</div>
+                        <div class="component">
+                            <input name="endTime">
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">警告时间</div>
+                        <div class="component">
+                            <input name="alarmTime">
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">限时(分钟)</div>
+                        <div class="component">
+                            <input name="timeLimit">
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">重复周期</div>
+                        <div class="component">
+                            <select name="period">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">${typeName}对象</div>
+                        <div class="component">
+                            <select name="scopeType" onchange="scopeTypeChange()">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">发布</div>
+                        <div class="component">
+                            <select name="valid">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">允许匿名</div>
+                        <div class="component">
+                            <select name="anonymous">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">说明</div>
+                        <div class="component_wide">
+                            <textarea name="intro"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_selector_line">
+                    <div class="component_item">
+                        <div class="label">${typeName}范围</div>
+                        <div class="component_selector">
+                            <div>
+                                <input class="search" id="selector_search">
+                            </div>
+                            <div id="selector">
+                                <div bind="com.gzzm.platform.group.PageMemberSelector.class" id="memberSelector"
+                                     name="members" types="dept,user" deptId="${deptId}" app="vote_scope">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="buttons">
+                    <span class="button">
+                        <button type="button" onclick="save();">保存</button>
+                    </span>
+                    <span class="button">
+                        <button type="button" onclick="closeWindow();">关闭</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+
+    <link type="text/css" rel="stylesheet" href="/oa/superquery/css/style.css">
+    <script type="text/javascript" src="/web/js/jquery.js"></script>
+    <script type="text/javascript" src="/oa/cloudstorage/js/jquery_update.js"></script>
+    <script type="text/javascript" src="/oa/superquery/js/leadersuperquery.js"></script>
+    <script type="text/javascript" src="/oa/superquery/js/homepage.js"></script>
+
+</head>
+<body>
+<div class="zj">
+    <div class="ssk" id="homepage">
+        <div class="ssk_sb"><img src="image/ssk_03.png" width="292" height="74"/></div>
+        <div class="ssk_xb">
+            <input type="text" name="condition"  onkeyup="keySearch(4)"/>
+            <button onclick="leaderHomeConditionSearch()" id="leaderSearch">搜索</button>
+        </div>
+        <div class="searchCheckDiv" style="margin-top: 30px">
+            <input type="checkbox" class="searchCheckBox" id="wsCheckBox" checked="true"/>公文
+            <input type="checkbox" class="searchCheckBox" id="menuCheckBox" checked="true"/>功能
+            <input type="checkbox" class="searchCheckBox" id="userCheckBox" checked="true"/>用户
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/platform/organ/scope.css">
+    <script type="text/javascript" src="/platform/organ/scope.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body id="dialogBody">
+
+    <form id="form" bind="entity">
+        <div id="components">
+            <div class="component_item">
+                <div class="label">名称</div>
+                <div class="component">
+                    <input name="scopeName">
+                </div>
+            </div>
+
+            <div class="component_item">
+                <div class="label">所属目录</div>
+                <div class="component">
+                    <input name="parentScopeId">
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+    <div id="depts">
+        <fieldset>
+            <legend>范围设置</legend>
+
+            <div id="search">
+                <input name="word" id="word" class="search">
+            </div>
+
+            <div bind="scopeDeptTree" id="deptTree" autoRender="true" checkboxName="deptId"
+                 onselect="deptselect();" oncheck="deptcheck(this);" rootVisible="false"></div>
+
+            <form id="scopeForm">
+                <div id="scope">
+                    <div class="component_item">
+                        <div class="include_label">包括下属部门</div>
+                        <div class="include_component">
+                            <input type="checkbox" name="includeSub" class="checkbox" onclick="includeSubClick();">
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="include_label">包括上级部门</div>
+                        <div class="include_component">
+                            <input type="checkbox" name="includeSup" class="checkbox">
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="include_label">包括部门自身</div>
+                        <div class="include_component">
+                            <input type="checkbox" name="includeSelf" checked class="checkbox">
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="include_label">排除此部门</div>
+                        <div class="include_component">
+                            <input type="checkbox" name="excluded" class="checkbox">
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="include_label">优先排除</div>
+                        <div class="include_component">
+                            <input type="checkbox" name="priority" class="checkbox">
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div id="filter_label">条件</div>
+                        <div id="filter_component">
+                            <textarea name="filter"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <div id="buttons">
+           <span class="button">
+               <button type="button" onclick="save();">保存</button>
+           </span>
+         <span class="button">
+               <button type="button" onclick="closeWindow();">关闭</button>
+           </span>
+    </div>
+</body>
+</html>

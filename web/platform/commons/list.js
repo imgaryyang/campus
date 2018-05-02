@@ -1,0 +1,1 @@
+Cyan.importJs("/platform/commons/columns_config.js");

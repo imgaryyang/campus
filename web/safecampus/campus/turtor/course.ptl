@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>${new$?"课程信息":entity.courseName}</title>
+    <link type="text/css" rel="stylesheet" href="/safecampus/campus/turtor/course.css">
+    <link type="text/css" rel="stylesheet" href="/safecampus/campus/turtor/check.css">
+    <script type="text/javascript" src="/platform/commons/base.js"></script>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body id="dialogBody">
+<div id="main">
+    <form id="form" action="">
+        <div class="tabPage normalPage" legend="基本信息">
+            <include page="/safecampus/campus/turtor/course_info.ptl"/>
+        </div>
+
+        <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="save();">保存</button>
+            </span>
+            <span class="button">
+                <button type="button" onclick="closeWindow();">关闭</button>
+            </span>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
+

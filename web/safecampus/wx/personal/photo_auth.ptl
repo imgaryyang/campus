@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>个人中心</title>
+    <link href="../css/newstyle.css" rel="stylesheet" type="text/css">
+    <link href="/safecampus/wx/personal/loaders.css" rel="stylesheet" type="text/css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="/safecampus/wx/js/jquery.js"></script>
+    <script src="/safecampus/wx/personal/jssdk.js"></script>
+
+</head>
+<body>
+<div class="zkd">
+    <div class="tswz">
+        请添加孩子脸部照片，用于学校人脸识别考勤。<br/>
+        按照提示录入5张人脸可提高识别精准度！
+    </div>
+    <div class="sscj">
+        <div class="gdzp">
+            <div class="dgcmm">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="cmm_lb">
+                    <tr>
+                        <td style="width: 70px" bind="dataMap.students" onclick="showPhoto(${studentId})" id="${studentId}"
+                            isfirt="${dataMap.students.indexOf(self)==0?'true':'false'}">
+                            <ul>
+                                <li>
+                                    <span class="${dataMap.students.indexOf(self)==0?"wxwq":""}" id="span_${studentId}"><img
+                                            src="/wx/centerpage/image/${studentId}"></span>
+                                    <p>${studentName}</p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cmm2">
+                <div class="tjls_bt">
+                    <p>添加照片</p>
+                </div>
+            </div>
+            <div class="cmm2">
+                <div class="tjzp">
+                    <ul>
+                        <li class="selectphoto" state="0">
+                            <p>正面照</p>
+                            <span><img type="0" class="photo" src="../image/face_0.png"></span>
+                        </li>
+                        <li class="selectphoto" state="0">
+                            <p>右侧面照</p>
+                            <span class="sp2"><img type="1" class="photo" src="../image/face_1.png"></span>
+                        </li>
+                        <li class="selectphoto" state="0">
+                            <p>左侧面照</p>
+                            <span class="sp3"><img type="2" class="photo" src="../image/face_2.png"></span>
+                        </li>
+                        <li class="selectphoto" state="0">
+                            <p>仰视照</p>
+                            <span class="sp3"><img type="3" class="photo" src="../image/face_3.png"></span>
+                        </li>
+                        <li class="selectphoto" state="0">
+                            <p>俯视照</p>
+                            <span class="sp3"><img type="4" class="photo" src="../image/face_4.png"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tjqx">
+                <button id="closeBut">取消</button>
+                <button id="saveFaceBut" class="hover btn1" studentId="">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/safecampus/wx/personal/face.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+.cyan-window {
+    position: absolute;
+    border: 1px solid #888888;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    background: #fafafa;
+}
+
+.cyan-window-header {
+    height: 25px;
+    border-bottom: 1px solid #888888;
+    background: #eeeeee;
+    cursor: move;
+}
+
+.cyan-window-footer {
+    background: #eeeeee;
+}
+
+.cyan-window-title {
+    float: left;
+    height: 29px;
+    line-height: 25px;
+    text-indent: 5px;
+    color: #666;
+}
+
+.cyan-window-buttons {
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.cyan-window-buttons div {
+    width: 19px;
+    height: 19px;
+}
+
+.cyan-window-close {
+    background: url(window/close.gif) no-repeat center;
+}
+
+.cyan-window-close:hover {
+    background: url(window/close_hover.gif) no-repeat center;
+}
+
+.cyan-window-loading {
+    background: transparent url(../../../images/icons/loading.gif) no-repeat 10px 10px;
+    padding-left: 80px;
+    padding-top: 29px;
+}
+
+.cyan-messagebox-icon {
+    clear: both;
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.cyan-messagebox-icon-info {
+    background: no-repeat url(window/info.gif);
+}
+
+.cyan-messagebox-icon-question {
+    background: no-repeat url(window/question.gif);
+}
+
+.cyan-messagebox-icon-error {
+    background: no-repeat url(window/error.gif);
+}
+
+.cyan-messagebox-message {
+    float: left;
+    height: 30px;
+    padding-top: 18px;
+    margin-left: 10px;
+}
+
+.cyan-messagebox-buttons {
+    clear: both;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.cyan-messagebox-buttons button {
+    cursor: pointer;
+    height: 25px;
+    line-height: 23px;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0 10px;
+}
+
+.cyan-progressbox-message {
+    font-size: 12px;
+    text-indent: 15px;
+    width: 100%;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cyan-progressbox-progress {
+    position: relative;
+    height: 22px;
+    margin-top: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid #888888;
+}
+
+.cyan-progressbox-progress-bar {
+    float: left;
+    height: 22px;
+    background: #dddddd;
+}
+
+.cyan-progressbox-progress-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.cyan-promptbox-message {
+    font-size: 12px;
+    text-indent: 10px;
+    width: 100%;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cyan-promptbox-input {
+    margin: 5px 10px 8px;
+}
+
+.cyan-promptbox-input input {
+    width: 100%;
+    border: 1px solid #888888;
+    height: 18px;
+}
+
+.cyan-promptbox-input textarea {
+    width: 100%;
+    border: 1px solid #888888;
+    height: 85px;
+}
+
+.cyan-promptbox-buttons {
+    clear: both;
+    text-align: center;
+}
+
+.cyan-promptbox-buttons button {
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 25px;
+    line-height: 23px;
+    margin-left: 3px;
+    margin-right: 3px;
+}

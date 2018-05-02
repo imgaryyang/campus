@@ -1,0 +1,17 @@
+.cyan-table-content.cyan-table-center button{
+    padding: 5px 10px;
+}
+.thisYear{
+    background-color: #35abff;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+
+
+.setYear{
+    background-color: #11c157;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}

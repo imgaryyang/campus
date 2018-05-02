@@ -1,0 +1,95 @@
+#dialogBody {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#search {
+    clear: both;
+    width: 450px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+#search input {
+    width: 400px;
+    height: 20px;
+}
+
+#depts {
+    float: left;
+    width: 605px;
+    height: 300px;
+}
+
+.itemselector {
+    float: left;
+    padding-left: 30px;
+    margin-right: 5px;
+    padding-top: 10px;
+    width: 500px;
+}
+
+.itemselector .legend {
+    height: 18px;
+}
+
+.itemselector .from {
+    float: left;
+    width: 202px;
+    overflow-x: auto;
+}
+
+.itemselector .from .content {
+    width: 200px;
+    height: 252px;
+    border: 1px solid #B5B8C8;
+    background-color: white;
+}
+
+.itemselector select {
+    width: 220px;
+    height: 255px;
+}
+
+.itemselector .to {
+    float: left;
+    width: 210px;
+}
+
+.itemselector .buttons {
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 90px;
+    width: 40px;
+}
+
+.itemselector .buttons button {
+    width: 40px;
+    margin-bottom: 3px;
+}
+
+#sortButtons {
+    float: left;
+    width: 65px;
+    height: 190px;
+    padding-top: 110px;
+    margin-left: 0;
+}
+
+#sortButtons button {
+    margin-top: 5px;
+    width: 55px
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    margin-top: 12px;
+    width: 605px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

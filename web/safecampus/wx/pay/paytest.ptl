@@ -1,0 +1,32 @@
+<html action="false">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>支付测试</title>
+    <script src="../js/jquery.js"></script>
+</head>
+
+<form action="http://121.15.180.66:801/NetPayment/BaseHttp.dll?MB_EUserPay" method="post">
+    账单ID：<input type="text" id="bill" value="2694">
+    Json：<input type="text" name="jsonRequestData" value='' id="sign"/><input type="submit">
+</form>
+<button id="gen">生成Json</button>
+
+
+<body>
+</body>
+</html>
+<script>
+    var json;
+    $("#gen").click(function () {
+        console.log(11)
+        $.get("/test/pay/payment/simple/" + $("#bill").val(), function (j) {
+            json = j
+            console.log(j)
+            $("#sign").val(j)
+
+        })
+    })
+
+
+</script>

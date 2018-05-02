@@ -1,0 +1,183 @@
+<html>
+<head>
+    <title bind="voteId==null">${vote.title}-${record.user.userName}</title>
+    <title bind="voteId!=null">${vote.title}</title>
+
+    <style type="text/css">
+        #vote {
+            clear: both;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 15px;
+            width: 90%;
+        }
+
+        #vote #head .title {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 26px;
+            line-height: 32px;
+            font-weight: bold;
+        }
+
+        #vote #head .intro {
+            font-size: 14px;;
+            line-height: 20px;
+            color: #005590;
+            text-indent: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 20px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            border-bottom: solid 2px #9fb0b4;
+        }
+
+        #vote .group_content {
+            margin-left: 10px;
+        }
+
+        #vote .problem {
+            margin-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        #vote .group_content .problem {
+            margin-left: 20px;
+        }
+
+        #vote .problem .title {
+            line-height: 20px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        #vote .problem .required {
+            color: red;
+            margin-left: 5px;
+        }
+
+        #vote .problem .top_title {
+            line-height: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        #vote .problem .top_title span {
+            font-size: 16px;
+        }
+
+        #vote .groupTitle {
+            line-height: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #vote .groupTitle span {
+            font-size: 16px;
+        }
+
+        #vote .problem .option {
+            line-height: 20px;
+        }
+
+        #vote .problem .option span {
+            vertical-align: top;
+            font-size: 13px;
+        }
+
+        #vote .problem .option div.remark {
+            padding-left: 10px;
+            text-indent: 20px;
+            font-size: 12px;
+            color: #808080;
+            font-style: italic;
+        }
+
+        #vote .problem div.textarea {
+            font-size: 13px;
+        }
+
+        #vote .problem .input {
+            font-size: 13px;
+            text-decoration: underline;
+        }
+
+        #vote .problem span.radio {
+            font-size: 13px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div id="mainBody">
+        <form>
+            <div id="vote">
+                <div id="head">
+                    <div class="title">${vote.title}</div>
+                    <div class="intro" bind="vote.intro"></div>
+                </div>
+
+                <%int index = 0;%>
+                <div bind="groups" class="group${(groupId!=null&&problems.size()>1)?' group_content':''}">
+
+                    <div class="groupTitle" bind="groupId!=null&&problems.size()>1">
+                        <span class="index"> <%=++index%>、</span>
+                        <span class="problemName">${groupName}</span>
+                    </div>
+
+                    <div bind="problems" class="problem">
+                        <div class="${(groupId!=null&&problems.size()>1)?'title':'top_title'}"
+                             bind="problems.size()>1||groups.size()>1">
+
+                            <span class="index" bind="groupId==null||problems.size()==1"><%=++index%>、</span>
+                            <span class="index" bind="groupId!=null&&problems.size()>1">(${index$+1})</span>
+                            <span class="problemName">${problemName}</span>
+                            <span bind="required" class="required">[必填]</span>
+
+                        </div>
+
+                        <div class="problem_content">
+                            <div bind="optionList" class="option">
+                                <div>
+                                    <span class="radio" bind="maxCount!=null&&maxCount>1">□</span>
+                                    <span class="radio" bind="maxCount==null||maxCount<=1">○</span>
+                                    <span class="label">${optionName}</span>
+                                </div>
+                                <div class="remark" bind="remark!=null&&remark.length()>0" bind="remark">
+                                </div>
+                            </div>
+
+                            <div bind="optionList.size()==0" class="text">
+                                <div class="input" bind="dataType==null||(dataType.name()!='TEXT')">
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                </div>
+                                <div class="textarea" bind="dataType!=null&&dataType.name()=='TEXT'">
+                                    <br> <br> <br> <br> <br> <br> <br><br> <br> <br> <br>
+                                </div>
+                            </div>
+
+                            <div bind="${optionList.size()>0&&(other!=null&&other)}" class="option">
+                                <div>
+                                    <span class="radio" bind="maxCount!=null&&maxCount>1">□</span>
+                                    <span class="radio" bind="maxCount==null||maxCount<=1">○</span>
+                                    <span class="label">
+                                        其他
+                                    </span>
+                                    <span class="input">
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

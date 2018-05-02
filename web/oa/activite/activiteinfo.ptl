@@ -1,0 +1,115 @@
+<html>
+<head>
+
+    <title>${entity.title}</title>
+    <link type="text/css" rel="stylesheet" href="/oa/activite/activite.css">
+    <script type="text/javascript" src="/oa/activite/query.js"></script>
+</head>
+<body>
+    <form id="form" bind="entity">
+
+        <div id="mainBody">
+            <div id="activite">
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">活动标题：</div>
+                        <div class="wide_component">
+                            <input value="${title}" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">报名截止时间：</div>
+                        <div class="component">
+                            <input value="${applyEndTime}" readonly>
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">开始时间：</div>
+                        <div class="component">
+                            <input value="${startTime}" readonly>
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">结束时间：</div>
+                        <div class="component">
+                            <input value="${endTime}" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">活动地点：</div>
+                        <div class="wide_component">
+                            <input value="${activitePlace}" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">发起部门：</div>
+                        <div class="component">
+                            <input value="${dept!=null?dept.deptName:''}" readonly>
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">发起人：</div>
+                        <div class="component">
+                            <input value="${user!=null?user.userName:''}" readonly>
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">活动类型：</div>
+                        <div class="component">
+                            <input value="${type!=null?type.typeName:""}" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">活动内容：</div>
+                        <div class="wide_component">
+                            <textarea readonly>${activiteContent}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="component_line" bind="memberLists!=null && memberLists.size()>0">
+                    <div class="component_item">
+                        <div class="label">
+                            邀请人员
+                        </div>
+                        <div class="wide_component">
+                            <div id="activeMembers">
+                                <span bind="memberLists" bind="state.name()=='invite'">${user.UserName}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line" bind="memberLists!=null && memberLists.size()>0">
+                    <div class="component_item">
+                        <div class="label">
+                            报名参与人员
+                        </div>
+                        <div class="wide_component">
+                            <div id="activeMembers">
+                                <span bind="memberLists" bind="state.name()!='invite'">${user.UserName}(${state})</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <span class="button">
+                        <button type="button" onclick="apply();" bind="applyable">报名</button>
+                    </span>
+                    <span class="button">
+                        <button type="button" onclick="System.closePage();">关闭</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

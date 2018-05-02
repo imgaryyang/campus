@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <!--访问数量配置-->
+
+    <bean class="com.gzzm.platform.visit.VisitConfig" factory="instance">
+        <cacheSize>3</cacheSize>
+    </bean>
+
+</config>

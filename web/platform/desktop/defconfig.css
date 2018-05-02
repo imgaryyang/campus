@@ -1,0 +1,24 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#main {
+    width: 200px;
+    height: 250px;
+    overflow-y: auto;
+}
+
+#apps {
+    margin-top: 8px;
+    margin-left: 13px;
+}
+
+#apps li {
+    height: 22px;
+}
+
+#apps li input {
+    height: 14px;
+    vertical-align: top;
+    margin-right: 4px;
+}

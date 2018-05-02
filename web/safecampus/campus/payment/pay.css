@@ -1,0 +1,407 @@
+/*---------- subPage begin---------- */
+
+.table {
+    width: 100%;
+    margin: 45px 0;
+    margin: 0 auto;
+    border: 0;
+
+}
+
+.table th {
+
+    font-weight: bold;
+    background-color: #e7ebfe;
+    color: #5b73fe
+}
+
+.table,
+.table th,
+.table td {
+    font-size: 0.95em;
+    text-align: center;
+    padding: 6px;
+    border-collapse: collapse;
+}
+
+.table th {
+    border: 1px solid #f7f7f7;
+    border-width: 1px
+}
+
+.table td {
+    border: 1px solid #e7ebfe;
+    border-width: 1px
+}
+
+.table tr {
+    border: 1px solid #ffffff;
+}
+
+.table tr:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+.table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.table tr.total {
+    background-color: #eff0f0;
+}
+
+#paymentMsg{
+    overflow: hidden;
+}
+#paymentMsg  .item{
+    margin-bottom: 5px;
+    float: left;
+    width: 50%;
+}
+
+#paymentMsg  .item span {
+    display: inline-block;
+}
+
+#paymentMsg .item span.label {
+    text-align: right;
+    width: 27%;
+    padding-right: 10px;
+    color:#616161;
+}
+
+#paymentMsg .item span.value {
+    text-align: left;
+    width: 65%;
+}
+
+.subBody {
+    text-align: center;
+    margin: 0 15px 0px;
+    font-size: 14px;
+}
+
+
+
+.choosestu h3 {
+    margin: 0 0 5px;
+    font-weight: 600;
+    color:#4E565F;
+}
+
+.mid {
+    text-align: center;
+}
+
+.line {
+    display: inline-block;
+    width: 120px;
+    height: 5px;
+    border-bottom: solid 3px #169bd5;
+    margin-bottom: 15px;
+}
+
+#subPageMask {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#subPage {
+    /*display: none;*/
+    border-radius: 4px;
+    width: 95%;
+    /*overflow: scroll;*/
+    /*left: 10%;*/
+    /*top: 0px;*/
+    padding: 30px 30px 40px;
+    margin: 20px auto;
+    /*position: absolute;*/
+    /*z-index: 1001;*/
+    /*background-color: #6c8989;*/
+    background-color: #e6f3f6;
+    box-shadow: 3px 3px 15px #aaaaaa;
+}
+
+/* -------- subPage end -------- */
+i {
+    cursor: pointer;
+}
+
+#paymentType .component span, #paymentType input, #paymentType label {
+    cursor: pointer;
+}
+
+/*.choosestu {*/
+    /*display: none;*/
+/*}*/
+
+.choosestu h3 {
+    margin: 0 0 5px;
+    font-weight: 600;
+
+}
+
+.line {
+    width: 120px;
+    height: 5px;
+    border-bottom: solid 3px #169bd5;
+    margin-bottom: 25px;
+}
+
+.select {
+    margin-bottom: 25px;
+}
+
+.selectButton {
+    text-align: center;
+    margin-top: 26px;
+}
+
+.selectButton2 button {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #169bd5;
+    font-family: "微软雅黑";
+    font-size: 15px;
+    letter-spacing: 2px;
+    width: 85px;
+    height: 35px;
+    margin-right: 15px;
+}
+
+.selectButton {
+    margin-left: -30px;
+}
+.selectButton button {
+
+    font-size: 13px;
+    letter-spacing: 2px;
+    width: 50px;
+    height: 30px;
+    margin-right: 15px;
+    padding-bottom: 3px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    text-align: center;
+}
+
+
+input[type="checkbox"] {
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px #80AAFF solid;
+    width: 15px;
+    height: 15px;
+    background: url("/safecampus/campus/image/checkbox.gif") no-repeat;
+    background-position: 0 0;
+    margin-bottom: -2px;
+}
+
+input[type="checkbox"].checkAll {
+     background-position: -39px -2px;
+ }
+
+.hasCheck input[type="checkbox"] {
+    background-position: -58px -2px !important;
+}
+
+input[type="checkbox"].checkHalf {
+    background-position: -76px -2px;
+}
+
+.checkNone {
+    background-position: 0px 0px;
+}
+
+.select {
+    display: none;
+}
+
+#form {
+    margin-bottom: 20px;
+}
+
+.chooseMsg .choose {
+    width: 87.1%;
+}
+
+#students, #classes, #hostStudents, #busStudents {
+    display: none;
+}
+
+.block i {
+    margin-left: 5px;
+    display: inline-block;
+    width: 16px;
+    height: 9px;
+    background: url("/safecampus/campus/image/down.gif");
+
+}
+
+.block .hide {
+    background: url("/safecampus/campus/image/up.gif");
+}
+
+.select {
+    width: 967px;
+    /*width: 969px;*/
+    /*border-bottom: 1px #AAAAAA solid;*/
+    /*border-right: 1px #AAAAAA solid;*/
+}
+
+.session {
+    /*height: 50px;*/
+    overflow: hidden;
+}
+.block {
+    width: 137px;
+    /*120*/
+    height: 45px;
+    float: left;
+    background-color: #fafafa;/*eeefff*/
+    text-align: center;
+    line-height: 45px;
+    border-right: 1px #dddfff solid;
+    border-bottom: 1px #dddfff solid;
+    /*border: 1px #dddfff solid;*/
+}
+.session{
+    border-left: 1px #dddfff solid;
+}
+#dialogBody{
+    margin-bottom: 0;
+}
+
+
+
+.stuAutoHide {
+    line-height: 50px;
+    height: 50px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    float: left;
+}
+
+#main {
+    margin: 30px 30px 5px 10px;
+}
+
+#paymentType .component span {
+    margin-right: 8px
+}
+
+.component_line {
+    overflow: hidden;
+    margin-bottom: 11px;
+}
+
+.component_item {
+    float: left;
+}
+
+.label {
+    /*padding-top: 4px;
+    float: left;*/
+}
+
+body {
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+
+input,
+textarea {
+    padding: 2px;
+    font-size: 13px;
+}
+
+#payname input {
+    width: 423px;
+}
+
+#description span {
+    float: left;
+    margin: 20px 6px 5px 0;
+}
+
+
+#description {
+    margin-right: 0;
+}
+#description textarea {
+    width: 423px;
+    height: 60px;
+}
+/*#form input,#form textarea {*/
+/*border: 1px solid #80AAFF;*/
+/*border-radius: 3px;*/
+/*padding: 7px;*/
+/*}*/
+input.component {
+    width: 150px;
+}
+.label {
+    padding-right: 4px;
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+}
+#main {
+    width: 590px;
+
+}
+
+.session > div {
+    display: none;
+}
+
+ul {
+    overflow: hidden;
+}
+
+#chooseCount {
+    margin-left: 30px;
+}
+
+.chooseMsg {
+    margin-bottom: 25px;
+    border: none;
+}
+
+#chooseCount #recent {
+    color: #0782C1;
+}
+
+.block:hover {
+    background-color: #ecf0fc;
+}
+
+.chooseBlock {
+    background-color: #ecf0fc;
+}
+
+#grades {
+    border-top: 1px #dddfff solid
+}
+
+.invalid_msg {
+    width: auto;
+    float: right;
+}

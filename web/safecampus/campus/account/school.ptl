@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>${isNew$()?'开通学校账号':entity.schoolName}</title>
+    <link type="text/css" rel="stylesheet" href="school.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/safecampus/campus/account/school.js"></script>
+    <script type="text/javascript" src="/cyan/client/widgets/fileupload.js"></script>
+</head>
+<body>
+    <div class="box" bind="entity">
+        <form action="" method="post">
+            <div class="box_bt">
+                <h2>学校基本信息</h2>
+            </div>
+            <div class="zdjj">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0" class="srk_lb">
+                    <tr>
+                        <td class="td3" rowspan="4">
+                            <dl class="sctx">
+                                <dt>
+                                    <div>
+                                        <div>
+                                            <img bind="isNew$()" id="imageId" src="/safecampus/campus/icons/organ.jpg"/>
+                                            <img bind="!isNew$()" id="imageId"
+                                                 src="/campus/account/schoolimage/${schoolId}"/>
+                                        </div>
+                                        <div class="sctx_btn">
+                                            <button type="button" id="upoladButton">上传学校照片</button>
+                                            <input name="image" type="file" class="fileInput"
+                                                   id="t_file"
+                                                   onchange="chooseFile();" hidefocus="true" onclick="this.blur();"
+                                                   accept="image/*">
+                                        </div>
+                                    </div>
+                                </dt>
+                            </dl>
+                        </td>
+                        <td class="td2">学校名称：</td>
+                        <td>
+                            <div class="tInput"><input name="schoolName" require/></div>
+                            <span class="red">*</span>
+                        </td>
+                        <td class="td2">学校级别：</td>
+                        <td>
+                            <div class="tInput">
+                                <input name="levelId" text="${schoolLevel.levelName}" require/>
+                            </div>
+                        </td>
+                        <td class="td2">办学单位类型：</td>
+                        <td>
+                            <div class="tInput">
+                                <select name="schoolType" require>
+                                    <option bind=""></option>
+                                </select></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td2">学校等级：</td>
+                        <td>
+                            <div class="tInput">
+                                <select name="schoolGrade" require>
+                                    <option bind=""></option>
+                                </select></div>
+                        </td>
+                        <td class="td2">学生规模：</td>
+                        <td>
+                            <div class="tInput">
+                                <select name="studentScale" require>
+                                    <option bind=""></option>
+                                </select></div>
+                        </td>
+                        <td class="td2">教职工规模：</td>
+                        <td>
+                            <div class="tInput">
+                                <select name="teacherScale" require>
+                                    <option bind=""></option>
+                                </select></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td2">联系人：</td>
+                        <td>
+                            <div class="tInput"><input name="contractMan" require/></div>
+                            <span class="red">*</span>
+                        </td>
+                        <td class="td2">联系电话：</td>
+                        <td>
+                            <div class="tInput"><input name="phone" onchange="onUserNameChange();" require/>
+                            </div>
+                            <span class="red">*</span>
+                        </td>
+                        <td class="td2">学校地址：</td>
+                        <td>
+                            <div class="tInput"><input name="address"/></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td2" valign="top">简介：</td>
+                        <td colspan="5">
+                            <textarea class="intro" name="intro"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box_bt">
+                <h2>学校商户信息</h2>
+            </div>
+
+            <div class="zdjj long1">
+                <div class="shh">
+                    <div class="shh_lt shh_lt2">&nbsp;&nbsp;分行/支行号：</div>
+                    <div class="shh_rt branchNo">
+                        <input name="merchant.branchNo" require/>
+                    </div>
+                    <span class="red">*</span>
+                </div>
+                <div class="shh">
+                    <div class="shh_lt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商户号：</div>
+                    <div class="shh_rt merchantNo">
+                        <input name="merchant.merchantNo" require/>
+                    </div>
+                    <span class="red">*</span>
+                </div>
+
+            </div>
+            <div class="zdjj long">
+
+                <div class="shh">
+                    <div class="shh_lt shh_lt2">项目合作编码：</div>
+                    <div class="shh_rt copCode">
+                        <input name="merchant.copCode" require/>
+                    </div>
+                    <span class="red">*</span>
+                </div>
+
+                <div class="shh">
+                    <div class="shh_lt shh_lt2">支付秘钥：</div>
+                    <div class="shh_rt copCode">
+                        <input name="merchant.secretKey" require/>
+                    </div>
+                    <span class="red">*</span>
+                </div>
+
+            </div>
+
+            <div class="box_bt">
+                <h2>学校管理账号</h2>
+
+            </div>
+            <div class="zdjj">
+
+                <div class="shh">
+                    <input name="user.userId" type="hidden"/>
+                    <div class="shh_lt">账号名：</div>
+                    <div class="shh_rt">
+                        <input name="user.loginName" require/>
+                    </div>
+                    <span class="red">*</span>
+                </div>
+                <div class="shh" bind="isNew$()">
+                    <div class="shh_lt shh_lt2">初始密码：</div>
+                    <div class="shh_rt">
+                        <input name="user.password" value="${getStringRandom(8)}" require/>
+                    </div>
+                    <span class="red">*</span>
+                </div>
+                <%--<div class="shh" bind="isNew$()">--%>
+                <%--<div class="shh_lt shh_lt2">确认密码：</div>--%>
+                <%--<div class="shh_rt">--%>
+                <%--<input name="password_confirm" type="password" equal="entity.user.password" require/>--%>
+                <%--</div><span class="red">*</span>--%>
+                <%--</div>--%>
+                <div class="restButton" bind="!isNew$()">
+                    <button type="button" onclick="showUpdatePassword(${entity.userId})">重置密码</button>
+                </div>
+            </div>
+            <div class="box_bt">
+                <h2>开通服务（权限）</h2>
+
+            </div>
+            <div class="zdjj">
+                <div bind="serviceTypes">
+                    <div bind="serviceTypes.size()>1" class="serviceType">
+                        ${typeName}
+                    </div>
+                    <div class="zdjj2">
+                        <div class="shh" bind="serviceInfoList">
+                                <span><input name="serviceIds" type="checkbox" value="${serviceId}"
+                                             checked="${checked}"/></span>
+                            <div class="shh_lt" title="${remark}">${serviceName}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="bcfh">
+                <button type="button" onclick="save();">保存</button>
+                <button type="button" class="btn2" onclick="System.closePage();">取消</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

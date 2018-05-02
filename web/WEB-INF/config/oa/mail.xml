@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <bean class="com.gzzm.oa.mail.MailContext" factory="instance">
+        <serverName>gzzm</serverName>
+        <domains>
+            <element>zhengmeng.net</element>
+        </domains>
+        <smtp>true</smtp>
+        <pop3>true</pop3>
+        <mx name="139.com">mx2.mail.139.com</mx>
+    </bean>
+</config>

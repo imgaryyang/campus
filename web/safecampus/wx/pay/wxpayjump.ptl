@@ -1,0 +1,25 @@
+<!doctype html>
+<html action="false">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>缴费</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="basepay.js"></script>
+</head>
+<body>
+请使用浏览器打开本页面后点击支付
+<button onclick="submit()">支付</button>
+
+<script>
+    function submit() {
+        var HttpPathPay = "http://121.15.180.66:801/NetPayment/BaseHttp.dll?MB_EUserPay";
+        $.get("/test/pay/payment/simple/${billId}", function (json) {
+            sendFormRequest(json, HttpPathPay);
+        })
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>修改记录</title>
+    <link type="text/css" rel="stylesheet" href="/platform/form/baks.css">
+</head>
+<body>
+    <div id="items">
+        <div bind="baks" class="item">
+            <div class="line">
+                <div class="label">修改前的内容</div>
+                <div class="value" bind="text"></div>
+            </div>
+            <div class="line">
+                <div class="label">修改人</div>
+                <div class="value">${operatorName}</div>
+            </div>
+            <div class="line">
+                <div class="label">修改时间</div>
+                <div class="value">${time}</div>
+            </div>
+        </div>
+
+        <div id="bottom"></div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#main {
+    width: 768px;
+    height: 560px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#dialogBody #components {
+    clear: both;
+    width: 760px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#dialogBody #components .component_line {
+    clear: both;
+}
+
+#dialogBody #components .component_line2 {
+    clear: both;
+}
+
+#dialogBody #components .component_item .label {
+    padding-top: 3px;
+    margin-bottom: 6px;
+    float: left;
+    width: 100px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#dialogBody #components .component_line .component_item .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 240px;
+}
+
+#dialogBody #components .component_line .component_item input {
+    width: 230px;
+    height: 18px;
+}
+
+#dialogBody #components .component_line .component_item select {
+    width: 230px;
+    height: 22px;
+}
+
+#dialogBody #components .component_line2 .component_item .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 570px;
+}
+
+#dialogBody #components .component_line2 .component_item input {
+    width: 550px;
+    height: 18px;
+}
+
+#dialogBody #components .component_line2 .component_item textarea {
+    width: 580px;
+    height: 60px;
+}
+
+#dialogBody #components .component_line .component_item input.checkbox {
+    margin-top: 3px;
+    width: 14px;
+    height: 14px;
+}
+
+#dialogBody #components .component_line .component_item input.radio {
+    margin-top: 3px;
+    width: 14px;
+    height: 14px;
+}
+
+#dialogBody #components .component_item .component span {
+    float: left;
+    height: 22px;
+}
+
+#dialogBody #components .component_item .component label {
+    padding-left: 5px;
+    padding-top: 3px;
+    float: left;
+    width: 40px;
+}
+
+#dialogBody #components .component_item .component label.label1 {
+    width: 60px;
+}
+
+#participants {
+    clear: both;
+    width: 720px;
+    margin-top: 4px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#participants .label {
+    padding-top: 3px;
+    float: left;
+    width: 100px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#participants .selector {
+    float: left;
+    width: 610px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 8px;
+    width: 768px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

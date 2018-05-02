@@ -1,0 +1,41 @@
+#dialogBody{
+    width: 480px;
+    height: 240px;
+}
+
+#dialogBody {
+    margin-bottom: 0;
+}
+
+{
+
+}
+#main {
+    margin: 10px auto;
+}
+
+#dialogBody #components .component_item .component {
+
+    margin-bottom: 10px;
+}
+
+/*#dialogBody #components input.belongGrade {*/
+
+    /*height: 40px;*/
+
+/*}*/
+
+#dialogBody #buttons {
+    position: absolute;
+    bottom: 20px;
+}
+
+.cyan-widget, cyan-menu {
+    height: 40px
+}
+#dialogBody #components .component_item .label {
+    width: 90px;
+}
+#dialogBody #components .component_item .component {
+    width: 280px;
+}

@@ -1,0 +1,99 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>考勤详情</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/TouchSlide.1.1.js"></script>
+    <script src="/safecampus/js/jquery.js"></script>
+</head>
+
+<body>
+
+<div class="zkd">
+    <div class="contont">
+        <div class="lyb">
+            <ul class="kqxq">
+                <li>
+                    <p>迟到学生</p>
+
+                    <p class="p1">${lateCount}</p>
+                </li>
+                <li class="last li2">
+                    <p>请假学生</p>
+
+                    <p class="p1">${leaveCount}</p>
+                </li>
+                <li class="last li3">
+                    <p class="${type==0?'':'unshowclass'}">已到班学生</p>
+                    <p class="${type==1?'':'unshowclass'}">已签到学生</p>
+                    <p class="${type==2?'':'unshowclass'}">已午休学生</p>
+                    <p class="${type==3?'':'unshowclass'}">已托管学生</p>
+                    <p class="${type==4?'':'unshowclass'}">已签到学生</p>
+
+                    <p class="p1">${arrvedCount}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="tjls">
+            <div class="jrmd"><img src="/safecampus/wx/image/xtb_03.jpg">
+
+                <p>今日名单</p>
+            </div>
+            <div class="cdjj">
+                <div class="jrmd_lb">
+                    <div class="jrmd_lb2">
+                        <ul>
+                            <li class="li1">请假</li>
+
+                            <li bind="leaveStudents">${student}</li>
+                            <li bind="leaveStudents.size()==0">无</li>
+                        </ul>
+                    </div>
+                    <div class="jrmd_lb2">
+                        <ul>
+                            <li class="li2">迟到</li>
+                            <li bind="lateStudents">${student}</li>
+                            <li bind="lateStudents.size()==0">无</li>
+                        </ul>
+                    </div>
+                    <div class="jrmd_lb3">
+                        <ul>
+                            <li class="li3">未发通知</li>
+                            <li bind="unsendedStudents">${student}</li>
+                            <li bind="unsendedStudents.size()==0">无</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tjls">
+            <div class="jrmd"><img src="/safecampus/wx/image/xtb_07.jpg" class="im2">
+
+                <p>考勤明细</p>
+            </div>
+            <div class="kqmx">
+                <ul>
+                    <li bind="attendances"><span><img src="/safecampus/wx/image/tx_03.png"></span>
+
+                        <h2>${student}</h2>
+
+                        <p class="p1" bind="${attendanceStatus.ordinal()==1}">迟到</p>
+
+                        <p class="p2" bind="${attendanceStatus.ordinal()==2}">请假</p>
+
+                        <p class="p3" bind="${attendanceStatus.ordinal()==3}">未到</p>
+
+                        <p class="p4" bind="${attendanceStatus.ordinal()==4}">其他</p>
+
+                        <p bind="${attendanceStatus.ordinal()==0||attendanceStatus.ordinal()>4}">
+                            正常</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

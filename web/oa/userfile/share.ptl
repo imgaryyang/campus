@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>文件共享</title>
+    <link type="text/css" rel="stylesheet" href="/oa/userfile/share.css"/>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/oa/userfile/share.js"></script>
+</head>
+
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" bind="entity" action="">
+
+            <div id="search">
+                <input class="search" name="word" id="word">
+            </div>
+
+            <div id="shares">
+                <div id="selector">
+                    <div bind="com.gzzm.platform.group.PageMemberSelector.class" id="shareSelector"
+                         name="members" types="user,dept" deptGroupDisplay="false" userGroupDisplay="false" app="">
+                    </div>
+                </div>
+            </div>
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="save();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

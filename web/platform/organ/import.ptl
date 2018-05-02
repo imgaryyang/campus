@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/organ/import.js"></script>
+    <link type="text/css" rel="stylesheet" href="/platform/organ/import.css">
+</head>
+<body id="dialogBody">
+
+    <form id="form">
+
+        <div id="components">
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">导入文件</div>
+                    <div class="component">
+                        <input type="file" name="file" fileType="exp">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="buttons">
+            <span class="button">
+                <button onclick="imp()" type="button">导入</button>
+            </span>
+            <span class="button">
+                <button onclick="cancel()" type="button">取消</button>
+            </span>
+        </div>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+html, body {
+    overflow-y: auto;
+}
+
+#steps {
+    width: 665px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    color: #000000;
+}
+
+.step {
+    clear: both;
+    float: left;
+    width: 600px;;
+    margin-left: 25px;;
+    margin-right: 25px;;
+    margin-bottom: 20px;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+.line {
+    clear: both;
+    float: left;
+    width: 100%;
+    line-height: 23px;
+    border-bottom: 1px solid #000000;
+    overflow-y: hidden;
+}
+
+.label {
+    float: left;
+    width: 120px;
+    text-align: right;
+    padding-right: 30px;
+}
+
+.value {
+    float: left;
+    width: 419px;
+    padding-left: 30px;
+    background-color: white;
+    border-left: 1px solid #000000;
+}
+
+button {
+    line-height: 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.text {
+
+}
+
+.time {
+    text-align: right;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+#bottom {
+    float: left;
+    clear: both;
+    width: 10px;
+    height: 5px;
+}

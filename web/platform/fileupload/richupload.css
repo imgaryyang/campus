@@ -1,0 +1,59 @@
+.richupload_container {
+    width: 700px;
+    height: 450px;
+    border: 1px gray solid;
+    background: #ffffff;
+}
+
+.richupload_container .richupload_bottom {
+    width: 700px;
+    height: 50px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.richupload_display {
+    width: 700px;
+    height: 400px;
+}
+
+.richupload_display .richupload .richupload_files {
+    width: 700px;
+    height: 350px;
+}
+
+.richupload {
+    text-align: center;
+}
+
+.richupload .richupload_files {
+    overflow-y: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.richupload .richupload_file {
+    float: left;
+    clear: both;
+    height: 20px;
+}
+
+.richupload .richupload_filename {
+    font-size: 13px;
+    color: blue;
+    margin-left: 12px;
+    float: left;
+}
+
+.richupload .richupload_file_percentage {
+    margin-left: 20px;
+    float: left;
+}
+
+.richupload_progressbar {
+    width: 99%;
+    clear: both;
+    margin-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+}

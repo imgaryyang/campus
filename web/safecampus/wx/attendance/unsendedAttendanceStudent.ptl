@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>未发送考勤学生</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/TouchSlide.1.1.js"></script>
+    <script src="/safecampus/wx/attendance/attendance.js"></script>
+    <script src="/safecampus/js/jquery.js"></script>
+</head>
+
+<body>
+
+<div class="txkq">
+    <div class="wfkqxs">未发送考勤学生(<font id="unsendcount">${unsendedCount}</font>) <button onclick="toFinish('${finishState}','${relationId}','${type}','${aoId}')" class="wcbtn">完成</button></div>
+    <div class="sscj">
+        <div class="contont">
+            <div class="tjls" bind="unsendedStudents">
+                <div class="kqmx">
+                    <ul>
+                        <li><span><img src="/safecampus/wx/image/tx_03.png"></span>
+
+                            <h2>${student}</h2>
+
+                            <h3><a href="tel:${student.phone}">联系家长</a></h3>
+                        </li>
+                    </ul>
+                </div>
+                <div class="kqlsjj">
+                    <div class="jrmd"><img src="/safecampus/wx/image/zxzt_03.jpg" class="im2">
+
+                        <p>最新状态标记</p>
+                    </div>
+                    <div class="bqzt">
+                        <ul id="${attId}">
+                            <li onclick="showHover(this)"><a name="attendanceStatus" value="2" class="${attendanceStatus.ordinal()==2?'hover':''}">请假</a></li>
+                            <li onclick="showHover(this)" ><a name="attendanceStatus" value="1"  class="${attendanceStatus.ordinal()==1?'hover':''}">迟到</a></li>
+                            <li onclick="showHover(this)" ><a  name="attendanceStatus" value="3"  class="${attendanceStatus.ordinal()==3?'hover':''}">未到</a></li>
+                            <li onclick="showHover(this)" ><a  name="attendanceStatus" value="0"  class="${(attendanceStatus.ordinal()==0||attendanceStatus.ordinal()==5||attendanceStatus.ordinal()==6||attendanceStatus.ordinal()==7||attendanceStatus.ordinal()==8)?'hover':''}" >补签</a></li>
+                            <li onclick="showHover(this)" ><a  name="attendanceStatus" value="4"  class="${attendanceStatus.ordinal()==4?'hover':''}">其他</a></li>
+                        </ul>
+                    </div>
+                    <div class="fsan">
+                        <button onclick="recordMessage('${attId}','${state}','${aoId}',0,'${finishState}')">记录但不发送</button>
+                        <button class="btn2" onclick="recordMessage('${attId}','${state}','${aoId}',1,'${finishState}')">发送考勤通知</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

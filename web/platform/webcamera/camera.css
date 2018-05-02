@@ -1,0 +1,108 @@
+#camera_overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 9999;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-image: url(overlay.png)
+}
+
+.camera {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 810px;
+    height: 450px;
+}
+
+#camera_images {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 870px;
+    height: 64px;
+    text-align: left;
+}
+
+#camera_imageLeft {
+    float: left;
+    width: 20px;
+    height: 45px;
+    margin-top: 9px;
+    margin-right: 10px;
+    background: url("/platform/webcamera/page_button.gif") -35px 0;
+    cursor: pointer;
+}
+
+#camera_imageLeft:hover {
+    background: url("/platform/webcamera/page_button.gif") -35px -46px;
+}
+
+#camera_imageList {
+    float: left;
+    width: 810px;
+    height: 64px;
+    text-align: left;
+    overflow-x: hidden;
+}
+
+#camera_imageListInner {
+    width: 9999px;
+    height: 64px;
+    background: #ffffff;
+}
+
+#camera_imageRight {
+    float: left;
+    width: 20px;
+    height: 45px;
+    margin-top: 9px;
+    margin-left: 10px;
+    background: url("/platform/webcamera/page_button.gif") -103px 0;
+    cursor: pointer;
+}
+
+#camera_imageRight:hover {
+    background: url("/platform/webcamera/page_button.gif") -103px -46px;
+}
+
+#camera_images #camera_imageListInner image {
+    width: 108px;
+    height: 60px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 0;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    vertical-align:top;
+}
+
+#camera_images #camera_imageListInner image:hover {
+    border: 2px solid #00FFFF;
+}
+
+#camera_images #camera_imageListInner image.selected {
+    border: 2px solid #0000AA;
+}
+
+#camera_buttons {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+    height: 60px;
+}
+
+.camera_button {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.camera_button button {
+    height: 22px;
+    line-height: 14px;
+}

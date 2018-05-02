@@ -1,0 +1,7 @@
+.agent_tip {
+    width: 170px;
+    height: 90px;
+    padding-left: 3px;
+    color: blue;
+    cursor:pointer;
+}

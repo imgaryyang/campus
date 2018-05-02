@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>排序</title>
+    <link type="text/css" rel="stylesheet" href="/platform/commons/sort.css">
+    <script type="text/javascript" src="/platform/commons/sort.js"></script>
+    <script type="text/javascript" src="/cyan/client/combox.js"></script>
+</head>
+<body id="sortBody">
+
+    <form action="">
+        <div id="sortPage">
+            <div id="sortList">
+                <select name="keys" multiple="multiple" size="3">
+                    <option bind="list" value="public.getKey(self)" text="public.toString(self)"></option>
+                </select>
+            </div>
+            <div id="sortButtons">
+                <button type="button" onclick="up();">上移</button>
+                <button type="button" onclick="down();">下移</button>
+                <button type="button" onclick="sort();">确定</button>
+                <button type="button" onclick="closeWindow();">关闭</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

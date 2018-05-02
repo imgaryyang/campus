@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <!--系统不变的配置-->
+
+    <!--对缓存实例的支持-->
+    <factoryProvider type="com.gzzm.platform.commons.cache.CacheInstanceFactoryProvider"/>
+
+    <!--配置对部门信息使用缓存-->
+    <bean class="com.gzzm.platform.organ.DeptService" imp="com.gzzm.platform.organ.DeptCacheTree"/>
+
+    <!--菜单权限生成-->
+    <bean class="List[com.gzzm.platform.menu.MenuAuthsProvider]" factory="instance">
+        <element type="com.gzzm.platform.commons.crud.CrudMenuAuthsProvider"/>
+    </bean>
+
+    <!--文件保存-->
+    <bean class="List[com.gzzm.platform.commons.filestore.FileStorer]" factory="instance">
+
+        <!--保存到个人资料-->
+        <element type="com.gzzm.ods.flow.OdFileStorer"/>
+        <element type="com.gzzm.oa.mail.MailFileStorer"/>
+        <element type="com.gzzm.oa.userfile.UserFileStorer"/>
+        <element type="com.gzzm.oa.deptfile.DeptFileStorer"/>
+
+    </bean>
+
+    <bean class="com.gzzm.platform.organ.AuthDeptDisplay"/>
+    <bean class="com.gzzm.platform.organ.AuthDeptTreeModel"/>
+
+    <bean class="com.gzzm.platform.attachment.AttachmentCrud"/>
+
+    <bean class="net.cyan.arachne.encrypt.PageEncryptStorer" imp="com.gzzm.platform.commons.SystemPageEncryptStorer"/>
+
+</config>

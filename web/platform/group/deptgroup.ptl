@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/platform/group/deptgroup.css">
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/group/deptgroup.js"></script>
+</head>
+<body id="dialogBody">
+
+    <form bind="entity">
+
+        <div id="components">
+            <div class="component_item">
+                <div class="label">部门组名称</div>
+                <div class="component">
+                    <input name="groupName">
+                </div>
+            </div>
+        </div>
+
+        <div id="search">
+            <input name="word" id="word" class="search">
+        </div>
+
+        <div id="depts">
+            <div id="deptSelector" name="entity.depts.deptId" class="itemselector" from:rootVisible="false"
+                 from:multiple="true" bind="net.cyan.arachne.components.PageItemSelector.class" available="deptTree"
+                 selected="entity.depts" fromLegend="" toLegend="">
+            </div>
+            <div id="sortButtons">
+                <button type="button" onclick="deptSelector.up();">上移</button>
+                <button type="button" onclick="deptSelector.down();">下移</button>
+            </div>
+        </div>
+
+        <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="save();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+        </div>
+
+    </form>
+
+</body>
+</html>

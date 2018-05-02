@@ -1,0 +1,35 @@
+.cyan_bubble_top_left {
+    width: 210px;
+    height: 115px;
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: absolute;
+    background-image: url("../images/bubble_top_left.gif");
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.cyan_bubble_top_right {
+    width: 210px;
+    height: 115px;
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: absolute;
+    background-image: url("../images/bubble_top_right.gif");
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.cyan_bubble_btn_close{
+    position: absolute;
+    right: 10px;
+    bottom: 12px;
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    background-image: url("../images/icons/close.png");
+}

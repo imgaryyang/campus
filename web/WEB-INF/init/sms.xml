@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+
+    <!--初始化短信机服务-->
+    <!--<init type="com.gzzm.sms.SmsStart"/>-->
+
+</system>

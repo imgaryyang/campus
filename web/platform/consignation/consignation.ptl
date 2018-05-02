@@ -1,0 +1,67 @@
+<html>
+<head>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <link type="text/css" rel="stylesheet" href="/platform/consignation/consignation.css">
+</head>
+<body id="dialogBody">
+
+    <form id="form">
+
+        <div id="components">
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">被委托人</div>
+                    <div class="component">
+                        <input name="entity.consignee"
+                               text="${entity.consigneeUser==null?'':entity.consigneeUser.userName}">
+                    </div>
+                </div>
+            </div>
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">开始时间</div>
+                    <div class="component">
+                        <input name="entity.startTime">
+                    </div>
+                </div>
+            </div>
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">结束时间</div>
+                    <div class="component">
+                        <input name="entity.endTime">
+                    </div>
+                </div>
+            </div>
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">说明</div>
+                    <div class="component">
+                        <textarea name="entity.remark"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="component_line">
+                <div class="component_item">
+                    <div class="label">委托范围</div>
+                    <div class="component">
+                        <span bind="modules" class="checkbox">
+                            <input type="checkbox" class="checkbox" name="entity.modules" value="${type}">${name}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="buttons">
+            <span class="button">
+                <button onclick="save()" type="button">保存</button>
+            </span>
+            <span class="button">
+                <button onclick="closeWindow()" type="button">关闭</button>
+            </span>
+        </div>
+
+    </form>
+</body>
+</html>

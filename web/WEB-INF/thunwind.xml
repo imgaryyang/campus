@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence>
+    <!--
+      将持久层的配置托管给nest，因此将以下配置注释，如果不使用nest，则使用一下配置
+      <entityFactory type="net.cyan.thunwind.dao.DaoEntityFactory"/>
+    -->
+
+    <managerFactory type="net.cyan.thunwind.connection.DefaultPersistenceManagerFactory"/>
+
+    <!--定义使用lucene作为全文索引引擎-->
+    <fullTextEngine manager="" type="net.cyan.thunwind.fulltext.LuceneFullTextEngineFactory">
+        <path>/lucene_thunwind</path>
+    </fullTextEngine>
+
+    <!--定义id产生器，在ID前面加系统编号-->
+    <idGenerator type="com.gzzm.platform.commons.SystemIdGenerator"/>
+
+</persistence>

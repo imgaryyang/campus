@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!--缴费类型-->
+    <bean class="com.gzzm.safecampus.campus.pay.paymentTypeConfig" factory="instance">
+        <types>
+            <element>学费</element>
+            <element>学杂费</element>
+            <element>校巴费</element>
+            <element>托管费</element>
+            <element>餐费</element>
+            <element>其它</element>
+        </types>
+    </bean>
+</config>

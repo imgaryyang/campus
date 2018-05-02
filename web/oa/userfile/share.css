@@ -1,0 +1,47 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#main {
+    margin-top: 10px;
+    width: 708px;
+    height: 335px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#search {
+    clear: both;
+    width: 600px;
+    margin-left: 32px;
+    margin-bottom: 10px;
+}
+
+#search input {
+    width: 400px;
+    height: 20px;
+}
+
+#shares {
+    clear: both;
+    width: 700px;
+    margin-top: 4px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#shares .selector {
+    width: 700px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 8px;
+    width: 708px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

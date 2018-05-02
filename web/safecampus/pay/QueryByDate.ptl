@@ -1,0 +1,82 @@
+<!doctype html>
+<html action="false">
+<head>
+    <meta charset="UTF-8">
+    <title>按商户日期查询</title>
+    <script type="text/javascript" src="/safecampus/pay/js/basepay.js"></script>
+    <script>
+        var HttpPath = "http://localhost/cmb/query/querySettledOrder";
+
+        function submit() {
+            var params = "beginDate=" + beginDate.value
+                + "&endDate=" + endDate.value + "&nextKeyValue=" + nextKeyValue.value
+
+            var json = sendXmlRequestByParams(params, HttpPath);
+            console.log("server-json: " + json)
+            var rsp = JSON.parse(json);
+            console.log(rsp.parseJSON())
+            document.getElementById("rspversion").value = rsp.version;
+            document.getElementById("rspcharset").value = rsp.charset;
+            var rspData =rsp.rspData;
+            console.log(rspData)
+            document.getElementById("rspCode").value = rsp.rspData.rspCode;
+            document.getElementById("rspMesg").value = rsp.rspData.rspMesg;
+            document.getElementById("dateTime").value = rsp.rspData.dateTime;
+            //是否续传
+            if (rsp.rspData.hasNext == "Y")
+                document.getElementById("nextKeyValue").value = rsp.rspData.nextKeyValue;
+            document.getElementById("rspData").value = JSON.stringify(rsp.rspData);
+
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+
+            <label> reqData:</label>
+
+            <br/>
+
+            <label for="beginDate"> beginDate:</label>
+            <input name="beginDate" type="text" id="beginDate" value="20160502">
+            <label for="endDate">
+                <br> endDate:
+            </label>
+            <input name="endDate" type="text" id="endDate" value="20180131">
+            <br/>
+
+            <label for="nextKeyValue">
+                <br> nextKeyValue:
+            </label>
+            <input name="nextKeyValue" type="text" id="nextKeyValue" value="">
+            <p>
+                <input type="button" name="submit" id="submit" value="提交" onClick="submit();">
+            </p>
+        </td>
+        <td width="100"></td>
+        <td valign="top">
+            <label> version:</label>
+            <input name="rspversion" type="text" id="rspversion" value="">
+            <br/>
+            <label> charset:</label>
+            <input name="rspcharset" type="text" id="rspcharset" value=""/>
+            <br/>
+            <label for="rspCode"> rspCode:</label>
+            <input name="rspCode" type="text" id="rspCode" value=""/>
+            <br/>
+            <label for="rspMesg"> rspMesg:</label>
+            <input name="rspMesg" type="text" id="rspMesg" value=""/>
+            <br/>
+            <label for="dateTime"> dateTime:</label>
+            <input name="dateTime" type="text" id="dateTime" value=""/>
+            <br/>
+            <label for="rspData"> rspData:</label>
+            <textarea rows="10" id="rspData" style="width: 400px"></textarea>
+            <br/>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

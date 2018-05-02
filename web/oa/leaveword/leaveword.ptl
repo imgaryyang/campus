@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/oa/leaveword/leaveword.css"/>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" action="">
+            <div class="components">
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">
+                            标题
+                        </div>
+                        <div class="component">
+                            <input name="entity.title"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">
+                            留言内容
+                        </div>
+                        <div class="component">
+                            <textarea name="entity.content"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">
+                            匿名
+                        </div>
+                        <div class="component">
+                            <select name="entity.anonymous">
+
+                                <option value="false">不匿名</option>
+                                <option value="true">匿名</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="save();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

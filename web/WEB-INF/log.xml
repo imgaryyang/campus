@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+
+    <macro name="log:target">
+        <target name="${name}">
+            <path>/log/zmeg_new/${(path==null||path=='')?name:path}%yyyy_%MM_%dd_%n.log</path>
+            <fileSize>${(fileSize==null||fileSize=='')?'2M':fileSize}</fileSize>
+        </target>
+    </macro>
+
+    <macro name="log:log">
+        <macro:if expression="target">
+            <log:target name="${target}" path="${(targetPath==null||targetPath=='')?path:targetPath}"/>
+        </macro:if>
+        <macro:if expression="debug">
+            <log:target name="${debug}" path="${(debugPath==null||debugPath=='')?path:debugPath}"/>
+        </macro:if>
+        <macro:if expression="info">
+            <log:target name="${info}" path="${(infoPath==null||infoPath=='')?path:infoPath}"/>
+        </macro:if>
+        <macro:if expression="error">
+            <log:target name="${error}" path="${(errorPath==null||errorPath=='')?path:errorPath}"/>
+        </macro:if>
+        <macro:if expression="warn">
+            <log:target name="${warn}" path="${(warnPath==null||warnPath=='')?path:warnPath}"/>
+        </macro:if>
+        <macro:if expression="fatal">
+            <log:target name="${fatal}" path="${(fatalPath==null||fatalPath=='')?path:fatalPath}"/>
+        </macro:if>
+        <log name="${name}">
+            <macro:switch>
+                <case expression="nested$">
+                    <macro:nested/>
+                </case>
+                <otherwise>
+                    <macro:if expression="target">
+                        <target>${target}</target>
+                    </macro:if>
+                    <macro:if expression="debug">
+                        <debug>${debug}</debug>
+                    </macro:if>
+                    <macro:if expression="info">
+                        <info>${info}</info>
+                    </macro:if>
+                    <macro:if expression="error">
+                        <error>${error}</error>
+                    </macro:if>
+                    <macro:if expression="warn">
+                        <warn>${warn}</warn>
+                    </macro:if>
+                    <macro:if expression="fatal">
+                        <fatal>${fatal}</fatal>
+                    </macro:if>
+                    <track>${track==null?'true':track}</track>
+                    <macro:if expression="level">
+                        <level>${level}</level>
+                    </macro:if>
+                </otherwise>
+            </macro:switch>
+        </log>
+    </macro>
+
+    <logFactory>
+        <target name="console" type="console"/>
+        <import path="log"/>
+    </logFactory>
+</system>

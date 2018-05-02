@@ -1,0 +1,4 @@
+getNodeLastOperatorDeptId(String nodeId)
+{
+   return FlowFunctions.getNodeLastOperatorDeptId(nodeId,$context.getService());
+}

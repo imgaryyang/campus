@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <bean class="List[com.gzzm.safecampus.campus.device.DeviceStatus]" factory="instance">
+        <element>
+            <code>0</code>
+            <name>正常</name>
+        </element>
+    </bean>
+    <!--配置连接的ftp-->
+    <bean class="com.gzzm.safecampus.campus.face.FtpConfig" factory="instance">
+        <port>21</port>
+        <ftpIp>54.223.81.159</ftpIp>
+        <ftpUserName>campus</ftpUserName>
+        <ftpPassword>gzinftp!@#</ftpPassword>
+        <!--PASV 被动模式 PORT主动模式-->
+        <ftpMode>PORT</ftpMode>
+        <ftpDownPath>/hikvision/ftp/2018_04_17-2018_04_17</ftpDownPath>
+        <ftpBakPath>/safecampus/videobak</ftpBakPath>
+<!--        <port>21</port>
+        <ftpIp>192.168.1.221</ftpIp>
+        <ftpUserName>zm</ftpUserName>
+        <ftpPassword>123456</ftpPassword>
+        <ftpDownPath>/safecampus/video</ftpDownPath>
+        <ftpBakPath>/safecampus/videobak</ftpBakPath>-->
+    </bean>
+
+    <bean class="me.chanjar.weixin.mp.api.WxMpInMemoryConfigStorage" factory="instance">
+        <appId>wxd62447c0c1778530</appId>
+        <secret>510b12d7964cb178822d5c3d0d667247</secret>
+        <!--<appId>wx71a46f7990d882a5</appId>
+        <secret>3e5d714cef17e40d416a11bbb84cde82</secret>-->
+        <token>yiuman</token>
+    </bean>
+
+</config>

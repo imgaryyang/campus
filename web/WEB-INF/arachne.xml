@@ -1,0 +1,32 @@
+<page>
+
+    <defaultLanguage>zh-cn</defaultLanguage>
+
+    <prefix>com.gzzm</prefix>
+
+    <!--异常处理-->
+    <exceptionHandler type="com.gzzm.platform.commons.SystemExceptionHandler"/>
+
+    <!--forward装饰-->
+    <forwardInterceptor type="com.gzzm.platform.commons.SystemForwardInterceptor"/>
+
+    <propertyStorer scope="user" type="com.gzzm.platform.organ.UserPropertyStorer"/>
+
+    <interceptor type="com.gzzm.in.InterfacePageInterceptor"/>
+
+    <!--<fileFilter type="net.cyan.arachne.fileupload.VirusScaner">-->
+    <!--<scaner type="net.cyan.virus.EsetScaner">-->
+    <!--<path>D:\Program Files\ESET\ESET Smart Security</path>-->
+    <!--</scaner>-->
+    <!--</fileFilter>-->
+
+    <doctype>
+        <![CDATA[<!DOCTYPE html>]]>
+    </doctype>
+
+    <checkCsrf>true</checkCsrf>
+    <fileMaxSize>25M</fileMaxSize>
+
+    <sessionListener type="com.gzzm.platform.login.RequestLoginSessionListener"/>
+
+</page>

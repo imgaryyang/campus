@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>字号维护</title>
+    <link type="text/css" rel="stylesheet" href="/platform/wordnumber/wordnumber.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/wordnumber/edit.js"></script>
+
+</head>
+<body id="dialogBody">
+
+    <div id="addButtons">
+        <span class="button">
+            <button type="button" onclick="addText();">添加字符</button>
+        </span>
+        <span class="button">
+            <button type="button" onclick="addYear();">添加年号</button>
+        </span>
+        <span class="button">
+            <button type="button" onclick="addSerial();">添加流水号</button>
+        </span>
+        <span class="button">
+            <button type="button" onclick="addDate();">添加日期</button>
+        </span>
+        <span class="button">
+            <button type="button" onclick="addVar();">添加变量</button>
+        </span>
+    </div>
+
+    <div id="elementsDiv">
+
+        <table id="elements" class="sublist">
+            <thead>
+            <tr>
+                <th class="element_type">
+                    类型
+                </th>
+                <th class="element_content">
+                    内容
+                </th>
+                <th class="up">
+                    上移
+                </th>
+                <th class="down">
+                    下移
+                </th>
+                <th class="remove">
+                    删除
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr bind="wordNumber.elements">
+                <td class="element_type">
+                    ${typeName}
+                </td>
+                <td class="element_content">
+
+                    <input type="hidden" name="types" value="${type}">
+
+                    <div bind="type=='string'">
+                        <input name="texts" value="${text}" class="text">
+                    </div>
+                    <div bind="type=='year'">
+                        年号
+                    </div>
+                    <div bind="type=='serial'">
+                        名称:<input name="serialNames" value="${name}" class="serialName">
+                        长度:<input name="serialLens" value="${length==0?'':length}" class="serialLen">
+                        年份:<input name="serialYears" value="${year<0?'':year}" class="serialYear">
+                    </div>
+                    <div bind="type=='date'">
+                        日期格式:<input name="dateFormats" value="${format}" class="dateFormat">
+                    </div>
+                    <div bind="type=='var'">
+                        变量名称:<input name="varNames" value="${name}" class="varName">
+                    </div>
+                </td>
+                <td class="up">
+                    <span onclick="upElement(this);" class="up"></span>
+                </td>
+                <td class="down">
+                    <span onclick="downElement(this);" class="down"></span>
+                </td>
+                <td class="remove">
+                    <span onclick="deleteElement(this);" class="remove"></span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div id="buttons">
+        <span class="button">
+            <button type="button" onclick="ok();">确定</button>
+        </span>
+        <span class="button">
+            <button type="button" onclick="closeWindow();">取消</button>
+        </span>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<div bind="sublist$">
+    ${view.header}
+    <div class="xzlx" bind="!readOnly">
+        <a href="javascript:void(0)" bind="showAdd" onclick="System.SubList.add('${id}')">新增</a>
+        <a href="javascript:void(0)" bind="view.buttons" onclick="${self.getAction(self)}">${self.getText(self)}</a>
+    </div>
+    <table id="${id}" class="sesublist" orderable="${orderable.toString()}" readOnly="${readOnly.toString()}" editable="${editable.toString()}">
+        <thead>
+        <tr>
+            <th bind="columns" width="${width==null?'auto':width}" align="${align}">
+                ${title}
+            </th>
+            <th class="up" bind="orderable&&!readOnly">
+                上移
+            </th>
+            <th class="down" bind="orderable&&!readOnly">
+                下移
+            </th>
+            <th class="remove" bind="!readOnly">
+                删除
+            </th>
+            <th class="edit" bind="!readOnly && editable">
+                修改
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        Cyan.onload(function ()
+        {
+            System.SubList.init("${id}", "${field}");
+        });
+    </script>
+</div>

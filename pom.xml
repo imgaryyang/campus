@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gzzm</groupId>
+    <artifactId>safecampus</artifactId>
+    <version>1.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+<!--        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4</version>
+        </dependency>-->
+        <!-- 微信开发工具包 -->
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-common</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-mp</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-s3</artifactId>
+            <version>1.11.313</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!--指定源码所在目录src-->
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <!--   要将源码放上去，需要加入这个插件    -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <fork>true</fork>
+                    <!-- 指明编译源代码时使用的字符编码，
+                    maven编译的时候默认使用的GBK编码，
+                      通过encoding属性设置字符编码，
+                      告诉maven这个项目使用UTF-8来编译 -->
+                    <encoding>utf8</encoding>
+                    <compilerArgs>
+                        <arg>-verbose</arg>
+                        <arg>-Xlint:unchecked</arg>
+                        <arg>-Xlint:deprecation</arg>
+                        <arg>-bootclasspath</arg>
+                        <arg>${env.JAVA_HOME}/jre/lib/rt.jar${path.separator}${env.JAVA_HOME}/jre/lib/jce.jar</arg>
+                        <arg>-extdirs</arg>
+                        <arg>${project.basedir}/web/WEB-INF/lib</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+
+            <!-- 修改webapp目录为WebContent -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <!-- 设置WebContent目录为Web目录 -->
+                    <webappDirectory>web</webappDirectory>
+                    <warSourceDirectory>web</warSourceDirectory>
+                    <packagingIncludes>**/safecampus/**,WEB-INF/classes/com/gzzm/**,WEB-INF/lib/cyan**</packagingIncludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

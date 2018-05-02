@@ -1,0 +1,109 @@
+html, body {
+    overflow: hidden;
+    *overflow-y: scroll;
+}
+
+button {
+    white-space: nowrap;
+}
+
+#top {
+    width: 100%;
+    padding-bottom: 5px;
+    background-color: #f7f3f7;
+    border-bottom: 1px #919b9c solid;
+}
+
+.buttons {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    line-height: 32px;
+}
+
+#nodeName {
+    line-height: 16px;
+    padding-right: 20px;
+    text-align: right;
+    color: #000000;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#container {
+    padding-top: 25px;
+    background-color: #d8d8d8;
+    overflow-y: auto;
+    position: relative;
+}
+
+#pages {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    display: table;
+}
+
+.page {
+    width: 100%;
+}
+
+.valmiki_page {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#bottom {
+    height: 20px;
+}
+
+#pages .tabBar {
+    height: 28px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+
+#pages .tabs {
+    float: left;
+    width: 88%;
+    height: 29px;
+    padding-right: 8px;
+    border-left: solid 1px #6c92ad;
+    border-bottom: solid 1px #6c92ad;
+}
+
+#pages .tabs div {
+    float: left;
+    line-height: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top: solid 1px #6c92ad;
+    border-right: solid 1px #6c92ad;
+    color: #005590;
+    cursor: pointer;
+}
+
+#pages .tabs .unselected {
+    height: 28px;
+    background-color: #edf2f7;
+    font-size: 12px;
+}
+
+#pages .tabs .selected {
+    height: 29px;
+    background-color: #ffffff;
+    font-size: 13px;
+}
+
+.page label input {
+    font-size: 12px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}

@@ -1,0 +1,20 @@
+${view.top}
+<html>
+<head>
+    <title bind="view.title"></title>
+</head>
+<body>
+
+    ${view.header}
+
+    <div>
+
+        <div id="container">
+            <div id="chart" bind="view"></div>
+        </div>
+
+    </div>
+
+    ${view.bottom}
+</body>
+</html>

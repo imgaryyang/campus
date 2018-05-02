@@ -1,0 +1,9 @@
+dateToString(Date date)
+{
+    return DateUtils.toString(date,"yyyy年MM月dd日");
+}
+
+dateToString(Date date,String format)
+{
+    return DateUtils.toString(date,format);
+}

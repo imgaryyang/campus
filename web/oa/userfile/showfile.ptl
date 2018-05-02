@@ -1,0 +1,18 @@
+<html action="false">
+<head>
+    <title bind="entity.title"></title>
+    <link type="text/css" rel="stylesheet" href="/oa/userfile/showfile.css">
+</head>
+<body>
+    <div id="container">
+        <div id="top">
+            <div id="title" bind="entity.fileName"></div>
+        </div>
+        <div id="content">
+            <div id="content-text">
+                ${content}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

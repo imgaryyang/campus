@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>导入学生</title>
+    <link rel="stylesheet" type="text/css" href="/safecampus/campus/classes/student/import.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/safecampus/campus/classes/student/import.js"></script>
+</head>
+
+<body id="dialogBody">
+<form id="form" action="">
+    <div id="components">
+        <div class="component_item">
+            <div class="label">请选择文件</div>
+            <div class="component">
+                <input name="file" type="file" filetype="xls xlsx " accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+            </div>
+        </div>
+
+    <div class="component_item msg_item">
+        <h4>提示：</h4>
+        <ul>
+            <li>1) 请按模板填写对应信息</li>
+            <li>2) 模板及使用说明(点击下载)：<a href="/safecampus/campus/classes/student/学生导入模板.xls">学生导入模板.xls</a></li>
+        </ul>
+    </div>
+    </div>
+    <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="importStu();">确定</button>
+            </span>
+        <span class="button">
+                <button type="button" onclick="closeWindow();">取消</button>
+            </span>
+    </div>
+
+</form>
+</body>
+</html>

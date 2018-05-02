@@ -1,0 +1,157 @@
+<script type="text/javascript" src="/safecampus/campus/classes/classesbase.js"></script>
+<div class="head" id="t_head" >
+    <div class="img">
+        <img bind="isNew$()" id="imageId" src="/safecampus/campus/icons/student.jpg"/>
+        <img bind="!isNew$()" id="imageId" src="/campus/classes/studentimage/${entity.studentId}"/>
+    </div>
+    <div class="imgTip" id="upoladButton">点击上传图片</div>
+    <input name="entity.picture" type="file" type="hidden"
+           id="t_file"
+           onchange="chooseFile();" hidefocus="true" onclick="this.blur();" accept="image/*">
+</div>
+<fieldset class="base">
+    <div class="components">
+        <div class="component_line">
+            <div class="component_item">
+                <div class="label">
+                    学号
+                    <span class="require"> *</span>
+                </div>
+                <div class="component">
+                    <input name="entity.studentNo" require>
+                </div>
+            </div>
+
+            <div class="component_item">
+                <div class="label">
+                    姓名
+                    <span class="require"> *</span>
+                </div>
+                <div class="component" id="studentName">
+                    <input name="entity.studentName" require>
+                </div>
+            </div>
+
+        </div>
+        <div class="component_line">
+            <div class="component_item">
+                <div class="label">
+                    班级
+                    <span class="require"> *</span>
+                </div>
+                <div class="component" id="classesId">
+                    <input  name="entity.classesId" text="${entity.classes.allName}" readonly require style="display: none;">
+                     <input  value="${entity.classes.allName}" readonly>
+                </div>
+
+            </div>
+            <div class="component_item">
+                <div class="label">
+                    入学时间
+                </div>
+                <div class="component">
+                    <input name="entity.entryTime">
+                </div>
+            </div>
+        </div>
+        <div class="component_line">
+            <div class="component_item">
+                <div class="label">
+                    性别
+                    <span class="require"> *</span>
+                </div>
+                <div class="component">
+                    <span>
+                    <select name="entity.sex" require>
+                        <option bind=""></option>
+                    </select>
+                </span>
+                </div>
+            </div>
+
+            <div class="component_item">
+                <div class="label">
+                    出生日期
+                </div>
+                <div class="component">
+                    <input name="entity.birthday">
+                </div>
+            </div>
+        </div>
+
+        <div class="component_line">
+            <div class="component_item">
+                <div class="label">
+                    联系方式
+                </div>
+                <div class="component">
+                    <input name="entity.phone">
+                </div>
+            </div>
+            <div class="component_item">
+                <div class="label">
+                    身份证号
+                </div>
+                <div class="component">
+                    <input name="entity.idCard">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="component_line">
+            <div class="component_item">
+                <div class="label">
+                    省份
+                </div>
+                <div class="component">
+                    <select name="entity.provinceId" onchange="provinceChange()">
+                        <option bind=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="component_item">
+                <div class="label">
+                    城市
+                </div>
+                <div class="component">
+                    <select name="entity.cityId">
+                        <option bind=""></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="component_line">
+            <div class="component_item">
+                <div class="label">
+                    家庭住址
+                </div>
+                <div class="component">
+                    <input name="entity.address" style="width: 408px;">
+                </div>
+            </div>
+        </div>
+        <div class="component_line">
+            <div class="component_item">
+                <div class="label">
+                    人脸入库编号
+                </div>
+                <div class="component">
+                    <input value="${entity.campusSerialNo}" style="width: 408px" readonly>
+                </div>
+            </div>
+        </div>
+
+        <div class="component_line">
+            <div class="component_item">
+                <div class="label">
+                    说明
+                </div>
+                <div class="component">
+                    <textarea name="entity.desc" style="width: 408px;height: 40px"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>

@@ -1,0 +1,89 @@
+getUserWithRole(Integer deptId,String roleName)
+{
+  return getUserWithRole(deptId,new String[]{roleName});
+}
+
+getUserWithRole(Integer deptId,String roleName1,String roleName2)
+{
+  return getUserWithRole(deptId,new String[]{roleName1,roleName2});
+}
+
+getUserWithRole(Integer deptId,String roleName1,String roleName2,String roleName3)
+{
+  return getUserWithRole(deptId,new String[]{roleName1,roleName2,roleName3});
+}
+
+getUserWithRole(Integer deptId,String roleName1,String roleName2,String roleName3,String roleName4)
+{
+  return getUserWithRole(deptId,new String[]{roleName1,roleName2,roleName3,roleName4});
+}
+
+getUserWithRole(Integer deptId,String roleName1,String roleName2,String roleName3,String roleName4,String roleName5)
+{
+  return getUserWithRole(deptId,new String[]{roleName1,roleName2,roleName3,roleName4,roleName5});
+}
+
+getUserWithRole(Integer deptId,String[] roleNames)
+{  
+   return FlowFunctions.getUserWithRole(new Integer[]{deptId},roleNames);
+}
+
+getUserWithRole(Integer[] deptIds,String roleName)
+{
+  return getUserWithRole(deptIds,new String[]{roleName});
+}
+
+getUserWithRole(Integer[] deptIds,String roleName1,String roleName2)
+{
+  return getUserWithRole(deptIds,new String[]{roleName1,roleName2});
+}
+
+getUserWithRole(Integer[] deptIds,String roleName1,String roleName2,String roleName3)
+{
+  return getUserWithRole(deptIds,new String[]{roleName1,roleName2,roleName3});
+}
+
+getUserWithRole(Integer[] deptIds,String roleName1,String roleName2,String roleName3,String roleName4)
+{
+  return getUserWithRole(deptIds,new String[]{roleName1,roleName2,roleName3,roleName4});
+}
+
+getUserWithRole(Integer[] deptIds,String roleName1,String roleName2,String roleName3,String roleName4,String roleName5)
+{
+  return getUserWithRole(deptIds,new String[]{roleName1,roleName2,roleName3,roleName4,roleName5});
+}
+
+getUserWithRole(Integer[] deptIds,String[] roleNames)
+{  
+   return FlowFunctions.getUserWithRole(deptIds,roleNames);
+}
+
+getUserWithRole(java.util.Collection deptIds,String roleName)
+{
+  return getUserWithRole(deptIds,new String[]{roleName});
+}
+
+getUserWithRole(java.util.Collection deptIds,String roleName1,String roleName2)
+{
+  return getUserWithRole(deptIds,new String[]{roleName1,roleName2});
+}
+
+getUserWithRole(java.util.Collection deptIds,String roleName1,String roleName2,String roleName3)
+{
+  return getUserWithRole(deptIds,new String[]{roleName1,roleName2,roleName3});
+}
+
+getUserWithRole(java.util.Collection deptIds,String roleName1,String roleName2,String roleName3,String roleName4)
+{
+  return getUserWithRole(deptIds,new String[]{roleName1,roleName2,roleName3,roleName4});
+}
+
+getUserWithRole(java.util.Collection deptIds,String roleName1,String roleName2,String roleName3,String roleName4,String roleName5)
+{
+  return getUserWithRole(deptIds,new String[]{roleName1,roleName2,roleName3,roleName4,roleName5});
+}
+
+getUserWithRole(java.util.Collection deptIds,String[] roleNames)
+{
+   return FlowFunctions.getUserWithRole(deptIds,roleNames);
+}

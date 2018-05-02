@@ -1,0 +1,76 @@
+#dialogBody {
+    margin-bottom: 10px;
+}
+
+#container {
+    float: left;
+    width: 725px;
+    height: 270px;
+}
+
+#opinion {
+    float: left;
+    width: 440px;
+    height: 270px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#opinion textarea {
+    width: 430px;
+    height: 230px;
+    font-size: 14px;
+    line-height: 20px;
+    overflow-y: auto;
+}
+
+#select {
+    float: left;
+    width: 35px;
+    padding-top: 120px;
+}
+
+#opinionList {
+    float: left;
+    width: 170px;
+    height: 260px;
+    padding-top: 10px;
+    padding-left: 2px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+#opinionList select {
+    width: 160px;
+    height: 234px;
+}
+
+.label {
+    height: 18px;
+}
+
+#opinionsButtons {
+    float: left;
+    width: 60px;
+    height: 170px;
+    padding-top: 45px;
+}
+
+#opinionsButtons button {
+    margin-top: 5px;
+    width: 60px;
+}
+
+#autoAddDiv {
+    clear: both;
+    float: left;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    line-height: 16px;
+    width: 450px;
+}
+
+#dialogBody #buttons {
+    width: 700px;
+}

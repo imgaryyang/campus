@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/safecampus/platform/main/main_plain.css">
+    <script type="text/javascript" src="/platform/menu/menu.js"></script>
+    <script type="text/javascript" src="/platform/desktop/shortcut.js"></script>
+    <script type="text/javascript" src="/platform/styles/plain/main.js"></script>
+</head>
+<body>
+<div id="top">
+    <div id="top_top">
+        <div id="userInfo">
+            <span id="userName">
+                用户名:${session.userOnlineInfo.userName}
+            </span>
+            <span id="deptName">
+                所属部门:${session.userOnlineInfo.dept.allName()}
+            </span>
+        </div>
+        <div id="top_top_right">
+            <span id="lock_screen">
+                <a href="javascript:System.lock();">屏幕锁定</a>
+            </span>
+            <span bind="session.userOnlineInfo.depts.size()>1" id="change_dept">
+                <a href="javascript:System.selectDept();">切换部门</a>
+            </span>
+            <span id="logout">
+                <a href="javascript:System.logout();">退出系统</a>
+            </span>
+        </div>
+    </div>
+    <div id="top_bottom">
+        <div id="logo"></div>
+        <div id="placard">
+        </div>
+        <div id="shortcuts">
+        </div>
+    </div>
+</div>
+<div id="left">
+    <div id="left_title">
+        系统菜单
+    </div>
+    <div id="menus">
+    </div>
+</div>
+<div bind="com.gzzm.platform.menu.MenuComponent.class" group="platform"></div>
+<div id="center">
+    <div id="main"></div>
+</div>
+</body>
+</html>

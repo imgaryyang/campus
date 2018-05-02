@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <!--<bean name="node1" class="net.cyan.commons.cache.CacheNode" type="self"/>-->
+    <!--<bean name="node2" class="net.cyan.commons.cache.CacheNode" url="http://127.0.0.1:8080"/>-->
+
+    <!--<bean name="node1" class="net.cyan.commons.cache.CacheNode" url="http://127.0.0.1"/>-->
+    <!--<bean name="node2" class="net.cyan.commons.cache.CacheNode" type="self"/>-->
+
+</config>

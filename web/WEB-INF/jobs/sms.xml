@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+
+    <!--生成短信日志的索引，用于短信日志查询-->
+    <!--<job single="true">-->
+        <!--<task type="com.gzzm.sms.SmsIndexGenerator"/>-->
+        <!--<trigger type="simple" interval="1800000"/>-->
+    <!--</job>-->
+
+</schedule>

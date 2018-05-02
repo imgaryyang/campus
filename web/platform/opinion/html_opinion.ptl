@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>填写意见</title>
+    <link type="text/css" rel="stylesheet" href="/platform/opinion/html_opinion.css">
+    <script type="text/javascript" src="/platform/commons/htmleditor.js"></script>
+    <script type="text/javascript" src="/platform/opinion/edit.js"></script>
+</head>
+<body id="dialogBody">
+
+    <form>
+        <div id="container">
+            <div id="opinion">
+                <div class="label" id="remark">
+                    请输入意见：
+                </div>
+                <div>
+                    <textarea name="text" class="htmleditor"></textarea>
+                </div>
+            </div>
+        </div>
+        <div id="buttons">
+            <span>
+                <button type="button" onclick="ok();">确定</button>
+            </span>
+            <span>
+                <button type="button" onclick="Cyan.Window.closeWindow();">取消</button>
+            </span>
+        </div>
+    </form>
+
+</body>
+</html>

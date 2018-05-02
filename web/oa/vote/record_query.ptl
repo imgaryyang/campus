@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>${vote.title}-高级查询</title>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/query.js"></script>
+    <link type="text/css" rel="stylesheet" href="/oa/vote/record_query.css"/>
+</head>
+<body>
+    <div id="mainBody">
+        <form>
+            <div id="vote">
+                <div id="head">
+                    <div class="title">${vote.title}</div>
+                    <div class="intro"></div>
+                </div>
+
+                <%int index = 0;%>
+                <div bind="groups" class="group${(groupId!=null&&problems.size()>1)?' group_content':''}">
+
+                    <div class="groupTitle" bind="groupId!=null&&problems.size()>1">
+                        <span class="index"> <%=++index%>、</span>
+                        <span class="problemName">${groupName}</span>
+                    </div>
+
+                    <div bind="problems" class="problem"
+                         bind="optionList.size()>0||dataType!=null&&(dataType.name()=='INTEGER'||dataType.name()=='NUMBER')">
+                        <div class="${(groupId!=null&&problems.size()>1)?'title':'top_title'}" bind="problems.size()>1">
+                            <span class="index" bind="groupId==null||problems.size()==1"><%=++index%>、</span>
+                            <span class="index" bind="groupId!=null&&problems.size()>1">(${index$+1})</span>
+                            <span class="problemName">${problemName}</span>
+                        </div>
+
+                        <div class="problem_content" id="problem_content${problemId}">
+                            <div bind="optionList" class="option" id="option${optionId}">
+                                <div>
+                                    <input type="checkbox" name="options.p${problemId}" value="${optionId}">
+                                    <span class="label">${optionName}</span>
+                                </div>
+                                <div class="remark" bind="remark!=null&&remark.length()>0" bind="remark">
+                                </div>
+                            </div>
+
+                            <div bind="${optionList.size()>0&&(other!=null&&other)}" class="option">
+                            <span>
+                                <input type="checkbox" name="options.p${problemId}" value="-1">
+                            </span>
+                            <span class="label">
+                                其他
+                            </span>
+                            </div>
+
+                            <div bind="optionList.size()==0" class="text">
+                             <span class="input">
+                                大于等于<input name="mins.p${problemId}" datatype="integer">
+                            </span>
+                            <span class="input">
+                                小于等于<input name="maxs.p${problemId}" datatype="integer">
+                            </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="buttons">
+                    <span class="button">
+                        <button type="button" onclick="ok();">确定</button>
+                    </span>
+                    <span class="button">
+                        <button type="button" onclick="cancel();">取消</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

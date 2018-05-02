@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>招in校园校园管理中心</title>
+    <link type="text/css" rel="stylesheet" href="/safecampus/campus/index/index.css">
+    <script type="text/javascript" src="/platform/login/login.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+
+<body>
+<div class="logo">
+    <div class="zj">
+        <div class="top">
+        </div>
+    </div>
+</div>
+<div class="banner">
+    <form id="form" action="" method="post">
+        <div class="zj">
+            <div class="dl">
+                <div class="dl_bt"></div>
+                <div class="dl_zj">
+                    <h2>用户登录</h2>
+
+                    <div class="dl_zh">
+                        <div class="dl_zh_lt"></div>
+                        <div class="dl_zh_rt">
+                            <input name="loginName" showName="账号" require placeholder="账号">
+                        </div>
+                    </div>
+                    <div class="dl_zh">
+                        <div class="dl_zh_lt2"></div>
+                        <div class="dl_zh_rt">
+                            <input name="password" showName="密码" type="password" require placeholder="密码">
+                        </div>
+                    </div>
+                    <div class="dl_zh">
+                        <div class="dl_zh_lt3"></div>
+                        <div class="dl_zh_rt2">
+                            <input name="captcha$" showName="验证码" require showErrorTo="captcha$img" placeholder="验证码">
+                        </div>
+                        <div class="yzm">
+                            <img src="" alt="看不清楚？换一张" id="captcha$img">
+                        </div>
+                    </div>
+                    <div class="dl_zh2">
+                        <button type="button" onclick="login('/safecampus/campus/main.ptl');">登录</button>
+                    </div>
+                </div>
+                <div class="dl_xb"></div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

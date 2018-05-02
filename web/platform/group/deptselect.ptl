@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>选择部门</title>
+    <link type="text/css" rel="stylesheet" href="/platform/group/deptselect.css">
+    <script type="text/javascript" src="/platform/group/deptselect.js"></script>
+</head>
+<body id="dialogBody">
+
+    <form>
+
+        <div id="search" bind="selectable==null">
+            <input class="search" name="word" id="word">
+        </div>
+
+        <div id="depts">
+            <div id="deptSelector" class="itemselector" from:rootVisible="false" from:multiple="true"
+                 bind="net.cyan.arachne.components.PageItemSelector.class" fromLegend="可选的部门" toLegend="已选的部门"
+                 available="${selectable==null?'deptTree':'selectableDepts'}" selected="selectedDepts">
+            </div>
+            <div id="sortButtons">
+                <button type="button" onclick="deptSelector.up();">上移</button>
+                <button type="button" onclick="deptSelector.down();">下移</button>
+            </div>
+        </div>
+
+        <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="ok();">确定</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+        </div>
+
+    </form>
+
+</body>
+</html>

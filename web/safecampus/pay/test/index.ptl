@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>测试</title>
+    <script src="/safecampus/js/jquery.js"></script>
+    <script type="text/javascript" src="/safecampus/wx/pay/basepay.js"></script>
+</head>
+<h4> &nbsp;</h4>
+<a href="/openaccount">
+    <button class="button button2">注册钱包1</button>
+</a>
+<a href="/openaccount2">
+    <button class="button button2">注册钱包2</button>
+</a>
+<a href="/loginDefault">
+    <button class="button button2">登录测试钱包</button>
+</a>
+<h4> </h4>
+<a href="/testReconcile">
+    <button class="button button2" style="background-color: #53c3b9">支付对账</button>
+</a>
+<h4> </h4>
+<a href="/safecampus/pay/test/accountmgr.ptl">
+    <button class="button button2" style="background-color: #939ac3">查看账户</button>
+</a>
+<h1></h1>
+<a href="/safecampus/database/showsqlwindow">
+    <button class="button button2" style="background-color: #b1c35b">SQL查询</button>
+</a>
+<a href="/safecampus/database/showreadfilewindow">
+    <button class="button button2" style="background-color: #c39129">文件查询</button>
+</a>
+<body>
+</body>
+</html>
+
+<script>
+
+</script>
+
+<style>
+    body {
+        padding-left: 50px;
+        padding-top: 50px;
+    }
+
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+    }
+
+    .button2:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+</style>
+

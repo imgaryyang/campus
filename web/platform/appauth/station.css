@@ -1,0 +1,79 @@
+#dialogBody {
+    margin-bottom: 0;
+}
+
+#main {
+    padding-top: 10px;
+    width: 668px;
+    height: 365px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#selector {
+    clear: both;
+    width: 570px;
+    margin-top: 4px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.components {
+    margin-top: 10px;
+    width: 658px;
+}
+
+.component {
+    margin-top: 5px;
+    width: 658px;
+    height: 20px;
+}
+
+.component div {
+    float: left;
+}
+
+.component div.label {
+    width: 40px;
+    padding-left: 10px;
+}
+
+.scope div.label {
+    padding-top: 5px;
+}
+
+.component span {
+    margin-right: 20px;
+}
+
+.component span input {
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.component span select {
+    width: 300px;
+    height: 16px;
+}
+
+.scope select {
+    width: 150px;
+    height: 16px;
+}
+
+.scope input {
+    width: 150px;
+    height: 16px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 8px;
+    width: 668px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

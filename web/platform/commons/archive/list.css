@@ -1,0 +1,195 @@
+#fileName {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 42px;
+    padding-left: 24px;
+    border-bottom: #e5e5e5 solid 1px;
+}
+
+#navigator {
+    height: 30px;
+    padding-left: 24px;
+    border-bottom: #e5e5e5 solid 1px;
+}
+
+#navigator .go {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-top: 7px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#back {
+    background: url("/platform/commons/icons/left.gif");
+}
+
+#forward {
+    background: url("/platform/commons/icons/right.gif");
+}
+
+#up {
+    background: url("/platform/commons/icons/up.gif");
+}
+
+#paths {
+    float: left;
+}
+
+#navigator .path {
+    float: left;
+    line-height: 26px;
+    font-size: 14px;
+    color: #000000;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+#navigator .path a {
+    color: #0000ff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#navigator .path a:hover {
+    text-decoration: underline;
+}
+
+#navigator .split {
+    float: left;
+    width: 11px;
+    height: 11px;
+    margin-top: 10px;
+    background: url("/platform/commons/icons/next1.gif");
+}
+
+#files {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.file {
+    float: left;
+    width: 160px;
+    height: 160px;
+    border: 3px solid #ffffff;
+    cursor: pointer;
+}
+
+.file_hover {
+    border: 3px solid #ececec;
+    border-radius: 5px;
+}
+
+.file .icon {
+    width: 114px;
+    height: 102px;
+    line-height: 102px;
+    margin-left: 23px;
+    margin-right: 23px;
+    margin-top: 16px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.file .icon img {
+    border: 0;
+}
+
+.file .ar {
+    background: url("icon/ar.jpg");
+}
+
+.file .audio {
+    background: url("icon/audio.jpg");
+}
+
+.file .doc {
+    background: url("icon/doc.jpg");
+}
+
+.file .flv {
+    background: url("icon/flv.jpg");
+}
+
+.file .folder {
+    background: url("icon/folder.jpg");
+}
+
+.file .html {
+    background: url("icon/html.jpg");
+}
+
+.file .image {
+    background: url("icon/image.jpg");
+}
+
+.file .mail {
+    background: url("icon/mail.jpg");
+}
+
+.file .pdf {
+    background: url("icon/pdf.jpg");
+}
+
+.file .ppt {
+    background: url("icon/ppt.jpg");
+}
+
+.file .ps {
+    background: url("icon/ps.jpg");
+}
+
+.file .text {
+    background: url("icon/text.jpg");
+}
+
+.file .unknown {
+    background: url("icon/unknown.jpg");
+}
+
+.file .video {
+    background: url("icon/video.jpg");
+}
+
+.file .xls {
+    background: url("icon/xls.jpg");
+}
+
+.file .name {
+    text-align: center;
+    font-size: 13px;
+    width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    margin-left: auto;
+    margin-right: auto;
+    text-overflow: ellipsis
+}
+
+.file .size {
+    text-align: center;
+    font-size: 12px;
+    color: #808080;
+}
+
+#actions {
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #000000;
+    padding: 5px;
+}
+
+#actions a {
+    color: #0000ff;
+    text-decoration: none;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#actions a:hover {
+    color: red;
+}

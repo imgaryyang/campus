@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>表单角色管理</title>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/platform/form/role.js"></script>
+    <link type="text/css" rel="stylesheet" href="/platform/form/role.css">
+</head>
+<body id="dialogBody">
+    <form action="">
+        <div id="main">
+            <div class="roleName">
+                <span>
+                    角色名称
+                </span>
+                <span bind="new$">
+                    <input name="entity.roleName">
+                </span>
+                <span bind="!new$">
+                    <input value="${entity.roleName}" readOnly>
+                </span>
+            </div>
+
+            <fieldset bind="webForm.pages">
+
+                @{pageName=name}
+
+                <legend>
+
+                    <label>${name}</label>
+                    <label>
+                        <input type="radio" name="entity.pageAuths.${name}" value="readonly" class="radio"
+                               method="post">可见
+                        <input type="radio" name="entity.pageAuths.${name}" value="hidden" class="radio"
+                               method="post">不可见
+                        <input type="radio" name="entity.pageAuths.${name}" value="default" class="radio"
+                               method="post">默认页
+
+                        <button type="button" onclick="allWritable(this)">全部可写</button>
+                        <button type="button" onclick="allReadonly(this)">全部只读</button>
+                    </label>
+
+                </legend>
+
+                <div class="component" bind="components" bind="allComponents"
+                     bind="authorityList!=null&&authorityList.size()>0">
+                    <span class="label">${name}</span>
+                    <span class="value" bind="authorityList">
+
+                        <input type="checkbox" name="entity.componentAuths.${pageName}.${name}" value="${self}"
+                               method="post">
+                        ${language.getWord('com.gzzm.platform.form.auth.'+self)}
+
+                    </span>
+                </div>
+
+            </fieldset>
+
+
+        </div>
+
+        <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="save();">保存</button>
+            </span>
+            <span class="button">
+                <button type="button" onclick="closeWindow();">关闭</button>
+            </span>
+            <span class="button">
+                <button type="button" onclick="allWritable(this);">全部可写</button>
+            </span>
+            <span class="button">
+                <button type="button" onclick="allReadonly(this);">全部只读</button>
+            </span>
+        </div>
+    </form>
+</body>
+</html>

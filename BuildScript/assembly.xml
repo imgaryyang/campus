@@ -1,0 +1,17 @@
+<assembly>
+  <id>autobuild</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+
+  <fileSets>    
+    <fileSet>
+      <outputDirectory>/</outputDirectory>
+      <excludes>
+        <exclude>assembly.xml</exclude>
+        <exclude>pom.xml</exclude>  
+        <exclude>target/</exclude>      
+      </excludes>
+    </fileSet>
+  </fileSets>
+</assembly>

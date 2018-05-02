@@ -1,0 +1,77 @@
+<!--project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+   http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+	<groupId>com.gzzm</groupId>
+	<artifactId>safecampus</artifactId>
+	<version>${versionValue}</version>
+	<packaging>pom</packaging>
+
+  <build>
+  	<plugins>
+		<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-resources-plugin</artifactId>
+			    <version>2.5</version>
+		</plugin>
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-assembly-plugin</artifactId>
+		    <version>2.5.1</version>
+		    <configuration>
+		    	<appendAssemblyId>false</appendAssemblyId>
+		      <descriptors>
+		        <descriptor>assembly.xml</descriptor>
+		      </descriptors>
+		    </configuration>
+		    <executions>
+		      <execution>
+		        <id>make-assembly</id>
+		        <phase>package</phase>
+		        <goals>
+		          <goal>single</goal>
+		        </goals>
+		      </execution>
+		    </executions>
+		  </plugin>
+		</plugins>
+	</build>
+<profiles>
+	 <profile>
+	 <id>CI</id>
+	  <distributionManagement>
+		<repository>
+			<id>dev</id>
+			<url>http://repository.cmbchina.io:80/artifactory/aws-dev-repo/</url>
+		</repository>
+	  </distributionManagement>
+	 </profile>
+
+	 <profile>
+	 <id>ST</id>
+	  <distributionManagement>
+		<repository>
+			<id>st</id>
+			<url>http://repository.cmbchina.io:80/artifactory/aws-st-repo/</url>
+		</repository>
+	 </distributionManagement>
+	 </profile>
+
+	 <profile>
+	 <id>UAT</id>
+	  <distributionManagement>
+		<repository>
+			<id>uat</id>
+			<url>http://repository.cmbchina.io:80/artifactory/aws-uat-repo/</url>
+		</repository>
+	 </distributionManagement>
+	 </profile>
+  </profiles>
+</project>
+
+
+
+

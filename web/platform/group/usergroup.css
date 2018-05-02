@@ -1,0 +1,90 @@
+#dialogBody {
+    width: 768px;
+    margin-bottom: 0;
+}
+
+#main {
+    clear: both;
+    overflow: hidden;
+    width: 768px;
+    height: 330px;
+}
+
+#dialogBody #components {
+    clear: both;
+    width: 700px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#dialogBody #components .component_item .label {
+    padding-top: 3px;
+    margin-bottom: 6px;
+    float: left;
+    width: 80px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#dialogBody #components .component_item .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 610px;
+}
+
+#dialogBody #components .component_item input {
+    width: 572px;
+    height: 18px;
+}
+
+#dialogBody #components .component_item textarea {
+    width: 572px;
+    height: 100px;
+}
+
+#users {
+    clear: both;
+    width: 760px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#users .label {
+    padding-top: 3px;
+    float: left;
+    width: 80px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#users .selector {
+    float: left;
+    width: 570px;
+}
+
+#sortButtons {
+    float: left;
+    width: 65px;
+    padding-top: 50px;
+    margin-left: 10px;
+}
+
+#sortButtons button {
+    margin-top: 5px;
+    width: 55px
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    padding-top: 8px;
+    width: 768px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

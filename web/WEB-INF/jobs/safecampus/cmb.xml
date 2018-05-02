@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+
+    <!--定期对超时交易删除-->
+    <job single="true">
+        <task type="com.gzzm.safecampus.pay.job.ClearTimoutPaymentJob">
+        </task>
+        <!-- 每2小时一次 -->
+        <trigger type="cron" expression="0 0 0/2 * * ? " />
+    </job>
+
+    <!--定期对超时账单设过期状态-->
+    <job single="true">
+        <task type="com.gzzm.safecampus.pay.job.BillTimeoutJob">
+        </task>
+        <!-- 每天0点5分触发 -->
+        <trigger type="cron" expression="0 5 0 * * ? " />
+    </job>
+
+    <!--定期获取招行公钥-->
+    <job single="true">
+        <task type="com.gzzm.safecampus.pay.job.CmbPublicKeySycJob">
+        </task>
+        <!-- 每天2点15分触发 正式环境 -->
+        <!--<trigger type="cron" expression="0 15 2 * * ?" />-->
+        <trigger type="cron" expression="0 0 9 * * ?" />
+    </job>
+
+    <!--定期进行银行对账-->
+    <job single="true">
+        <task type="com.gzzm.safecampus.pay.job.BankReconciliation">
+        </task>
+        <!-- 每天3点0分触发 -->
+        <!--<trigger type="cron" expression="0 0 3 * * ?" />-->
+        <trigger type="cron" expression="0 5 9 * * ?" />
+    </job>
+
+    <!--定期未成功签约账户删除-->
+    <job single="true">
+        <task type="com.gzzm.safecampus.pay.job.ClearAccountJob">
+        </task>
+        <!-- 每天4点触发 -->
+        <!--<trigger type="cron" expression="0 0 4 * * ? " />-->
+        <trigger type="cron" expression="0 3 9 * * ? " />
+    </job>
+
+</schedule>

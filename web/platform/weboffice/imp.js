@@ -1,0 +1,1 @@
+Cyan.importJs("/platform/weboffice/ntko5.js");

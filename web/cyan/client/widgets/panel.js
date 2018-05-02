@@ -1,0 +1,1 @@
+Cyan.importAdapter("panel.js");

@@ -1,0 +1,79 @@
+#desktop_top {
+    float: left;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 10px;
+
+}
+
+#search {
+    float: left;
+    width: 90%;
+    text-align: center;
+}
+
+.top_item {
+    margin-right: 60px;
+}
+
+.top_item input {
+    width: 180px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.top_item button {
+    height: 22px;
+}
+
+#desktop_top .config {
+    float: right;
+    padding-right: 77px;
+    margin-top: 8px;
+}
+
+#desktop_top .config a {
+    color: blue;
+}
+
+#desktop_top .config a:hover {
+    color: red;
+}
+
+.desktop-search {
+    text-align: center;
+}
+
+.desktop-search input {
+    width: 45%;
+    height: 30px;
+    text-indent: 10px;
+    border: none;
+    vertical-align: top;
+}
+
+.desktop-search button {
+    width: 100px;
+    height: 32px;
+    text-align: center;
+    border: none;
+    color: #fff;
+    background: #5a9bd5;
+    margin-left: 10px;
+    border: 1px solid #5a9bd5;
+    position: relative;
+    text-indent: 30px;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.desktop-search button img {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 2px;
+    left: 15px;
+    border: none;
+    display: inline-block;
+}
+

@@ -1,0 +1,120 @@
+#dialogBody {
+    width: 530px;
+    margin-bottom: 20px;
+}
+
+#main {
+    clear: both;
+    overflow: hidden;
+    width: 530px;
+    height: 460px;
+}
+
+#dialogBody #components {
+    clear: both;
+    width: 522px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#dialogBody #components .component_item {
+    clear: both;
+}
+
+#dialogBody #components .component_item .label {
+    padding-top: 3px;
+    margin-bottom: 6px;
+    float: left;
+    width: 90px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#dialogBody #components .component_item .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 410px;
+}
+
+#dialogBody #components .component_item input {
+    width: 390px;
+    height: 18px;
+}
+
+#dialogBody #components .component_item textarea {
+    width: 390px;
+    height: 100px;
+}
+
+#search {
+    clear: both;
+    width: 500px;
+    margin-top: 20px;
+    padding-left: 16px;
+}
+
+#search input {
+    width: 480px;
+}
+
+.itemselector {
+    clear: both;
+    margin-left: 15px;
+    margin-right: 10px;
+    padding-top: 5px;
+    width: 500px;
+    height: 180px;
+}
+
+.itemselector .legend {
+    height: 18px;
+}
+
+.itemselector .from {
+    float: left;
+    width: 200px;
+}
+
+.itemselector .from .content {
+    height: 155px;
+    border: 1px solid #B5B8C8;
+    overflow: auto;
+    background: #ffffff;
+}
+
+.itemselector select {
+    width: 220px;
+    height: 155px;
+}
+
+.itemselector .to {
+    float: left;
+    width: 200px;
+}
+
+.itemselector .buttons {
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 40px;
+    width: 40px;
+}
+
+.itemselector .buttons button {
+    width: 40px;
+    margin-bottom: 3px;
+}
+
+#dialogBody #buttons {
+    clear: both;
+    text-align: center;
+    margin-top: 8px;
+    width: 526px;
+}
+
+#dialogBody #buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

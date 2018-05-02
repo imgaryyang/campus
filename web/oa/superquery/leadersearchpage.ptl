@@ -1,0 +1,41 @@
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/oa/superquery/css/style.css">
+    <script type="text/javascript" src="/oa/superquery/js/leadersuperquery.js"></script>
+    <script type="text/javascript" src="/oa/superquery/js/leadercontent.js"></script>
+</head>
+<body>
+    <div class="zj">
+        <div>
+            <div class="searchdiv">
+                <img class="searchimg" src="image/ssk_03.png" width="100" height="20"/>
+                <input class="searchinput" name="condition" value="${condition}" onkeyup="keySearch(4)"/>
+                <button class="searchbut" onclick="searchLeaderConditionSearch()" id="leaderSearch">搜索</button>
+            </div>
+            <div class="searchCheckDiv">
+                <input type="checkbox" class="searchCheckBox" id="wsCheckBox" checked="${wsCheck!=null?wsCheck:true}"/>公文
+                <input type="checkbox" class="searchCheckBox" id="menuCheckBox" checked="${menuCheck!=null?menuCheck:true}"/>功能
+                <input type="checkbox" class="searchCheckBox" id="userCheckBox" checked="${userCheck!=null?userCheck:true}"/>用户
+            </div>
+            <input type="hidden"  name="wsPageCount" >
+            <input type="hidden"  name="wsPageNo">
+            <input type="hidden"  name="hidenCondition">
+        </div>
+        <div class="gw">
+            <div class="gw_sb">
+                <ul>
+                    <li id="li1"><a href="javascript:void(0);" id="wsCount"
+                           onclick="changeTab(1,this)" class='hover'>公文(0)</a></li>
+                    <li id="li2"><a href="javascript:void(0);" id="menuCount"
+                           onclick="changeTab(2,this)" class="">功能(0)</a></li>
+                    <li id="li3"><a href="javascript:void(0);" id="userCount"
+                           onclick="changeTab(3,this)" class="">用户(0)</a></li>
+                </ul>
+            </div>
+            <div id="t1" class="gw_xb" style="display: block"></div>
+            <div id="t2" class="gw_xb" style="display: none"></div>
+            <div id="t3" class="gw_xb" style="display: none"></div>
+        </div>
+    </div>
+</body>
+</html>

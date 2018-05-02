@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!--微信相关配置-->
+    <bean class="com.gzzm.safecampus.campus.wx.Config" factory="instance">
+        <domain>http://gzin.cmburl.cn</domain>
+    </bean>
+
+    <!--微信消息处理器-->
+    <bean class="List[com.gzzm.safecampus.campus.wx.message.MessageProcessor]" factory="instance">
+        <element type="com.gzzm.safecampus.campus.wx.message.SubscribeEventProcessor"/>
+        <element type="com.gzzm.safecampus.campus.wx.message.UnSubscribeEventProcessor"/>
+        <element type="com.gzzm.safecampus.campus.wx.message.TextMessageProcessor"/>
+    </bean>
+</config>

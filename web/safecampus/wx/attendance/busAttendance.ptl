@@ -1,0 +1,105 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>校巴考勤</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/TouchSlide.1.1.js"></script>
+    <script src="/safecampus/wx/attendance/attendance.js"></script>
+    <script src="/safecampus/js/jquery.js"></script>
+</head>
+
+<body>
+
+<div class="bjkq">
+    <ul>
+        <li><a href="/wx/attendance/classatt">班级考勤</a></li>
+        <li><a href="/wx/attendance/busatt" class="hover">校巴考勤</a></li>
+        <li><a href="/wx/attendance/siestaatt">午休考勤</a></li>
+        <li><a href="/wx/attendance/truatt">托管考勤</a></li>
+    </ul>
+</div>
+
+<div id="selecttype" class="unshowclass" style="text-align: center">
+    <div class="aa" onclick="checkthis(this)" status="0" value="0">上午上车</div>
+    <div class="aa" onclick="checkthis(this)" status="0" value="1">上午下车</div>
+    <div class="aa" onclick="checkthis(this)" status="0" value="2">下午上车</div>
+    <div class="aa" onclick="checkthis(this)" status="0" value="3">下午下车</div>
+    <button onclick="startAtt(this,'${relationId}')">确定</button> <button onclick="unshowdiv()">取消</button>
+</div>
+
+</body>
+
+<div class="contont">
+    <div id="full" class="unshowclass"
+         style="width:102%;height: 100%;z-index:49;position:absolute;background-color:gray;opacity:0.5;
+      top:0px;left:0px;">
+
+    </div>
+    <div class="xzbj" id="tag" style="height: 35px" >
+        <select id="roomsel" data-status="1">
+            <option bind="busRoutes" value="${routeId}">${routeName}</option>
+        </select>
+    </div>
+    <!--<div class="xzbj">
+        <ul id="showclass" onclick="showcla('${relationId}',1)" data-status="0">
+            <li id="currli">${currentRoute}</li>
+        </ul>
+        <ul bind="busRoutes" class="unshowclass" onclick="showClass('${routeId}',1)">
+            <li>${routeName}</li>
+        </ul>
+
+    </div>-->
+
+    <!--<a href="/wx/attendance/startbusatt?relationId=${relationId}" class="ljkq">开始考勤</a>-->
+    <a onclick="selecttype()" class="ljkq"> 开始考勤</a>
+
+
+    <div class="tjls" bind="minMap" onclick="unshow()">
+        <div class="tjls_bt">
+            <p>${key}考勤情况</p>
+            <span onclick="showAttendanceDetail('${value.aoId}',1)"></span>
+        </div>
+        <div class="wfs">
+            <div class="wfs_lt">未发送考勤通知学生<span>${value.unsendedCount}</span></div>
+            <div class="wfs_rt"><a href="/wx/attendance/buschangestate?aoId=${value.aoId}">更改状态</a></div>
+        </div>
+        <div class="kqmx">
+            <ul>
+                <li class="li1" bind="value.unsendedStudents">
+                    <span><img src="/safecampus/wx/image/tx_03.png"></span>
+
+                    <h2>${studentName}</h2>
+
+                    <h3><a href="tel:${phone}">联系家长</a></h3>
+                </li>
+
+            </ul>
+        </div>
+        <div class="cdzh">
+            <ul>
+                <li>
+                    <p>迟到学生</p>
+
+                    <p class="p1">${value.lateCount}</p>
+                    <span></span></li>
+                <li>
+                    <p>请假学生</p>
+
+                    <p class="p2">${value.leaveCount}</p>
+                    <span></span></li>
+                <li>
+                    <p>正常到班学生</p>
+
+                    <p class="p3">${value.arrvedCount}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="tjls" style="text-align: center" onclick="unshow()">
+        <span>温馨提示：点击左下角按钮切换需要考勤的路线</span>
+        <button onclick="toHistory('${relationId}',1)">查看考勤历史</button>
+    </div>
+</div>
+</body>
+</html>

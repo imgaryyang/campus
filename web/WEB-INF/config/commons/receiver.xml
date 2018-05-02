@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <!--接收者提供器-->
+    <bean class="List[com.gzzm.platform.receiver.ReceiverProvider]" factory="instance">
+
+        <!--从组织机构用户里读取接收者-->
+        <element type="com.gzzm.platform.receiver.UserReceiverProvider"/>
+
+        <!--从用户组里读取接收者-->
+        <element type="com.gzzm.platform.group.UserGroupReceiverProvider"/>
+
+        <!--从个人通讯录读取接收者-->
+        <element type="com.gzzm.oa.address.AddressReceiverProvider"/>
+
+        <!--从电话列表读取接收者-->
+        <element type="com.gzzm.platform.message.sms.PhoneListReceiverProvider"/>
+
+    </bean>
+
+</config>

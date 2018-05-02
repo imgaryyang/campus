@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>阅读情况跟踪</title>
+    <link type="text/css" rel="stylesheet" href="/oa/notice/track.css"/>
+</head>
+<body id="dialogBody">
+    <div id="main">
+        
+        <table>
+
+            <thead>
+                <tr>
+                    <th class="name">名称</th>
+                    <th class="depts">部门</th>
+                    <th class="state">状态</th>
+                    <th class="time">阅读时间</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr bind="traceList">
+                    <td class="name">
+                        <span>${user.userName}</span>
+                    </td>
+                    <td class="depts">
+                        <span>${user.allDeptName()}</span>
+                    </td>
+                    <td class="state">
+                        <span bind="readTime==null">未查看</span>
+                        <span bind="readTime!=null">已查看</span>
+                    </td>
+                    <td class="time">
+                        <span>${readTime}</span>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="count">
+            <span id="all">
+                总人数：${traceList.size()}
+            </span>
+            <span id="readed">
+                已读人数：${readedCount}
+            </span>
+            <span id="noreaded">
+                未读人数：${noReadedCount}
+            </span>
+        </div>
+
+    </div>
+</body>
+</html>

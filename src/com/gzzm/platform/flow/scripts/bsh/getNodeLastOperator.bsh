@@ -1,0 +1,28 @@
+getNodeLastOperator(String nodeId)
+{
+   return getNodeLastOperator(new String[]{nodeId});
+}
+
+getNodeLastOperator(String nodeId1,String nodeId2)
+{
+   return getNodeLastOperator(new String[]{nodeId1,nodeId2});
+}
+
+getNodeLastOperator(String nodeId1,String nodeId2,String nodeId3)
+{
+   return getNodeLastOperator(new String[]{nodeId1,nodeId2,nodeId3});
+}
+
+getNodeLastOperator(String nodeId1,String nodeId2,String nodeId3,String nodeId4)
+{
+   return getNodeLastOperator(new String[]{nodeId1,nodeId2,nodeId3,nodeId4});
+}
+
+getNodeLastOperator(String[] nodeIds)
+{
+   var r = $empty;
+   for(nodeId:nodeIds)
+     r=r.add($context.getNodeLastOperator(nodeId));
+
+   return r;
+}

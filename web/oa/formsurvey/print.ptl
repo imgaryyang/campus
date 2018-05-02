@@ -1,0 +1,8 @@
+<include page="/platform/print/print.ptl">
+    <include:part name="title">
+        打印${survey.surveyName}
+    </include:part>
+    <include:part name="head">
+        <script type="text/javascript" src="/oa/formsurvey/print.js"></script>
+    </include:part>
+</include>

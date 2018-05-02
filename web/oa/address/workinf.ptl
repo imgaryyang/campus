@@ -1,0 +1,131 @@
+<div class="components">
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                工作单位
+            </div>
+            <div class="component_wide">
+                <input name="entity.attributes.office" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                行 业
+            </div>
+            <div class="component">
+                <input name="entity.attributes.industry" editable="true" readonly="${readOnly}">
+            </div>
+        </div>
+        <div class="component_item">
+            <div class="label">
+                地 区
+            </div>
+            <div class="component">
+                <input name="entity.attributes.adDivision" editable="true" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                单位地址
+            </div>
+            <div class="component_wide">
+                <input name="entity.attributes.officeAddress" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                职 务
+            </div>
+            <div class="component">
+                <input name="entity.attributes.duty" readonly="${readOnly}">
+            </div>
+        </div>
+        <div class="component_item">
+            <div class="label">
+                任职时间
+            </div>
+            <div class="component">
+                <input name="entity.attributes.workTime" datatype="date" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+    <div class="component_line">
+           <div class="component_item">
+               <div class="label">
+                   员工编号
+               </div>
+               <div class="component">
+                   <input name="entity.attributes.empNo" readonly="${readOnly}">
+               </div>
+           </div>
+           <div class="component_item">
+               <div class="label">
+                   任职状态
+               </div>
+               <div class="component">
+                   <select name="entity.attributes.state"  readonly="${readOnly}" style="width:100px;">
+                       <option>在职</option>
+                       <option>离职</option>
+                   </select>
+               </div>
+           </div>
+       </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                工作电话
+            </div>
+            <div class="component">
+                <input name="entity.attributes.workPhone" readonly="${readOnly}">
+            </div>
+        </div>
+        <div class="component_item">
+            <div class="label">
+                传 真
+            </div>
+            <div class="component">
+                <input name="entity.attributes.fax" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                学 历
+            </div>
+            <div class="component">
+                <input name="entity.attributes.diploma" readonly="${readOnly}">
+            </div>
+        </div>
+        <div class="component_item">
+            <div class="label">
+                专 业
+            </div>
+            <div class="component">
+                <input name="entity.attributes.specialty" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                毕业院校
+            </div>
+            <div class="component_wide">
+                <input name="entity.attributes.graduation" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+</div>

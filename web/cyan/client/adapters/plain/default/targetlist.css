@@ -1,0 +1,23 @@
+.cyan-targetlist {
+    position: absolute;
+    border: 1px solid #888888;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.cyan-targetlist-item {
+    padding-left: 3px;
+    padding-right: 8px;
+    line-height: 22px;
+    font-size: 12px;
+    color: #000000;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow-x: hidden;
+}
+
+.cyan-targetlist-item-selected {
+    background: #cde3f3;
+}

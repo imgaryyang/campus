@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>常见问题</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/oa/help/js/helpcenter.js"></script>
+</head>
+
+<body>
+<div class="zj">
+    <div class="cjwt">
+        <div class="cjwt_bt">
+            <div class="cjwt_bt_lt">常见问题</div>
+            <%--暂时不用--%>
+            <%--<div class="cjwt_bt_zj"><a href="#">其他问题</a></div>--%>
+            <div class="cjwt_bt_rt">common problem</div>
+        </div>
+        <div class="sousuo">
+            <div class="sousuo_lt"></div>
+                <div class="sousuo_zj"><input name="search" type="text" class="kuang" value="${request.search!=null?request.search:"请输入关键字"}"
+                                              onfocus="if(this.value=='请输入关键字'){this.value='';this.style.color='#d0d0d0'}"
+                                              onblur="if(this.value==''){this.value='请输入关键字';this.style.color='#d0d0d0'}">
+            </div>
+            <div class="sousuo_rt">
+                <button onclick="Helper.refCom()">搜索</button>
+            </div>
+        </div>
+        <segment id="comproseg">
+            <div class="wtlb">
+                <ul>
+                    <li portal:type="compro_info" pageSize="6" search="${request.search}" pageNo="${request.pageNo}"  >
+                        <a href="/info/${informationId}" target="_blank">${title}[查看详情]</a>
+                    </li>
+                </ul>
+            </div>
+            <include page="compage.ptl"/>
+        </segment>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+#sortBody {
+    width: 330px;
+    overflow: hidden;
+}
+
+#sortPage {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 320px;
+    height: 350px;
+}
+
+#sortPage #sortList {
+    width: 250px;
+    height: 352px;
+    float: left;
+}
+
+#sortPage #sortList select {
+    width: 240px;
+    height: 350px;
+}
+
+#sortPage #sortButtons {
+    width: 65px;
+    height: 270px;
+    padding-top: 80px;
+    float: left;
+}
+
+#sortPage #sortButtons button {
+    margin-top: 5px;
+    width: 55px
+}

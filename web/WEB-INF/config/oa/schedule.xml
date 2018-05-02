@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 配置优先级 -->
+    <bean class="List[com.gzzm.oa.schedule.Priority]" factory="instance">
+        <element>
+            <value>0</value>
+            <name>一般</name>
+            <color/>
+            <icon>priority0.gif</icon>
+        </element>
+        <element>
+            <value>1</value>
+            <name>重要</name>
+            <color>#6A6CE4</color>
+            <icon>priority1.gif</icon>
+        </element>
+        <element>
+            <value>2</value>
+            <name>紧急</name>
+            <color>#C838D4</color>
+            <icon>priority2.gif</icon>
+        </element>
+        <element>
+            <value>3</value>
+            <name>特急</name>
+            <color>#E02820</color>
+            <icon>priority3.gif</icon>
+        </element>
+    </bean>
+
+    <!-- 配置类型 -->
+    <bean class="List[com.gzzm.oa.schedule.Type]" factory="instance">
+        <element>
+            <value>1</value>
+            <name>会议</name>
+            <icon>meeting.gif</icon>
+        </element>
+        <element>
+            <value>2</value>
+            <name>接待</name>
+            <icon>schedule.gif</icon>
+        </element>
+        <element>
+            <value>3</value>
+            <name>公务</name>
+            <icon>public.gif</icon>
+        </element>
+        <element>
+            <value>4</value>
+            <name>假期</name>
+            <icon>private.gif</icon>
+        </element>
+        <element>
+            <value>5</value>
+            <name>活动</name>
+            <icon>public.gif</icon>
+        </element>
+        <element>
+            <value>0</value>
+            <name>其他</name>
+            <icon/>
+        </element>
+    </bean>
+</config>

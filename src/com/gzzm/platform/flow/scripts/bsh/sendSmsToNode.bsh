@@ -1,0 +1,4 @@
+sendSmsToNode(String content, String nodeId)
+{
+   FlowFunctions.sendMessageToNode(content,nodeId,$context);
+}

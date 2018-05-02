@@ -1,0 +1,202 @@
+#main {
+    clear: both;
+    width: 784px;
+    height: auto;
+}
+
+#tabs {
+    /*height: 400px;*/
+}
+
+.tabPage {
+    /*height: 360px;*/
+}
+
+fieldset.types {
+    border: 1px solid #00aaff;
+    padding: 8px;
+    width: 780px;
+    margin-left: 35px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    min-height: 60px;
+    *height: 60px;
+    font-weight: bold;
+}
+
+fieldset.types ul {
+    font-weight: normal;
+}
+
+fieldset.types fieldset {
+    border: 1px solid #B5B8C8;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 765px;
+    margin-left: 12px;
+    margin-top: 2px;
+    margin-bottom: 6px;
+    min-height: 40px;
+    *height: 40px;
+    font-weight: normal;
+}
+
+fieldset.types ul {
+    margin-top: 8px;
+}
+
+fieldset.types li {
+    float: left;
+    width: 150px;
+    height: 20px;
+}
+
+fieldset.types fieldset li {
+    width: 94px;
+}
+
+fieldset.types li input {
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.head {
+    float: left;
+    margin-top: 56px;
+    margin-left: 43px;
+    width: 140px;
+}
+
+.head .img {
+    height: 160px;
+    line-height: 160px;
+    background-image: url("/safecampus/campus/icons/student.jpg");
+
+}
+
+.imgTip {
+
+    color: white;
+    background-color: #0090ff;
+    border-radius: 2px;
+    text-align: center;
+    margin: 7px auto;
+    cursor: pointer;
+    width: 140px;
+    height: 33px;
+    line-height: 32px;
+
+}
+
+.imgTip:hover {
+    cursor: pointer;
+}
+
+.head img {
+    vertical-align: middle;
+    width: 100%;
+    height:100%;
+}
+
+.head input {
+    width: 100%;
+}
+
+.richupload_container {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+#addParent {
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+    margin-right: 3px;
+    line-height: 20px;
+    float: right;
+}
+
+.parentRelation .component_item .component {
+    width: auto;
+}
+
+.parentRelation .label {
+    width: 60px;
+}
+
+.relation .label {
+    width: 102px;
+}
+
+.parentRelation .relation .component input {
+    width: 50px;
+}
+
+.parentRelation .parent .component input {
+    width: 90px;
+}
+
+.parentRelation .contract .component input {
+    width: 110px;
+}
+
+/** ------------ guardian list ----------**/
+
+#guardianList {
+    height: 305px;
+    overflow-y: scroll;
+}
+
+#subList {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.xzlx {
+    height: 40px;
+}
+
+.xzlx a, .wtms_bt a {
+    text-decoration: none;
+    line-height: 30px;
+    color: rgb(255, 255, 255);
+    width: 70px;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    border-image: initial;
+    border-radius: 5px;
+    background: rgb(63, 116, 186);
+    float: right;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: block;
+
+}
+
+.up, .down {
+    display: none;
+}
+
+/** ---------- guardian list end ----------**/
+
+
+/*--限制高度，隐藏IE9下生成的多余内容--*/
+#dialogBody{
+    height: 391px;
+    overflow: hidden;
+}
+#main{
+    height: 391px;
+    overflow: hidden;
+}
+#main > .tab{
+    display: none;
+}
+/*----------------------------*/

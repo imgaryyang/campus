@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>政务云盘-输入链接</title>
+    <link rel="stylesheet" type="text/css" href="../css/style-ye.css"/>
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery_update.js"></script>
+    <script type="text/javascript" src="../js/cloudshare.js"></script>
+</head>
+<body>
+<div class="lj">
+    <div class="ljbg">
+        <div class="ljbox">
+            <input id="ljInp" type="text" placeholder="请输入链接">
+            <button id="sumBut">提交</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

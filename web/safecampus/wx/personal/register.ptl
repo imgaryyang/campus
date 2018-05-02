@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>注册认证</title>
+    <link href="../css/stlye.css" rel="stylesheet" type="text/css">
+    <link href="/safecampus/wx/personal/regsiter.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/jquery.js"></script>
+    <script src="/safecampus/wx/arttemplate/template-web.js"></script>
+    <script src="/safecampus/wx/arttemplate/json3.min.js"></script>
+    <script src="/safecampus/wx/personal/register.js"></script>
+    <script src="/safecampus/wx/personal/validate.js"></script>
+</head>
+
+<body>
+<form id="form">
+    <div class="jfcg">
+        <div class="contont">
+            <div class="logo"><img src="../image/zyxylogo_03.png"></div>
+            <div class="srxsj">
+                <div class="srxsj_lt"><img src="../image/xtbtm_03.png" class="im4"></div>
+                <div class="srxsj_zt">
+                    <select name="wxRegister.schoolId" id="scl_sel" class="kuang df" style="width: 100%" placeholder="请选择学校">
+                        <option value="" selected disabled>请选择学校</option>
+                        <option bind="schoolList" value="${schoolId}">${schoolName}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="srxsj">
+                <div class="srxsj_lt"><img src="../image/xtbtm_07.png" class="im4"></div>
+                <div class="srxsj_zt">
+                    <input type="text" name="wxRegister.studentName" id="studentName" class="kuang df" placeholder="请输入学生姓名">
+                </div>
+            </div>
+            <div class="srxsj">
+                <div class="srxsj_lt"><img src="../image/xtbtm_10.png" class="im2"></div>
+                <div class="srxsj_zt">
+                    <select style="width: 50%;padding-right: 15px" class="kuang df" id="grade_sel" name="wxRegister.gradeId">
+                        <option value="0" selected disabled>请选择年级</option>
+                    </select>
+
+                    <select name="wxRegister.classesId" style="width: 50%"  class="kuang df" id="classes_sel">
+                        <option value="0" selected disabled>请选择班级</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="srxsj">
+                <div class="srxsj_lt"><img src="../image/xtbtm_07.png" class="im4"></div>
+                <div class="srxsj_zt">
+                    <input type="text"
+                           value="${wxUserOnlineInfo.userName}" ${wxUserOnlineInfo.userName!=null?'disable':''}
+                           name="wxRegister.userName" class="kuang df" placeholder="请输入家长姓名">
+                </div>
+
+            </div>
+
+            <div class="srxsj">
+                <div class="srxsj_lt"><img src="../image/xtbtm_22.png" class="im3"></div>
+                <div class="srxsj_zt">
+                    <input type="text" value="${wxUserOnlineInfo.idCard}"  ${wxUserOnlineInfo.idCard!=null?'disable':''}
+                           id="idCard" name="wxRegister.idCard" class="kuang df" placeholder="请输入身份证">
+                </div>
+
+            </div>
+            <div class="srxsj">
+                <div class="srxsj_lt"><img src="../image/sjh_03.png"></div>
+                <div class="srxsj_zt">
+                    <input type="text" value="${wxUserOnlineInfo.phone}" ${wxUserOnlineInfo.phone!=null?'disable':''}
+                           id="phone" name="wxRegister.phone" class="kuang df" placeholder="请输入手机号码">
+                </div>
+
+            </div>
+
+            <div class="qdxg">
+                <button class="hover" id="commitBut" type="button">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <script id="gradeItem" type="text/html">
+        <option value="0" selected disabled>请选择年级</option>
+        {{each items value index}}
+        <option value="{{value.key}}">{{value.name}}</option>
+        {{/each }}
+    </script>
+
+    <script id="classItem" type="text/html">
+        <option value="0" selected disabled>请选择班级</option>
+        {{each items value index}}
+        <option value="{{value.key}}">{{value.name}}</option>
+        {{/each }}
+    </script>
+</form>
+</body>
+</html>

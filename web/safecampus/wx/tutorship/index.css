@@ -1,0 +1,16 @@
+.tjjslb li {
+    width: 33.33%;
+}
+.tjls_bt span.more{
+    padding-top: 0.5em;
+    display: block;
+    width: 2.8em;
+    line-height: 1.2em;
+    float: right;
+}
+.tjls_bt a{
+
+    color: grey;
+
+    font-size: 14px;
+}

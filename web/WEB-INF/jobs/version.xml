@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+
+    <job single="true">
+        <task type="com.gzzm.oa.version.VersionInfoJob"/>
+        <trigger type="once"/>
+    </job>
+
+</schedule>

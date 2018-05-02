@@ -1,0 +1,153 @@
+<html>
+<head>
+    <title bind="new$">新增投票</title>
+    <title bind="!new$">修改投票</title>
+    <link type="text/css" rel="stylesheet" href="/platform/message/smsvote.css">
+    <link type="text/css" rel="stylesheet" href="/platform/receiver/receiverselector.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/platform/receiver/receiverselector.js"></script>
+    <script type="text/javascript" src="/platform/message/smsvote.js"></script>
+</head>
+<body>
+    <div id="pageBody">
+        <form id="form" bind="entity">
+
+            <div id="mainBody">
+                <div id="sms">
+
+                    <div class="item">
+                        <div class="label">
+                            投票标题：
+                        </div>
+                        <div class="input" bind="!sended">
+                            <input name="title" class="input">
+                        </div>
+                        <div class="input" bind="sended">
+                            <input name="title" class="input" readonly>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label" bind="!sended">
+                            <a href="#" onclick="openReceiverDialog();">接收人</a>：
+                        </div>
+                        <div class="label" bind="sended">
+                            参与人：
+                        </div>
+                        <div class="input" bind="!sended">
+                            <input name="receiver" id="receiver" class="input">
+                        </div>
+                        <div class="input" bind="sended">
+                            <input name="receiver" id="receiver" class="input" readonly>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                            结束时间：
+                        </div>
+                        <div class="input">
+                            <input name="endTime" class="input">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                            投票限制：
+                        </div>
+                        <div class="input">
+                            <input name="voteCount" class="number">(每个手机号码允许投票的次数,0表示不限制投票次数)
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                            匿名投票：
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" name="anonymous" value="true" class="checkbox">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                            限制范围：
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" name="restrictReceiver" value="true" class="checkbox">
+                        </div>
+                    </div>
+
+
+                    <div class="item">
+                        <div class="label">
+                            投票选项：
+                        </div>
+                        <div class="input">
+
+                            <table class="sublist" bind="!sended">
+                                <thead>
+                                <tr>
+                                    <th class="option_content">
+                                        选项内容
+                                    </th>
+                                    <th class="up">
+                                        上移
+                                    </th>
+                                    <th class="down">
+                                        下移
+                                    </th>
+                                    <th class="remove">
+                                        删除
+                                    </th>
+                                    <th class="add">
+                                        <span id="option_add" class="add" title="添加选项" onclick="addOption();"></span>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr bind="entity.options">
+                                    <td class="option_content">
+                                        <input name="options" value="${self}" require showName="选项内容" msgtype="icon">
+                                    </td>
+                                    <td class="up">
+                                        <span onclick="upOption(this);" class="up"></span>
+                                    </td>
+                                    <td class="down">
+                                        <span onclick="downOption(this);" class="down"></span>
+                                    </td>
+                                    <td class="remove">
+                                        <span onclick="deleteOption(this);" class="remove"></span>
+                                    </td>
+                                    <td class="add">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <div bind="sended" bind="options">
+                                ${index$+1}、 ${self}
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <span class="button">
+                            <button type="button" onclick="save();">保存</button>
+                        </span>
+                         <span class="button" bind="!sended">
+                            <button type="button" onclick="send();">发送</button>
+                        </span>
+                         <span class="button" bind="sended">
+                            <button type="button" onclick="addReceiver();">添加参与人</button>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

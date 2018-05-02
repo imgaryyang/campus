@@ -1,0 +1,198 @@
+html, body {
+    overflow-y: auto;
+}
+
+#vote {
+    clear: both;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 15px;
+    width: 90%;
+}
+
+#vote #head .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#vote #head .intro {
+    font-size: 13px;;
+    color: #005590;
+    text-indent: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 2px #444444;
+}
+
+.recordCount {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#vote .group_content {
+    margin-left: 10px;
+}
+
+#vote .problem {
+    margin-left: 10px;
+}
+
+#vote .group_content .problem {
+    margin-left: 20px;
+}
+
+#vote .problem span {
+    font-size: 13px;;
+}
+
+#vote .problem {
+    margin-bottom: 15px;
+}
+
+#vote .problem .title {
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+#vote .problem .title .required {
+    color: red;
+    margin-left: 5px;
+}
+
+#vote .problem .top_title {
+    line-height: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#vote .problem .top_title span {
+    font-size: 16px;
+}
+
+#vote .problem .top_title .required {
+    color: red;
+    margin-left: 5px;
+}
+
+#vote .groupTitle {
+    line-height: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#vote .groupTitle span {
+    font-size: 16px;
+}
+
+#vote .problem .option {
+    height: 26px;
+    line-height: 20px;
+    clear: both;
+}
+
+#vote .problem .option .label {
+    float: left;
+    width: 250px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-top: 3px;
+    color: #222222;
+}
+
+#vote .problem .option .ratio {
+    float: left;
+    width: 300px;
+    height: 12px;
+    margin-top: 7px;
+    margin-right: 30px;
+    background: #f4f4f4;
+}
+
+#vote .problem .option .ratio .ratio_value {
+    height: 10px;
+    border: 1px solid;
+}
+
+#vote .problem .option .ratio .ratio_value0 {
+    background: #e7ab6d;
+    border-color: #8a4461;
+}
+
+#vote .problem .option .ratio .ratio_value1 {
+    background: #5dbc5b;
+    border-color: #377136;
+}
+
+#vote .problem .option .ratio .ratio_value2 {
+    background: #6c81b6;
+    border-color: #404d6d;
+}
+
+#vote .problem .option .ratio .ratio_value3 {
+    background: #d2e5ea;
+    border-color: #637a80;
+}
+
+#vote .problem .option .ratio .ratio_value4 {
+    background: #eba0d9;
+    border-color: #844174;
+}
+
+#vote .problem .option .ratio .ratio_value5 {
+    background: #c2f363;
+    border-color: #869569;
+}
+
+#vote .problem .option .ratio .ratio_value6 {
+    background: #ee325f;
+    border-color: #8f5664;
+}
+
+#vote .problem .option .ratio .ratio_value7 {
+    background: #ffc534;
+    border-color: #99761f;
+}
+
+#vote .problem  .stat {
+    margin-left: 10px;
+    margin-top: 3px;
+    color: #222222;
+}
+
+#vote .problem .detail {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+#vote .problem .detail a {
+    color: gray;
+}
+
+#vote .problem .detail a:hover {
+    color: red;
+}
+
+#vote .problem  .stat span {
+    margin-right: 20px;
+}
+
+.buttons {
+    clear: both;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.buttons .button button {
+    cursor: pointer;
+}

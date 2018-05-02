@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <portalTag type="oql" name="compro_info">
+        <![CDATA[
+               select t from (
+               select i1 from Information i1 where i1.channelId in (select c1.channelId from Channel c1 where c1.channelCode = '916001001') order by i1.publishTime desc limit 1
+               union all
+               select i2 from Information i2 where i2.channelId in (select c2.channelId from Channel c2 where c2.channelCode = '916001002') order by i2.publishTime
+                ) t where t.title like '%'||?search||'%'
+                ]]>
+
+    </portalTag>
+</config>

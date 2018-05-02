@@ -1,0 +1,61 @@
+#notify {
+    width: 99%;
+    height: 450px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+#notify .item {
+    clear: both;
+    width: 100%;
+    padding-top: 8px;
+}
+
+#notify .item .label {
+    float: left;
+    width: 7%;
+    height: 21px;
+    padding-top: 4px;
+    text-align: right;
+
+}
+
+#notify .item .label a {
+    color: blue;
+}
+
+#notify .item .input {
+    width: 93%;
+    float: left;
+}
+
+#notify span.checkbox {
+    margin-right: 15px;
+}
+
+#notify span.checkbox input {
+    vertical-align: middle;
+    margin-right: 5px;
+    height: 14px;
+}
+
+#notify .item div.content {
+    height: 350px;
+}
+
+textarea.content {
+    width: 97%;
+    height: 350px;
+}
+
+.buttons {
+    padding-top: 10px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+}
+
+.buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

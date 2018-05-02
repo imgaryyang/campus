@@ -1,0 +1,89 @@
+#sms {
+    width: 99%;
+    height: 450px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+#sms .item {
+    clear: both;
+    width: 100%;
+    padding-top: 8px;
+}
+
+#sms .item .label {
+    float: left;
+    width: 7%;
+    height: 21px;
+    padding-top: 4px;
+    text-align: right;
+
+}
+
+#sms .item .label a {
+    color: blue;
+}
+
+#sms .item .input {
+    width: 93%;
+    float: left;
+}
+
+#sms .item .input .input {
+    width: 97%;
+    height: 22px;
+    border: 1px solid gray;
+    background-color: white;
+    line-height: 20px;
+}
+
+#sms .item .input .number {
+    width: 100px;
+    height: 22px;
+    border: 1px solid gray;
+    background-color: white;
+    line-height: 20px;
+    text-align: right;
+}
+
+#sms .item div.checkbox .checkbox {
+    margin-top: 5px;
+}
+
+#sms .item div.content {
+    height: 350px;
+}
+
+textarea.content {
+    width: 97%;
+    height: 350px;
+}
+
+div.receiverlist {
+    width: 97%;
+}
+
+.buttons {
+    padding-top: 10px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+}
+
+.buttons .button {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+table.sublist {
+    float: left;
+    width: 96%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.option_content input {
+    height: 20px;
+    width: 95%;
+    border: 0;
+}

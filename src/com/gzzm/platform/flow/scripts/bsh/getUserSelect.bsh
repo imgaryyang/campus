@@ -1,0 +1,17 @@
+getUserSelect()
+{
+   return FlowFunctions.getUserSelect();
+}
+
+getUserSelect(Integer scopeId)
+{
+   return FlowFunctions.getUserSelect(scopeId);
+}
+
+getUserSelect(String scopeName)
+{
+   if("approve".equals($flowTag))
+      return FlowFunctions.getUserSelect(scopeName,bureauId);
+   else
+      return FlowFunctions.getUserSelect(scopeName,businessDeptId);
+}

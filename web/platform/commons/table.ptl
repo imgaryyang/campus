@@ -1,0 +1,39 @@
+${view.top}
+<html>
+<head>
+    <title bind="view.title"></title>
+    <link type="text/css" rel="stylesheet" href="/platform/commons/table.css">
+    <script type="text/javascript" src="/platform/commons/table.js"></script>
+</head>
+<body>
+
+    ${view.header}
+
+    <div bind="view.title" id="app_title"></div>
+    <div bind="view.remark" id="app_remark"></div>
+
+    <table id="table">
+
+        <thead>
+        <tr>
+            <th bind="view.columns" style="text-align:${align}">
+                ${title}
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        </tbody>
+
+    </table>
+
+    <div id="bottom">
+        <div id="page">
+        </div>
+        <div id="actions">
+        </div>
+    </div>
+
+    ${view.bottom}
+</body>
+</html>

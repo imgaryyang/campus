@@ -1,0 +1,142 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/oa/notice/notice.css"/>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+    <script type="text/javascript" src="/platform/commons/htmleditor.js"></script>
+    <script type="text/javascript" src="/oa/notice/notice.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body id="dialogBody">
+
+    <div id="main">
+        <form id="form" bind="entity" action="">
+
+            <div id="components">
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">
+                            标题
+                        </div>
+                        <div class="component_double">
+                            <input name="title">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">
+                            信息类型
+                        </div>
+                        <div class="component">
+                            <select name="type" onchange="changeType();">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">
+                            栏目
+                        </div>
+                        <div class="component" bind="typeId0==null">
+                            <select name="typeId">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                        <div class="component" bind="typeId0!=null">
+                            <input name="noticeType.typeName" readOnly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line" id="url_div" style="${type.name()=="url"?"":"display:none"}">
+                    <div class="component_item">
+                        <div class="label">
+                            URL
+                        </div>
+                        <div class="component_double">
+                            <input name="url">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line" id="file_div" style="${type.name()=="file"?"":"display:none"}">
+                    <div class="component_item">
+                        <div class="label">
+                            文件
+                        </div>
+                        <div class="component_double">
+                            <input id="file" type="file" name="file">
+                            <a href="/oa/notice/${noticeId}/down" target="_blank">下载</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">
+                            状态
+                        </div>
+                        <div class="component">
+                            <select name="state">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">
+                            有效时间
+                        </div>
+                        <div class="component">
+                            <input id="invalidTime" name="invalidTime" onchange="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component_line">
+                    <div class="component_item">
+                        <div class="label">
+                            置顶
+                        </div>
+                        <div class="component">
+                            <select name="topTag">
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="component_item">
+                        <div class="label">
+                            置顶时间
+                        </div>
+                        <div class="component">
+                            <input name="topInvalidTime">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="content_div" class="component_content" style="${type.toString()=="edit"?"":"display:none"}">
+                <div class="label">
+                    内容
+                </div>
+                <div class="component">
+                    <textarea name="content" class="htmleditor"></textarea>
+                </div>
+            </div>
+
+            <div id="buttons">
+					<span class="button">
+						<button type="button" onclick="submitInfo()" progress="true">保存</button>
+                    </span>
+					<span class="button">
+						<button type="button" onclick="closeWindow();">关闭</button>
+                    </span>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

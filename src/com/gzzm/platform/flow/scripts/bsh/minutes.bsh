@@ -1,0 +1,4 @@
+minutes(Date date)
+{
+   return DateUtils.getMinute(date);
+}

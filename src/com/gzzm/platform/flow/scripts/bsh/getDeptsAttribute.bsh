@@ -1,0 +1,9 @@
+getDeptsAttribute(Integer[] deptIds,String attributeName,String defaultValue)
+{
+   return FlowFunctions.getDeptsAttribute(deptIds,attributeName,defaultValue);
+}
+
+getDeptsAttribute(Integer deptId,String attributeName,String defaultValue)
+{
+   return FlowFunctions.getDeptsAttribute(new Integer[]{deptId},attributeName,defaultValue);
+}

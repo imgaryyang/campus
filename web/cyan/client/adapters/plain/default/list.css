@@ -1,0 +1,69 @@
+.cyan-list {
+    float: left;
+    font-size: 13px;
+    min-width: 100%;
+    *width: 100%;
+}
+
+.cyan-list * {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cyan-list-item {
+    height: 22px;
+    cursor: pointer;
+}
+
+.cyan-list-item:hover {
+    background: #eeeeee;
+}
+
+.cyan-list-item-selected {
+    background: #e3e9f5;
+}
+
+.cyan-list .cyan-list-item-selected:hover {
+    background: #e3e9f5;
+}
+
+.cyan-list-item-icon {
+    display: inline-block;
+    *display: inline;
+    width: 16px;
+    height: 16px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    margin-right: 2px;
+    margin-left: 8px;
+}
+
+.cyan-list-item-icon span {
+    display: inline-block;
+    *display: inline;
+    width: 16px;
+    height: 16px;
+    background: url("list/default.gif") no-repeat;
+}
+
+.cyan-list-item-icon img {
+    width: 16px;
+    height: 16px;
+}
+
+.cyan-list-item-text {
+    display: inline-block;
+    *display: inline;
+    line-height: 22px;
+    margin-right: 4px;
+}
+
+.cyan-list-item-checkbox {
+    display: inline-block;
+    *display: inline;
+}
+
+.cyan-list-item-checkbox input {
+    cursor: pointer;
+    margin: 0;
+}

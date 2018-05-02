@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>${actionName}统计—${vote.title}</title>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/oa/vote/voteresult.js"></script>
+    <link type="text/css" rel="stylesheet" href="/oa/vote/voteresult.css"/>
+</head>
+<body>
+    <div id="mainBody">
+        <div id="vote">
+            <div id="head">
+                <div class="title">${vote.title}</div>
+                <div class="recordCount">
+                    共${recordCount}${objectName}${actionName}&nbsp;&nbsp;开始时间:${vote.startTime}&nbsp;&nbsp;截止时间:${vote.endTime}
+                </div>
+                <div class="intro" bind="vote.intro"></div>
+            </div>
+
+            <%int index = 0;%>
+            <div bind="groups" class="group${(groupId!=null&&problems.size()>1)?' group_content':''}">
+
+                <div class="groupTitle" bind="groupId!=null&&problems.size()>1">
+                    <span class="index"> <%=++index%>、</span>
+                    <span class="problemName">${groupName}</span>
+                </div>
+
+                <div bind="problems" class="problem">
+
+                    <div class="${(groupId!=null&&problems.size()>1)?'title':'top_title'}"
+                         bind="problems.size()>1||groups.size()>1">
+
+                        <span class="index" bind="groupId==null||problems.size()==1"><%=++index%>、</span>
+                        <span class="index" bind="groupId!=null&&problems.size()>1">(${index$+1})</span>
+                        <span class="problemName">${problemName}</span>
+                        <span bind="required" class="required">[必填]</span>
+
+                    </div>
+
+                    <div class="problem_content" bind="optionList.size()>0">
+                        <div bind="getOptionList(self)" class="option">
+                            <div class="label">${optionName}<span bind="score!=null" class="score">(${score}分)</span>：
+                            </div>
+                            <div class="ratio">
+                                <div bind="getOptionVoteCount(self)!=0" class="ratio_value ratio_value${index$%8}"
+                                     style="width:${getOptionVoteRatio(self)}"></div>
+                            </div>
+                            <div class="value">
+                                ${getOptionVoteCount(self)}(${getOptionVoteRatio(self)})
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="problem_content"
+                         bind="optionList.size()==0&&(dataType.name()=='NUMBER'||dataType.name()=='INTEGER')">
+                        <div class="stat">
+                            <span>共${getVoteInputStat(problemId).count}${objectName}回答了此问题</span>
+                            <span> 最小值:${getVoteInputStat(problemId).min}</span>
+                            <span>最大值:${getVoteInputStat(problemId).max}</span>
+                            <span> 平均值:${getVoteInputStat(problemId).avg}</span>
+                        </div>
+                    </div>
+                    <div class="problem_content"
+                         bind="optionList.size()==0&&dataType.name()=='FILE'">
+                        <div class="stat">
+                            共${getVoteInputCount(problemId)}${objectName}上传了内容
+                        </div>
+                    </div>
+                    <div class="problem_content"
+                         bind="optionList.size()==0&&dataType.name()!='NUMBER'&&dataType.name()!='INTEGER'&&dataType.name()!='FILE'">
+                        <div class="stat">
+                            共${getVoteInputCount(problemId)}${objectName}回答了此问题
+                        </div>
+                    </div>
+
+                    <div class="detail">
+                        <a href="#" onclick="showDetail(${problemId});return false;">查看详细情况</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="buttons">
+                <span class="button">
+                    <button type="button" onclick="exportResult();">导出</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="printResult();">打印</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="System.closePage();">关闭</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

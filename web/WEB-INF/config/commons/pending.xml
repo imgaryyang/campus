@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <!--配置主页上待办事项显示的内容-->
+
+    <bean class="List[com.gzzm.platform.desktop.PendingItem]" factory="instance">
+
+        <element>
+            <title>新邮件</title>
+            <sql>
+                <![CDATA[select count(*) from OAMAIL where USERID=?userId and TYPE=2 and READTIME is null and DELETED=0 and catalogId is null]]>
+            </sql>
+            <url>/oa/mail/list?type=received</url>
+        </element>
+
+        <element>
+            <title>归档邮件</title>
+            <sql>
+                <![CDATA[select count(*) from OAMAIL where USERID=?userId and TYPE=2 and READTIME is null and DELETED=0 and catalogId is not null]]>
+            </sql>
+            <url>/oa/mail/list</url>
+        </element>
+
+        <element>
+            <title>待办事项</title>
+            <url>/ods/flow/worksheet?type=nodeal</url>
+        </element>
+
+        <element>
+            <title>待办公文</title>
+            <url>/ods/flow/worksheet?type=nodeal&amp;businessType=send&amp;businessType=receive</url>
+        </element>
+
+        <element>
+            <title>待阅公文</title>
+            <url>/ods/flow/worksheet?type=noread</url>
+        </element>
+
+        <element>
+            <title>草稿箱</title>
+            <url>/ods/flow/worksheet?type=draft</url>
+        </element>
+
+        <element>
+            <title>待接收公文</title>
+            <url>
+                <![CDATA[/ods/receivelist?state=noAccepted]]>
+            </url>
+        </element>
+
+        <element>
+            <title>待接收公文</title>
+            <url>
+                <![CDATA[/ods/receivelist?state=noAccepted&type=receive]]>
+            </url>
+        </element>
+
+        <element>
+            <title>会签公文</title>
+            <url>
+                <![CDATA[/ods/receivelist?type=collect]]>
+            </url>
+            <arg name="state1">noAccepted</arg>
+        </element>
+
+        <element>
+            <title>联合办文</title>
+            <url>
+                <![CDATA[/ods/receivelist?type=union&type=unionseal&type=uniondeal]]>
+            </url>
+            <arg name="state1">noAccepted</arg>
+        </element>
+
+        <element>
+            <title>被退回公文</title>
+            <url>
+                <![CDATA[/ods/backlist]]>
+            </url>
+            <arg name="state">NODEALED</arg>
+        </element>
+
+        <element>
+            <title>回执反馈</title>
+            <url>
+                <![CDATA[/ods/receipt/query]]>
+            </url>
+            <arg name="newOnly">true</arg>
+        </element>
+
+        <element>
+            <title>待办行政事务</title>
+            <url>/ods/flow/worksheet?type=nodeal&amp;businessType=inner</url>
+        </element>
+
+        <element>
+            <title>未阅读消息</title>
+            <url>/flow/message</url>
+            <arg name="readed">false</arg>
+        </element>
+
+        <element>
+            <title>待办日程</title>
+            <url>/oa/schedule/list</url>
+            <arg name="state">notStarted</arg>
+        </element>
+
+        <element>
+            <title>受邀请活动</title>
+            <url>/oa/activite/join</url>
+            <arg name="state">invite</arg>
+        </element>
+
+        <element>
+            <title>可报名活动</title>
+            <url>/oa/activite/query</url>
+        </element>
+
+        <element>
+            <title>新投票</title>
+            <url>/oa/vote/VoteQuery</url>
+            <arg name="state">1</arg>
+            <arg name="voteState">1</arg>
+        </element>
+
+        <element>
+            <title>有效的工作委托</title>
+            <url>/Consignation?type=1</url>
+            <arg name="available">true</arg>
+        </element>
+
+        <element>
+            <title>咨询投诉</title>
+            <url>
+                <![CDATA[/portal/inquiry/process?states=NOACCEPTED&states=PROCESSING]]>
+            </url>
+        </element>
+    </bean>
+
+</config>

@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title bind="new$">增加参与人</title>
+    <link type="text/css" rel="stylesheet" href="/platform/message/smsvote.css">
+    <link type="text/css" rel="stylesheet" href="/platform/receiver/receiverselector.css">
+    <script type="text/javascript" src="/platform/receiver/receiverselector.js"></script>
+    <script type="text/javascript" src="/platform/message/smsvote.js"></script>
+</head>
+<body>
+    <div id="pageBody">
+        <form id="form">
+
+            <div id="mainBody">
+                <div id="sms">
+
+
+                    <div class="item">
+                        <div class="label">
+                            <a href="#" onclick="openReceiverDialog();">参与人</a>：
+                        </div>
+                        <div class="input">
+                            <input name="receiver" id="receiver" class="input">
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                         <span class="button">
+                            <button type="button" onclick="send();">发送</button>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

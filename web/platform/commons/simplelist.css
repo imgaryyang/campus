@@ -1,0 +1,126 @@
+body{
+    background: white;
+}
+
+#app_title {
+    display: none;
+}
+
+#list {
+    margin-top: 3px;
+}
+
+html {
+    overflow: hidden;
+}
+
+#list li {
+    clear: both;
+    line-height: 22px;
+    height: 22px;
+    *height: 20px;
+    *line-height: 20px;
+    text-indent: 7px;
+    color: #282828;
+}
+
+#list li a {
+    text-decoration: none;
+    color: #282828;
+}
+
+#list li a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+#bottom {
+    clear: both;
+}
+
+#page {
+    float: left;
+    height: 22px;
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#page span {
+    margin-right: 3px;
+}
+
+#page span.selected {
+    color: red;
+}
+
+#page span a {
+    text-decoration: none;
+}
+
+#actions {
+    float: right;
+    height: 22px;
+    text-align: right;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+#actions span {
+    margin-right: 3px;
+    color: #282828;
+}
+
+#actions span a {
+    text-decoration: none;
+    color: #282828;
+}
+
+#actions span a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.title {
+    float: left;
+    padding-left: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title_readed {
+    width: 305px;
+}
+
+.title_noread {
+    font-weight: bold;
+    width: 305px;
+}
+
+.title_long {
+    width: 465px;
+}
+
+.title_long_readed {
+    width: 465px;
+}
+
+.title_long_noread {
+    font-weight: bold;
+    width: 265px;
+}
+
+.title a {
+    text-decoration: none
+}
+
+.title a:hover {
+    text-decoration: underline
+}
+
+.time {
+    float: right;
+    color: gray;
+    margin-right: 15px;
+}

@@ -1,0 +1,13 @@
+#word {
+    width: 100%;
+    height: 550px;
+}
+
+#buttons {
+    padding-top: 10px;
+    text-align: center;
+}
+
+#buttons button {
+    margin-left: 10px;    
+}

@@ -1,0 +1,86 @@
+body {
+    overflow-y: hidden;
+}
+
+#app_title {
+    display: none;
+}
+
+#app_remark {
+    display: none;
+}
+
+#table {
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+    *border-spacing: expression(this.cellSpacing='0');
+}
+
+#table th {
+    text-align: center;
+    height: 24px;
+    font-weight: bold;
+    background-color: #E1F0FF;
+}
+
+#table td {
+    text-align: center;
+    height: 24px;
+    color: #282828;
+}
+
+#table td a {
+    text-decoration: none;
+}
+
+#table td a:hover {
+    text-decoration: underline;
+}
+
+#bottom {
+    clear: both;
+}
+
+#page {
+    float: left;
+    height: 22px;
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#page span {
+    margin-right: 3px;
+}
+
+#page span.selected {
+    color: red;
+}
+
+#page span a {
+    text-decoration: none;
+}
+
+#actions {
+    float: right;
+    height: 22px;
+    text-align: right;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+#actions span {
+    margin-right: 3px;
+    color: #282828;
+}
+
+#actions span a {
+    text-decoration: none;
+    color: #282828;
+}
+
+#actions span a:hover {
+    text-decoration: underline;
+    color: red;
+}

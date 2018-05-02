@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>表单意见管理</title>
+    <link type="text/css" rel="stylesheet" href="/platform/form/control.css">
+    <script type="text/javascript" src="/platform/form/control.js"></script>
+</head>
+<body>
+
+    <form>
+        <segment id="main">
+
+            <div id="texts">
+
+                <table bind="pages" bind="getParallelTexts(self)" class="text">
+
+                    <!assign pageName=super.name!>
+
+                    <tr>
+                        <td class="name">
+                            ${name}
+                        </td>
+                        <td class="items">
+
+                            <div bind="items" class="item" title="点击修改意见"
+                                 onclick="edit('${pageName}.${name}','${id}',this)">
+
+                                <div class="content" bind="text"></div>
+
+                                <input type="hidden" name="text" value="${text}">
+
+                                <div class="sign">
+
+                                    <span>${operatorName}</span>
+                                    <span bind="time" format="yyyy-MM-dd HH:mm:ss"></span>
+                                    <span>
+                                        <button type="button">
+                                            修改意见
+                                        </button>
+                                        <button type="button" onclick="showBaks('${pageName}.${name}','${id}');">
+                                            查看修改记录
+                                        </button>
+                                    </span>
+
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <div id="bottom"></div>
+
+            </div>
+        </segment>
+        <div class="buttons">
+            <span class="button">
+                <button onclick="" type="button">刷新</button>
+            </span>
+        </div>
+    </form>
+</body>
+</html>

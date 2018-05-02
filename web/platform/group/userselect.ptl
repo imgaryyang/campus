@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>选择用户</title>
+    <link type="text/css" rel="stylesheet" href="/platform/group/userselect.css"/>
+    <script type="text/javascript" src="/platform/group/userselect.js"></script>
+</head>
+
+<body id="dialogBody">
+    <div id="main">
+        <form id="form">
+
+            <div id="search">
+                <input class="search" name="word" id="word">
+            </div>
+
+            <div id="users">
+                <div class="selector">
+                    <div bind="userSelector" selected="selectedUsers" name="userIds">
+                    </div>
+                </div>
+                <div id="sortButtons">
+                    <button type="button" onclick="userSelector.up();">上移</button>
+                    <button type="button" onclick="userSelector.down();">下移</button>
+                </div>
+            </div>
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="ok();">确定</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">取消</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

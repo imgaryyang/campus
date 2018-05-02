@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>更改号码</title>
+    <link href="../css/stlye.css" rel="stylesheet" type="text/css">
+    <link href="/safecampus/wx/personal/regsiter.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/jquery.js"></script>
+    <script src="/safecampus/wx/personal/nobind.js"></script>
+    <script src="/safecampus/wx/personal/validate.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="/safecampus/wx/personal/jssdk.js"></script>
+</head>
+
+<body>
+<div class="jfcg">
+    <div class="contont">
+        <div class="srxsj">
+            <div class="srxsj_lt"><img src="../image/sjh_03.png"></div>
+            <div class="srxsj_zt">
+                <input id="phone" name="phone" type="text" value="" class="kuang" placeholder="请输入手机号码">
+            </div>
+        </div>
+        <div class="qdxg">
+            <div id="errmsg"></div>
+            <button id="confirmBut" class="hover">确定</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

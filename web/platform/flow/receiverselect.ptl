@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>请选择接收者</title>
+    <link type="text/css" rel="stylesheet" href="/platform/flow/receiverselect.css">
+    <script type="text/javascript" src="/platform/flow/receiverselect.js"></script>
+</head>
+<body id="dialogBody">
+    <div id="remark" bind="action" bind="self.getProperty('receiver_select_remark')">
+    </div>
+    <div id="list">
+    </div>
+    <div id="buttons">
+        <span>
+            <button type="button" onclick="ok();">确定</button>
+        </span>
+        <span>
+            <button type="button" onclick="Cyan.Window.closeWindow();">取消</button>
+        </span>
+    </div>
+</body>
+</html>

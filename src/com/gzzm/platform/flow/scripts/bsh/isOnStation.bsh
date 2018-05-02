@@ -1,0 +1,34 @@
+isOnStation(Integer userId,Integer deptId,String stationName)
+{
+  return isOnStation(userId,deptId,new String[]{stationName});
+}
+
+isOnStation(Integer userId,Integer deptId,String stationName1,String stationName2)
+{
+  return isOnStation(userId,deptId,new String[]{stationName1,stationName2});
+}
+
+isOnStation(Integer userId,Integer deptId,String stationName1,String stationName2,String stationName3)
+{
+  return isOnStation(userId,deptId,new String[]{stationName1,stationName2,stationName3});
+}
+
+isOnStation(Integer userId,Integer deptId,String stationName1,String stationName2,String stationName3,String stationName4)
+{
+  return isOnStation(userId,deptId,new String[]{stationName1,stationName2,stationName3,stationName4});
+}
+
+isOnStation(Integer userId,Integer deptId,String stationName1,String stationName2,String stationName3,String stationName4,String stationName5)
+{
+  return isOnStation(userId,deptId,new String[]{stationName1,stationName2,stationName3,stationName4,stationName5});
+}
+
+isOnStation(Integer userId,Integer deptId,String[] stationNames)
+{  
+   return FlowFunctions.isOnStation(userId,deptId,stationNames);
+}
+
+isOnStation(Integer userId,Integer deptId,java.util.Collection stationNames)
+{
+   return FlowFunctions.isOnStation(userId,deptId,stationNames);
+}

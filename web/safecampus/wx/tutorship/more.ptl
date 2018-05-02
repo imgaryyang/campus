@@ -1,0 +1,79 @@
+<!doctype html>
+<html action="false">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+
+    <title bind="tutorInstitutions.size()>0"> 推荐机构</title>
+    <title bind="tutorCourses.size()>0"> 推荐课程</title>
+    <title bind="tutorTeachers.size()>0"> 推荐教师</title>
+
+    <link href="../css/stlye.css" rel="stylesheet" type="text/css">
+    <link href="more.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="zkd">
+
+    <div class="contont">
+        <div class="xwlb">
+
+
+            <div class="tjls tjls2" bind="tutorInstitutions">
+                <a href="${url}">
+                    <dl class="gdls">
+                        <dt><span><img src="/campus/tutorship/institution/${institutionId}" class="im2"></span></dt>
+                        <dd>
+                            <div class="gdls_bt"><h2>${institutionName}</h2></div>
+                            <h3>
+                                <p><img src="../image/xbddtb_03.jpg"></p>
+                                <font>${address}</font>
+                            </h3>
+                        </dd>
+                    </dl>
+                </a>
+            </div>
+
+
+            <div class="tjls tjls2" bind="tutorCourses">
+                <dl class="gdls no">
+                    <dt><span><img src="../image/tjkc_06.png"></span></dt>
+                    <dd>
+                        <div class="gdls_bt"><h2>${courseName}</h2>
+                            <p bind="CourseTypes">
+                                ${subjectTypeItem.typeItemName}
+                            </p></div>
+                        <h3>
+                            <p><img src="../image/xxtb_03.png"></p>
+                            <font>${institution.address}</font>
+                        </h3>
+                    </dd>
+                </dl>
+            </div>
+
+
+            <div class="tjls" bind="tutorTeachers">
+                <dl class="gdls">
+                    <dt><span><img src="/campus/tutorship/teacherimage/${teacherId}"></span></dt>
+                    <dd>
+                        <div class="gdls_bt">
+                            <h2>${teacherName}</h2>
+                        </div>
+                        <div class="xbq">
+                            <p bind="teacherCourses"> ${course}</p>
+                        </div>
+                        <h3>
+                            <p><img src="../image/xxtb_03.png"></p>
+                            <font>${institution.address}</font>
+                        </h3>
+                    </dd>
+                </dl>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</p>
+</body>
+</html>

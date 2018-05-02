@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>系统标题</title>
+    <link type="text/css" rel="stylesheet" href="/oa/index/index.css">
+    <script type="text/javascript" src="/platform/login/login.js"></script>
+    <script type="text/javascript" src="/thirdparty/gdca.js"></script>
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="center">
+            <div id="components">
+                <form id="form" action="">
+                    <input type="hidden" name="certType" value="gdca">
+                    <input type="hidden" name="random">
+                    <input type="hidden" name="sign">
+                    <input type="hidden" name="cert">
+
+                    <div class="item">
+                        <div class="label">
+                            Pin码：
+                        </div>
+                        <div class="input">
+                            <input name="pin" type="password" require>
+                        </div>
+                    </div>
+                    <div id="buttons">
+                        <button id="login_button" type="button" onclick="gdca_login('/oa/main.ptl');"></button>
+                        <button id="reset_button" type="button" onclick="reset();"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+
+    <!--定期删除文件-->
+    <job single="true">
+        <task type="net.cyan.commons.util.FileCleaner">
+            <path>d:\log</path>
+        </task>
+        <trigger type="cron" expression="0 0 2 * * ?"/>
+    </job>
+
+    <job single="true">
+        <task type="net.cyan.commons.util.FileCleaner">
+            <path>d:\log</path>
+        </task>
+        <trigger type="cron" expression="0 0 2 * * ?"/>
+    </job>
+
+</schedule>

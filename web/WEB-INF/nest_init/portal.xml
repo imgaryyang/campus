@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <elementLoader name="portalTag" type="com.gzzm.portal.tag.PortalTagLoader"/>
+
+</config>

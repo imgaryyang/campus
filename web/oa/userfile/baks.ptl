@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>文件修改历史记录</title>
+    <link type="text/css" rel="stylesheet" href="/oa/userfile/baks.css">
+</head>
+<body id="dialogBody">
+    <div id="main">
+        <table>
+            <thead>
+            <tr>
+                <th>上传时间</th>
+                <th>类型</th>
+                <th>大小</th>
+                <th>下载</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr bind="baks">
+                <td>
+                    ${uploadTime}
+                </td>
+                <td>
+                    ${fileType}
+                </td>
+                <td format="bytesize" bind="fileSize">
+                </td>
+                <td>
+                    <a target="_blank" href="/oa/userfile/file/bak/${bakId}">下载</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="Cyan.Window.closeWindow();">关闭</button>
+            </span>
+        </div>
+    </div>
+</body>
+</html>

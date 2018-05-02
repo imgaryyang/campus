@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>孩子安全</title>
+    <link href="/safecampus/wx/attendance/stlye.css" rel="stylesheet" type="text/css">
+    <script src="/safecampus/wx/js/TouchSlide.1.1.js"></script>
+    <script src="/safecampus/js/jquery.js"></script>
+    <script src="/safecampus/wx/attendance/attendance.js"></script>
+    <script src="/safecampus/wx/attendance/child.js"></script>
+</head>
+
+<body>
+<div class="zkd">
+    <div class="txkq2">
+        <!--<input type="date" class="dateInput" onchange="queryMsg('${studentId}')" name="dateStart" id="dateStart"/> &lt;!&ndash;<button class="wcbtn1" onclick="queryMsg('${studentId}')">搜索</button>&ndash;&gt;<br><br>-->
+        <input id="oncheck" type="hidden" value="${studentId}"/>
+        <dl class="jsmmz" bind="students" onclick="showStudentAttendance('${studentId}')">
+            <dt><img src="/wx/centerpage/image/${studentId}"></dt>
+            <dd name="${index$}" id="${studentId}">${studentName}</dd>
+        </dl>
+        <div class="sscj">
+            <div class="contont">
+                <div class="tjls" bind="attMap">
+                    <div class="kqrq">${key}</div>
+                    <ul class="kqlb">
+                        <li bind="value">
+                            <p class="p1"></p>
+                            <h2>${attName}</h2>
+                            <span>${arrivedTime}</span></li>
+                        <span></span>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div  bind="${students==null||students.size()==0}">
+    <dl class="nochildstyle">
+        <dt><img src="/safecampus/wx/image/noattend.png" class="imgsize"></dt>
+        <dd class="mydd1">您暂无关联的孩子</dd>
+    </dl>
+</div>
+</body>
+</html>

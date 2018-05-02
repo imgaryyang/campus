@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>跟车老师排班表</title>
+    <link type="text/css" rel="stylesheet" href="/safecampus/campus/bus/busschedule.css">
+    <script type="text/javascript" src="/safecampus/campus/bus/busschedule.js"></script>
+</head>
+<body>
+<div class="box">
+    <form id="form">
+        <div class="lasxz">
+            <div class="lasxz_sb">
+                <div class="lasxz_lt">跟车老师：</div>
+                <div class="lasxz_rt">
+                    <input name="teacherId" text="${teacherName}" require/>
+                    <input name="oldTeacherId" type="hidden" value="${teacherId}"/>
+                </div>
+            </div>
+            <div style="padding-top: 20px;">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0" class="lspblb">
+                    <tr>
+                        <td bind="items" class="td1">${scheduleName}(<span display="none" bind="scheduleTime"
+                                                                           format="MM/dd"></span>)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bind="items">
+                            <a href="#" class="${type==type.ALLDAY?'hover':''}"
+                               onclick="changeValue('${scheduleTimeStr}',${index$},'ALLDAY')"
+                               name="scheduleTime_${index$}" id="scheduleTime_${index$}_ALLDAY">全天</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bind="items">
+                            <a href="#" class="${type==type.MORNING?'hover':''}"
+                               onclick="changeValue('${scheduleTimeStr}',${index$},'MORNING')"
+                               name="scheduleTime_${index$}" id="scheduleTime_${index$}_MORNING">早班</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bind="items">
+                            <a href="#" class="${type==type.NIGHT?'hover':''}"
+                               onclick="changeValue('${scheduleTimeStr}',${index$},'NIGHT')"
+                               name="scheduleTime_${index$}" id="scheduleTime_${index$}_NIGHT">晚班</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <input name="busId" value="${busId}" type="hidden"/>
+            <span bind="items">
+                <input name="itemMap.${scheduleTimeStr}" value="${type}" type="hidden">
+            </span>
+        </div>
+
+        <div id="buttons">
+            <span class="button">
+                <button type="button" onclick="savesche()">保存</button>
+            </span>
+            <span class="button">
+                <button type="button" onclick="closeWindow();">关闭</button>
+            </span>
+        </div>
+    </form>
+</div>
+</body>
+</html>

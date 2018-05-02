@@ -1,0 +1,29 @@
+#dialogBody {
+    margin-bottom: 10px;
+}
+
+#container {
+    width: 970px;
+    height: 420px;
+}
+
+#opinion {
+    float: left;
+    width: 960px;
+    height: 410px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#opinion textarea {
+    width: 950px;
+    height: 380px;
+}
+
+.label {
+    height: 18px;
+}
+
+#dialogBody #buttons {
+    width: 970px;
+}

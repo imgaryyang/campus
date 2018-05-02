@@ -1,0 +1,4 @@
+getStationById(Integer deptId,Integer stationId)
+{  
+   return FlowFunctions.getStationById(deptId,stationId);
+}

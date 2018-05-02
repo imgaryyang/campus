@@ -1,0 +1,43 @@
+#labels {
+    float: left;
+    width: 420px;
+    text-align: left;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    margin-left: 5px;
+    border-bottom: 1px solid #64c9f4;
+}
+
+.label {
+    border-left: 1px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+    border-top: 1px solid #cfcfcf;
+    background-color: #f9f9f9;
+    margin-left: -1px;
+}
+
+.label_selected {
+    border-left: 1px solid #64c9f4;
+    border-right: 1px solid #64c9f4;
+    border-top: 1px solid #64c9f4;
+    background-color: #d1effc;
+    margin-left: -1px;
+    margin-right: 1px;
+}
+
+#labels span.label {
+    color: #646464;
+    cursor: pointer;
+}
+
+#labels span.label_selected {
+    color: #0c815b;
+    cursor: pointer;
+}
+
+#labels span {
+    float: left;
+    line-height: 22px;
+    padding-left: 12px;
+    padding-right: 12px;
+}

@@ -1,0 +1,56 @@
+<div class="components">
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                个人主页
+            </div>
+            <div class="component_wide">
+                <input name="entity.attributes.homeUrl" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                Email
+            </div>
+            <div class="component_wide">
+                <input name="entity.attributes.email" datatype="email" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                QQ
+            </div>
+            <div class="component_wide">
+                <input name="entity.attributes.qq" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                MSN
+            </div>
+            <div class="component_wide">
+                <input name="entity.attributes.msn" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+
+    <div class="component_line">
+        <div class="component_item">
+            <div class="label">
+                ICQ
+            </div>
+            <div class="component_wide">
+                <input name="entity.attributes.icq" readonly="${readOnly}">
+            </div>
+        </div>
+    </div>
+</div>

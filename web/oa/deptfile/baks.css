@@ -1,0 +1,34 @@
+#main {
+    width: 500px;
+    height: 200px;
+}
+
+table {
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 10px;
+    border-spacing: 1px;
+    *border-spacing: expression(this.cellSpacing='1px');
+}
+
+th {
+    line-height: 27px;
+    text-align: center;
+    font-weight: bold;
+    background: white;
+}
+
+td {
+    line-height: 27px;
+    text-align: center;
+    background: white;
+}
+
+td button {
+    line-height: 12px;
+}
+
+#dialogBody #buttons {
+    width: 500px;
+    margin-top: 10px;
+}

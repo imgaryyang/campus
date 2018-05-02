@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/platform/organ/userdept.css">
+    <script type="text/javascript" src="/platform/organ/userdept.js"></script>
+</head>
+<body id="dialogBody">
+
+    <form>
+
+        <div id="depts">
+            <div id="deptSelector" class="itemselector" from:rootVisible="false" from:multiple="true"
+                 bind="net.cyan.arachne.components.PageItemSelector.class" available="deptTree" selected="entity.depts"
+                 fromLegend="可选的部门" toLegend="已选的部门">
+            </div>
+            <div id="sortButtons">
+                <button type="button" onclick="deptSelector.up();">上移</button>
+                <button type="button" onclick="deptSelector.down();">下移</button>
+            </div>
+        </div>
+
+        <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="saveDepts();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+        </div>
+
+    </form>
+
+</body>
+</html>

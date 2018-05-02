@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>常见问题</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<c bind="information">
+    <div class="zj">
+        <div class="cjwt">
+            <div class="cjwt_bt">
+                <div class="cjwt_bt_lt">常见问题</div>
+                <div class="cjwt_bt_rt">common problem</div>
+            </div>
+            <div class="wtlb">
+                <div class="xxy" bind="title" format="trunc(20)"></div>
+                <div class="xxy_sm">${content}</div>
+            </div>
+            <div portal:type="channelId_code" channelId="${channelId}">
+                <c bind="${channelCode == '916001002'}">
+                    <div class="fy2">
+                        <div class="fy_lt" bind="prevInformationId!=null"><a>上一篇：</a><a portal:type="info"
+                                                                                        infoId="${prevInformationId}"
+                                                                                        href="/info/${infoId}"
+                                ><span bind="title" format="trunc(12)"></span></a></div>
+                        <div class="fy_rt" bind="nextInformationId!=null"><a>下一篇:</a> <a portal:type="info"
+                                                                                         infoId="${nextInformationId}"
+                                                                                         href="/info/${infoId}"
+                                ><span bind="title" format="trunc(12)"></span></a></div>
+                    </div>
+                </c>
+            </div>
+</div>
+</div>
+</c>
+</body>
+</html>

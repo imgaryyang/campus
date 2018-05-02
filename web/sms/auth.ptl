@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/sms/auth.css"/>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+</head>
+
+<body id="dialogBody">
+    <div id="main">
+        <form id="form" bind="entity" action="">
+            <div id="authUsers">
+                <div id="deptLabel" class="label">
+                    部门
+                </div>
+                <div id="userLabel" class="label">
+                    人员
+                </div>
+                <div id="selectedLabel" class="label">
+                    已授权人员
+                </div>
+                <div class="selector">
+                    <div bind="com.gzzm.platform.organ.PageUserSelector.class" selected="entity.authUsers"
+                         name="entity.authUsers.userId">
+                    </div>
+                </div>
+            </div>
+            <div id="buttons">
+                <span class="button">
+                    <button type="button" onclick="save();">保存</button>
+                </span>
+                <span class="button">
+                    <button type="button" onclick="closeWindow();">关闭</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

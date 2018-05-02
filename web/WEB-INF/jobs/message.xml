@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+
+    <!--接收短信回执-->
+    <!--<job>-->
+        <!--<task type="com.gzzm.platform.message.sms.ReceiptReceiverJob"/>-->
+        <!--<trigger type="simple" single="true" interval="5000"/>-->
+    <!--</job>-->
+
+    <!--<job>-->
+        <!--<task type="com.gzzm.platform.message.sms.SmsReSendJob"/>-->
+        <!--<trigger type="once"/>-->
+    <!--</job>-->
+
+</schedule>

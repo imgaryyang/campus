@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="/platform/menu/menu.js"></script>
+    <script type="text/javascript" src="/platform/styles/extjs/main.js"></script>
+    <script type="text/javascript" src="/platform/desktop/placard.js"></script>
+    <script type="text/javascript" src="/platform/desktop/shortcut.js"></script>
+    <script type="text/javascript" src="/oa/styles/main.js"></script>
+    <script type="text/javascript" src="/versionLog/versionLog.js"></script>
+    <script type="text/javascript" src="/oa/versionlog.js"></script>
+    <link type="text/css" rel="stylesheet" href="/oa/styles/main.css">
+    <link type="text/css" rel="stylesheet" href="${request['style.path']}/main.css">
+    <link type="text/css" rel="stylesheet" href="/versionLog/css/style.css">
+</head>
+<body>
+    <div id="top">
+        <div id="top_left">
+            <div id="logo"></div>
+            <div id="placard">
+            </div>
+            <div id="top_left_bottom">
+                <div id="date" bind="new java.util.Date()" format="yyyy年M月d日 E"></div>
+                <div id="userInfo" bind="com.gzzm.platform.login.UserOnlineInfo.class">
+                    <span id="userName">
+                        用户名:${userName}
+                    </span>
+                    <span id="deptName">
+                        所属部门:${dept.allName()}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div id="top_right">
+
+            <div id="shortcuts">
+            </div>
+
+            <div id="logout">
+                <span>
+                    <a href="javascript:System.lock();">屏幕锁定</a>
+                </span>
+                <span bind="com.gzzm.platform.login.UserOnlineInfo.class" bind="depts.size()>1">
+                    <a href="javascript:System.selectDept();">切换部门</a>
+                </span>
+                <span>
+                    <a href="javascript:System.logout();">退出系统</a>
+                </span>
+            </div>
+        </div>
+
+    </div>
+    <div bind="com.gzzm.platform.menu.MenuComponent.class" group="oa"></div>
+    <div id="center">
+    </div>
+</body>
+</html>

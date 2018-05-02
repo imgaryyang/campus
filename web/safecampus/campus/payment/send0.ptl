@@ -1,0 +1,219 @@
+
+<%-- 测试页面 --%>
+
+<html>
+<head>
+    <title>发送账单</title>
+    <link type="text/css" rel="stylesheet" href="/safecampus/campus/payment/pay.css">
+    <script type="text/javascript" src="/cyan/client/validate.js"></script>
+    <script type="text/javascript" src="/platform/commons/crud.js"></script>
+</head>
+<body>
+<div id="main">
+
+    <div id="subPage">
+        <div class="choosestu">
+            <h3>缴费项目明细</h3>
+            <span class="line"></span>
+        </div>
+        <div class="subBody" id="paymentMsg">
+            <div class='item'>
+                <span class='label'>缴费类型: </span>
+                <span class='value'>${payItem.paymentType}</span>
+            </div>
+            <div class='item'>
+                <span class='label'>项目名称: </span>
+                <span class='value'>${payItem.payItemName}</span>
+            </div>
+            <div class='item'>
+                <span class='label'>项目编号: </span>
+                <span class='value'>${payItem.serialNo}</span>
+            </div>
+            <div class='item'>
+                <span class='label'>缴费金额(元): </span>
+                <span class='value'>${payItem.money}</span>
+            </div>
+            <div class='item'>
+                <span class='label'>开始时间: </span>
+                <span class='value'>${payItem.beginTime}</span>
+            </div>
+            <div class='item'>
+                <span class='label'>截止时间: </span>
+                <span class='value'>${payItem.deadline}</span>
+            </div>
+            <div class='item' style="width:100%;">
+                <span class='label' style="width: 9%;float: left;padding-left: 55px;">缴费说明: </span>
+                <span class='value' style=" width: 70%; float: left;">${payItem.desc}</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="selectSession">
+        <div class="choosestu">
+            <h3>选择学生</h3>
+            <div class="line"></div>
+        </div>
+
+        <div class="chooseMsg">
+
+            <input type="checkbox" id="sendAll"/>
+            <label for="sendAll"> 全选</label>
+
+            <span id="chooseCount" class="chooseCount">
+					<span>已选择 </span>
+            <strong class="recent">0</strong>
+             <strong>/</strong>
+             <strong class="total">0</strong>
+            <span>人</span>
+				</span>
+        </div>
+
+        <div id="selectTuition" class="select">
+
+            <div class="session" id="grades" data-type="grade">
+                <div class="block"><span>年级</span></div>
+                <ul></ul>
+            </div>
+            <div class="session" id="classes">
+                <div class="block"><span>班级</span></div>
+            </div>
+
+            <div class="session stuList" id="students">
+                <div class="block stuAutoHide">学生</div>
+            </div>
+
+
+        </div>
+
+        <div id="selectHost" class="select">
+
+            <div class="session" id="hostRoom">
+                <div class="block"><span>托管室</span></div>
+                <ul></ul>
+            </div>
+
+            <div class="session stuList" id="hostStudents">
+                <div class="block stuAutoHide">学生</div>
+            </div>
+
+        </div>
+
+        <div id="selectSchoolBus" class="select">
+
+            <div class="session" id="bus">
+                <div class="block"><span>校巴</span></div>
+                <ul></ul>
+            </div>
+
+            <div class="session stuList" id="busStudents">
+                <div class="block stuAutoHide">学生</div>
+            </div>
+
+        </div>
+    </div>
+    <div class="selectButton">
+        <button id="subBack">返回</button>
+        <button id="subSend">发送</button>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="/safecampus/js/jquery.js"></script>
+<script type="text/javascript" src="/safecampus/campus/payment/pay.js"></script>
+
+<script>
+
+    if ("${payItem.paymentType}" == "学费") {
+        //展示全部学生，对已发送账单的学生进行标识，可选性设为： 不可选
+        showTuition("${payItem.payItemId}", 0);
+    }
+
+    if ("${payItem.paymentType}" == "托管费") {
+        //展示全部学生，对已发送账单的学生进行标识，可选性设为： 不可选
+        showHost("${payItem.payItemId}", 0);
+    }
+    if ("${payItem.paymentType}" == "校巴费") {
+        //展示全部学生，对已发送账单的学生进行标识，可选性设为： 不可选
+        showBus("${payItem.payItemId}", 0);
+    }
+
+
+    $("button#subBack").click(function () {
+        System.closePage();
+    });
+
+    $("button#subSend").click(function () {
+
+        send("${payItem.payItemId}", function (n) {
+            Cyan.message("已发送：" + n + " 个账单", function () {
+                System.closePage();
+            });
+        })
+    });
+
+    function send(payItemId, callback) {
+
+        var arr = [];
+        $(".select").find(".stuList").find(".checkAll").each(function () {
+            if ($(this).attr("disabled") != "disabled")
+                arr.push($(this).val());
+        });
+
+        console.log("students=" + arr.join("&students="));
+        console.log($("#form").serialize().replace(/entity/gi, "payItem"));
+
+        $.post(
+            "/campus/pay/payItem/sendTo/" + payItemId,
+            {
+                "studentArray": arr.join("-")
+            },
+            function (result) {
+                //console.log(result)
+                if (callback) {
+                    callback(result);
+                }
+            }
+        )
+    }
+
+</script>
+
+</body>
+</html>
+
+<style>
+    .session > div {
+        display: none;
+    }
+
+    ul {
+        overflow: hidden;
+    }
+
+    #chooseCount {
+        margin-left: 30px;
+    }
+
+    .chooseMsg {
+        margin-bottom: 25px;
+        border: none;
+    }
+
+    #chooseCount .recent {
+        color: #0782C1;
+    }
+
+    .block:hover {
+        background-color: #ecf0fc;
+    }
+
+    .chooseBlock {
+        background-color: #ecf0fc;
+    }
+
+    #grades, #bus, #hostRoom {
+        border-top: 1px #dddfff solid
+    }
+
+</style>

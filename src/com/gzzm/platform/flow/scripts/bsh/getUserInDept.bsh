@@ -1,0 +1,29 @@
+getUserInDept(Integer deptId)
+{
+  return getUserInDept(new Integer[]{deptId});
+}
+
+getUserInDept(Integer deptId1,Integer deptId2)
+{
+  return getUserInDept(new Integer[]{deptId1,deptId2});
+}
+
+getUserInDept(Integer deptId1,Integer deptId2,Integer deptId3)
+{
+  return getUserInDept(new Integer[]{deptId1,deptId2,deptId3});
+}
+
+getUserInDept(Integer deptId1,Integer deptId2,Integer deptId3,Integer deptId4)
+{
+  return getUserInDept(new Integer[]{deptId1,deptId2,deptId3,deptId4});
+}
+
+getUserInDept(Integer[] deptIds)
+{
+   return FlowFunctions.getUserInDept(deptIds);
+}
+
+getUserInDept(java.util.Collection deptIds)
+{
+   return FlowFunctions.getUserInDept(deptIds);
+}

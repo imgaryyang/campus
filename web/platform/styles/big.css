@@ -1,0 +1,32 @@
+#dialogBody #main.single {
+    width: 800px;
+}
+
+#dialogBody #components {
+    width: 800px;
+}
+
+#dialogBody #components .component_item {
+    clear: both;
+}
+
+#dialogBody #components .component_item .component {
+    width: 700px;
+}
+
+#dialogBody #components .component_item input {
+    width: 680px;
+    height: 18px;
+}
+
+#dialogBody #components .component_item textarea {
+    width: 680px;
+}
+
+#dialogBody #components .component_item select {
+    width: 680px;
+}
+
+#dialogBody #buttons {
+    width: 800px;
+}

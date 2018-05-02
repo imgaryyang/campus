@@ -1,0 +1,52 @@
+.fileName img {
+    vertical-align: top;
+    width: 14px;
+    height: 14px;
+}
+
+.fileName span {
+    padding-left: 5px;
+}
+
+#dialogBody {
+    margin-bottom: 20px;
+}
+
+#main {
+    width: 950px;
+    overflow: hidden;
+}
+
+#dialogBody #components {
+    clear: both;
+    width: 940px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+#dialogBody #components .component_item .component {
+    padding-top: 0;
+    margin-bottom: 6px;
+    float: left;
+    width: 800px;
+}
+
+#dialogBody #components .component_item input {
+    width: 835px;
+    height: 18px;
+}
+
+#dialogBody #components .component_item textarea {
+    width: 850px;
+    height: 480px;
+}
+
+#dialogBody #buttons {
+    width: 950px;
+}
+
+#dialogBody #progress {
+	height: 200px;
+	overflow-y: auto;
+}

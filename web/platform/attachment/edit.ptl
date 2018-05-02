@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>${attachment.attachmentName}</title>
+    <script type="text/javascript" src="/platform/commons/buttons.js"></script>
+    <script type="text/javascript" src="/platform/weboffice/office.js"></script>
+    <script type="text/javascript" src="/platform/attachment/edit.js"></script>
+    <link type="text/css" rel="stylesheet" href="/platform/attachment/edit.css">
+</head>
+<body>
+    <div id="word"></div>
+
+    <div id="buttons">
+
+        <span>
+            <button class="btn" id="maximize" onclick="window.maximize();">最大化</button>
+        </span>
+
+        <span>
+            <button class="btn" id="restore" onclick="window.restore();">还原</button>
+        </span>
+
+        <span>
+            <button class="btn" onclick="saveText();">保存</button>
+        </span>
+
+        <span>
+            <button class="btn" onclick="acceptAllRevisions();">定稿</button>
+        </span>
+
+        <span>
+            <button class="btn" id="history" onclick="showHistory();">修改记录</button>
+        </span>
+
+        <span>
+            <button class="btn" onclick="printWord();">打印</button>
+        </span>
+
+        <span>
+            <button class="btn" onclick="saveAs();">另存为</button>
+        </span>
+
+        <span>
+            <button class="btn" id="showRevisions" onclick="window.showRevisions();">显示痕迹</button>
+        </span>
+
+        <span>
+            <button class="btn" id="hideRevisions" onclick="window.hideRevisions();">隐藏痕迹</button>
+        </span>
+
+        <span>
+            <button class="btn" onclick="exit();">关闭</button>
+        </span>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+hours(Date date)
+{
+   return DateUtils.getHour(date);
+}

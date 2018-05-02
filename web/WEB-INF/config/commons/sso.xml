@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <bean class="com.gzzm.platform.login.SSOConfig" factory="instance">
+
+        <item name="oa">http://localhost/sso/check?id={id}&amp;checkNumber={checkNumber}</item>
+
+    </bean>
+
+</config>

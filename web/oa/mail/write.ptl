@@ -1,0 +1,140 @@
+<html>
+<head>
+    <title>写邮件</title>
+    <link type="text/css" rel="stylesheet" href="/oa/mail/write.css">
+    <link type="text/css" rel="stylesheet" href="/platform/receiver/receiverselector.css">
+    <script type="text/javascript" src="/platform/receiver/receiverselector.js"></script>
+    <script type="text/javascript" src="/oa/mail/write.js"></script>
+    <script type="text/javascript" src="/platform/commons/htmleditor.js"></script>
+</head>
+<body>
+    <div id="pageBody" class="left bottom">
+        <form id="form" action="">
+            <div id="buttons">
+                <span>
+                    <button type="button" onclick="preview();" icon="/platform/commons/icons/blank.gif">预览</button>
+                </span>
+                <span>
+                    <button type="button" onclick="send();" icon="/oa/mail/icons/send.gif">发送邮件</button>
+                </span>
+                <span>
+                    <button type="button" onclick="save();" icon="/oa/mail/icons/save.gif">保存到草稿箱</button>
+                </span>
+                <span>
+                    <button type="button" bind="hasCc()" class="ccbutton" icon="/oa/mail/icons/cc.gif">删除抄送</button>
+                    <button type="button" bind="!hasCc()" class="ccbutton" icon="/oa/mail/icons/cc.gif">添加抄送</button>
+                </span>
+                <span>
+                    <button type="button" bind="hasSc()" class="scbutton" icon="/oa/mail/icons/sc.gif">删除密送</button>
+                    <%--<button type="button" bind="!hasSc()" class="scbutton" icon="/oa/mail/icons/sc.gif">添加密送</button>--%>
+                </span>
+            </div>
+
+            <div id="mainBody">
+                <div id="mail">
+
+                    <div bind="smtpSupported" class="item" id="mailFromDiv">
+                        <div class="label">
+                            发件人：
+                        </div>
+                        <div class="input mailFrom">
+                            <select name="body.accountId" type="targetlist">
+                                <option bind="localServerSupported" value="">本地邮箱</option>
+                                <option bind=""></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                            <a href="#" onclick="openReceiverDialog('mailTo');">收件人</a>：
+                        </div>
+                        <div class="input">
+                            <input name="body.mailTo" class="mail_receiver">
+                        </div>
+                    </div>
+
+                    <div class="item" id="ccdiv" style="${hasCc()?'':'display:none'}">
+                        <div class="label">
+                            <a href="#" onclick="openReceiverDialog('cc');">抄送</a>：
+                        </div>
+                        <div class="input">
+                            <input name="body.cc" class="mail_receiver">
+                        </div>
+                    </div>
+
+                    <div class="item" id="scdiv" style="${hasSc()?'':'display:none'}">
+                        <div class="label">
+                            <a href="#" onclick="openReceiverDialog('sc');">密送</a>：
+                        </div>
+                        <div class="input">
+                            <input name="body.sc" class="mail_receiver">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                            主题：
+                        </div>
+                        <div class="input">
+                            <input id="title" name="body.title" class="title">
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                        </div>
+                        <div class="input">
+                            <div class="attachment_add">
+                                <a href="#" id="attachment_add" onclick="return false;">添加附件</a>
+                                <a href="#" id="attachment_addbatch" onclick="return false;">批量上传</a>
+                                <a href="#" onclick="addAttachments();return false;">从资料中心添加</a>
+                                <%--<a href="#" onclick="cameraAttachments();return false;">拍照</a>--%>
+                            </div>
+                            <div id="attachments" bind="attachments">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item" bind="signs.size()>0">
+                        <div class="label">
+                            签名：
+                        </div>
+                        <div class="input">
+                            <select id="body.signId" name="body.signId">
+                                <option value="">-------------------------------------------</option>
+                                <option bind="signs"></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                            内容：
+                        </div>
+                        <div class="input content">
+                            <textarea id="body.content" name="body.content" class="content htmleditor"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="label">
+                        </div>
+                        <div class="input">
+                            <span class="checkbox">
+                                <input name="body.urgent" type="checkbox"
+                                       value="true"><label>紧急</label>
+                            </span>
+                            <%--<span class="checkbox" bind="">--%>
+                            <%--<input name="notify" type="checkbox" value="true"><label>短信通知</label>--%>
+                            <%--<input name="autoNotify" type="hidden" value="false">--%>
+                            <%--</span>--%>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

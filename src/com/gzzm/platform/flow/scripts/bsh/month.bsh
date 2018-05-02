@@ -1,0 +1,4 @@
+month(Date date)
+{
+   return DateUtils.getMonth(date);
+}

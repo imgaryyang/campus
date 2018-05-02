@@ -1,0 +1,4 @@
+sendSmsToUser(String content, Integer userId)
+{
+   FlowFunctions.sendMessageToUser(content,userId);
+}

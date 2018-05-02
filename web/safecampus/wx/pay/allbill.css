@@ -1,0 +1,38 @@
+#back {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.jtzwkq dt img {
+    width: 10rem;
+}
+
+.jtzwkq dd.dd1 {
+    font-size: 1.4rem;
+    color:grey;
+}
+
+.zdsqtb .sort font {
+    width: 90%;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.contont {
+    display: none;
+}
+
+.bjkq ul li {
+    width: 33.3%;
+}
+
+.show {
+    display: block;
+}
+
+.bjkq ul li.hover {
+    border-bottom: solid 1px #4ba292;
+    color: #4ba292;
+}
